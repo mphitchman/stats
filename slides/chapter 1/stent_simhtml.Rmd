@@ -1,0 +1,127 @@
+---
+title: "Stent treatment simulation"
+author: "Mike H"
+date: "6/20/2021"
+output: html_document
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Case Study: Using stents to prevent strokes
+
+Stents are devices put inside blood vessels that assist in patient recovery after cardiac events, and they have been shown to reduce the risk of an additional heart attack or death. 
+
+Many doctors have hoped that there would be similar benefits for patients at risk of stroke.
+
+Research Question: Does the use of stents reduce the risk of stroke?
+
+### Recall our data set
+
+```{r}
+stent365<-read.csv("https://www.openintro.org/data/csv/stent365.csv")
+(table(stent365))
+
+```
+
+- 451 total patients, 224 of them in treatment group
+- 73 total patients had stroke event in the one year time period
+- 45 patients in treatment group had a stroke event
+
+Suppose that in this group of 451 patients, 73 would have had a stroke event during the year *regardless* of which group they were in.  
+
+**Key Question**: In this case, how likely is it to get 45 (or more) stroke events in the treatment group?
+
+### Create a deck of cards reflecting these results
+
+We can attack the key question via simulation!
+
+First, create a *deck* of 451 cards so that 73 of them have 's' printed on them (for stroke event), the rest have 'n'.
+
+```{r, echo = TRUE}
+deck <- rep(c("n","s"),times=c(378,73))
+table(deck)
+```
+
+## Simulate
+
+We shuffle the deck, randomly deal 224 cards into Treatment group, and see how many 's' cards we get.
+
+```{r, echo=TRUE}
+sim1 <- sample(deck)[1:224]
+table(sim1)
+```
+
+### Simulate again
+
+```{r, echo=TRUE}
+sim2 <- sample(deck)[1:224]
+table(sim2)
+```
+
+### Simulate a third time
+
+```{r, echo=TRUE}
+sim3 <- sample(deck)[1:224]
+table(sim3)
+```
+
+```{r}
+s_counts <- c(table(sim1)[2],table(sim2)[2],table(sim3)[2])
+```
+
+
+We should expect to get different 's' counts from different samples.  
+
+In our three simulations we saw these results: `r s_counts`
+
+What range of results should we expect if we continued this game?  And how likely is it to get 45 or more on any given trial?
+
+If we simulatw a *bunch* of times, we can address these types of questions.
+
+## Simulate many, many times at once
+
+```{r, echo=TRUE}
+trials=5000
+  results<-c()
+  for(x in 1:trials) 
+    {results<-c(results,table(sample(deck)[1:224])['s'])}
+```
+Running this simulation `r trials` times, we asked R to record the results in the vector `results`. With the code below, we can find how often the treatment group had at least 45 stroke events in these in these `r trials` trials.
+
+```{r, echo=TRUE}
+sum(results>=45)
+```
+
+The proportion of the trials with at least 45 stroke events:
+
+```{r, echo=TRUE}
+sum(results>=45)/trials
+```
+
+In other words, such an extreme number of stroke events would occured in about `r round(sum(results>=45)/trials*100,1)`% of these trials.
+
+## Plotting the distribution for these trials
+
+We can also plot a histogram of our simulation results to get a sense of how many ’s’ cards are likely to turn up in any given trial.
+
+```{r}
+hist(results,
+             main=paste0("Simulation Results. ",trials," trials"),
+             xlab="# stroke events",
+             xlim=c(20,50),
+             col="light blue",
+             border="brown"
+  )
+```
+
+## Conclusion
+
+
+- If we assume the treatments have no effect on the 451 patients in this group, and that 73 of these patients would have had a stroke event in the first year, regardless of treatment, then it is ***very unlikely*** that among 224 randomly chosen patients from the group, 45 or more of them would have a stroke event.
+
+- In fact, our simulation of `r trials` trials suggests that such an extreme result happens about `r round(sum(results>=45)/trials*100,1)`% of the time.
+
+- The researchers originally asked whether the use of stents *reduced* the rate of strokes, and the data clearly do not support this claim.  In fact, after running this simulation, I am led to consider that the treatment actually makes a stroke more likely, because in the experiment 45 of the patients in the treatment group actually did suffer a stroke event in the first year, something that would happen very rarely if the stent made no difference.
