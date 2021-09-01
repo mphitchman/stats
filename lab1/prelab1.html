@@ -215,7 +215,7 @@ pre code {
 <pre class="r"><code>colors &lt;- c(&quot;dodgerblue&quot;,&quot;orange&quot;,&quot;gold&quot;)
 numbers &lt;- c(8,4,1,0)</code></pre>
 <p>Often we give a name to a vector. Above, I have defined a vector of words (colors recognized by R), giving it the name <em>colors</em>. I have also defined the vector <em>numbers</em>, consisting of my four favorite numbers.</p>
-Consider this list of numbers:
+Consider this ordered list of numbers:
 <center>
 20, 24, 24, 21, 27, 37, 31, 37, 45, 38, 39, 42, 51, 46, 36, 34, 39, 32, 32, 39, 39, 12
 </center>
@@ -357,15 +357,15 @@ sum(x)/length(x)</code></pre>
 <pre class="r"><code>x &lt;- c(10,12,17)
 x-4</code></pre>
 <pre><code>## [1]  6  8 13</code></pre>
-<p>ANSWER: R subtracted 4 from each value in the list <code>x</code> and returned a new list (with three elements).</p>
+<p>ANSWER: R subtracted 4 from each value in the vector <code>x</code> and returned a new vector (with three elements).</p>
 <p>How about this one?</p>
 <pre class="r"><code>x &lt;- c(10,12,17)
 xbar &lt;- mean(x)
 d &lt;- (x - mean(x))^2</code></pre>
-<p><code>x</code> is a list of three values, <code>xbar</code> is the mean of the values in <code>x</code>. So what is <code>d</code>?</p>
+<p><code>x</code> is a vector of three values, <code>xbar</code> is the mean of the values in <code>x</code>. So what is <code>d</code>?</p>
 <pre class="r"><code>d</code></pre>
 <pre><code>## [1]  9  1 16</code></pre>
-<p>d is aslo an ordered list of three values, obtained from the list <code>x</code> by subtracting each element of <code>x</code> by <code>xbar</code> and then squaring the difference. Hold on! Then this…</p>
+<p>d is aslo a vector of three values, obtained from <code>x</code> by subtracting each element of <code>x</code> by <code>xbar</code> and then squaring the difference. Hold on! Then this…</p>
 <pre class="r"><code>sum(d)/(length(d)-1)</code></pre>
 <pre><code>## [1] 13</code></pre>
 <p>… must be, the variance of <code>x</code>? Let’s check:</p>
