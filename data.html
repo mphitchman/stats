@@ -286,24 +286,21 @@ $(document).ready(function () {
 <style type="text/css">
 h1.title {
   font-size: 18px;
-}
-h1 { /* Header 1 */
-  font-size: 16px;
   color: DarkGreen;
 }
-h2 { /* Header 2 */
-    font-size: 16px;
+blockquote {
+    padding: 10px 20px;
+    margin: 0 0 20px;
+    font-size: 10px;
+    border-left: 1px solid #eee;
 }
-h3 { /* Header 3 */
-  font-size: 14px;
-}
-code.r{ /* Code block */
-    font-size: 12px;
-}
-pre { /* Code block - determines code spacing between lines */
-    font-size: 14px;
-}
+
 </style>
+<p>To import a .csv file directly from the web into RStudio, such as one of the ones below, we use the following command:</p>
+<p><code>read.csv("web address")</code></p>
+<p>For instance, to import the governors data file, and give it the name <code>gov</code> we enter the following at the console prompt in RStudio (you can copy and paste!):</p>
+<pre><code>gov = read.csv(&quot;https://mphitchman.com/stats/data/governors.csv&quot;)</code></pre>
+<p>To avoid typing the web address by hand, I encourage you to right click on the link below to copy the web address, and then paste it (between quotes!) in the command above.</p>
 <ul>
 <li><a href="data/survey_cleaned_F21.csv">survey</a></li>
 <li><a href="data/softball.csv">softball.csv</a></li>
