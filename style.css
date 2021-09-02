@@ -1,0 +1,30 @@
+/* Whole document: */
+body{
+  font-size: 14px;
+}
+/* Headers */
+h1.title {
+  font-size: 20px;
+  color: DarkGreen;
+}
+h1 { /* Header 1 */
+  font-size: 20px;
+  color: DarkGreen;
+}
+h2 { /* Header 2 */
+    font-size: 18px;
+}
+h3 { /* Header 3 */
+  font-size: 15px;
+  color: DarkRed;
+}
+code.r{ /* Code block */
+    font-size: 12px;
+}
+blockquote {
+    padding: 10px 20px;
+    margin: 0 0 20px;
+    font-size: 12px;
+    border-left: 2px solid #eee;
+    border-color: blue;
+}
