@@ -332,9 +332,9 @@ $(document).ready(function () {
 <p>For instance, suppose in a folder called “awesome” I have a script file called <em>legos.R</em>, and I also have a data file called <em>legosets.csv</em>. If I set my working directory in RStudio to the awesome folder, then the following line in my <em>legos.R</em> script will read the data file into my RStudio session, and give it the working name ‘legos’:</p>
 <pre><code>legos = read.csv(&quot;legosets.csv&quot;)</code></pre>
 <p><strong>TIP 6: Reading a csv files into RStudio from the web.</strong></p>
-<p>To import a .csv file directly from the web into RStudio, such as one of the ones below, we use the following command:</p>
+<p>To import a .csv file directly from the web into RStudio we use the following command:</p>
 <p><code>read.csv("web address")</code></p>
-<p>For instance, to import the governors data file, and give it the name <code>gov</code>, we enter the following at the console prompt in RStudio (you can copy and paste!):</p>
+<p>For instance, to import the governors data file from our resource page, and give it the name <code>gov</code>, we enter the following at the console prompt in RStudio (you can copy and paste!):</p>
 <pre><code>gov = read.csv(&quot;https://mphitchman.com/stats/data/governors.csv&quot;)</code></pre>
 <p>This works regardless of your working directory :).</p>
 <p><strong>TIP 7: Installing and Using Packages.</strong></p>
@@ -342,7 +342,7 @@ $(document).ready(function () {
 <p>To install a package, follow the steps in the link above.</p>
 <p>Once a package is installed in your copy of RStudio, you can load it into a current session with the <code>library()</code> command. For instance, the ggplot2 package, used for data visualization, can be loaded into a session by executing this command:</p>
 <pre><code>library(&quot;ggplot2&quot;)</code></pre>
-<p>If you get an error when you run this, it means ggplot2 hasn’t been installed on your computer.</p>
+<p>If you get an error when you run this, it means the ggplot2 package hasn’t been installed.</p>
 <blockquote>
 <p>Note: You only need to <strong>install</strong> the packages once, but you will need to <strong>load</strong> the packages each time you use RStudio.</p>
 </blockquote>
