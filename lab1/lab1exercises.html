@@ -306,7 +306,7 @@ In 2021, Major League Baseball lost one of its greatest and most-admired stars, 
 <ol style="list-style-type: lower-alpha">
 <li><p>Enter these data with the <code>c()</code> function and give the set a name. Then determine how many Tropical storms have been reported since 1851.</p></li>
 <li><p>On average, how many tropical storms are reported each <em>year</em>?</p></li>
-<li><p>Do these data suggest that tropical storms are becoming more frequent in the last 20 years? As much as possible, base your answer on summary statistics and/or graphics gleaned from this data set. The function <code>plot(storms, type=&quot;l&quot;)</code> will give a line plot of these data, if you gave the data set the name <code>storms</code>. You may also want to compare the average storms per year before 2001 against the average storms per year since 2001.</p></li>
+<li><p>Do these data suggest that tropical storms are becoming more frequent in the last 20 years? As much as possible, base your answer on summary statistics and/or graphics gleaned from this data set. The function <code>plot(storms, type=&quot;l&quot;)</code> (with a lower case “L”, not a 1), will give a line plot of these data, if you gave the data set the name <code>storms</code>. You may also want to compare the average storms per year before 2001 against the average storms per year since 2001.</p></li>
 </ol>
 </div>
 <div id="q3---class-survey" class="section level1">
@@ -322,9 +322,9 @@ In 2021, Major League Baseball lost one of its greatest and most-admired stars, 
 <li><p>Make a bar plot summarizing the results of the ‘classdread’ question. Recall, the scale of this question was from 1 (Do not dread at all!) to 5 (Totally dread!). Describe this distribution in a sentence or two.</p></li>
 <li><p>How many respondents identified as ‘introverted’? How many as ‘extroverted’? Which segment of the respondents plans to study more, ‘introverted’ or ‘extroverted’ students? Support your answers with summary statistics and/or plots. You may want to construct side-by-side boxplots of studyhrs, split by the intext variable. To do so, you can use this code:</p></li>
 </ol>
-<pre><code>boxplot(survey$studyhrs~survey$intext, horizontal=TRUE)</code></pre>
+<pre><code>boxplot(survey$studyhrs~survey$int.ext, horizontal=TRUE)</code></pre>
 <p>Here is another bit of code that can be useful, it computes the mean study hours for those respondents who identified as introverted.</p>
-<pre><code>mean(survey$studyhrs[survey$intext==&quot;introverted&quot;],na.rm = TRUE)</code></pre>
+<pre><code>mean(survey$studyhrs[survey$int.ext==&quot;introverted&quot;],na.rm = TRUE)</code></pre>
 <!--
 g. BONUS: Is there an association between the *intext* variable and the number of hours a day one spends on their phone?  Explain, and support your answer with summary statistics and/or plots.
 
