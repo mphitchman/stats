@@ -1,12 +1,12 @@
-Week-Day,Date,Topic,Activities,WeBWorK
-1.Mon,30-Aug,Ch 1,First Day Survey,Ch.1: due 9/03
+Week-Day,Date,Topic,Activities,Assignments
+1.Mon,30-Aug,Ch 1,First Day Survey,Webwork Ch.1: due 9/03
 1.Wed,1-Sep,Ch 1,Governors,
-2.Mon,6-Sep,2.1,Governors,Sec 2.1: due 9/10
-2.Wed,8-Sep,2.2,Berkeley Admissions,Sec 2.2: due 9/10
-3.Mon,13-Sep,Lab 1,Intro to Rstudio,
-3.Wed,15-Sep,3.1,Random Phones,Ch. 3: due 9/22
-4.Mon,20-Sep,"3.4,4.1",Probability Models,
-4.Wed,22-Sep,4.1,Z-scores,Sec 4.1: due 9/24
+2.Mon,6-Sep,2.1,Governors,Webwork Sec 2.1: due 9/10
+2.Wed,8-Sep,2.2,Berkeley Admissions,Webwork Sec 2.2: due 9/10
+3.Mon,13-Sep,Lab 1,Intro to Rstudio,Lab1 due 9/15
+3.Wed,15-Sep,Ch 3,"Random Phones, Prob. Models",Webwork Ch. 3: due 9/22
+4.Mon,20-Sep,4.1,Z-scores,Webwork Sec 4.1: due 9/24
+4.Wed,22-Sep,"4.1, Review",,
 5.Mon,27-Sep,Test 1,,
 5.Wed,29-Sep,5.1,CLT-Proportions,Sec 5.1: due 10/08
 6.Mon,4-Oct,Fall Break,,
