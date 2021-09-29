@@ -1,6 +1,6 @@
 Week-Day,Date,Topic,Activities,Assignments
 1.Mon,30-Aug,Ch 1,First Day Survey,Webwork Ch.1: due 9/03
-1.Wed,1-Sep,Ch 1,Governors,
+1.Wed,1-Sep,Ch 1,Governors,"Get R and Rstudio installed, and begin reading through Prelab1"
 2.Mon,6-Sep,2.1,Governors,Webwork Sec 2.1: due 9/10
 2.Wed,8-Sep,2.2,Berkeley Admissions,Webwork Sec 2.2: due 9/10
 3.Mon,13-Sep,Lab 1,Intro to Rstudio,Lab1 due 9/15
@@ -8,10 +8,10 @@ Week-Day,Date,Topic,Activities,Assignments
 4.Mon,20-Sep,4.1,normal distributions,Webwork Sec 4.1: due 9/24
 4.Wed,22-Sep,"4.1, Review",,
 5.Mon,27-Sep,Test 1,,
-5.Wed,29-Sep,5.1,CLT-Proportions,Sec 5.1: due 10/08
+5.Wed,29-Sep,5.1,ESP,Sec 5.1: due 10/08
 6.Mon,4-Oct,Fall Break,,
-6.Wed,6-Oct,Lab 2,Intro to Inference,
-7.Mon,11-Oct,5.2,Confidence Intervals,Sec 5.2: due 10/15
+6.Wed,6-Oct,5.2,CLT- Proportions,Sec 5.2: due 10/08
+7.Mon,11-Oct,Lab 2,Intro to Inference,
 7.Wed,13-Oct,5.3,Flat Tire,Sec 5.3: due 10/15
 8.Mon,18-Oct,"6.1,2",Two proportions,Sec 6.2: due 10/22
 8.Wed,20-Oct,6.3,Benford's Law,
