@@ -1,276 +1,232 @@
 ---
-title: "Lab 1: Welcome to RStudio"
+title: "Lab 2: Intro to Inference"
 author: "Type Names Here"
 date: "Enter Date Here"
 output: html_document
 ---
 
+```{=html}
+<style type=text/css>
+body{ /* Normal  */
+      font-size: 14px;
+  }
+h1.title {
+  font-size: 20px;
+  color: DarkGreen;
+}
+h1 { /* Header 1 */
+  font-size: 18px;
+  color: DarkGreen;
+}
+h2 { /* Header 2 */
+    font-size: 16px;
+    color: DodgerBlue;
+}
+h3 { /* Header 3 */
+  font-size: 15px;
+}
+</style>
+```
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Report Instructions
+
+1.  Run the following code chunk by clicking on the green arrow in the upper right corner of the chunk. This code loads the tidyverse package and data sets used in this lab. (We note that this code chunk will not appear in your final html file when you knit the document. We make this happen with the code `include=FALSE` inside the curly braces at the top of the code chunk.)
+
+```{r, include=FALSE}
 library(tidyverse)
-```
-
-### Objectives
-
-In this lab we begin working in RStudio to examine data sets.  In solving the exercises below, we practice 
-
-(a) inputing and importing data sets in *RStudio*,
-(b) determining summary statistics, 
-(c) presenting data visually, and
-(d) Using *R Markdown* to write a lab report.
-
-
-## SOLUTION to Q1: ##
-
-### 1 a) ###
-
-#### Code chunk(s) ####
-
-```{r}
-#enter your code here
-```
-
-#### Written solution ####
-
-type your solution here. 
-
-### 1 b) ### 
-
-#### Code chunk(s) ####
-
-```{r}
-#enter your code here
-```
-
-#### Written solution ####
-
-type your solution here. 
-
-### 1 c) ### 
-
-#### Code chunk(s) ####
-
-```{r}
-#enter your code here
-```
-
-#### Written solution ####
-
-type your solution here. 
-
-
-
-
-## SOLUTION to Q2: ##
-
-### 2 a) ###
-
-#### Code chunk(s) ####
-
-```{r}
-#enter your code here
-```
-
-#### Written solution ####
-
-type your solution here. 
-
-### 2 b) ### 
-
-#### Code chunk(s) ####
-
-```{r}
-#enter your code here
-```
-
-#### Written solution ####
-
-type your solution here. 
-
-### 2 c) ### 
-
-#### Code chunk(s) ####
-
-```{r}
-#enter your code here
-```
-
-#### Written solution ####
-
-type your solution here. 
-
-
-
-
-## SOLUTION to Q3: ##
-
-```{r}
+# Data for Q1 and Q2
+marbles <- rep(c("blue","orange"),c(900,1500))
+# Data for Q3 and Q4
 survey <- read.csv("https://mphitchman.com/stats/data/survey_cleaned_F21.csv")
 ```
 
+2.  Follow the **Golden Rule of Write-ups** as discussed in the Lab 2 Instructions.
 
-### 3 a) ###
+3.  You may add a code chunk at any spot of this document by following **Code -\> Insert Chunk**
 
-#### Code chunk(s) ####
+4.  Email your solutions to the Lab 2 exercises in the form of an HTML or PDF file created from an *R Markdown* file in *RStudio*.
 
-```{r}
-#enter your code here
+# SOLUTION to Q1:
+
+## 1 a)
+
+### Written solution
+
+...goes here
+
+## 1 b)
+
+### Written solution
+
+...goes here
+
+## 1 c)
+
+### Code chunk(s)
+
+```{r, cache=TRUE}
+
 ```
 
-#### Written solution ####
+### Written solution
 
-type your solution here. 
+...goes here
 
-### 3 b) ### 
+## 1 d)
 
-#### Code chunk(s) ####
+### Code chunk(s)
 
-```{r}
-#enter your code here
+```{r, fig.width=5, fig.height=3}
+  
 ```
 
-#### Written solution ####
+### Written solution
 
-type your solution here. 
+...goes here
 
-### 3 c) ### 
+## 1 e)
 
-#### Code chunk(s) ####
-
-```{r}
-#enter your code here
-```
-
-#### Written solution ####
-
-type your solution here. 
-
-### 3 d) ###
-
-#### Code chunk(s) ####
+### Code chunk(s)
 
 ```{r}
-#enter your code here
+
 ```
 
-#### Written solution ####
+### Written solution
 
-type your solution here. 
+...goes here
 
-### 3 e) ###
+## 1 f)
 
-#### Code chunk(s) ####
+### Code chunk(s)
+
+```{r, cache=TRUE, fig.width=5, fig.height=3}
+
+```
+
+### Written solution
+
+...goes here
+
+## 1 g)
+
+### Code chunk(s)
 
 ```{r}
-#enter your code here
+
 ```
 
-#### Written solution ####
+### Written solution
 
-type your solution here. 
+...goes here
 
-### 3 f) ###
+# SOLUTION to Q2:
 
-#### Code chunk(s) ####
+## 2 a)
+
+### Code chunk(s)
 
 ```{r}
-#enter your code here
+
 ```
 
-#### Written solution ####
+### Written solution
 
-type your solution here. 
+...goes here
 
+## 2 b)
 
-
-## SOLUTION to Q4: ##
+### Code chunk(s)
 
 ```{r}
-arb <- read.csv("https://www.openintro.org/data/csv/arbuthnot.csv")
+
 ```
 
+### Written solution
 
-### 4 a) ###
+...goes here
 
-#### Code chunk(s) ####
+## 2 c)
+
+### Code chunk(s)
 
 ```{r}
-#enter your code here
+
 ```
 
-#### Written solution ####
+### Written solution
 
-type your solution here. 
+...goes here
 
-### 4 b) ### 
+## 2 d)
 
-#### Code chunk(s) ####
+### Code chunk(s)
 
 ```{r}
-#enter your code here
+
 ```
 
-#### Written solution ####
+### Written solution
 
-type your solution here. 
+...goes here
 
-### 4 c) ### 
+# SOLUTION to Q3:
 
-#### Code chunk(s) ####
+## 3 a)
+
+### Code chunk(s)
 
 ```{r}
-#enter your code here
+
 ```
 
-#### Written solution ####
+### Written solution
 
-type your solution here. 
+...goes here
 
-### 4 d) ###
+## 3 b)
 
-#### Code chunk(s) ####
+### Code chunk(s)
 
 ```{r}
-#enter your code here
+
 ```
 
-#### Written solution ####
+### Written solution
 
-type your solution here. 
+...goes here
 
-### 4 e) ###
+## 3 c)
 
-#### Code chunk(s) ####
+### Code chunk(s)
 
 ```{r}
-#enter your code here
+
 ```
 
-#### Written solution ####
+### Written solution
 
-type your solution here. 
+...goes here
 
-### 4 f) ###
+# SOLUTION to Q4:
 
-#### Code chunk(s) ####
+## 4 a)
+
+### Code chunk(s)
 
 ```{r}
-#enter your code here
+
 ```
 
-#### Written solution ####
+### Written solution
 
-type your solution here. 
+...goes here
 
-### BONUS: 4 g) ###
+## 4 b)
 
-#### Code chunk(s) ####
+### Written solution
 
-```{r}
-#enter your code here
-```
-
-#### Written solution ####
-
-type your solution here. 
-
+...goes here
