@@ -194,7 +194,7 @@ pre code {
                H_o: p = 1/6 \\
                H_a: p &gt; 1/6
   \end{cases}
-\]</span> To conduct the test we gather data. How about we roll 100 times and record how often we roll an four? Hang on while I do that…</p>
+\]</span> To conduct the test we gather data. How about I roll 100 times and record how often I roll a four? Hang on while I do that…</p>
 <p>Done! It turns out I rolled a four on 22 of my 100 rolls.</p>
 <p>To conduct the test we follow the Prepare-Check-Calculate-Conclude procedure:</p>
 <p><strong>Prepare</strong> for the significance test.</p>
@@ -242,10 +242,10 @@ cat(paste0(&quot;Null hypthosis: p = &quot;,round(p_0,4),&quot;\n&quot;,
 <p>In our example we used <span class="math inline">\(H_a: p &gt; p_0\)</span>, so we obtain this p-value:</p>
 <pre class="r"><code>(p_value=p_val.gt)</code></pre>
 <pre><code>## [1] 0.07620314</code></pre>
-<p>Comparing this p-value to the significance level we see:</p>
+<p>Now, we compare this p-value to the significance level. In particular, we check whether</p>
 <pre class="r"><code>p_value &lt; alpha</code></pre>
 <pre><code>## [1] FALSE</code></pre>
-<p>Since the p-value is not smaller than alpha, we fail to reject H_0 in favor of H_a at the significance level 0.05. We don’t quite have sufficient evidence to be convinced that we roll a 4 more often than chance would allow.</p>
+<p>FALSE! The p-value is not smaller than alpha, so we fail to reject <span class="math inline">\(H_o\)</span> in favor of <span class="math inline">\(H_a\)</span> at the significance level 0.05. We don’t have sufficient evidence (at the 5% level) to be convinced that we roll a 4 more often than chance would allow.</p>
 </div>
 <div id="the-built-in-function-prop.test" class="section level3">
 <h3>The built-in function, prop.test()</h3>
