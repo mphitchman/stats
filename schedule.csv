@@ -15,10 +15,10 @@ Week-Day,Date,Topic,Activities,Assignments
 7.Wed,13-Oct,5.3,Flat Tire,Sec 5.3: due 10/20
 8.Mon,18-Oct,"6.1,2",Random Rectangles,Sec 6.2: due 10/25
 8.Wed,20-Oct,7.1,"CLT-Means, Inference on Means",Sec 7.1: due 10/27
-9.Mon,25-Oct,7.2,Matched Pairs,Sec 7.2: due 10/27
-9.Wed,27-Oct,Lab 3,Inference on Means,
+9.Mon,25-Oct,7.1,Inference Review,
+9.Wed,27-Oct,"7.2,.7.3, Review",,
 10.Mon,1-Nov,Test 2,,
-10.Wed,3-Nov,7.3,Two means,Sec 7.3: due 11/08
+10.Wed,3-Nov,7.3,Two means,"Sec 7.2,7.3: due 11/08"
 11.Mon,8-Nov,6.3,Benford's Law,Secs 6.3 and 6.4: due 11/14
 11.Wed,10-Nov,6.4,Chi Square,
 12.Mon,15-Nov,8.1,Regression I,8 (Correlation): due 11/17

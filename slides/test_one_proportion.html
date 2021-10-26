@@ -201,6 +201,7 @@ pre code {
 <p>Our <em>sample size</em> is <span class="math inline">\(n = 100\)</span>, and we rolled <span class="math inline">\(x = 22\)</span> fours, so the <em>sample proportion</em> of fours rolled is <span class="math display">\[\hat{p} = \frac{22}{100} = 0.22.\]</span></p>
 <p><strong>Check</strong> that the success-failure conditions hold: our success count is 22, our failure count is 78, both at least 10, so the distribution for <span class="math inline">\(\hat{p}\)</span> is nearly normal.</p>
 <p><strong>Calculate</strong></p>
+<p>We find the test statistic from our data, which is a z-score in this case, and the p-value associated to this test statistic. We can ask RStudio to do the calculations, and note that the test statistic is given by the formula <span class="math display">\[z = \frac{\hat{p}-p_0}{\sqrt{p_0(1-p_0)/n}},\]</span> where <span class="math inline">\(\p_0\)</span> is the value of the proportion in the null hypothesis.</p>
 <pre class="r"><code>## Conducting a test of significance for one proportion.
 
 # Significance level
@@ -242,13 +243,14 @@ cat(paste0(&quot;Null hypthosis: p = &quot;,round(p_0,4),&quot;\n&quot;,
 <p>In our example we used <span class="math inline">\(H_a: p &gt; p_0\)</span>, so we obtain this p-value:</p>
 <pre class="r"><code>(p_value=p_val.gt)</code></pre>
 <pre><code>## [1] 0.07620314</code></pre>
+<p><strong>Conclude</strong></p>
 <p>Now, we compare this p-value to the significance level. In particular, we check whether</p>
 <pre class="r"><code>p_value &lt; alpha</code></pre>
 <pre><code>## [1] FALSE</code></pre>
-<p>FALSE! The p-value is not smaller than alpha, so we fail to reject <span class="math inline">\(H_o\)</span> in favor of <span class="math inline">\(H_a\)</span> at the significance level 0.05. We don’t have sufficient evidence (at the 5% level) to be convinced that we roll a 4 more often than chance would allow.</p>
+<p>FALSE! Since the p-value is not smaller than alpha, we fail to reject H_0 in favor of H_a at the significance level 0.05. We do not have sufficient evidence (at the 5% level) to conclude that we roll a 4 more often than chance would allow.</p>
 </div>
-<div id="the-built-in-function-prop.test" class="section level3">
-<h3>The built-in function, prop.test()</h3>
+<div id="prop.test" class="section level3">
+<h3>prop.test()</h3>
 <p>The built-in function <code>prop.test()</code> in R can conduct an hypothesis test on one population proportion as follows:</p>
 <pre class="r"><code>prop.test(x=22, n=100, p = 1/6, alternative = &quot;greater&quot;, correct = FALSE)</code></pre>
 <pre><code>## 
@@ -299,11 +301,11 @@ To answer this question, we need to understand the sampling distribution for $\h
 mean $\mu = 1/6$ and standard deviation $$\sqrt{\frac{(1/6)(5/6)}{100}}=\sqrt{\frac{5}{3600}}=\frac{\sqrt{5}}{60} \approx .03727.$$
 Here's a picture of this distribution.
 
-<img src="test_one_proportion_files/figure-html/unnamed-chunk-7-1.png" width="480" style="display: block; margin: auto;" />
+<img src="test_one_proportion_files/figure-html/unnamed-chunk-8-1.png" width="480" style="display: block; margin: auto;" />
 
 Remember, this picture represents a density curve for the distribution of sample proportions (for $n = 100$ rolls) that we would obtain in the long run over many, many repetitions.  Now, in this universe, how likely is it to observe a sample proportion at least as extreme as our observed $\hat{p} = .22$?  the answer to that question is this area:
 
-<img src="test_one_proportion_files/figure-html/unnamed-chunk-8-1.png" width="480" style="display: block; margin: auto;" />
+<img src="test_one_proportion_files/figure-html/unnamed-chunk-9-1.png" width="480" style="display: block; margin: auto;" />
 
 And to find this area, we can first determine the Z-score for our sample:
 $$z = \frac{\hat{p}-p_0}{SE} = \frac{.22-1/6}{.03727}\approx1.431,$$ and then finding the area to the right of 1.43 in $N(0,1)$:

@@ -202,6 +202,7 @@ pre code {
 </ul>
 <p><strong>Check</strong> success-failure conditions hold: all four success and failure counts are at least 10. From population 1 we had 49 successes and 201 failures; in population 2 the counts were 62 and 138. So, the distribution for <span class="math inline">\(\hat{p}_1-\hat{p}_2\)</span> is nearly normal.</p>
 <p><strong>Calculate</strong></p>
+<p>We find the test statistic from our data, which is a z-score in this case, and the p-value associated to this test statistic. We can ask RStudio to do the calculations, and note that the test statistic is given by the formula <span class="math display">\[z = \frac{\hat{p}_1-\hat{p}_2}{\sqrt{\frac{\hat{p}(1-\hat{p})}{n_1}+\frac{\hat{p}(1-\hat{p})}{n_2}}}.\]</span></p>
 <pre class="r"><code>## Conducting a test of significance for two proportions.
 
 # significance level
@@ -238,16 +239,16 @@ cat(paste0(&quot;Null hypthosis: p_1 - p_2 = 0&quot;,&quot;\n&quot;,
            &quot;phat_1 = &quot;,round(phat_1,4),&quot;\n&quot;,
            &quot;phat_2 = &quot;,round(phat_2,4),&quot;\n&quot;,
            &quot;test statistic, z = &quot;,round(z,3),&quot;\n&quot;,
-           &quot;p-value for H_a: p_1 - p_2 &lt; 0: &quot;,round(p_val.lt,4),&quot;\n&quot;,
-           &quot;p-value for H_a: p_1 - p_2 &gt; 0: &quot;,round(p_val.gt,4),&quot;\n&quot;,
-           &quot;p-value for H_a: p_1 - p_2 not 0: &quot;,round(p_val.neq,4),&quot;\n&quot;))</code></pre>
+           &quot;p-value for H_a: p_1 - p_2 &lt; 0: &quot;,p_val.lt,&quot;\n&quot;,
+           &quot;p-value for H_a: p_1 - p_2 &gt; 0: &quot;,p_val.gt,&quot;\n&quot;,
+           &quot;p-value for H_a: p_1 - p_2 not 0: &quot;,p_val.neq,&quot;\n&quot;))</code></pre>
 <pre><code>## Null hypthosis: p_1 - p_2 = 0
 ## phat_1 = 0.196
 ## phat_2 = 0.31
 ## test statistic, z = -2.788
-## p-value for H_a: p_1 - p_2 &lt; 0: 0.0027
-## p-value for H_a: p_1 - p_2 &gt; 0: 0.9973
-## p-value for H_a: p_1 - p_2 not 0: 0.0053</code></pre>
+## p-value for H_a: p_1 - p_2 &lt; 0: 0.0026547761456283
+## p-value for H_a: p_1 - p_2 &gt; 0: 0.997345223854372
+## p-value for H_a: p_1 - p_2 not 0: 0.00530955229125651</code></pre>
 <p>In our example we used <span class="math inline">\(H_a: p_1 - p_2 \neq 0\)</span>, so we obtain this p-value:</p>
 <pre class="r"><code>(p_value=p_val.neq)</code></pre>
 <pre><code>## [1] 0.005309552</code></pre>
