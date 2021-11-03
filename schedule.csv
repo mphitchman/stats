@@ -16,13 +16,13 @@ Week-Day,Date,Topic,Activities,Assignments
 8.Mon,18-Oct,"6.1,2",Random Rectangles,Sec 6.2: due 10/25
 8.Wed,20-Oct,7.1,"CLT-Means, Inference on Means",Sec 7.1: due 10/27
 9.Mon,25-Oct,7.1,Inference Review,
-9.Wed,27-Oct,"7.2,.7.3, Review",,
+9.Wed,27-Oct,Review,,
 10.Mon,1-Nov,Test 2,,
-10.Wed,3-Nov,7.3,Two means,"Sec 7.2,7.3: due 11/08"
-11.Mon,8-Nov,6.3,Benford's Law,Secs 6.3 and 6.4: due 11/14
-11.Wed,10-Nov,6.4,Chi Square,
-12.Mon,15-Nov,8.1,Regression I,8 (Correlation): due 11/17
-12.Wed,17-Nov,"8.2,3",Regression II,8 (regression): due 11/29
+10.Wed,3-Nov,7.3,Two means,"Sec 7.2,7.3: due 11/10"
+11.Mon,8-Nov,8.1,Regression I,Ch 8 (Correlation)
+11.Wed,10-Nov,"8.2,3",Regression II,Ch 8 (regression)
+12.Mon,15-Nov,6.3,Benford's Law,
+12.Wed,17-Nov,6.4,Chi Square,
 Thanksgiving,22-Nov,Break,,
 Thanksgiving,24-Nov,Break,,
 13.Mon,29-Nov,Lab 4,Regression,

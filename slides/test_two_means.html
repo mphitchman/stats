@@ -191,16 +191,12 @@ Ag2 &lt;- c(5.3,5.6,5.5,5.1,6.2,5.8,5.8) </code></pre>
 <p>These data appear in <em>The Handbook of Small Data Sets</em> (p. 118), and are based on this article:</p>
 <p>Hendy, M.F. and Charles J.A. (1970), <em>The production techniques, silver content and circulation history of the twelfth-century Byzantine Trachy.</em> Archaeonetry, 12. 13-21)</p>
 <p><strong>The question</strong></p>
-<p>Is there a signficant difference in the silver content of coins minted early and late in Manuel’s reign?</p>
+<p>Is there a significant difference in the silver content of coins minted early and late in Manuel’s reign?</p>
+<p><strong>Parameter of Interest</strong> We let <span class="math inline">\(\mu_1\)</span> denote the population mean silver content from the first coinage, and <span class="math inline">\(\mu_2\)</span> represent the population mean silver content from the later coinage. We are interested in the difference <span class="math display">\[\mu_1 - \mu_2.\]</span></p>
+<p><strong>Point estimate</strong> Our point estimate will be <span class="math display">\[\overline{x}_1 - \overline{x}_2,\]</span> where <span class="math inline">\(\overline{x}_1\)</span> is the mean silver content of the 9 coins found from the first coinage; and <span class="math inline">\(\overline{x}_2\)</span> the mean silver content of the 7 coins found from the later coinage.</p>
 <p><strong>The hypotheses</strong></p>
-<p>We let <span class="math inline">\(\mu_1\)</span> denote the population mean silver content from the first coinage, and <span class="math inline">\(\mu_2\)</span> represent the population mean silver content from the later coinage. We translate our question to hypotheses for a test of significance:</p>
+<p>We let <span class="math inline">\(\mu_1\)</span> denote the population mean silver content from the first coinage, and <span class="math inline">\(\mu_2\)</span> represent the population mean silver content from the later coinage. We translate our research question to hypotheses for a test of significance:</p>
 <p><span class="math display">\[
-  \begin{cases}
-               H_o: \mu_1 = \mu_2\\
-               H_a: \mu_1 \neq \mu_2
-  \end{cases}
-\]</span></p>
-<p>Equivalently, we can state the hypotheses as: <span class="math display">\[
   \begin{cases}
                H_o: \mu_1 - \mu_2 = 0\\
                H_a: \mu_1 - \mu_2 \neq 0
@@ -278,7 +274,7 @@ cat(paste0(&quot;Null hypthosis: mu_1 = mu_2&quot;,&quot;\n&quot;,
 <p>Now, we compare this p-value to the significance level. In particular, we check whether</p>
 <pre class="r"><code>p_value &lt; alpha</code></pre>
 <pre><code>## [1] TRUE</code></pre>
-<p>TRUE! Since the p-value is smaller than alpha, we reject H_0 in favor of H_a at the significance level 0.05. We have sufficient evidence to conclude that the average silver content of coins minted in these two eras is different.</p>
+<p>TRUE! Since the p-value is smaller than alpha, we reject H_0 in favor of H_a at the significance level 0.05. We have sufficient evidence to conclude that there is a difference in the silver content of coins minted early and late in Manuel’s reign.</p>
 <p><par> <par></p>
 </div>
 <div id="t.test" class="section level3">
