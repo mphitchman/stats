@@ -1,0 +1,276 @@
+---
+title: "Lab 1: Welcome to RStudio"
+author: "Type Names Here"
+date: "Enter Date Here"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+```
+
+### Objectives
+
+In this lab we begin working in RStudio to examine data sets.  In solving the exercises below, we practice 
+
+(a) inputing and importing data sets in *RStudio*,
+(b) determining summary statistics, 
+(c) presenting data visually, and
+(d) Using *R Markdown* to write a lab report.
+
+
+## SOLUTION to Q1: ##
+
+### 1 a) ###
+
+#### Code chunk(s) ####
+
+```{r}
+#enter your code here
+```
+
+#### Written solution ####
+
+type your solution here. 
+
+### 1 b) ### 
+
+#### Code chunk(s) ####
+
+```{r}
+#enter your code here
+```
+
+#### Written solution ####
+
+type your solution here. 
+
+### 1 c) ### 
+
+#### Code chunk(s) ####
+
+```{r}
+#enter your code here
+```
+
+#### Written solution ####
+
+type your solution here. 
+
+
+
+
+## SOLUTION to Q2: ##
+
+### 2 a) ###
+
+#### Code chunk(s) ####
+
+```{r}
+#enter your code here
+```
+
+#### Written solution ####
+
+type your solution here. 
+
+### 2 b) ### 
+
+#### Code chunk(s) ####
+
+```{r}
+#enter your code here
+```
+
+#### Written solution ####
+
+type your solution here. 
+
+### 2 c) ### 
+
+#### Code chunk(s) ####
+
+```{r}
+#enter your code here
+```
+
+#### Written solution ####
+
+type your solution here. 
+
+
+
+
+## SOLUTION to Q3: ##
+
+```{r}
+survey <- read.csv("https://mphitchman.com/stats/data/survey_cleaned_F21.csv")
+```
+
+
+### 3 a) ###
+
+#### Code chunk(s) ####
+
+```{r}
+#enter your code here
+```
+
+#### Written solution ####
+
+type your solution here. 
+
+### 3 b) ### 
+
+#### Code chunk(s) ####
+
+```{r}
+#enter your code here
+```
+
+#### Written solution ####
+
+type your solution here. 
+
+### 3 c) ### 
+
+#### Code chunk(s) ####
+
+```{r}
+#enter your code here
+```
+
+#### Written solution ####
+
+type your solution here. 
+
+### 3 d) ###
+
+#### Code chunk(s) ####
+
+```{r}
+#enter your code here
+```
+
+#### Written solution ####
+
+type your solution here. 
+
+### 3 e) ###
+
+#### Code chunk(s) ####
+
+```{r}
+#enter your code here
+```
+
+#### Written solution ####
+
+type your solution here. 
+
+### 3 f) ###
+
+#### Code chunk(s) ####
+
+```{r}
+#enter your code here
+```
+
+#### Written solution ####
+
+type your solution here. 
+
+
+
+## SOLUTION to Q4: ##
+
+```{r}
+arb <- read.csv("https://www.openintro.org/data/csv/arbuthnot.csv")
+```
+
+
+### 4 a) ###
+
+#### Code chunk(s) ####
+
+```{r}
+#enter your code here
+```
+
+#### Written solution ####
+
+type your solution here. 
+
+### 4 b) ### 
+
+#### Code chunk(s) ####
+
+```{r}
+#enter your code here
+```
+
+#### Written solution ####
+
+type your solution here. 
+
+### 4 c) ### 
+
+#### Code chunk(s) ####
+
+```{r}
+#enter your code here
+```
+
+#### Written solution ####
+
+type your solution here. 
+
+### 4 d) ###
+
+#### Code chunk(s) ####
+
+```{r}
+#enter your code here
+```
+
+#### Written solution ####
+
+type your solution here. 
+
+### 4 e) ###
+
+#### Code chunk(s) ####
+
+```{r}
+#enter your code here
+```
+
+#### Written solution ####
+
+type your solution here. 
+
+### 4 f) ###
+
+#### Code chunk(s) ####
+
+```{r}
+#enter your code here
+```
+
+#### Written solution ####
+
+type your solution here. 
+
+### BONUS: 4 g) ###
+
+#### Code chunk(s) ####
+
+```{r}
+#enter your code here
+```
+
+#### Written solution ####
+
+type your solution here. 
+

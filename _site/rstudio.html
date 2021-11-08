@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>Tips for Getting Started with RStudio in MATH 140</title>
+
+<script src="site_libs/header-attrs-2.10/header-attrs.js"></script>
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+<style type="text/css">
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #adb5bd;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script type="text/javascript">
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.tab('show');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">MATH 140</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">Home</a>
+</li>
+<li>
+  <a href="slides.html">Slides</a>
+</li>
+<li>
+  <a href="labs.html">Activities and Labs</a>
+</li>
+<li>
+  <a href="data.html">Data</a>
+</li>
+<li>
+  <a href="rstudio.html">RStudio</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+  <a href="mailto:&lt;mhitchm@linfield.edu&gt;">
+    <span class="fa fa-envelope fa-lg"></span>
+     
+  </a>
+</li>
+<li>
+  <a href="http://github.com/mphitchman/stats">
+    <span class="fa fa-github fa-lg"></span>
+     
+  </a>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div id="header">
+
+
+
+<h1 class="title toc-ignore">Tips for Getting Started with RStudio in MATH 140</h1>
+
+</div>
+
+
+<div id="install-r-and-rstudio" class="section level2">
+<h2>1. Install R and RStudio</h2>
+<p>Read <a href="https://moderndive.netlify.app/1-getting-started.html#installing">Section 1.1.1</a> of the text <em>ModernDive</em> for instructions on installing them both.</p>
+</div>
+<div id="folder-system" class="section level2">
+<h2>2. Folder system</h2>
+<p>Organize a folder system on your computer to help you keep track of your files and data sets.</p>
+<ol style="list-style-type: decimal">
+<li><p><em>Create a folder</em> dedicated to this class on your computer, perhaps the desktop, with a descriptive name, say “math140”.</p></li>
+<li><p><em>Create a subfolder</em> in your “math140” folder for each RStudio project you work on. For instance, you might create a folder called “lab1” in your “math140” folder ahead of our first lab.</p></li>
+</ol>
+</div>
+<div id="projects" class="section level2">
+<h2>3. Projects</h2>
+<p>Project files in Rstudio give you a good way to organize your work in RStudio. You will probably have at least 5 projects before the end of the semester, one for each of our labs, and one for your term project. To create a project, follow these steps:</p>
+<ol style="list-style-type: decimal">
+<li><p>Open RStudio</p></li>
+<li><p>Create a project from the File menu, or by moving the cursor to the upper-right corner of your window and selecting <strong>Project (None)&gt;New Project</strong> as pictured:</p></li>
+</ol>
+<center>
+<img src="images/project.png" style="width:65.0%" />
+</center>
+<ol start="3" style="list-style-type: decimal">
+<li><p>Select <strong>Existing Directory</strong> in the pop-up menu.</p></li>
+<li><p>Click <strong>Browse</strong> and navigate to where you created the lab1 folder. Select this folder and then click <strong>Create Project</strong>.</p></li>
+</ol>
+<ul>
+<li><p>Your R project has now been created. Note that in the upper right-hand corner, the program indicates that you are working on the project named lab1. In the future you can click on this spot in the upper right corner to change the project you want to work on or create a new one.</p></li>
+<li><p>Note also that if you click on the <strong>Files</strong> tab in the lower right pane in RStudio, you can access the file system on your computer, and RStudio is showing the contents of your current project directory.</p></li>
+<li><p>My mature project folders often contain three types of files:</p>
+<ul>
+<li>R script files (discussed below)</li>
+<li>data files (usually .csv files)</li>
+<li>output files (pdf files, images of graphs, webpages)</li>
+</ul></li>
+</ul>
+</div>
+<div id="scripts" class="section level2">
+<h2>4. Scripts</h2>
+<p>Think of a script as a place to write down commands you want to use in a project. You can also type comments (begin a line with a pound sign #) to help someone understand the commands that follow (including yourself two weeks later!). To create a script, go to the upper left corner of your window and click on the green + symbol. Then select R script.</p>
+<center>
+<img src="images/script.png" style="width:65.0%" />
+</center>
+<p>As already mentioned, scripts are a place to write down commands you want to use in your work. To actually <strong>execute lines of code in your script</strong>, place your cursor anywhere on that line of code and click <strong>Run</strong>.</p>
+<p>Alternatively, you can use a keyboard shortcut:</p>
+<ul>
+<li><strong>Command + return</strong> on a Mac</li>
+<li><strong>ctrl + enter</strong> on a PC</li>
+</ul>
+</div>
+<div id="read-local-csv-files" class="section level2">
+<h2>5. Read local csv files</h2>
+<p>To import a .csv file that is saved locally on your computer, use the command <code>read.csv("path to file/filename")</code></p>
+<p>The ‘path to file’ part of this command is necessary if the file you want is not in your RStudio <strong>working directory.</strong> You can set your working directory to a particular folder by going to the <strong>Files</strong> tab in the lower right pane, navigating to the folder you want, then clicking on <strong>More</strong> and selecting “Set as Working Directory.”</p>
+<p>It’s simplest for me to save local data files in the same folder as the scripts I write to analyze them, and then in RStudio make that folder the working directory when I’m working on them.</p>
+<p>For instance, suppose in a folder called “awesome” I have a script file called <em>legos.R</em>, and I also have a data file called <em>legosets.csv</em>. If I set my working directory in RStudio to the awesome folder, then the following line in my <em>legos.R</em> script will read the data file into my RStudio session, and give it the working name ‘legos’:</p>
+<pre><code>legos = read.csv(&quot;legosets.csv&quot;)</code></pre>
+</div>
+<div id="read-online-csv-files" class="section level2">
+<h2>6. Read online csv files</h2>
+<p>To import a .csv file directly from the web into RStudio we use the following command:</p>
+<p><code>read.csv("web address")</code></p>
+<p>For instance, to import the governors data file from our resource page, and give it the name <code>gov</code>, we enter the following at the console prompt in RStudio (you can copy and paste!):</p>
+<pre><code>gov = read.csv(&quot;https://mphitchman.com/stats/data/governors.csv&quot;)</code></pre>
+</div>
+<div id="packages" class="section level2">
+<h2>7. Packages</h2>
+<p>RStudio comes with a bunch of built-in functions, but packages provide more! Here is a link to a very nice <a href="https://moderndive.netlify.app/1-getting-started.html#packages">introduction to packages</a> in <em>ModernDive</em>. I suggest you read all of Section 1.3 in this link.</p>
+<p>You can install a package from the console prompt by running:</p>
+<pre><code>install.packages(&quot;package name&quot;)</code></pre>
+<p>You can also install a package by following these steps:</p>
+<ol style="list-style-type: lower-roman">
+<li>Click on the <strong>Packages</strong> tab in the lower right pane of your RStudio session.</li>
+<li>Click on <strong>Install</strong> next to <strong>Update</strong></li>
+<li>Enter the name(s) of the package(s) in the window that pops up</li>
+<li>Click <strong>install</strong></li>
+</ol>
+<p>Once a package is installed in your copy of RStudio, you can load it into a current session with the <code>library()</code> command. For instance, the ggplot2 package, used for data visualization, can be loaded into a session by executing this command:</p>
+<pre><code>library(&quot;ggplot2&quot;)</code></pre>
+<p>If you get an error when you run this command, it means the ggplot2 package hasn’t been installed.</p>
+<blockquote>
+<p>Note: You only need to <strong>install</strong> the packages once, but you will need to <strong>load</strong> the packages each time you use RStudio.</p>
+</blockquote>
+<p>Commonly used packages worth installing on your machine:</p>
+<ol style="list-style-type: decimal">
+<li>ggplot2 (for making nice plots)</li>
+<li>dplyr (for managing data frames)</li>
+<li>knitr (for compiling markdown files)</li>
+<li>tidyverse (An opinionated collection of R packages, per <a href="https://www.tidyverse.org/">tidyverse.org</a>)</li>
+<li>openintro (for data sets that appear in our text!)</li>
+</ol>
+</div>
+<div id="r-markdown" class="section level2">
+<h2>8. R Markdown</h2>
+<p>Your lab reports will be written using R Markdown, and perhaps parts of your term project. R Markdown files allow you to knit together text, mathematics formatting, R code, and images into a fine looking report. I will provide template markdown files for lab reports.</p>
+<p>Here is a nice website with <a href="https://rmarkdown.rstudio.com/authoring_basics.html">R Markdown Basics</a>, that demonstrates how to format text (e.g., bold, italics), make lists, make tables, insert images, insert web links, and other sorts of things in a markdown file.</p>
+<p><strong>References</strong></p>
+<ol style="list-style-type: decimal">
+<li><p><a href="https://nulib.github.io/kuyper-stat202/index.html#working-efficiently-with-rstudio">Setting up R and R Studio efficiently</a></p></li>
+<li><p><a href="https://rmarkdown.rstudio.com/authoring_basics.html">R Markdown Basics</a></p></li>
+</ol>
+<!-- Default Statcounter code for math 140 resources pages-->
+<script type="text/javascript">
+var sc_project=12608389;
+var sc_invisible=1;
+var sc_security="1d868be4";
+</script>
+<script type="text/javascript"
+src="https://www.statcounter.com/counter/counter.js"
+async></script>
+<noscript>
+<div class="statcounter">
+<a title="Web Analytics"
+href="https://statcounter.com/" target="_blank"><img
+class="statcounter"
+src="https://c.statcounter.com/12608389/0/1d868be4/1/"
+alt="Web Analytics"
+referrerPolicy="no-referrer-when-downgrade"></a>
+</div>
+</noscript>
+<!-- End of Statcounter Code -->
+</div>
+
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+<script>
+$(document).ready(function ()  {
+
+    // temporarily add toc-ignore selector to headers for the consistency with Pandoc
+    $('.unlisted.unnumbered').addClass('toc-ignore')
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

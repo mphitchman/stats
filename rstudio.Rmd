@@ -1,0 +1,159 @@
+---
+title: "Tips for Getting Started with RStudio in MATH 140"
+output:
+  html_document:
+    toc: true
+    toc_float: true
+    toc_collapsed: true
+    toc_depth: 3
+    theme: cosmo
+    css: style.css
+---
+
+## 1. Install R and RStudio ## 
+
+Read <a href="https://moderndive.netlify.app/1-getting-started.html#installing">Section 1.1.1</a> of the text *ModernDive* for instructions on installing them both. 
+
+## 2. Folder system ##
+
+Organize a folder system on your computer to help you keep track of your files and data sets.
+  
+  1. *Create a folder* dedicated to this class on your computer, perhaps the desktop, with a descriptive name, say "math140".  
+ 
+  2. *Create a subfolder* in your "math140" folder for each RStudio project you work on. For instance, you might create a folder called "lab1" in your "math140" folder ahead of our first lab.
+
+## 3. Projects ##
+
+Project files in Rstudio give you a good way to organize your work in RStudio.  You will probably have at least 5 projects before the end of the semester, one for each of our labs, and one for your term project.  To create a project, follow these steps:
+  
+  1. Open RStudio
+  
+  2. Create a project from the File menu, or by moving the cursor to the upper-right corner of your window and selecting **Project (None)>New Project** as pictured:
+ 
+  <center>![](images/project.png){width=65%}</center>
+  
+  3. Select **Existing Directory** in the pop-up menu.
+  
+  4. Click **Browse** and navigate to where you created the lab1 folder. Select this folder and then click **Create Project**.
+  
+- Your R project has now been created. Note that in the upper right-hand corner, the program indicates that you are working on the project named lab1. In the future you can click on this spot in the upper right corner to change the project you want to work on or create a new one.
+  
+- Note also that if you click on the **Files** tab in the lower right pane in RStudio, you can access the file system on your computer, and RStudio is showing the contents of your current project directory.
+  
+- My mature project folders often contain three types of files: 
+  - R script files (discussed below)
+  - data files (usually .csv files) 
+  - output files (pdf files, images of graphs, webpages)
+  
+## 4. Scripts ##
+
+Think of a script as a place to write down commands you want to use in a project. You can also type comments (begin a line with a pound sign #) to help someone understand the commands that follow (including yourself two weeks later!).  To create a script, go to the upper left corner of your window and click on the green + symbol. Then select R script.
+
+<center>![](images/script.png){width=65%}</center>
+
+As already mentioned, scripts are a place to write down commands you want to use in your work.  To actually **execute lines of code in your script**, place your cursor anywhere on that line of code and click **Run**.
+
+Alternatively, you can use a keyboard shortcut:
+
+  - **Command + return** on a Mac
+  - **ctrl + enter** on a PC
+  
+## 5. Read local csv files ##
+
+To import a .csv file that is saved locally on your computer, use the command `read.csv("path to file/filename")`
+
+The 'path to file' part of this command is necessary if the file you want is not in your RStudio **working directory.**  You can set your working directory to a particular folder by going to the **Files** tab in the lower right pane, navigating to the folder you want, then clicking on **More** and selecting "Set as Working Directory."
+
+It's simplest for me to save local data files in the same folder as the scripts I write to analyze them, and then in RStudio make that folder the working directory when I'm working on them. 
+
+For instance, suppose in a folder called "awesome" I have a script file called *legos.R*, and I also have a data file called *legosets.csv*.  If I set my working directory in RStudio to the awesome folder, then the following line in my *legos.R* script will read the data file into my RStudio session, and give it the working name 'legos':
+
+```
+legos = read.csv("legosets.csv")
+```
+
+
+## 6. Read online csv files ##
+
+To import a .csv file directly from the web into RStudio we use the following command:
+
+`read.csv("web address")`
+
+
+For instance, to import the governors data file from our resource page, and give it the name `gov`, we enter the following at the console prompt in RStudio (you can copy and paste!):
+
+```
+gov = read.csv("https://mphitchman.com/stats/data/governors.csv")
+```
+
+
+## 7. Packages ##
+
+RStudio comes with a bunch of built-in functions, but packages provide more! Here is a link to a very nice  <a href="https://moderndive.netlify.app/1-getting-started.html#packages">introduction to packages</a> in *ModernDive*. I suggest you read all of Section 1.3 in this link.
+
+You can install a package from the console prompt by running:
+
+```
+install.packages("package name")
+```
+
+You can also install a package by following these steps:
+
+(i) Click on the **Packages** tab in the lower right pane of your RStudio session.
+(ii) Click on **Install** next to **Update**
+(iii) Enter the name(s) of the package(s) in the window that pops up
+(iv) Click **install**
+
+Once a package is installed in your copy of RStudio, you can load it into a current session with the `library()` command.  For instance, the ggplot2 package, used for data visualization, can be loaded into a session by executing this command:
+
+```
+library("ggplot2")
+```
+
+If you get an error when you run this command, it means the ggplot2 package hasn't been installed.
+
+> Note: You only need to **install** the packages once, but you will need to **load** the packages each time you use RStudio.
+
+Commonly used packages worth installing on your machine:
+
+1. ggplot2 (for making nice plots)
+2. dplyr (for managing data frames)
+3. knitr (for compiling markdown files)
+4. tidyverse (An opinionated collection of R packages, per <a href="https://www.tidyverse.org/">tidyverse.org</a>)
+5. openintro (for data sets that appear in our text!)
+
+## 8. R Markdown ##
+
+Your lab reports will be written using R Markdown, and perhaps parts of your term project.  R Markdown files allow you to knit together text, mathematics formatting, R code, and images into a fine looking report.  I will provide template markdown files for lab reports.
+
+Here is a nice website with <a href="https://rmarkdown.rstudio.com/authoring_basics.html">R Markdown Basics</a>, that demonstrates how to format text (e.g., bold, italics), make lists, make tables, insert images, insert web links, and other sorts of things in a markdown file.
+
+
+**References**
+
+1. <a href="https://nulib.github.io/kuyper-stat202/index.html#working-efficiently-with-rstudio">Setting up R and R Studio efficiently</a>
+
+2. <a href="https://rmarkdown.rstudio.com/authoring_basics.html">R Markdown Basics</a>
+
+
+
+
+
+<!-- Default Statcounter code for math 140 resources pages-->
+<script type="text/javascript">
+var sc_project=12608389;
+var sc_invisible=1;
+var sc_security="1d868be4";
+</script>
+<script type="text/javascript"
+src="https://www.statcounter.com/counter/counter.js"
+async></script>
+<noscript><div class="statcounter"><a title="Web Analytics"
+href="https://statcounter.com/" target="_blank"><img
+class="statcounter"
+src="https://c.statcounter.com/12608389/0/1d868be4/1/"
+alt="Web Analytics"
+referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
+<!-- End of Statcounter Code -->
+
+
