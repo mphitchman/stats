@@ -363,74 +363,135 @@ div.tocify {
 </div>
 
 
+<style type=text/css>
+blockquote {
+    background: #f8f8f8;
+    padding: 5px 10px;
+    margin: 0 0 10px;
+    font-size: 16px;
+    border-left: 1px solid #aaa;
+    border-bottom: 1px solid #aaa;
+}
+</style>
 <div id="install-r-and-rstudio" class="section level2">
 <h2>1. Install R and RStudio</h2>
-<p>Read <a href="https://moderndive.netlify.app/1-getting-started.html#installing">Section 1.1.1</a> of the text <em>ModernDive</em> for instructions on installing them both.</p>
+<p>You will first need to download and install both R and RStudio (Desktop version) on your computer. R and RStudio are separate installations. R is a programming language that is convenient to use in statistics. RStudio is a user-friendly interface that makes using R easier. In the well-written, freely available text <a href="https://moderndive.netlify.app/"><em>ModernDive</em></a>, the authors put it this way:</p>
+<blockquote>
+<p>R is like a car’s engine while RStudio is like a car’s dashboard… So just as the way of having access to a speedometer, rearview mirrors, and a navigation system makes driving much easier, using RStudio’s interface makes using R much easier as well.</p>
+</blockquote>
+<p>The following installation instructions are taken from <a href="https://moderndive.netlify.app/1-getting-started.html#installing">Section 1.1.1</a> of <em>ModernDive</em>.</p>
+<blockquote>
+<ol style="list-style-type: decimal">
+<li><strong>You must do this first</strong>: Download and install R by going to <a href="https://cloud.r-project.org/">https://cloud.r-project.org</a></li>
+</ol>
+<ul>
+<li>If you are a Windows user: Click on “Download R for Windows”, then click on “base”, then click on the Download link.</li>
+<li>If you are macOS user: Click on “Download R for (Mac) OS X”, then under “Latest release:” click on R-X.X.X.pkg, where R-X.X.X is the version number.</li>
+<li>If you are a Linux user: Click on “Download R for Linux” and choose your distribution for more information on installing R for your setup.</li>
+</ul>
+<ol start="2" style="list-style-type: decimal">
+<li><strong>You must do this second</strong>: Download and install RStudio at <a href="https://www.rstudio.com/products/rstudio/download/">https://www.rstudio.com/products/rstudio/download/</a>.</li>
+</ol>
+<ul>
+<li>Scroll down to “Installers for Supported Platforms” near the bottom of the page.</li>
+<li>Click on the download link corresponding to your computer’s operating system.</li>
+</ul>
+</blockquote>
+<p>I recommend reading all of section 1.1.1 in <em>ModernDive</em> as you get started with RStudio.</p>
 </div>
-<div id="folder-system" class="section level2">
-<h2>2. Folder system</h2>
-<p>Organize a folder system on your computer to help you keep track of your files and data sets.</p>
+<div id="orient-yourself-in-rstudio" class="section level2">
+<h2>2. Orient yourself in RStudio</h2>
+<p>The RStudio interface has four window panes which split your window into four quarters (the red division lines appearing in the image below were added for dramatic effect)</p>
+<center>
+<img src="images/Rstudiosession.svg" style="width:95.0%" />
+</center>
+<p>Here’s a quick introduction to each of these panes.</p>
+<p><strong>Upper Left: Source Editor</strong><br />
+The source editor pane appears in the upper left of your RStudio window. If you open RStudio files such as <em>scripts</em> or <em>Rmarkdown</em> files, they will appear in this pane. We discuss these two types of files below, for now think of them as files we create in order to do some job for us, perhaps run a simulation, or do a statistical analysis on a data matrix, or write a lab report for this class. In the screenshot above, the source pane has one script loaded, called <em>governors.R</em>, which has code to import data on the 50 US governors and do some exploratory data analysis.</p>
+<p><strong>Lower Left: Console</strong><br />
+The console pane appears in the lower left. This pane has a command line prompt <code>&gt;</code> at which we can enter and run code. We can use RStudio as a calculator, we can ask it to print statements, and we can do some programming, and other cool things:</p>
+<center>
+<img src="images/console_screen.png" style="width:45.0%" />
+</center>
+<p><strong>Upper Right: Workspace Browser</strong><br />
+The workspace browser pane appears in the upper right. This pane has several tabs. The two we will use most are probably these:</p>
+<ul>
+<li><em>Environment tab</em>. This tab displays all the data frames and variables and functions that you’ve defined by name in your RStudio session.</li>
+<li><em>History tab</em>. This tab records all the commands you’ve run. This history can be helpful if you’re wondering how you did a certain thing a while back… . You can <em>clear</em> your workspace browser by clicking on the broom icon near the upper right corner of the workspace browser pane.</li>
+</ul>
+<p>In the screenshot above, the Environment tab is showing in the Workspace. It shows two defined items (defined in the script), a dataframe called <code>gov</code>, and a vector called <code>party_colors</code>, used to choose the red and blue colors appearing in plots. The data frame <code>gov</code> has has 50 rows (observations), one for each state, and 11 columns (variables), containing information like the governor’s name, age at inauguration, political party.</p>
+<p><strong>Lower Right: Plots and Files</strong> The bottom right pane in RStudio has several much-used tabs.</p>
+<ul>
+<li>The <em>Files tab</em> shows the file system in your computer.<br />
+</li>
+<li>The <em>Plots tab</em> is where your beautiful graphics will appear when you create them in a script or at the console prompt.<br />
+</li>
+<li>The <em>Help tab</em> is self-explanatory. I will add that R has wonderfully rich help documentation. If you want to learn more about a command or a built-in data set, the help tab is there - and there are usually built-in examples to demonstrate ideas. I will also say that RStudio help is at your fingertips via Google.</li>
+<li>The <em>Packages tab</em> is in this pane as well. We talk about packages below.</li>
+</ul>
+<p>In the screenshot the Plots tab is open, showing side-by-side boxplots of Governor ages by political party. Incidentally, the code for producing this plot is visible in the Source pane of this screenshot.</p>
+</div>
+<div id="use-a-folder-system" class="section level2">
+<h2>3. Use a Folder System</h2>
+<p>Organize a folder system on your computer to help you keep track of your files and data sets. Here’s my suggestion:</p>
 <ol style="list-style-type: decimal">
 <li><p><em>Create a folder</em> dedicated to this class on your computer, perhaps the desktop, with a descriptive name, say “math140”.</p></li>
 <li><p><em>Create a subfolder</em> in your “math140” folder for each RStudio project you work on. For instance, you might create a folder called “lab1” in your “math140” folder ahead of our first lab.</p></li>
 </ol>
 </div>
-<div id="projects" class="section level2">
-<h2>3. Projects</h2>
-<p>Project files in Rstudio give you a good way to organize your work in RStudio. You will probably have at least 5 projects before the end of the semester, one for each of our labs, and one for your term project. To create a project, follow these steps:</p>
+<div id="create-projects" class="section level2">
+<h2>4. Create Projects</h2>
+<p>Project files in Rstudio help you organize your work, and make it convenient for you to load different files associated with different projects into an RStudio session. By the end of the term your “math140” folder may have 5 or 6 different subfolders. One for each lab, one for your term project, one for top secret data analysis - who knows. If you attach a project file to each of these subfolders then it is easy in RStudio to shift between these projects.</p>
+<p>To create a project, follow these steps:</p>
 <ol style="list-style-type: decimal">
 <li><p>Open RStudio</p></li>
-<li><p>Create a project from the File menu, or by moving the cursor to the upper-right corner of your window and selecting <strong>Project (None)&gt;New Project</strong> as pictured:</p></li>
-</ol>
-<center>
-<img src="images/project.png" style="width:65.0%" />
-</center>
-<ol start="3" style="list-style-type: decimal">
-<li><p>Select <strong>Existing Directory</strong> in the pop-up menu.</p></li>
-<li><p>Click <strong>Browse</strong> and navigate to where you created the lab1 folder. Select this folder and then click <strong>Create Project</strong>.</p></li>
+<li><p>Create a project from the File menu (<em>File -&gt; New Project</em>), or by moving the cursor to the upper-right corner of your RStudio window and selecting <em>Project &gt; New Project</em>. <!-- as pictured: <center>![](images/project.png){width=65%}</center>--></p></li>
+<li><p>Select <em>Existing Directory</em> in the pop-up menu.</p></li>
+<li><p>Click <em>Browse</em> and navigate to where you created the lab1 folder. Select this folder and then click <em>Create Project</em>.</p></li>
 </ol>
 <ul>
 <li><p>Your R project has now been created. Note that in the upper right-hand corner, the program indicates that you are working on the project named lab1. In the future you can click on this spot in the upper right corner to change the project you want to work on or create a new one.</p></li>
-<li><p>Note also that if you click on the <strong>Files</strong> tab in the lower right pane in RStudio, you can access the file system on your computer, and RStudio is showing the contents of your current project directory.</p></li>
-<li><p>My mature project folders often contain three types of files:</p>
+<li><p>Note also that if you click on the <strong>Files</strong> tab in the lower right pane in RStudio, you can access the file system on your computer. By default, RStudio will show the contents of your current project folder</p></li>
+<li><p>In addition to the project file itself, my mature project folders often contain three types of files:</p>
 <ul>
 <li>R script files (discussed below)</li>
 <li>data files (usually .csv files)</li>
-<li>output files (pdf files, images of graphs, webpages)</li>
+<li>output files (.pdf files, images of graphs, .html files (webpages))</li>
 </ul></li>
 </ul>
 </div>
 <div id="scripts" class="section level2">
-<h2>4. Scripts</h2>
-<p>Think of a script as a place to write down commands you want to use in a project. You can also type comments (begin a line with a pound sign #) to help someone understand the commands that follow (including yourself two weeks later!). To create a script, go to the upper left corner of your window and click on the green + symbol. Then select R script.</p>
-<center>
-<img src="images/script.png" style="width:65.0%" />
-</center>
-<p>As already mentioned, scripts are a place to write down commands you want to use in your work. To actually <strong>execute lines of code in your script</strong>, place your cursor anywhere on that line of code and click <strong>Run</strong>.</p>
+<h2>5. Scripts</h2>
+<p>Think of a script as a place to write down commands you want to use in a project. You can also type comments (begin a line with a pound sign #) to help your future self or a project partner understand the commands that follow. To create a script, you can follow <em>File -&gt; New File -&gt; R Script</em>, or, even faster, go to the upper left corner of your RStudio window and click on the green + symbol. Then select R script.</p>
+<!--
+<center>![](images/script.png){width=65%}</center>
+-->
+<p>As already mentioned, scripts are a place to write down commands you want to use in your work.<br />
+<em>To execute lines of code in your script</em>, place your cursor anywhere on that line of code and click <em>Run</em>.</p>
 <p>Alternatively, you can use a keyboard shortcut:</p>
 <ul>
-<li><strong>Command + return</strong> on a Mac</li>
-<li><strong>ctrl + enter</strong> on a PC</li>
+<li><em>Command + return</em> on a Mac</li>
+<li><em>ctrl + enter</em> on a PC</li>
 </ul>
 </div>
 <div id="read-local-csv-files" class="section level2">
-<h2>5. Read local csv files</h2>
+<h2>6. Read local csv files</h2>
 <p>To import a .csv file that is saved locally on your computer, use the command <code>read.csv("path to file/filename")</code></p>
-<p>The ‘path to file’ part of this command is necessary if the file you want is not in your RStudio <strong>working directory.</strong> You can set your working directory to a particular folder by going to the <strong>Files</strong> tab in the lower right pane, navigating to the folder you want, then clicking on <strong>More</strong> and selecting “Set as Working Directory.”</p>
+<p>The ‘path to file’ part of this command is necessary if the file you want is not in your RStudio <em>working directory.</em> You can set your working directory to a particular folder by going to the <em>Files tab</em> in the lower right pane, navigating to the folder you want, then clicking on <em>More</em> and selecting <em>Set as Working Directory</em>.</p>
 <p>It’s simplest for me to save local data files in the same folder as the scripts I write to analyze them, and then in RStudio make that folder the working directory when I’m working on them.</p>
 <p>For instance, suppose in a folder called “awesome” I have a script file called <em>legos.R</em>, and I also have a data file called <em>legosets.csv</em>. If I set my working directory in RStudio to the awesome folder, then the following line in my <em>legos.R</em> script will read the data file into my RStudio session, and give it the working name ‘legos’:</p>
 <pre><code>legos = read.csv(&quot;legosets.csv&quot;)</code></pre>
 </div>
-<div id="read-online-csv-files" class="section level2">
-<h2>6. Read online csv files</h2>
+<div id="read-csv-files-from-the-web" class="section level2">
+<h2>7. Read csv files from the web</h2>
 <p>To import a .csv file directly from the web into RStudio we use the following command:</p>
 <p><code>read.csv("web address")</code></p>
 <p>For instance, to import the governors data file from our resource page, and give it the name <code>gov</code>, we enter the following at the console prompt in RStudio (you can copy and paste!):</p>
 <pre><code>gov = read.csv(&quot;https://mphitchman.com/stats/data/governors.csv&quot;)</code></pre>
 </div>
 <div id="packages" class="section level2">
-<h2>7. Packages</h2>
-<p>RStudio comes with a bunch of built-in functions, but packages provide more! Here is a link to a very nice <a href="https://moderndive.netlify.app/1-getting-started.html#packages">introduction to packages</a> in <em>ModernDive</em>. I suggest you read all of Section 1.3 in this link.</p>
+<h2>8. Packages</h2>
+<p>RStudio comes with many built-in functions, but packages provide are bundles of extra functions we might want to use. Here is a link to a very nice <a href="https://moderndive.netlify.app/1-getting-started.html#packages">introduction to packages</a> in <em>ModernDive</em>. I recommend you read all of Section 1.3 in this link.</p>
 <p>You can install a package from the console prompt by running:</p>
 <pre><code>install.packages(&quot;package name&quot;)</code></pre>
 <p>You can also install a package by following these steps:</p>
@@ -456,7 +517,7 @@ div.tocify {
 </ol>
 </div>
 <div id="r-markdown" class="section level2">
-<h2>8. R Markdown</h2>
+<h2>9. R Markdown</h2>
 <p>Your lab reports will be written using R Markdown, and perhaps parts of your term project. R Markdown files allow you to knit together text, mathematics formatting, R code, and images into a fine looking report. I will provide template markdown files for lab reports.</p>
 <p>Here is a nice website with <a href="https://rmarkdown.rstudio.com/authoring_basics.html">R Markdown Basics</a>, that demonstrates how to format text (e.g., bold, italics), make lists, make tables, insert images, insert web links, and other sorts of things in a markdown file.</p>
 <p><strong>References</strong></p>
