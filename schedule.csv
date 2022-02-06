@@ -1,33 +1,32 @@
-Week-Day,Date,Topic,Activities,Assignments
-1.Mon,30-Aug,Ch 1,First Day Survey,Webwork Ch.1: due 9/03
-1.Wed,1-Sep,Ch 1,Governors,"Get R and Rstudio installed, and begin reading through Prelab1"
-2.Mon,6-Sep,2.1,Governors,Webwork Sec 2.1: due 9/10
-2.Wed,8-Sep,2.2,Berkeley Admissions,Webwork Sec 2.2: due 9/10
-3.Mon,13-Sep,Lab 1,Intro to Rstudio,Lab1 due 9/15
-3.Wed,15-Sep,Ch 3,"Random Phones, Prob. Models",Webwork Ch. 3: due 9/22
-4.Mon,20-Sep,4.1,normal distributions,Webwork Sec 4.1: due 9/24
-4.Wed,22-Sep,"4.1, Review",,
-5.Mon,27-Sep,Test 1,,
-5.Wed,29-Sep,5.1,ESP,Sec 5.1: due 10/08
-6.Mon,4-Oct,Fall Break,,
-6.Wed,6-Oct,5.2,CLT- Proportions,Sec 5.2: due 10/08
-7.Mon,11-Oct,Lab 2,Intro to Inference,Lab2 due 10/15
-7.Wed,13-Oct,5.3,Flat Tire,Sec 5.3: due 10/20
-8.Mon,18-Oct,"6.1,2",Random Rectangles,Sec 6.2: due 10/25
-8.Wed,20-Oct,7.1,"CLT-Means, Inference on Means",Sec 7.1: due 10/27
-9.Mon,25-Oct,7.1,Inference Review,
-9.Wed,27-Oct,Review,,
-10.Mon,1-Nov,Test 2,,
-10.Wed,3-Nov,7.3,Two means,Sec 7.3: due 11/10
-11.Mon,8-Nov,7.2-3,Matched Pairs,Sec 7.2: due 11/10
-11.Wed,10-Nov,7.2-7.3,,
-12.Mon,15-Nov,8.1,Regression I,Ch 8 (Correlation)
-12.Wed,17-Nov,"8.2,3",Regression II,Ch 8 (regression)
-Thanksgiving,22-Nov,Break,,
-Thanksgiving,24-Nov,Break,,
-13.Mon,29-Nov,Lab 4,Regression,
-13.Wed,1-Dec,Exam 3,,
-14.Mon,6-Dec,"6.3,4",Chi Square,Sec 6.3-6.4 (optional)
-14.Wed,8-Dec,TBA,,
-Finals Week,Wed 15-Dec,Sec 02 at 13:00,,
-Finals Week,Fri 17-Dec,Sec 01 at 10:30,,
+Date,Topic,Text,Activities,Assignments
+8-Feb,Introduction,Ch 1,"First Day Survey, Statistical Questions",Webwork Ch.1
+10-Feb,Data,Ch 1,random rectangles,"Get R and Rstudio installed, and begin reading through Prelab1"
+15-Feb,Descriptive statistics,2.1,Governors,Webwork Sec 2.1
+17-Feb,Descriptive statistics,2.2,Descriptive statistics using R,Webwork Sec 2.2
+22-Feb,"scatter plots, correlation",8.1,Regression I,Webwork 8 Correlation
+24-Feb,least squares regression,"8.2,3",Regression using R,Webwork 8 Linear Regression
+1-Mar,"Quiz 1, probability models",Ch 3,probability models,Webwork Ch. 3
+3-Mar,probability models,Ch 3,Random Phones and sampling in R,
+8-Mar,normal distributions,4.1,normal distributions,Webwork Sec 4.1
+10-Mar,"normal distributions, sampling distributions","4.1, 5.1",sampling distributions in R,
+15-Mar,"Quiz 2, CLT for a proportion",5.1,CLT-Proportions,Webwork Sec 5.1
+17-Mar,confidence intervals,5.2,confidence interval in R,Webwork Sec 5.2
+22-Mar,Spring Break,,,
+24-Mar,Spring Break,,,
+29-Mar,"tests of signficance, type I & II errors",5.3,flat tire,Webwork Sec 5.3
+31-Mar,inference on a proportion,6.1,Inference on a proportion,
+5-Apr,"Quiz 3, CLT for a mean",7.1,"CLT-Means,Intro to Inference",Webwork Sec 7.1
+7-Apr,sampling distributions revisited,7.1,sampling distributions in R part 2,
+12-Apr,inference on a mean,7.1,Inference on Means,
+14-Apr,interence on 2 means,7.2-3,Two means,Webwork Sec 7.3
+19-Apr,"Quiz 4, matched pairs",7.2-3,Matched Pairs,Webwork Sec 7.2
+21-Apr,inference on 2 proportions,6.2,inference on 2 proportions,Webwork Sec 6.2
+26-Apr,chi square,"6.3,4",chi square goodness of fit,"Webwork Sec 6.3,4"
+28-Apr,chi square,"6.3,4",chi square test of independence,
+3-May,"Quiz 5, Regression",,,
+5-May,Inference on Regression,8.4,,
+10-May,ANOVA,7.5,ANOVA,Webwork Sec 7.5
+12-May,Quiz 6 (optional),,,
+17-May,TBA,,,
+19-May,Reading Day,,,
+26-May,Projects,,,
