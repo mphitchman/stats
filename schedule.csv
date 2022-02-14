@@ -1,6 +1,6 @@
 Date,Topic,Text,Activities,Assignments
 8-Feb,Introduction,Ch 1,"First Day Survey, Statistical Questions",Webwork Ch.1
-10-Feb,Data,Ch 1,random rectangles,"Get R and Rstudio installed, and begin reading through Prelab1"
+10-Feb,Data,Ch 1,random rectangles,"Install R and Rstudio, read ""Getting Started in Rstudio"" in Labs tab"
 15-Feb,Descriptive statistics,2.1,Governors,Webwork Sec 2.1
 17-Feb,Descriptive statistics,2.2,Descriptive statistics using R,Webwork Sec 2.2
 22-Feb,"scatter plots, correlation",8.1,Regression I,Webwork 8 Correlation
