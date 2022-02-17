@@ -5,12 +5,12 @@ Date,Topic,Text,Activities,Assignments
 17-Feb,Descriptive statistics,2.2,Descriptive statistics using R,Webwork Sec 2.2
 22-Feb,"scatter plots, correlation",8.1,Regression I,Webwork 8 Correlation
 24-Feb,least squares regression,"8.2,3",Regression using R,Webwork 8 Linear Regression
-1-Mar,"Quiz 1, probability models",Ch 3,probability models,Webwork Ch. 3
+1-Mar,"Quiz 1, probability models",Ch 3,probability models,"Webwork Ch. 3, Term project: Groups Due"
 3-Mar,probability models,Ch 3,Random Phones and sampling in R,
-8-Mar,normal distributions,4.1,normal distributions,Webwork Sec 4.1
+8-Mar,normal distributions,4.1,normal distributions,"Webwork Sec 4.1, Term Project: 3 Project ideas due"
 10-Mar,"normal distributions, sampling distributions","4.1, 5.1",sampling distributions in R,
 15-Mar,"Quiz 2, CLT for a proportion",5.1,CLT-Proportions,Webwork Sec 5.1
-17-Mar,confidence intervals,5.2,confidence interval in R,Webwork Sec 5.2
+17-Mar,confidence intervals,5.2,confidence interval in R,"Webwork Sec 5.2, Term Project: Final Proposal due"
 22-Mar,Spring Break,,,
 24-Mar,Spring Break,,,
 29-Mar,"tests of signficance, type I & II errors",5.3,flat tire,Webwork Sec 5.3
@@ -19,7 +19,7 @@ Date,Topic,Text,Activities,Assignments
 7-Apr,sampling distributions revisited,7.1,sampling distributions in R part 2,
 12-Apr,inference on a mean,7.1,Inference on Means,
 14-Apr,interence on 2 means,7.2-3,Two means,Webwork Sec 7.3
-19-Apr,"Quiz 4, matched pairs",7.2-3,Matched Pairs,Webwork Sec 7.2
+19-Apr,"Quiz 4, matched pairs",7.2-3,Matched Pairs,"Webwork Sec 7.2, Term Project: Meeting with Prof this week"
 21-Apr,inference on 2 proportions,6.2,inference on 2 proportions,Webwork Sec 6.2
 26-Apr,chi square,"6.3,4",chi square goodness of fit,"Webwork Sec 6.3,4"
 28-Apr,chi square,"6.3,4",chi square test of independence,
@@ -27,6 +27,6 @@ Date,Topic,Text,Activities,Assignments
 5-May,Inference on Regression,8.4,,
 10-May,ANOVA,7.5,ANOVA,Webwork Sec 7.5
 12-May,Quiz 6 (optional),,,
-17-May,TBA,,,
+17-May,TBA,,,Term Project: Papers Due
 19-May,Reading Day,,,
-26-May,Projects,,,
+26-May,Final Exam Period,,,Project Presentations
