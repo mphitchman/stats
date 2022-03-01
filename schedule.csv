@@ -5,8 +5,8 @@ Date,Topic,Text,Activities,Assignments
 2/17,Descriptive statistics,2.2,Descriptive statistics using R,Webwork Sec 2.2
 2/22,"scatter plots, correlation",8.1,Regression I,Webwork 8 Correlation
 2/24,least squares regression,"8.2,3",Regression using R,Webwork 8 Linear Regression
-3/1,"Quiz 1, probability models",Ch 3,probability models,"Webwork Ch. 3, Term project: Groups Due"
-3/3,probability models,Ch 3,Random Phones and sampling in R,
+3/1,"least squares regression, probability models","Ch 8, Ch 3",R activity: Starbucks,Term project: Groups Due
+3/3,"Quiz 1, probability models",Ch 3,Random Phones,Webwork Ch. 3
 3/8,normal distributions,4.1,normal distributions,"Webwork Sec 4.1, Term Project: 3 Project ideas due"
 3/10,"normal distributions, sampling distributions","4.1, 5.1",sampling distributions in R,
 3/15,"Quiz 2, CLT for a proportion",5.1,CLT-Proportions,Webwork Sec 5.1
