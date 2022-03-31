@@ -14,15 +14,15 @@ Date,Topic,Text,Activities,Assignments
 3/22,Spring Break,,,
 3/24,Spring Break,,,
 3/29,confidence intervals,5.2,"confidence intervals - proportion, flat tire","Webwork Sec 5.2,3"
-3/31,inference on a proportion,"5.3,6.1",Inference on a proportion,
-4/5,"Quiz 3, CLT for a mean",7.1,"CLT-Means,Intro to Inference",Webwork Sec 7.1
-4/7,sampling distributions revisited,7.1,sampling distributions in R part 2,
-4/12,inference on a mean,7.1,Inference on Means,
-4/14,interence on 2 means,7.2-3,Two means,Webwork Sec 7.3
-4/19,"Quiz 4, matched pairs",7.2-3,Matched Pairs,"Webwork Sec 7.2, Term Project: Meeting with Prof this week"
-4/21,inference on 2 proportions,6.2,inference on 2 proportions,Webwork Sec 6.2
-4/26,chi square,"6.3,4",chi square goodness of fit,"Webwork Sec 6.3,4"
-4/28,chi square,"6.3,4",chi square test of independence,
+3/31,inference on a proportion,"5.3,6.1",,
+4/5,CLT for a mean,7.1,"CLT-Means,Intro to Inference",Webwork Sec 7.1
+4/7,"Quiz 3, sampling distributions revisited",7.1,Inference on Means,
+4/12,interence on 2 means,7.2-3,Two means,Webwork Sec 7.3
+4/14,Matched pairs,7.2-3,Matched Pairs,Webwork Sec 7.2
+4/19,"Quiz 4, inference on 2 proportions",6.2,Matched Pairs,Term Project: Meeting with Prof this week
+4/21,chi square,"6.3,4",chi square goodness of fit,Webwork Sec 6.2
+4/26,chi square,"6.3,4",chi square test of independence,"Webwork Sec 6.3,4"
+4/28,TBA,,,
 5/3,"Quiz 5, Regression",,,
 5/5,Inference on Regression,8.4,,
 5/10,ANOVA,7.5,ANOVA,Webwork Sec 7.5

@@ -216,6 +216,19 @@ cat(paste0(&quot;phat = &quot;,round(phat,4),&quot;\n&quot;,&quot;z* = &quot;,ro
 <p><strong>Conclude.</strong> We are 95% confident that between 62.6% and and 84.2% of Linfield students like the number 8 better than the number 3.</p>
 <p><par> <par></p>
 </div>
+<div id="finding-sample-size-for-a-particular-margin-of-error" class="section level3">
+<h3>Finding sample size for a particular margin of error</h3>
+<p>We know that the margin of error (MOE) for a level C confidence interval is <span class="math display">\[\text{MOE} = z^*\sqrt{\frac{p(1-p)}{n}}.\]</span> This means that we can adjust the margin of error by choosing a different sample size <span class="math inline">\(n\)</span>. The larger <span class="math inline">\(n\)</span> gets, the smaller the MOE gets.</p>
+<p><strong>Example</strong> How large should <span class="math inline">\(n\)</span> be so that a 99% confidence interval for <span class="math inline">\(p\)</span> has MOE = 0.02? Assume a population proportion of <span class="math inline">\(p = 1/2\)</span>.</p>
+<p>The formula we derived in class for the value of <span class="math inline">\(n\)</span> is <span class="math display">\[n = p(1-p)\left(\frac{z^*}{\text{MOE}}\right)^2\]</span> where we be sure to round up to the next whole number (e.g., if the formula gives <span class="math inline">\(n = 76.2\)</span> we should choose sample size <span class="math inline">\(n=77\)</span>).</p>
+<pre class="r"><code>C = .8 # input confidence level here (as a decimal)
+p = 1/2 # input assumed value of p here.
+MOE = .02 # input the desired margin of error here.
+zstar = qnorm(C+(1-C)/2)
+n = p*(1-p)*(zstar/MOE)^2
+print(paste(&quot;The sample size must be at least&quot;,ceiling(n)))</code></pre>
+<pre><code>## [1] &quot;The sample size must be at least 1027&quot;</code></pre>
+</div>
 <div id="prop.test" class="section level3">
 <h3>prop.test()</h3>
 <p>The <code>prop.test()</code> function in R generates a confidence interval as well. This function uses a slightly different formula for the CI than the one in the text, and the results of the two versions of the formula may differ slightly. <strong>On WeBWorK and on exams use the textbook “by hand” approach.</strong></p>
