@@ -201,7 +201,7 @@ pre code {
 <p>Our <em>sample size</em> is <span class="math inline">\(n = 100\)</span>, and we rolled <span class="math inline">\(x = 22\)</span> fours, so the <em>sample proportion</em> of fours rolled is <span class="math display">\[\hat{p} = \frac{22}{100} = 0.22.\]</span></p>
 <p><strong>Check</strong> that the success-failure conditions hold: our success count is 22, our failure count is 78, both at least 10, so the distribution for <span class="math inline">\(\hat{p}\)</span> is nearly normal.</p>
 <p><strong>Calculate</strong></p>
-<p>We find the test statistic from our data, which is a z-score in this case, and the p-value associated to this test statistic. We can ask RStudio to do the calculations, and note that the test statistic is given by the formula <span class="math display">\[z = \frac{\hat{p}-p_0}{\sqrt{p_0(1-p_0)/n}},\]</span> where <span class="math inline">\(\p_0\)</span> is the value of the proportion in the null hypothesis.</p>
+<p>We find the test statistic from our data, which is a z-score in this case, and the p-value associated to this test statistic. We can ask RStudio to do the calculations, and note that the test statistic is given by the formula <span class="math display">\[z = \frac{\hat{p}-p_0}{\sqrt{p_0(1-p_0)/n}},\]</span> where <span class="math inline">\(p_0\)</span> is the value of the proportion in the null hypothesis.</p>
 <pre class="r"><code>## Conducting a test of significance for one proportion.
 
 # Significance level
