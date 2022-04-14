@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>Tips for Getting Started with RStudio in MATH 140</title>
+
+<script src="site_libs/header-attrs-2.10/header-attrs.js"></script>
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+<style type="text/css">
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #adb5bd;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script type="text/javascript">
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.tab('show');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">MATH 140</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">Home</a>
+</li>
+<li>
+  <a href="slides.html">Slides</a>
+</li>
+<li>
+  <a href="activities.html">Activities</a>
+</li>
+<li>
+  <a href="data.html">Data</a>
+</li>
+<li>
+  <a href="rstudio.html">RStudio</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+  <a href="mailto:&lt;mhitchm@linfield.edu&gt;">
+    <span class="fa fa-envelope fa-lg"></span>
+     
+  </a>
+</li>
+<li>
+  <a href="http://github.com/mphitchman/stats">
+    <span class="fa fa-github fa-lg"></span>
+     
+  </a>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div id="header">
+
+
+
+<h1 class="title toc-ignore">Tips for Getting Started with RStudio in MATH 140</h1>
+
+</div>
+
+
+<style type=text/css>
+blockquote {
+    background: #f8f8f8;
+    padding: 5px 10px;
+    margin: 0 0 10px;
+    font-size: 16px;
+    border-left: 1px solid #aaa;
+    border-bottom: 1px solid #aaa;
+}
+</style>
+<div id="install-r-and-rstudio" class="section level2">
+<h2>1. Install R and RStudio</h2>
+<p>You will first need to download and install both R and RStudio (Desktop version) on your computer. R and RStudio are separate installations. R is a programming language that is convenient to use in statistics. RStudio is a user-friendly interface that makes using R easier. In the well-written, freely available text <a href="https://moderndive.netlify.app/"><em>ModernDive</em></a>, the authors put it this way:</p>
+<blockquote>
+<p>R is like a car’s engine while RStudio is like a car’s dashboard… So just as the way of having access to a speedometer, rearview mirrors, and a navigation system makes driving much easier, using RStudio’s interface makes using R much easier as well.</p>
+</blockquote>
+<p>The following installation instructions are taken from <a href="https://moderndive.netlify.app/1-getting-started.html#installing">Section 1.1.1</a> of <em>ModernDive</em>.</p>
+<blockquote>
+<ol style="list-style-type: decimal">
+<li><strong>You must do this first</strong>: Download and install R by going to <a href="https://cloud.r-project.org/">https://cloud.r-project.org</a></li>
+</ol>
+<ul>
+<li>If you are a Windows user: Click on “Download R for Windows”, then click on “base”, then click on the Download link.</li>
+<li>If you are macOS user: Click on “Download R for (Mac) OS X”, then under “Latest release:” click on R-X.X.X.pkg, where R-X.X.X is the version number.</li>
+<li>If you are a Linux user: Click on “Download R for Linux” and choose your distribution for more information on installing R for your setup.</li>
+</ul>
+<ol start="2" style="list-style-type: decimal">
+<li><strong>You must do this second</strong>: Download and install RStudio at <a href="https://www.rstudio.com/products/rstudio/download/">https://www.rstudio.com/products/rstudio/download/</a>.</li>
+</ol>
+<ul>
+<li>Scroll down to “Installers for Supported Platforms” near the bottom of the page.</li>
+<li>Click on the download link corresponding to your computer’s operating system.</li>
+</ul>
+</blockquote>
+<p>I recommend reading all of section 1.1.1 in <em>ModernDive</em> as you get started with RStudio.</p>
+</div>
+<div id="orient-yourself-in-rstudio" class="section level2">
+<h2>2. Orient yourself in RStudio</h2>
+<p>The RStudio interface has four window panes which split your window into four quarters (the red division lines appearing in the image below were added for dramatic effect)</p>
+<center>
+<img src="images/Rstudiosession.svg" style="width:95.0%" />
+</center>
+<p>Here’s a quick introduction to each of these panes.</p>
+<p><strong>Upper Left: Source Editor</strong><br />
+The source editor pane appears in the upper left of your RStudio window. If you open RStudio files such as <em>scripts</em> or <em>Rmarkdown</em> files, they will appear in this pane. We discuss these two types of files below, for now think of them as files we create in order to do some job for us, perhaps run a simulation, or do a statistical analysis on a data matrix, or write a lab report for this class. In the screenshot above, the source pane has one script loaded, called <em>governors.R</em>, which has code to import data on the 50 US governors and do some exploratory data analysis.</p>
+<p><strong>Lower Left: Console</strong><br />
+The console pane appears in the lower left. This pane has a command line prompt <code>&gt;</code> at which we can enter and run code. We can use RStudio as a calculator, we can ask it to print statements, and we can do some programming, and other cool things:</p>
+<center>
+<img src="images/console_screen.png" style="width:45.0%" />
+</center>
+<p><strong>Upper Right: Workspace Browser</strong><br />
+The workspace browser pane appears in the upper right. This pane has several tabs. The two we will use most are probably these:</p>
+<ul>
+<li><em>Environment tab</em>. This tab displays all the data frames and variables and functions that you’ve defined by name in your RStudio session.</li>
+<li><em>History tab</em>. This tab records all the commands you’ve run. This history can be helpful if you’re wondering how you did a certain thing a while back… . You can <em>clear</em> your workspace browser by clicking on the broom icon near the upper right corner of the workspace browser pane.</li>
+</ul>
+<p>In the screenshot above, the Environment tab is showing in the Workspace. It shows two defined items (defined in the script), a dataframe called <code>gov</code>, and a vector called <code>party_colors</code>, used to choose the red and blue colors appearing in plots. The data frame <code>gov</code> has has 50 rows (observations), one for each state, and 11 columns (variables), containing information like the governor’s name, age at inauguration, political party.</p>
+<p><strong>Lower Right: Plots and Files</strong> The bottom right pane in RStudio has several much-used tabs.</p>
+<ul>
+<li>The <em>Files tab</em> shows the file system in your computer.<br />
+</li>
+<li>The <em>Plots tab</em> is where your beautiful graphics will appear when you create them in a script or at the console prompt.<br />
+</li>
+<li>The <em>Help tab</em> is self-explanatory. I will add that R has wonderfully rich help documentation. If you want to learn more about a command or a built-in data set, the help tab is there - and there are usually built-in examples to demonstrate ideas. I will also say that RStudio help is at your fingertips via Google.</li>
+<li>The <em>Packages tab</em> is in this pane as well. We talk about packages below.</li>
+</ul>
+<p>In the screenshot the Plots tab is open, showing side-by-side boxplots of Governor ages by political party. Incidentally, the code for producing this plot is visible in the Source pane of this screenshot.</p>
+</div>
+<div id="use-a-folder-system" class="section level2">
+<h2>3. Use a Folder System</h2>
+<p>Organize a folder system on your computer to help you keep track of your files and data sets. Here’s my suggestion:</p>
+<ol style="list-style-type: decimal">
+<li><p><em>Create a folder</em> dedicated to this class on your computer, perhaps the desktop, with a descriptive name, say “math140”.</p></li>
+<li><p><em>Create a subfolder</em> in your “math140” folder for each RStudio project you work on. For instance, you might create a folder called “lab1” in your “math140” folder ahead of our first lab.</p></li>
+</ol>
+</div>
+<div id="create-projects" class="section level2">
+<h2>4. Create Projects</h2>
+<p>Project files in Rstudio help you organize your work, and make it convenient for you to load different files associated with different projects into an RStudio session. By the end of the term your “math140” folder may have 5 or 6 different subfolders. One for each lab, one for your term project, one for top secret data analysis - who knows. If you attach a project file to each of these subfolders then it is easy in RStudio to shift between these projects.</p>
+<p>To create a project, follow these steps:</p>
+<ol style="list-style-type: decimal">
+<li><p>Open RStudio</p></li>
+<li><p>Create a project from the File menu (<em>File -&gt; New Project</em>), or by moving the cursor to the upper-right corner of your RStudio window and selecting <em>Project &gt; New Project</em>. <!-- as pictured: <center>![](images/project.png){width=65%}</center>--></p></li>
+<li><p>Select <em>Existing Directory</em> in the pop-up menu.</p></li>
+<li><p>Click <em>Browse</em> and navigate to where you created the lab1 folder. Select this folder and then click <em>Create Project</em>.</p></li>
+</ol>
+<ul>
+<li><p>Your R project has now been created. Note that in the upper right-hand corner, the program indicates that you are working on the project named lab1. In the future you can click on this spot in the upper right corner to change the project you want to work on or create a new one.</p></li>
+<li><p>Note also that if you click on the <strong>Files</strong> tab in the lower right pane in RStudio, you can access the file system on your computer. By default, RStudio will show the contents of your current project folder</p></li>
+<li><p>In addition to the project file itself, my mature project folders often contain three types of files:</p>
+<ul>
+<li>R script files (discussed below)</li>
+<li>data files (usually .csv files)</li>
+<li>output files (.pdf files, images of graphs, .html files (webpages))</li>
+</ul></li>
+</ul>
+</div>
+<div id="scripts" class="section level2">
+<h2>5. Scripts</h2>
+<p>Think of a script as a place to write down commands you want to use in a project. You can also type comments (begin a line with a pound sign #) to help your future self or a project partner understand the commands that follow. To create a script, you can follow <em>File -&gt; New File -&gt; R Script</em>, or, even faster, go to the upper left corner of your RStudio window and click on the green + symbol. Then select R script.</p>
+<!--
+<center>![](images/script.png){width=65%}</center>
+-->
+<p>As already mentioned, scripts are a place to write down commands you want to use in your work.<br />
+<em>To execute lines of code in your script</em>, place your cursor anywhere on that line of code and click <em>Run</em>.</p>
+<p>Alternatively, you can use a keyboard shortcut:</p>
+<ul>
+<li><em>Command + return</em> on a Mac</li>
+<li><em>ctrl + enter</em> on a PC</li>
+</ul>
+</div>
+<div id="read-local-csv-files" class="section level2">
+<h2>6. Read local csv files</h2>
+<p>To import a .csv file that is saved locally on your computer, use the command <code>read.csv("path to file/filename")</code></p>
+<p>The ‘path to file’ part of this command is necessary if the file you want is not in your RStudio <em>working directory.</em> You can set your working directory to a particular folder by going to the <em>Files tab</em> in the lower right pane, navigating to the folder you want, then clicking on <em>More</em> and selecting <em>Set as Working Directory</em>.</p>
+<p>It’s simplest for me to save local data files in the same folder as the scripts I write to analyze them, and then in RStudio make that folder the working directory when I’m working on them.</p>
+<p>For instance, suppose in a folder called “awesome” I have a script file called <em>legos.R</em>, and I also have a data file called <em>legosets.csv</em>. If I set my working directory in RStudio to the awesome folder, then the following line in my <em>legos.R</em> script will read the data file into my RStudio session, and give it the working name ‘legos’:</p>
+<pre><code>legos = read.csv(&quot;legosets.csv&quot;)</code></pre>
+</div>
+<div id="read-csv-files-from-the-web" class="section level2">
+<h2>7. Read csv files from the web</h2>
+<p>To import a .csv file directly from the web into RStudio we use the following command:</p>
+<p><code>read.csv("web address")</code></p>
+<p>For instance, to import the governors data file from our resource page, and give it the name <code>gov</code>, we enter the following at the console prompt in RStudio (you can copy and paste!):</p>
+<pre><code>gov = read.csv(&quot;https://mphitchman.com/stats/data/governors.csv&quot;)</code></pre>
+</div>
+<div id="packages" class="section level2">
+<h2>8. Packages</h2>
+<p>RStudio comes with many built-in functions, but packages provide are bundles of extra functions we might want to use. Here is a link to a very nice <a href="https://moderndive.netlify.app/1-getting-started.html#packages">introduction to packages</a> in <em>ModernDive</em>. I recommend you read all of Section 1.3 in this link.</p>
+<p>You can install a package from the console prompt by running:</p>
+<pre><code>install.packages(&quot;package name&quot;)</code></pre>
+<p>You can also install a package by following these steps:</p>
+<ol style="list-style-type: lower-roman">
+<li>Click on the <strong>Packages</strong> tab in the lower right pane of your RStudio session.</li>
+<li>Click on <strong>Install</strong> next to <strong>Update</strong></li>
+<li>Enter the name(s) of the package(s) in the window that pops up</li>
+<li>Click <strong>install</strong></li>
+</ol>
+<p>Once a package is installed in your copy of RStudio, you can load it into a current session with the <code>library()</code> command. For instance, the ggplot2 package, used for data visualization, can be loaded into a session by executing this command:</p>
+<pre><code>library(&quot;ggplot2&quot;)</code></pre>
+<p>If you get an error when you run this command, it means the ggplot2 package hasn’t been installed.</p>
+<blockquote>
+<p>Note: You only need to <strong>install</strong> the packages once, but you will need to <strong>load</strong> the packages each time you use RStudio.</p>
+</blockquote>
+<p>Commonly used packages worth installing on your machine:</p>
+<ol style="list-style-type: decimal">
+<li>ggplot2 (for making nice plots)</li>
+<li>dplyr (for managing data frames)</li>
+<li>knitr (for compiling markdown files)</li>
+<li>tidyverse (An opinionated collection of R packages, per <a href="https://www.tidyverse.org/">tidyverse.org</a>)</li>
+<li>openintro (for data sets that appear in our text!)</li>
+</ol>
+</div>
+<div id="some-rstudio-tutorials" class="section level2">
+<h2>9 Some RStudio tutorials</h2>
+<p>Tutorials made for this class:</p>
+<ul>
+<li><a href="Rlabs/getting-started.html">Reading Data and Descriptic Statistics</a></li>
+<li><a href="Rlabs/tutorial-ggplot.html">Using ggplot for sharp looking graphics</a></li>
+<li><a href="Rlabs/tutorial-regression-planets.html">Linear Regression</a></li>
+</ul>
+<p>Note: A wealth of examples is at your fingertips via Google. If you want to know how to do something in RStudio, like a histogram or a scatter plot, or a five number summary, or… whatever… you’ll find answers quickly via Google.</p>
+</div>
+<div id="r-markdown" class="section level2">
+<h2>10. R Markdown</h2>
+<p>Reports and papers can be written using R Markdown, including your term project. R Markdown files allow you to knit together text, mathematics formatting, R code, and images into a fine looking report.</p>
+<p>Here is a nice website with <a href="https://rmarkdown.rstudio.com/authoring_basics.html">R Markdown Basics</a>, that demonstrates how to format text (e.g., bold, italics), make lists, make tables, insert images, insert web links, and other sorts of things in a markdown file.</p>
+</div>
+<div id="references" class="section level2">
+<h2>11 References</h2>
+<ol style="list-style-type: decimal">
+<li><p><a href="https://moderndive.netlify.app/"><em>ModernDive</em></a></p></li>
+<li><p><a href="https://nulib.github.io/kuyper-stat202/index.html#working-efficiently-with-rstudio">Setting up R and R Studio efficiently</a></p></li>
+<li><p><a href="https://rmarkdown.rstudio.com/authoring_basics.html">R Markdown Basics</a></p></li>
+</ol>
+<!-- Default Statcounter code for math 140 resources pages-->
+<script type="text/javascript">
+var sc_project=12608389;
+var sc_invisible=1;
+var sc_security="1d868be4";
+</script>
+<script type="text/javascript"
+src="https://www.statcounter.com/counter/counter.js"
+async></script>
+<noscript>
+<div class="statcounter">
+<a title="Web Analytics"
+href="https://statcounter.com/" target="_blank"><img
+class="statcounter"
+src="https://c.statcounter.com/12608389/0/1d868be4/1/"
+alt="Web Analytics"
+referrerPolicy="no-referrer-when-downgrade"></a>
+</div>
+</noscript>
+<!-- End of Statcounter Code -->
+</div>
+
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+<script>
+$(document).ready(function ()  {
+
+    // temporarily add toc-ignore selector to headers for the consistency with Pandoc
+    $('.unlisted.unnumbered').addClass('toc-ignore')
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
