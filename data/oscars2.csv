@@ -1,95 +1,96 @@
 date_of_award,name.best actor,age_at_award.best actor,name.best actress,age_at_award.best actress,diff
-16-May-29,Emil Jannings,44.8,Janet Gaynor,22.61,22.19
-3-Apr-30,Warner Baxter,41,Mary Pickford,37.98,3.02
-5-Nov-30,George Arliss,62.6,Norma Shearer,28.24,34.36
-10-Nov-31,Lionel Barrymore,53.5,Marie Dressler,63,-9.5
-18-Nov-32,Wallace Beery,47.6,Helen Hayes,32.11,15.49
-16-Mar-34,Charles Laughton,34.7,Katharine Hepburn,26.84,7.86
-27-Feb-35,Clark Gable,34.1,Claudette Colbert,31.46,2.64
-5-Mar-36,Victor McLaglen,49.2,Bette Davis,27.92,21.28
-4-Mar-37,Paul Muni,41.4,Luise Rainer,27.14,14.26
-10-Mar-38,Spencer Tracy,37.9,Luise Rainer,28.16,9.74
-23-Feb-39,Spencer Tracy,38.9,Bette Davis,30.89,8.01
-29-Feb-40,Robert Donat,35,Vivien Leigh,26.32,8.68
-27-Feb-41,James Stewart,32.8,Ginger Rogers,29.62,3.18
-26-Feb-42,Gary Cooper,40.8,Joan Fontaine,24.35,16.45
-4-Mar-43,James Cagney,43.6,Greer Garson,38.43,5.17
-2-Mar-44,Paul Lukas,48.8,Jennifer Jones,25,23.8
-15-Mar-45,Bing Crosby,41.9,Ingrid Bergman,29.54,12.36
-7-Mar-46,Ray Milland,39.2,Joan Crawford,40.95,-1.75
+16-May-29,Emil Jannings,44.8,Janet Gaynor,22.6,22.2
+3-Apr-30,Warner Baxter,41,Mary Pickford,38.0,3.0
+5-Nov-30,George Arliss,62.6,Norma Shearer,28.2,34.4
+10-Nov-31,Lionel Barrymore,53.5,Marie Dressler,63.0,-9.5
+18-Nov-32,Wallace Beery,47.6,Helen Hayes,32.1,15.5
+16-Mar-34,Charles Laughton,34.7,Katharine Hepburn,26.8,7.9
+27-Feb-35,Clark Gable,34.1,Claudette Colbert,31.5,2.6
+5-Mar-36,Victor McLaglen,49.2,Bette Davis,27.9,21.3
+4-Mar-37,Paul Muni,41.4,Luise Rainer,27.1,14.3
+10-Mar-38,Spencer Tracy,37.9,Luise Rainer,28.2,9.7
+23-Feb-39,Spencer Tracy,38.9,Bette Davis,30.9,8.0
+29-Feb-40,Robert Donat,35,Vivien Leigh,26.3,8.7
+27-Feb-41,James Stewart,32.8,Ginger Rogers,29.6,3.2
+26-Feb-42,Gary Cooper,40.8,Joan Fontaine,24.4,16.5
+4-Mar-43,James Cagney,43.6,Greer Garson,38.4,5.2
+2-Mar-44,Paul Lukas,48.8,Jennifer Jones,25.0,23.8
+15-Mar-45,Bing Crosby,41.9,Ingrid Bergman,29.5,12.4
+7-Mar-46,Ray Milland,39.2,Joan Crawford,41.0,-1.8
 13-Mar-47,Fredric March,49.5,Olivia de Havilland,30.7,18.8
 20-Mar-48,Ronald Colman,57.1,Loretta Young,35.2,21.9
-24-Mar-49,Laurence Olivier,41.8,Jane Wyman,32.21,9.59
-23-Mar-50,Broderick Crawford,38.3,Olivia de Havilland,33.72,4.58
-29-Mar-51,José Ferrer,39.2,Judy Holliday,29.77,9.43
-20-Mar-52,NA,NA,Vivien Leigh,38.37,NA
+24-Mar-49,Laurence Olivier,41.8,Jane Wyman,32.2,9.6
+23-Mar-50,Broderick Crawford,38.3,Olivia de Havilland,33.7,4.6
+29-Mar-51,José Ferrer,39.2,Judy Holliday,29.8,9.4
+20-Mar-52,NA,NA,Vivien Leigh,38.4,NA
 30-Mar-52,Humphrey Bogart,52.3,NA,NA,NA
-19-Mar-53,Gary Cooper,51.9,Shirley Booth,54.55,-2.65
-25-Mar-54,William Holden,35.9,Audrey Hepburn,24.89,11.01
-30-Mar-55,Marlon Brando,31,Grace Kelly,25.38,5.62
-21-Mar-56,Ernest Borgnine,39.2,Anna Magnani,48.04,-8.84
-27-Mar-57,Yul Brynner,36.7,Ingrid Bergman,41.57,-4.87
-26-Mar-58,Alec Guinness,44,Joanne Woodward,28.07,15.93
-6-Apr-59,David Niven,49.1,Susan Hayward,41.77,7.33
-4-Apr-60,Charlton Heston,36.5,Simone Signoret,39.03,-2.53
-17-Apr-61,Burt Lancaster,47.5,Elizabeth Taylor,29.13,18.37
-9-Apr-62,Maximilian Schell,31.3,Sophia Loren,27.55,3.75
-8-Apr-63,Gregory Peck,47,Anne Bancroft,31.55,15.45
-13-Apr-64,Sidney Poitier,37.1,Patricia Neal,38.23,-1.13
-5-Apr-65,Rex Harrison,57.1,Julie Andrews,29.51,27.59
-18-Apr-66,Lee Marvin,42.2,Julie Christie,26.01,16.19
-10-Apr-67,Paul Scofield,45.2,Elizabeth Taylor,35.11,10.09
-10-Apr-68,Rod Steiger,43,Katharine Hepburn,60.91,-17.91
-14-Apr-69,Cliff Robertson,45.6,Katharine Hepburn,61.92,-16.32
-7-Apr-70,John Wayne,62.9,Maggie Smith,35.27,27.63
-15-Apr-71,George C. Scott,43.5,Glenda Jackson,34.93,8.57
+19-Mar-53,Gary Cooper,51.9,Shirley Booth,54.6,-2.7
+25-Mar-54,William Holden,35.9,Audrey Hepburn,24.9,11.0
+30-Mar-55,Marlon Brando,31,Grace Kelly,25.4,5.6
+21-Mar-56,Ernest Borgnine,39.2,Anna Magnani,48.0,-8.8
+27-Mar-57,Yul Brynner,36.7,Ingrid Bergman,41.6,-4.9
+26-Mar-58,Alec Guinness,44,Joanne Woodward,28.1,15.9
+6-Apr-59,David Niven,49.1,Susan Hayward,41.8,7.3
+4-Apr-60,Charlton Heston,36.5,Simone Signoret,39.0,-2.5
+17-Apr-61,Burt Lancaster,47.5,Elizabeth Taylor,29.1,18.4
+9-Apr-62,Maximilian Schell,31.3,Sophia Loren,27.6,3.8
+8-Apr-63,Gregory Peck,47,Anne Bancroft,31.6,15.5
+13-Apr-64,Sidney Poitier,37.1,Patricia Neal,38.2,-1.1
+5-Apr-65,Rex Harrison,57.1,Julie Andrews,29.5,27.6
+18-Apr-66,Lee Marvin,42.2,Julie Christie,26.0,16.2
+10-Apr-67,Paul Scofield,45.2,Elizabeth Taylor,35.1,10.1
+10-Apr-68,Rod Steiger,43,Katharine Hepburn,60.9,-17.9
+14-Apr-69,Cliff Robertson,45.6,Katharine Hepburn,61.9,-16.3
+7-Apr-70,John Wayne,62.9,Maggie Smith,35.3,27.6
+15-Apr-71,George C. Scott,43.5,Glenda Jackson,34.9,8.6
 10-Apr-72,Gene Hackman,42.2,Jane Fonda,34.3,7.9
-27-Mar-73,Marlon Brando,49,Liza Minnelli,27.04,21.96
+27-Mar-73,Marlon Brando,49,Liza Minnelli,27.0,22.0
 2-Apr-74,Jack Lemmon,49.1,Glenda Jackson,37.9,11.2
-8-Apr-75,Art Carney,56.4,Ellen Burstyn,42.33,14.07
-29-Mar-76,Jack Nicholson,38.9,Louise Fletcher,41.69,-2.79
+8-Apr-75,Art Carney,56.4,Ellen Burstyn,42.3,14.1
+29-Mar-76,Jack Nicholson,38.9,Louise Fletcher,41.7,-2.8
 28-Mar-77,Peter Finch,60.5,Faye Dunaway,36.2,24.3
-3-Apr-78,Richard Dreyfuss,30.4,Diane Keaton,32.24,-1.84
-9-Apr-79,Jon Voight,40.3,Jane Fonda,41.3,-1
-14-Apr-80,Dustin Hoffman,42.7,Sally Field,33.44,9.26
-31-Mar-81,Robert De Niro,37.6,Sissy Spacek,31.26,6.34
-29-Mar-82,Henry Fonda,76.9,Katharine Hepburn,74.88,2.02
+3-Apr-78,Richard Dreyfuss,30.4,Diane Keaton,32.2,-1.8
+9-Apr-79,Jon Voight,40.3,Jane Fonda,41.3,-1.0
+14-Apr-80,Dustin Hoffman,42.7,Sally Field,33.4,9.3
+31-Mar-81,Robert De Niro,37.6,Sissy Spacek,31.3,6.3
+29-Mar-82,Henry Fonda,76.9,Katharine Hepburn,74.9,2.0
 11-Apr-83,Ben Kingsley,39.3,Meryl Streep,33.8,5.5
-9-Apr-84,Robert Duvall,53.3,Shirley MacLaine,49.96,3.34
-25-Mar-85,F. Murray Abraham,45.4,Sally Field,38.38,7.02
-24-Mar-86,William Hurt,36,Geraldine Page,61.33,-25.33
+9-Apr-84,Robert Duvall,53.3,Shirley MacLaine,50.0,3.3
+25-Mar-85,F. Murray Abraham,45.4,Sally Field,38.4,7.0
+24-Mar-86,William Hurt,36,Geraldine Page,61.3,-25.3
 30-Mar-87,Paul Newman,62.2,Marlee Matlin,21.6,40.6
-11-Apr-88,Michael Douglas,43.5,Cher,41.89,1.61
-27-Mar-89,Dustin Hoffman,51.6,Jodie Foster,26.35,25.25
+11-Apr-88,Michael Douglas,43.5,Cher,41.9,1.6
+27-Mar-89,Dustin Hoffman,51.6,Jodie Foster,26.4,25.3
 26-Mar-90,Daniel Day-Lewis,32.9,Jessica Tandy,80.8,-47.9
-25-Mar-91,Jeremy Irons,42.5,Kathy Bates,42.74,-0.24
-30-Mar-92,Anthony Hopkins,54.2,Jodie Foster,29.36,24.84
-29-Mar-93,Al Pacino,52.9,Emma Thompson,33.95,18.95
-21-Mar-94,Tom Hanks,37.7,Holly Hunter,36,1.7
-27-Mar-95,Tom Hanks,38.7,Jessica Lange,45.93,-7.23
-25-Mar-96,Nicolas Cage,32.2,Susan Sarandon,49.47,-17.27
-24-Mar-97,Geoffrey Rush,45.7,Frances McDormand,39.75,5.95
-23-Mar-98,Jack Nicholson,60.9,Helen Hunt,34.77,26.13
-21-Mar-99,Roberto Benigni,46.4,Gwyneth Paltrow,26.48,19.92
-26-Mar-00,Kevin Spacey,40.7,Hilary Swank,25.66,15.04
+25-Mar-91,Jeremy Irons,42.5,Kathy Bates,42.7,-0.2
+30-Mar-92,Anthony Hopkins,54.2,Jodie Foster,29.4,24.8
+29-Mar-93,Al Pacino,52.9,Emma Thompson,34.0,19.0
+21-Mar-94,Tom Hanks,37.7,Holly Hunter,36.0,1.7
+27-Mar-95,Tom Hanks,38.7,Jessica Lange,45.9,-7.2
+25-Mar-96,Nicolas Cage,32.2,Susan Sarandon,49.5,-17.3
+24-Mar-97,Geoffrey Rush,45.7,Frances McDormand,39.8,6.0
+23-Mar-98,Jack Nicholson,60.9,Helen Hunt,34.8,26.1
+21-Mar-99,Roberto Benigni,46.4,Gwyneth Paltrow,26.5,19.9
+26-Mar-00,Kevin Spacey,40.7,Hilary Swank,25.7,15.0
 25-Mar-01,Russell Crowe,37,Julia Roberts,33.4,3.6
-24-Mar-02,Denzel Washington,47.2,Halle Berry,35.61,11.59
-23-Mar-03,Adrien Brody,29.9,Nicole Kidman,35.75,-5.85
-29-Feb-04,Sean Penn,43.5,Charlize Theron,28.56,14.94
-27-Feb-05,Jamie Foxx,37.2,Hilary Swank,30.58,6.62
-5-Mar-06,Philip Seymour Hoffman,38.6,Reese Witherspoon,29.95,8.65
-25-Feb-07,Forest Whitaker,45.6,Helen Mirren,61.58,-15.98
+24-Mar-02,Denzel Washington,47.2,Halle Berry,35.6,11.6
+23-Mar-03,Adrien Brody,29.9,Nicole Kidman,35.8,-5.9
+29-Feb-04,Sean Penn,43.5,Charlize Theron,28.6,14.9
+27-Feb-05,Jamie Foxx,37.2,Hilary Swank,30.6,6.6
+5-Mar-06,Philip Seymour Hoffman,38.6,Reese Witherspoon,30.0,8.7
+25-Feb-07,Forest Whitaker,45.6,Helen Mirren,61.6,-16.0
 24-Feb-08,Daniel Day-Lewis,50.8,Marion Cotillard,32.4,18.4
-22-Feb-09,Sean Penn,48.5,Kate Winslet,33.38,15.12
-7-Mar-10,Jeff Bridges,60.3,Sandra Bullock,45.61,14.69
-27-Feb-11,Colin Firth,50.5,Natalie Portman,29.72,20.78
-26-Feb-12,Jean Dujardin,39.7,Meryl Streep,62.68,-22.98
-24-Feb-13,Daniel Day-Lewis,55.8,Jennifer Lawrence,22.53,33.27
+22-Feb-09,Sean Penn,48.5,Kate Winslet,33.4,15.1
+7-Mar-10,Jeff Bridges,60.3,Sandra Bullock,45.6,14.7
+27-Feb-11,Colin Firth,50.5,Natalie Portman,29.7,20.8
+26-Feb-12,Jean Dujardin,39.7,Meryl Streep,62.7,-23.0
+24-Feb-13,Daniel Day-Lewis,55.8,Jennifer Lawrence,22.5,33.3
 2-Mar-14,Matthew McConaughey,44.3,Cate Blanchett,44.8,-0.5
-22-Feb-15,Eddie Redmayne,33.1,Julianne Moore,54.22,-21.12
-28-Feb-16,Leonardo DiCaprio,41.3,Brie Larson,26.41,14.89
-26-Feb-17,Casey Affleck,41.5,Emma Stone,28.31,13.19
-4-Mar-18,Gary Oldman,60,Frances McDormand,60.69,-0.69
-24-Feb-19,Rami Malek,37.8,Olivia Colman,45.07,-7.27
-9-Feb-20,Joaquin Phoenix,45.3,Renee Zellweger,50.79,-5.49
-25-Apr-21,Anthony Hopkins,83.3,Frances McDormand,63.84,19.46
+22-Feb-15,Eddie Redmayne,33.1,Julianne Moore,54.2,-21.1
+28-Feb-16,Leonardo DiCaprio,41.3,Brie Larson,26.4,14.9
+26-Feb-17,Casey Affleck,41.5,Emma Stone,28.3,13.2
+4-Mar-18,Gary Oldman,60,Frances McDormand,60.7,-0.7
+24-Feb-19,Rami Malek,37.8,Olivia Colman,45.1,-7.3
+9-Feb-20,Joaquin Phoenix,45.3,Renee Zellweger,50.8,-5.5
+25-Apr-21,Anthony Hopkins,83.3,Frances McDormand,63.8,19.5
+27-Mar-22,Will Smith,53.5,Jessica Chastain,45.0,8.5
