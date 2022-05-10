@@ -284,9 +284,14 @@ blockquote {
 <pre class="r"><code>stress &lt;- read.csv(&quot;stress.csv&quot;)</code></pre>
 <p>Click on the stress data frame in the Environment tab to get a look at how the data has been formatted. Having the data in this long form (as opposed to having separate columns for each of the three groups) makes it much easier to use R commands to run ANOVA and visualize the data.</p>
 </div>
+<div id="load-the-tidyverse" class="section level2">
+<h2>Load the tidyverse</h2>
+<p>The code below makes use of packages in the tidyverse, so be sure to load it into your session:</p>
+<pre><code>library(tidyverse)</code></pre>
+</div>
 <div id="side-by-side-boxplots" class="section level2">
 <h2>Side-by-side Boxplots</h2>
-<p>First, load the tidyverse by running <code>library(tidyverse)</code> so that we may use <code>ggplot</code>. The following code makes boxplots of the heart rates for each of the three treatments, and colors them by treatment too. Feel free to add axis labels and plot title</p>
+<p>The following code makes boxplots of the heart rates for each of the three treatments, and colors them by treatment too. Feel free to add axis labels and plot title</p>
 <pre class="r"><code>ggplot(stress,aes(y=heart.rate,x=treatment))+
   geom_boxplot(aes(fill=treatment),show.legend=FALSE)+
   ggtitle(&quot;Plot title would go here&quot;)</code></pre>
