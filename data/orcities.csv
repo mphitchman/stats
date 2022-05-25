@@ -1,0 +1,374 @@
+rank,city,population,lead.digit
+1,Portland,645291,6
+2,Salem,169259,1
+3,Eugene,168302,1
+4,Gresham,110494,1
+5,Hillsboro,106543,1
+6,Beaverton,97861,9
+7,Bend,93917,9
+8,Medford,81145,8
+9,Springfield,62077,6
+10,Corvallis,58028,5
+11,Aloha,54287,5
+12,Albany,53521,5
+13,Tigard,53312,5
+14,Lake Oswego,39127,3
+15,Keizer,38980,3
+16,Grants Pass,37545,3
+17,Oregon City,36492,3
+18,McMinnville,34010,3
+19,Redmond,30167,3
+20,Tualatin,27527,2
+21,West Linn,26656,2
+22,Bethany,26501,2
+23,Woodburn,25738,2
+24,Forest Grove,24457,2
+25,Wilsonville,24073,2
+26,Newberg,23396,2
+27,Roseburg,23083,2
+28,Hayesville,21979,2
+29,Klamath Falls,21335,2
+30,Ashland,21056,2
+31,Milwaukie,21009,2
+32,Happy Valley,20971,2
+33,Sherwood,19625,1
+34,Altamont,19341,1
+35,Central Point,18376,1
+36,Oak Grove,17872,1
+37,Canby,17695,1
+38,Cedar Mill,17659,1
+39,Hermiston,17423,1
+40,Lebanon,16870,1
+41,Pendleton,16733,1
+42,Troutdale,16466,1
+43,Four Corners,16399,1
+44,Coos Bay,16229,1
+45,Dallas,16168,1
+46,The Dalles,15448,1
+47,Oatfield,14060,1
+48,St. Helens,13559,1
+49,La Grande,13310,1
+50,Cornelius,12638,1
+51,Oak Hills,12308,1
+52,Gladstone,12170,1
+53,Damascus,11161,1
+54,Sandy,11070,1
+55,Ontario,10966,1
+56,Newport,10559,1
+57,Monmouth,10282,1
+58,Silverton,10242,1
+59,Cottage Grove,10182,1
+60,Prineville,10035,1
+61,Bull Mountain,10005,1
+62,Rockcreek,9893,9
+63,White City,9890,9
+64,Independence,9842,9
+65,Astoria,9836,9
+66,Baker City,9752,9
+67,North Bend,9652,9
+68,Sweet Home,9619,9
+69,Fairview,9363,9
+70,Molalla,9155,9
+71,Eagle Point,9154,9
+72,Florence,8921,8
+73,Cedar Hills,8912,8
+74,West Haven-Sylvan,8888,8
+75,Lincoln City,8826,8
+76,Stayton,8130,8
+77,Sutherlin,8033,8
+78,Jennings Lodge,7988,7
+79,Green,7985,7
+80,Hood River,7715,7
+81,Scappoose,7270,7
+82,Umatilla,7162,7
+83,Milton-Freewater,7037,7
+84,Garden Home-Whitford,7006,7
+85,West Slope,6913,6
+86,Madras,6777,6
+87,Seaside,6737,6
+88,Talent,6503,6
+89,Brookings,6431,6
+90,Raleigh Hills,6146,6
+91,Sheridan,6122,6
+92,Junction City,6053,6
+93,Deschutes River Woods,6044,6
+94,Warrenton,5549,5
+95,Winston,5416,5
+96,Creswell,5356,5
+97,Tillamook,5231,5
+98,Roseburg North,5059,5
+99,Veneta,4953,4
+100,Philomath,4929,4
+101,Phoenix,4582,4
+102,Mount Hood Village,4445,4
+103,King City,4309,4
+104,Tri-City,4150,4
+105,Lafayette,4149,4
+106,Aumsville,4099,4
+107,Reedsport,4082,4
+108,Beavercreek,4075,4
+109,Wood Village,4057,4
+110,Crooked River Ranch,4026,4
+111,Coquille,3894,3
+112,Metzger,3886,3
+113,Harrisburg,3799,3
+114,Toledo,3579,3
+115,Mount Angel,3542,3
+116,Hubbard,3475,3
+117,Boardman,3439,3
+118,Myrtle Creek,3428,3
+119,Estacada,3426,3
+120,Oakridge,3303,3
+121,Jefferson,3301,3
+122,Dundee,3234,3
+123,Warm Springs,3213,3
+124,Three Rivers,3212,3
+125,Nyssa,3163,3
+126,Bandon,3100,3
+127,Shady Cove,3080,3
+128,Redwood,2970,2
+129,North Plains,2942,2
+130,Jacksonville,2884,2
+131,Eagle Crest,2839,2
+132,Sublimity,2810,2
+133,Burns,2740,2
+134,Stanfield,2722,2
+135,Gervais,2713,2
+136,Dayton,2668,2
+137,Sisters,2643,2
+138,Lakeview,2638,2
+139,Myrtle Point,2517,2
+140,Bunker Hill,2501,2
+141,Turner,2494,2
+142,Cave Junction,2479,2
+143,Willamina,2450,2
+144,Gold Beach,2418,2
+145,Rogue River,2410,2
+146,Odell,2380,2
+147,La Pine,2343,2
+148,Mulino,2334,2
+149,John Day,2244,2
+150,Union,2180,2
+151,Carlton,2180,2
+152,Rainier,2113,2
+153,Vale,2079,2
+154,Lincoln Beach,2072,2
+155,Waldport,2055,2
+156,Irrigon,2053,2
+157,Enterprise,2033,2
+158,Millersburg,1998,1
+159,Harbor,1958,1
+160,Chenoweth,1956,1
+161,Warren,1943,1
+162,Durham,1941,1
+163,Merlin,1922,1
+164,Culver,1914,1
+165,Columbia City,1882,1
+166,Barview,1879,1
+167,Brownsville,1871,1
+168,Vernonia,1856,1
+169,Mill City,1839,1
+170,Canyonville,1826,1
+171,Banks,1812,1
+172,Depoe Bay,1805,1
+173,Lakeside,1765,1
+174,Stafford,1733,1
+175,Bay City,1675,1
+176,Terrebonne,1658,1
+177,Amity,1650,1
+178,Clatskanie,1646,1
+179,Gearhart,1645,1
+180,Grand Ronde,1604,1
+181,New Hope,1593,1
+182,Cannon Beach,1491,1
+183,Elgin,1448,1
+184,Gold Hill,1437,1
+185,Tangent,1414,1
+186,Hines,1392,1
+187,Williams,1390,1
+188,Glide,1366,1
+189,Yamhill,1346,1
+190,Pilot Rock,1322,1
+191,Falls City,1300,1
+192,Sunriver,1294,1
+193,Cascade Locks,1285,1
+194,Yoncalla,1261,1
+195,Riddle,1252,1
+196,Athena,1246,1
+197,Dunes City,1237,1
+198,Lowell,1196,1
+199,Rose Lodge,1169,1
+200,Rockaway Beach,1166,1
+201,Siletz,1144,1
+202,Donald,1128,1
+203,Adair Village,1119,1
+204,Heppner,1110,1
+205,Pacific City,1076,1
+206,Lyons,1059,1
+207,Aurora,1045,1
+208,Powers,1030,1
+209,Island City,1022,1
+210,Coburg,1011,1
+211,Halsey,1009,1
+212,Maywood Park,995,9
+213,Joseph,989,9
+214,Ruch,986,9
+215,Lookingglass,985,9
+216,South Lebanon,970,9
+217,Metolius,955,9
+218,Chiloquin,954,9
+219,Port Orford,954,9
+220,Scio,927,9
+221,Bayside Gardens,907,9
+222,Malin,899,8
+223,Oakland,885,8
+224,Mission,850,8
+225,Drain,847,8
+226,Weston,823,8
+227,Wallowa,797,7
+228,Garibaldi,797,7
+229,Merrill,784,7
+230,Netarts,778,7
+231,Tetherow,757,7
+232,Glasgow,738,7
+233,Echo,735,7
+234,Prairie City,735,7
+235,Crabtree,712,7
+236,Canyon City,702,7
+237,Glendale,702,7
+238,Condon,659,6
+239,Cove,653,6
+240,Melrose,649,6
+241,Monroe,640,6
+242,O'Brien,636,6
+243,Foots Creek,621,6
+244,Selma,591,5
+245,Arlington,591,5
+246,Gardiner,586,5
+247,Kerby,578,5
+248,Dufur,572,5
+249,Dillard,568,5
+250,Mount Vernon,565,5
+251,North Powder,558,5
+252,Yachats,553,5
+253,Trail,552,5
+254,Oceanside,546,5
+255,Rivergrove,536,5
+256,Tumalo,535,5
+257,Marion,534,5
+258,Labish Village,518,5
+259,Gates,517,5
+260,Johnson City,514,5
+261,Gaston,510,5
+262,Maupin,508,5
+263,Adams,494,4
+264,Brooks,492,4
+265,Pine Hollow,488,4
+266,Lacomb,481,4
+267,St. Paul,480,4
+268,Prospect,476,4
+269,Takilma,466,4
+270,Bonanza,464,4
+271,Mosier,455,4
+272,Wimer,452,4
+273,Wasco,440,4
+274,Mount Hood,414,4
+275,Crawfordsville,409,4
+276,Huntington,407,4
+277,Holley,402,4
+278,Gopher Flats,395,3
+279,Shedd,394,3
+280,"Manzanita, Fossil",393,3
+281,Fossil,393,3
+282,Scotts Mills,393,3
+283,Sodaville,386,3
+284,Paisley,385,3
+285,Tutuilla,382,3
+286,Ione,372,3
+287,Seventh Mountain,371,3
+288,Butte Falls,366,3
+289,Westport,364,3
+290,Umapine,361,3
+291,Wheeler,357,3
+292,Nehalem,355,3
+293,Moro,353,3
+294,Jeffers Gardens,348,3
+295,Fair Oaks,342,3
+296,Winchester Bay,337,3
+297,Imbler,337,3
+298,Butteville,337,3
+299,Parkdale,324,3
+300,Nesika Beach,315,3
+301,Halfway,314,3
+302,Idaville,312,3
+303,Lostine,307,3
+304,Richland,303,3
+305,Westfir,296,2
+306,Annex,274,2
+307,Ukiah,267,2
+308,Waterloo,267,2
+309,Haines,265,2
+310,Days Creek,264,2
+311,Seneca,262,2
+312,Rowena,258,2
+313,Peoria,237,2
+314,Spray,234,2
+315,Alsea,234,2
+316,Mehama,224,2
+317,Camp Sherman,215,2
+318,Black Butte Ranch,206,2
+319,Summit,204,2
+320,Adrian,198,1
+321,Alpine,183,1
+322,Hebo,182,1
+323,Sumpter,181,1
+324,Tygh Valley,180,1
+325,Grass Valley,179,1
+326,Cloverdale,177,1
+327,Government Camp,176,1
+328,Elkton,174,1
+329,Rufus,173,1
+330,Summerville,170,1
+331,Neahkahnie,170,1
+332,Riverside,165,1
+333,Neskowin,164,1
+334,Idanha,162,1
+335,Long Creek,148,1
+336,Jordan Valley,147,1
+337,Deer Island,147,1
+338,Lexington,146,1
+339,Barlow,143,1
+340,Mitchell,142,1
+341,Harper,135,1
+342,Kirkpatrick,135,1
+343,Langlois,135,1
+344,Kings Valley,132,1
+345,Pistol River,126,1
+346,Helix,121,1
+347,Cascadia,117,1
+348,Dayville,113,1
+349,Crane,107,1
+350,West Scio,105,1
+351,Silver Lake,104,1
+352,Beaver,103,1
+353,Pine Grove,99,9
+354,Plush,95,9
+355,Fort Hill,89,8
+356,Prescott,88,8
+357,Monument,86,8
+358,Detroit,83,8
+359,Antelope,82,8
+360,New Pine Creek,82,8
+361,Cape Meares,80,8
+362,Wamic,74,7
+363,Brogan,51,5
+364,Unity,48,4
+365,Cayuse,45,4
+366,Pronghorn,44,4
+367,Juntura,26,2
+368,Wallowa Lake,24,2
+369,Blodgett,23,2
+370,Granite,19,1
+371,Bellfountain,16,1
+372,Shaniko,9,9
+373,Lonerock,8,8

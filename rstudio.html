@@ -332,8 +332,35 @@ div.tocify {
 <li>
   <a href="data.html">Data</a>
 </li>
-<li>
-  <a href="rstudio.html">RStudio</a>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    RStudio
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="rstudio.html">Installation and Orientation</a>
+    </li>
+    <li>
+      <a href="basicstats.html">Data and Descriptive Statistics</a>
+    </li>
+    <li>
+      <a href="dataviz.html">Data Visualization</a>
+    </li>
+    <li>
+      <a href="datamanip.html">Data Manipulation</a>
+    </li>
+    <li>
+      <a href="regression.html">Linear Regression</a>
+    </li>
+    <li>
+      <a href="inference.html">Inference</a>
+    </li>
+    <li>
+      <a href="references.html">Other Resources</a>
+    </li>
+  </ul>
 </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -484,14 +511,13 @@ The workspace browser pane appears in the upper right. This pane has several tab
 </div>
 <div id="read-csv-files-from-the-web" class="section level2">
 <h2>7. Read csv files from the web</h2>
-<p>To import a .csv file directly from the web into RStudio we use the following command:</p>
-<p><code>read.csv("web address")</code></p>
+<p>To import a .csv file directly from the web into RStudio we use the <code>read.csv()</code> command. Inside the parentheses, type in quotes the web address.</p>
 <p>For instance, to import the governors data file from our resource page, and give it the name <code>gov</code>, we enter the following at the console prompt in RStudio (you can copy and paste!):</p>
 <pre><code>gov = read.csv(&quot;https://mphitchman.com/stats/data/governors.csv&quot;)</code></pre>
 </div>
 <div id="packages" class="section level2">
 <h2>8. Packages</h2>
-<p>RStudio comes with many built-in functions, but packages provide are bundles of extra functions we might want to use. Here is a link to a very nice <a href="https://moderndive.netlify.app/1-getting-started.html#packages">introduction to packages</a> in <em>ModernDive</em>. I recommend you read all of Section 1.3 in this link.</p>
+<p>RStudio comes with many built-in commands, but packages provide bundles of additional commands that can make our R life easier. Here is a link to a very nice <a href="https://moderndive.netlify.app/1-getting-started.html#packages">introduction to packages</a> in <em>ModernDive</em>. I recommend you read all of Section 1.3 in this link.</p>
 <p>You can install a package from the console prompt by running:</p>
 <pre><code>install.packages(&quot;package name&quot;)</code></pre>
 <p>You can also install a package by following these steps:</p>
@@ -501,43 +527,22 @@ The workspace browser pane appears in the upper right. This pane has several tab
 <li>Enter the name(s) of the package(s) in the window that pops up</li>
 <li>Click <strong>install</strong></li>
 </ol>
-<p>Once a package is installed in your copy of RStudio, you can load it into a current session with the <code>library()</code> command. For instance, the ggplot2 package, used for data visualization, can be loaded into a session by executing this command:</p>
-<pre><code>library(&quot;ggplot2&quot;)</code></pre>
-<p>If you get an error when you run this command, it means the ggplot2 package hasn’t been installed.</p>
+<p>Once a package is installed in your copy of RStudio, you can load it into a current session with the <code>library()</code> command. For instance, the tidyverse package, which we make extensive use of in this class, can be loaded into a session by executing this command:</p>
+<pre><code>library(tidyverse)</code></pre>
+<p>If you get an error when you run this command, it means the tidyverse package hasn’t been installed on your machine.</p>
 <blockquote>
-<p>Note: You only need to <strong>install</strong> the packages once, but you will need to <strong>load</strong> the packages each time you use RStudio.</p>
+<p>Note: You only need to <strong>install</strong> the packages once, but you will need to <strong>load</strong> the packages each time you open the RStudio program.</p>
 </blockquote>
-<p>Commonly used packages worth installing on your machine:</p>
+<p>I recommend installing three packages for this course:</p>
 <ol style="list-style-type: decimal">
-<li>ggplot2 (for making nice plots)</li>
-<li>dplyr (for managing data frames)</li>
+<li>tidyverse ((An opinionated collection of R packages, per <a href="https://www.tidyverse.org/">tidyverse.org</a>). Included in the tidyverse collection are ggplot2 (for making nice plots) and dplyr (for managing data frames)</li>
 <li>knitr (for compiling markdown files)</li>
-<li>tidyverse (An opinionated collection of R packages, per <a href="https://www.tidyverse.org/">tidyverse.org</a>)</li>
 <li>openintro (for data sets that appear in our text!)</li>
 </ol>
 </div>
-<div id="some-rstudio-tutorials" class="section level2">
-<h2>9 Some RStudio tutorials</h2>
-<p>Tutorials made for this class:</p>
-<ul>
-<li><a href="Rlabs/getting-started.html">Reading Data and Descriptic Statistics</a></li>
-<li><a href="Rlabs/tutorial-ggplot.html">Using ggplot for sharp looking graphics</a></li>
-<li><a href="Rlabs/tutorial-regression-planets.html">Linear Regression</a></li>
-</ul>
-<p>Note: A wealth of examples is at your fingertips via Google. If you want to know how to do something in RStudio, like a histogram or a scatter plot, or a five number summary, or… whatever… you’ll find answers quickly via Google.</p>
-</div>
-<div id="r-markdown" class="section level2">
-<h2>10. R Markdown</h2>
-<p>Reports and papers can be written using R Markdown, including your term project. R Markdown files allow you to knit together text, mathematics formatting, R code, and images into a fine looking report.</p>
-<p>Here is a nice website with <a href="https://rmarkdown.rstudio.com/authoring_basics.html">R Markdown Basics</a>, that demonstrates how to format text (e.g., bold, italics), make lists, make tables, insert images, insert web links, and other sorts of things in a markdown file.</p>
-</div>
-<div id="references" class="section level2">
-<h2>11 References</h2>
-<ol style="list-style-type: decimal">
-<li><p><a href="https://moderndive.netlify.app/"><em>ModernDive</em></a></p></li>
-<li><p><a href="https://nulib.github.io/kuyper-stat202/index.html#working-efficiently-with-rstudio">Setting up R and R Studio efficiently</a></p></li>
-<li><p><a href="https://rmarkdown.rstudio.com/authoring_basics.html">R Markdown Basics</a></p></li>
-</ol>
+<div id="doing-statistics-in-rstudio" class="section level2">
+<h2>9. Doing Statistics in RStudio</h2>
+<p>Get started here with <a href="basicstats.hmlt">entering and analyzing data</a></p>
 <!-- Default Statcounter code for math 140 resources pages-->
 <script type="text/javascript">
 var sc_project=12608389;

@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>MATH 140: Data Visualization with ggplot</title>
+
+<script src="site_libs/header-attrs-2.10/header-attrs.js"></script>
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+<style type="text/css">
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #adb5bd;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script type="text/javascript">
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.tab('show');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">MATH 140</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">Home</a>
+</li>
+<li>
+  <a href="slides.html">Slides</a>
+</li>
+<li>
+  <a href="activities.html">Activities</a>
+</li>
+<li>
+  <a href="data.html">Data</a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    RStudio
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="rstudio.html">Installation and Orientation</a>
+    </li>
+    <li>
+      <a href="basicstats.html">Data and Descriptive Statistics</a>
+    </li>
+    <li>
+      <a href="dataviz.html">Data Visualization</a>
+    </li>
+    <li>
+      <a href="datamanip.html">Data Manipulation</a>
+    </li>
+    <li>
+      <a href="regression.html">Linear Regression</a>
+    </li>
+    <li>
+      <a href="inference.html">Inference</a>
+    </li>
+    <li>
+      <a href="references.html">Other Resources</a>
+    </li>
+  </ul>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+  <a href="mailto:&lt;mhitchm@linfield.edu&gt;">
+    <span class="fa fa-envelope fa-lg"></span>
+     
+  </a>
+</li>
+<li>
+  <a href="http://github.com/mphitchman/stats">
+    <span class="fa fa-github fa-lg"></span>
+     
+  </a>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div id="header">
+
+
+
+<h1 class="title toc-ignore">MATH 140: Data Visualization with ggplot</h1>
+
+</div>
+
+
+<p>We can produce graphics in base R, as demonstrated in the <a href="basicstats.html#Basic_data_visualization">data and descriptive statistics page</a>.</p>
+<p>We can also produce superb graphics using the powerful package <em>ggplot2</em>.</p>
+<p>In this tutorial we focus on producing three types of graphics with ggplot2: histograms, scatter plots, and box plots.</p>
+<p><strong>I encourage you to replicate all the graphs in this tutorial in your own RStudio session.</strong></p>
+<p>The <em>ggplot2</em> package is part of the <em>tidyverse</em> package, so begin your session by loading the tidyverse. Recall, do do this, run the line</p>
+<pre><code>library(tidyverse)</code></pre>
+<p>With the tidyverse loaded, you are ready to use the ggplot commands for generating plots.</p>
+<p>All the plots in this tutorial use the <strong>earthquakes</strong> data set that comes with the <code>openintro</code> package from our text. This data frame contains information about all major 20th century earthquakes.</p>
+<p>If you have installed the <code>openintro</code> package, and loaded it into your session, run this line</p>
+<pre class="r"><code>df &lt;- earthquakes</code></pre>
+<p>Alternatively, you can load the data set into your session directly from its url:</p>
+<pre class="r"><code>df &lt;- read.csv(&quot;https://www.openintro.org/data/csv/earthquakes.csv&quot;)</code></pre>
+<p>Let’s check the first few rows</p>
+<pre class="r"><code>head(df,3)</code></pre>
+<pre><code>## # A tibble: 3 × 7
+##    year month      day richter area                        region    deaths
+##   &lt;dbl&gt; &lt;chr&gt;    &lt;dbl&gt;   &lt;dbl&gt; &lt;chr&gt;                       &lt;chr&gt;      &lt;dbl&gt;
+## 1  1902 April       19     7.5 Quezaltenango and San Marco Guatemala   2000
+## 2  1902 December    16     6.4 Uzbekistan                  Russia      4700
+## 3  1903 April       28     7   Malazgirt                   Turkey      3500</code></pre>
+<p><strong>Note</strong> Plotting data with ggplot requires the data to be within a data frame. ggplot will not work on a vector.</p>
+<blockquote>
+<p>The key to using ggplot: Begin with the <code>ggplot()</code>, and follow that with <em>layers</em> describing the plot(s) and features of the plot(s).</p>
+</blockquote>
+<p><strong>Example 1</strong>: A histogram of all magnitudes (on the <code>richter</code> scale):</p>
+<pre class="r"><code>ggplot(data=df)+
+  geom_histogram(aes(x=richter),col=&quot;white&quot;,fill=&quot;steelblue&quot;,bins=10) +
+  ggtitle(&quot;20th century Earthquakes&quot;) +
+  xlab(&quot;Magnitutde on the Richter scale&quot;)</code></pre>
+<p><img src="dataviz_files/figure-html/unnamed-chunk-4-1.png" width="576" /></p>
+<p><strong>Notes on code</strong>:</p>
+<ol style="list-style-type: decimal">
+<li>The first line says we’re going to make a ggplot using the <code>df</code> data frame. Three layers follow this initial line</li>
+<li>The first layer specifies that we plot a histogram of the variable <code>richter</code>, and adds color to the bars, along with how many bins to make.</li>
+<li>The second layer provides a plot title</li>
+<li>The third layer provides an x-axis label.</li>
+</ol>
+<p><strong>Remarks</strong>:</p>
+<ol style="list-style-type: decimal">
+<li><p>We specify variables involved in a plot within the <code>aes()</code> command, <code>aes</code> being short for <em>aesthetic</em>. The dots and lines in plots have certain locations, colors, shapes, and sizes. In ggplot, these features are called <em>aesthetics</em>.</p></li>
+<li><p>Add that <code>+</code> sign at the end of a line if you plan to add another layer.</p></li>
+</ol>
+<div id="histograms-with-ggplot" class="section level1">
+<h1>Histograms with ggplot</h1>
+<blockquote>
+<p>Key layer: Use <code>geom_histogram()</code>, and specify x inside <code>aes()</code>.</p>
+</blockquote>
+<div id="basic-histogram" class="section level2">
+<h2>Basic Histogram</h2>
+<pre class="r"><code>ggplot(data = df) +
+  geom_histogram(aes(x=richter))</code></pre>
+<p><img src="dataviz_files/figure-html/unnamed-chunk-5-1.png" width="480" /></p>
+</div>
+<div id="add-color-and-axis-labels" class="section level2">
+<h2>Add color and axis labels</h2>
+<pre class="r"><code>ggplot(data = df) +
+  geom_histogram(aes(x=richter),bins = 20,col=&quot;blue&quot;,fill=&quot;yellow&quot;) + 
+  ggtitle(&quot;20th century Earthquakes&quot;) +
+  xlab(&quot;Magnitude on the Ricther scale&quot;)</code></pre>
+<p><img src="dataviz_files/figure-html/unnamed-chunk-6-1.png" width="480" /></p>
+<p>The <code>col</code> option colors the boundary of each bar, the <code>fill</code> option colors the interior of each bar. If we want to change the y-axis label, we use the code <code>ylab("enter new label here inside quotes")</code>.</p>
+</div>
+<div id="specify-the-bins" class="section level2">
+<h2>Specify the bins</h2>
+<p>Specifying the bins for a histogram is good practice. You can either specify the bin widths with the <code>binwidth</code> option inside the <code>geom_histogram()</code> command, or you can specify the total number of bins with the <code>bins</code> option.</p>
+<div id="using-binwidth-option" class="section level4">
+<h4>Using <code>binwidth</code> option</h4>
+<p>In the following graph, each bin has width 0.4.</p>
+<pre class="r"><code>ggplot(data = df) +
+  geom_histogram(aes(x=richter),col=&quot;white&quot;,binwidth = 0.4)</code></pre>
+<p><img src="dataviz_files/figure-html/unnamed-chunk-7-1.png" width="480" /></p>
+</div>
+<div id="using-the-bins-option" class="section level4">
+<h4>Using the <code>bins</code> option</h4>
+<p>In the following plot we create 16 equal width bins</p>
+<pre class="r"><code>ggplot(data = df) +
+  geom_histogram(aes(x=richter),col=&quot;white&quot;,bins = 16)</code></pre>
+<p><img src="dataviz_files/figure-html/unnamed-chunk-8-1.png" width="480" /></p>
+</div>
+</div>
+<div id="change-the-theme" class="section level2">
+<h2>Change the theme</h2>
+<p>If you’re not a fan of the gray plot background, you can change the theme. Here are two other options:</p>
+<pre class="r"><code>ggplot(data=df)+
+  geom_histogram(aes(x=richter),col=&quot;white&quot;,fill=&quot;steelblue&quot;,bins=10) +
+  ggtitle(&quot;20th century Earthquakes&quot;) +
+  xlab(&quot;Magnitutde on the Richter scale&quot;)+
+  theme_classic()</code></pre>
+<p><img src="dataviz_files/figure-html/unnamed-chunk-9-1.png" width="480" /></p>
+<pre class="r"><code>ggplot(data=df)+
+  geom_histogram(aes(x=richter),col=&quot;white&quot;,fill=&quot;steelblue&quot;,bins=10) +
+  ggtitle(&quot;20th century Earthquakes&quot;) +
+  xlab(&quot;Magnitutde on the Richter scale&quot;) + 
+  theme_bw()</code></pre>
+<p><img src="dataviz_files/figure-html/unnamed-chunk-10-1.png" width="480" /></p>
+</div>
+<div id="bonus-round---density-plot" class="section level2">
+<h2>Bonus Round - Density Plot</h2>
+<p>Instead of a histogram of counts, we can produce a histogram of relative frequencies by adding the option <code>aes(y = ..density..)</code> as below. This will produce a histogram that records the proportion of the values falling in each bin, not the total counts.</p>
+<pre class="r"><code>ggplot(df) + 
+  geom_histogram(aes(x=richter,y = ..density..), bins=16, col=&quot;white&quot;, fill=&quot;dodgerblue&quot;,alpha = 0.4)</code></pre>
+<p><img src="dataviz_files/figure-html/unnamed-chunk-11-1.png" width="480" /></p>
+<p><strong>Note</strong>: The <code>alpha</code> option refers to the opacity of the fill color. Values of alpha range from 0 to 1, with lower values corresponding to more transparent colors.</p>
+<pre class="r"><code>ggplot(df) + 
+  geom_density(aes(x=richter)) + 
+  geom_vline(aes(xintercept=mean(richter)),
+            color=&quot;blue&quot;, linetype=&quot;dashed&quot;, size=1)</code></pre>
+<p><img src="dataviz_files/figure-html/unnamed-chunk-12-1.png" width="480" /></p>
+<p>The <code>geom_density()</code> function gives an idealized density plot rather than a histogram.</p>
+<p>The <code>geom_vline()</code> option places a vertical line in the graph, for which we’ve specified these options: the color is blue, it is dashed, and it hits the x-axis at the mean value of the <code>richter</code> variable.</p>
+</div>
+</div>
+<div id="scatter-plots-with-ggplot" class="section level1">
+<h1>Scatter Plots with ggplot</h1>
+<blockquote>
+<p>Key layer: Use the <code>geom_point()</code> plot type command, and specify x and y inside <code>aes()</code>.</p>
+</blockquote>
+<div id="basic-scatter-plot" class="section level2">
+<h2>Basic scatter plot</h2>
+<p>Although there is likely no association, we can plot earthquake magnitude against the day of the month on which it occurred.</p>
+<pre class="r"><code>ggplot(data = df) +
+  geom_point(aes(x=richter,y=day))</code></pre>
+<p><img src="dataviz_files/figure-html/unnamed-chunk-13-1.png" width="480" /></p>
+</div>
+<div id="add-color-and-axis-labels-1" class="section level2">
+<h2>Add color and axis labels</h2>
+<pre class="r"><code>ggplot(data = df) +
+  geom_point(aes(x=richter,y=day))+
+  xlab(&quot;magnitude&quot;) + 
+  ylab(&quot;day of the month&quot;) +
+  ggtitle(&quot;Major 20th Century Earthquakes&quot;) + 
+  theme_bw()</code></pre>
+<p><img src="dataviz_files/figure-html/unnamed-chunk-14-1.png" width="480" /></p>
+<p><strong>Note</strong>: R has lots (657) of built-in color names. You can see the names in RStudio if you run <code>colors()</code>.</p>
+</div>
+<div id="add-color-by-category" class="section level2">
+<h2>Add color by category</h2>
+<p>We can color points in a scatter plot according to a categorical variable by specifying col = this variable <em>within</em> the aes() command.</p>
+<pre class="r"><code>ggplot(data = df) +
+  geom_point(aes(x=richter,y=day,col=month))+
+  xlab(&quot;magnitude&quot;) + 
+  ylab(&quot;day of the month&quot;) +
+  ggtitle(&quot;Major 20th Century Earthquakes&quot;)</code></pre>
+<p><img src="dataviz_files/figure-html/unnamed-chunk-15-1.png" width="480" /></p>
+</div>
+<div id="bonus-round---fit-the-line" class="section level2">
+<h2>Bonus Round - Fit the line</h2>
+<p>We have two ways to add a line to a plot in ggplot.</p>
+<div id="using-geom_abline" class="section level4">
+<h4>Using geom_abline()</h4>
+<p>The first approach is to add the line by specifying the slope and y-intercept using <code>geom_abline(slope = , intercept = )</code>.</p>
+<p>For instance, the slope and <span class="math inline">\(y\)</span>-intercept for the least squares line in the faithful example are 20.227 and -0.4561, respectively (found by using the code `lm(day~richter,df)).</p>
+<p>Knowing these values we can add a line to a scatter plot by having two layers in our plot: a <code>geom_point</code> layer which plots the points, and a <code>geom_abline</code> layer which plots the line.</p>
+<pre class="r"><code>ggplot(data = df) +
+  geom_point(aes(x=richter,y=day))+
+  geom_abline(slope = -0.4561, intercept = 20.227)</code></pre>
+<p><img src="dataviz_files/figure-html/unnamed-chunk-16-1.png" width="480" /></p>
+<p><strong>Note</strong>: We can change the size of the points and the size of the line, and we can change the linetype in the <code>geom_abline()</code> layer.</p>
+<pre class="r"><code>ggplot(data = df) +
+  geom_point(aes(x=richter,y=day),size=.5)+
+  geom_abline(slope = -0.4561, intercept = 20.227,col=&quot;blue&quot;,linetype=&quot;dashed&quot;,size=.7)</code></pre>
+<p><img src="dataviz_files/figure-html/unnamed-chunk-17-1.png" width="480" /></p>
+</div>
+<div id="using-geom_smooth" class="section level4">
+<h4>Using geom_smooth()</h4>
+<p>The second approach to fitting a line to data is to use the <code>geom_smooth()</code>command. Here’s how to add the least squares regression line to the scatter plot:</p>
+<pre class="r"><code>ggplot(data = df,aes(x=richter,y=day)) +
+  geom_point(size=.5)+
+  geom_smooth(method=&#39;lm&#39;, formula=y~x,se=FALSE) +
+  theme_bw()</code></pre>
+<p><img src="dataviz_files/figure-html/unnamed-chunk-18-1.png" width="480" /></p>
+<p><strong>Note</strong>: Now the x and y coordinates in the plot are specified within the <code>ggplot</code> command since both the <code>geom_smooth</code> and <code>geom_point</code> commands require them. Alternatively, we could have indicated them in both layers.</p>
+<!--
+The gray bar of varying thickness surrounding the least squares regression line is called a confidence band, something we won't consider here.  To remove it from a plot, add the `se = FALSE` option in your geom_smooth() line.  While we're at it, let's spruce up the look of it all:
+-->
+</div>
+</div>
+</div>
+<div id="box-plots-with-ggplot" class="section level1">
+<h1>Box plots with ggplot</h1>
+<div id="basic-box-plot" class="section level2">
+<h2>Basic box plot</h2>
+<blockquote>
+<p>Key layer: Use the <code>geom_boxplot()</code> plot type command.</p>
+</blockquote>
+<pre class="r"><code>ggplot(data = df) +
+  geom_boxplot(aes(x=richter)) +
+  xlab(&quot;magnitude&quot;) + 
+  ggtitle(&quot;Major 20th century earthquakes&quot;)</code></pre>
+<p><img src="dataviz_files/figure-html/unnamed-chunk-19-1.png" width="384" /></p>
+<p>This plot is unsatisfying because it gives values on the y-axis, which are meaningless in the context of this box plot. We can hide them:</p>
+<pre class="r"><code>ggplot(data = df) +
+  geom_boxplot(aes(x=richter)) +
+  xlab(&quot;Magnitude&quot;) + 
+  ggtitle(&quot;Major 20th century earthquakes&quot;)+
+  theme(axis.ticks.y = element_blank(),
+        axis.text.y = element_blank())</code></pre>
+<p><img src="dataviz_files/figure-html/unnamed-chunk-20-1.png" width="384" /></p>
+</div>
+<div id="add-points-to-box-plots" class="section level2">
+<h2>Add points to box plots</h2>
+<pre class="r"><code>ggplot(data = df) +
+  geom_boxplot(aes(x=richter)) +
+  geom_jitter(aes(x=richter,y=0),col=&quot;seagreen&quot;,height=.1,size=1.2)+
+  xlab(&quot;Magnitude&quot;) +
+  ylab(&quot;&quot;)</code></pre>
+<p><img src="dataviz_files/figure-html/unnamed-chunk-21-1.png" width="672" /></p>
+<pre class="r"><code>  ggtitle(&quot;Major 20th century earthquakes&quot;)+
+  theme(axis.ticks.y = element_blank(),
+        axis.text.y = element_blank())</code></pre>
+<pre><code>## NULL</code></pre>
+<p><strong>Note</strong>: The <code>geom_jitter()</code> command is the same as the <code>geom_point()</code> with the exception that the computer randomly moves the points a tiny bit(a little “jitter”). This feature is a nice way to see multiple points that might otherwise be stacked right on top of one another. The <code>height=.1</code> option means I’m letting the y-coordinate of the point (the height) vary plus or minus .1 units from its actual value.</p>
+</div>
+<div id="side-by-side-box-plots" class="section level2">
+<h2>Side-by-side box plots</h2>
+<p>The package <code>ggplot</code> makes nice side-by-side box plots quite easily.</p>
+<p>If <span class="math inline">\(x\)</span> is a numerical variable and <span class="math inline">\(y\)</span> is a categorical variable, we can determine side-by-side box plots for the values of <span class="math inline">\(x\)</span> grouped by the values of <span class="math inline">\(y\)</span>.</p>
+<pre class="r"><code>ggplot(data = df) +
+  geom_boxplot(aes(x=richter,y=month)) +
+  xlab(&quot;magnitude&quot;) + 
+  ylab(&quot;month&quot;) + 
+  ggtitle(&quot;Major 20th century earthquakes&quot;)</code></pre>
+<p><img src="dataviz_files/figure-html/unnamed-chunk-22-1.png" width="576" /></p>
+</div>
+<div id="coloring-box-plots" class="section level2">
+<h2>Coloring box plots</h2>
+<p>We can fill box plots with color according to a categorical variable using the <code>fill</code> option.</p>
+<pre class="r"><code>ggplot(data = df) +
+  geom_boxplot(aes(x=richter,y=month,fill=month)) +
+  xlab(&quot;magnitude&quot;) + 
+  ylab(&quot;month&quot;) + 
+  ggtitle(&quot;Major 20th century earthquakes&quot;)</code></pre>
+<p><img src="dataviz_files/figure-html/unnamed-chunk-23-1.png" width="576" /></p>
+</div>
+<div id="ordering-months-chronologically" class="section level2">
+<h2>Ordering months chronologically</h2>
+<p>The first line of code below redefines the month column in a way that specifies the months in the correct order.</p>
+<p>We can also <strong>hide the legend</strong> if it is superfluous, as it is in this case, by adding <code>show.legend = FALSE</code> inside the <code>geom_boxplot()</code> command.</p>
+<pre class="r"><code>df$month = factor(df$month, levels=month.name)
+ggplot(data = df) +
+  geom_boxplot(aes(x=richter,y=month,fill=month),show.legend=FALSE) +
+  xlab(&quot;magnitude&quot;) + 
+  ylab(&quot;month&quot;) + 
+  ggtitle(&quot;Major 20th century earthquakes&quot;)</code></pre>
+<p><img src="dataviz_files/figure-html/unnamed-chunk-24-1.png" width="576" /></p>
+</div>
+<div id="bonus-round---color-opacity" class="section level2">
+<h2>Bonus Round - Color Opacity</h2>
+<p>As mentioned in the histogram section, the <code>alpha</code> option adjusts the opacity of a color in a plot. The closer alpha is to 0, the more transparent it becomes, and the closer to 1, the more opaque it becomes. In the graph below the three box plots are all filled with the color “orange” but with different alpha values.</p>
+<pre class="r"><code>ggplot(data = df) +
+  geom_boxplot(aes(x=richter,y=month),fill=&quot;orange&quot;,alpha=seq(from=0,to=1,by=1/11),show.legend=FALSE) +
+  xlab(&quot;magnitude&quot;) + 
+  ylab(&quot;month&quot;) + 
+  ggtitle(&quot;Major 20th century earthquakes&quot;)</code></pre>
+<p><img src="dataviz_files/figure-html/unnamed-chunk-25-1.png" width="576" /></p>
+</div>
+</div>
+<div id="bonus-plot---bar-plot-for-categorical-variable" class="section level1">
+<h1>Bonus plot - bar plot for categorical variable</h1>
+<p>In Base R we can visualize the frequencies for a categorical variable as follows:</p>
+<pre class="r"><code>barplot(table(df$month))</code></pre>
+<p><img src="dataviz_files/figure-html/unnamed-chunk-26-1.png" width="576" /></p>
+<p>We can also create a bar plot with gglplot with the following code:</p>
+<pre class="r"><code>ggplot(data=df,aes(x=month))+
+  geom_bar(stat=&quot;count&quot;)</code></pre>
+<p><img src="dataviz_files/figure-html/unnamed-chunk-27-1.png" width="576" /></p>
+<p><strong>Note</strong> We can specify colors manually, change bar width, add labels, and even rotate them so they look less crowded. We can also specify the limits of the values on the y-axis to be, say, 0 to 20:</p>
+<pre class="r"><code>colors=c(&quot;wheat&quot;,&quot;steelblue&quot;,&quot;tomato&quot;,&quot;seagreen&quot;,&quot;yellow&quot;,&quot;purple&quot;,
+         &quot;pink&quot;,&quot;orange&quot;,&quot;brown3&quot;,&quot;dodgerblue&quot;,&quot;gray&quot;,&quot;darkblue&quot;)
+ggplot(data=df,aes(x=month))+
+  geom_bar(stat=&quot;count&quot;, width=.5, fill=colors)+
+  ylim(0,20)+
+  ggtitle(&quot;Number of earthquakes by month&quot;)+
+  theme(axis.text.x=element_text(angle=60,vjust=.5))</code></pre>
+<p><img src="dataviz_files/figure-html/unnamed-chunk-28-1.png" width="576" /></p>
+</div>
+<div id="cheat-sheet" class="section level1">
+<h1>Cheat Sheet</h1>
+<p>The following page has a downloadable <a href="https://www.rstudio.com/resources/cheatsheets/">ggplot cheat sheet (pdf)</a></p>
+</div>
+
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+<script>
+$(document).ready(function ()  {
+
+    // temporarily add toc-ignore selector to headers for the consistency with Pandoc
+    $('.unlisted.unnumbered').addClass('toc-ignore')
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
