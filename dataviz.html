@@ -390,9 +390,17 @@ div.tocify {
 </div>
 
 
+<div id="introduction" class="section level1">
+<h1>Introduction</h1>
 <p>We can produce graphics in base R, as demonstrated in the <a href="basicstats.html#Basic_data_visualization">data and descriptive statistics page</a>.</p>
 <p>We can also produce superb graphics using the powerful package <em>ggplot2</em>.</p>
-<p>In this tutorial we focus on producing three types of graphics with ggplot2: histograms, scatter plots, and box plots.</p>
+<p>In this tutorial we focus on producing these types of graphics with ggplot2:</p>
+<ol style="list-style-type: decimal">
+<li>histograms</li>
+<li>scatter plots</li>
+<li>box plots, and</li>
+<li>bar plots</li>
+</ol>
 <p><strong>I encourage you to replicate all the graphs in this tutorial in your own RStudio session.</strong></p>
 <p>The <em>ggplot2</em> package is part of the <em>tidyverse</em> package, so begin your session by loading the tidyverse. Recall, do do this, run the line</p>
 <pre><code>library(tidyverse)</code></pre>
@@ -402,7 +410,7 @@ div.tocify {
 <pre class="r"><code>df &lt;- earthquakes</code></pre>
 <p>Alternatively, you can load the data set into your session directly from its url:</p>
 <pre class="r"><code>df &lt;- read.csv(&quot;https://www.openintro.org/data/csv/earthquakes.csv&quot;)</code></pre>
-<p>Let’s check the first few rows</p>
+<p>Here are the first three rows of the data frame</p>
 <pre class="r"><code>head(df,3)</code></pre>
 <pre><code>## # A tibble: 3 × 7
 ##    year month      day richter area                        region    deaths
@@ -410,9 +418,8 @@ div.tocify {
 ## 1  1902 April       19     7.5 Quezaltenango and San Marco Guatemala   2000
 ## 2  1902 December    16     6.4 Uzbekistan                  Russia      4700
 ## 3  1903 April       28     7   Malazgirt                   Turkey      3500</code></pre>
-<p><strong>Note</strong> Plotting data with ggplot requires the data to be within a data frame. ggplot will not work on a vector.</p>
 <blockquote>
-<p>The key to using ggplot: Begin with the <code>ggplot()</code>, and follow that with <em>layers</em> describing the plot(s) and features of the plot(s).</p>
+<p>The key to using ggplot: A plot begins with the <code>ggplot()</code> command, which is followed by <strong>layers</strong> describing the plot(s) and features of the plot(s).</p>
 </blockquote>
 <p><strong>Example 1</strong>: A histogram of all magnitudes (on the <code>richter</code> scale):</p>
 <pre class="r"><code>ggplot(data=df)+
@@ -422,7 +429,8 @@ div.tocify {
 <p><img src="dataviz_files/figure-html/unnamed-chunk-4-1.png" width="576" /></p>
 <p><strong>Notes on code</strong>:</p>
 <ol style="list-style-type: decimal">
-<li>The first line says we’re going to make a ggplot using the <code>df</code> data frame. Three layers follow this initial line</li>
+<li>The first line says we’re going to make a ggplot using the <code>df</code> data frame. Three layers follow this initial line.<br />
+</li>
 <li>The first layer specifies that we plot a histogram of the variable <code>richter</code>, and adds color to the bars, along with how many bins to make.</li>
 <li>The second layer provides a plot title</li>
 <li>The third layer provides an x-axis label.</li>
@@ -431,7 +439,9 @@ div.tocify {
 <ol style="list-style-type: decimal">
 <li><p>We specify variables involved in a plot within the <code>aes()</code> command, <code>aes</code> being short for <em>aesthetic</em>. The dots and lines in plots have certain locations, colors, shapes, and sizes. In ggplot, these features are called <em>aesthetics</em>.</p></li>
 <li><p>Add that <code>+</code> sign at the end of a line if you plan to add another layer.</p></li>
+<li><p>Plotting data with ggplot requires the data to be within a data frame.</p></li>
 </ol>
+</div>
 <div id="histograms-with-ggplot" class="section level1">
 <h1>Histograms with ggplot</h1>
 <blockquote>
@@ -517,13 +527,18 @@ div.tocify {
 <div id="add-color-and-axis-labels-1" class="section level2">
 <h2>Add color and axis labels</h2>
 <pre class="r"><code>ggplot(data = df) +
-  geom_point(aes(x=richter,y=day))+
+  geom_point(aes(x=richter,y=day),col=&quot;blue&quot;)+
   xlab(&quot;magnitude&quot;) + 
   ylab(&quot;day of the month&quot;) +
   ggtitle(&quot;Major 20th Century Earthquakes&quot;) + 
   theme_bw()</code></pre>
 <p><img src="dataviz_files/figure-html/unnamed-chunk-14-1.png" width="480" /></p>
-<p><strong>Note</strong>: R has lots (657) of built-in color names. You can see the names in RStudio if you run <code>colors()</code>.</p>
+<p><strong>Notes</strong>:</p>
+<ol style="list-style-type: decimal">
+<li>In this plot we specify the color (“blue”) outside the aesthetic. This if fine if we want a single color for all the points. If we want the color of a point to depend on some categorical variable, as in the plot below, we specify that inside <code>aes()</code>.<br />
+</li>
+<li>R has lots (657) of built-in color names. You can see the names in RStudio if you run <code>colors()</code>.</li>
+</ol>
 </div>
 <div id="add-color-by-category" class="section level2">
 <h2>Add color by category</h2>
@@ -595,12 +610,11 @@ The gray bar of varying thickness surrounding the least squares regression line 
   geom_boxplot(aes(x=richter)) +
   geom_jitter(aes(x=richter,y=0),col=&quot;seagreen&quot;,height=.1,size=1.2)+
   xlab(&quot;Magnitude&quot;) +
-  ylab(&quot;&quot;)</code></pre>
-<p><img src="dataviz_files/figure-html/unnamed-chunk-21-1.png" width="672" /></p>
-<pre class="r"><code>  ggtitle(&quot;Major 20th century earthquakes&quot;)+
+  ylab(&quot;&quot;)+
+  ggtitle(&quot;Major 20th century earthquakes&quot;)+
   theme(axis.ticks.y = element_blank(),
         axis.text.y = element_blank())</code></pre>
-<pre><code>## NULL</code></pre>
+<p><img src="dataviz_files/figure-html/unnamed-chunk-21-1.png" width="672" /></p>
 <p><strong>Note</strong>: The <code>geom_jitter()</code> command is the same as the <code>geom_point()</code> with the exception that the computer randomly moves the points a tiny bit(a little “jitter”). This feature is a nice way to see multiple points that might otherwise be stacked right on top of one another. The <code>height=.1</code> option means I’m letting the y-coordinate of the point (the height) vary plus or minus .1 units from its actual value.</p>
 </div>
 <div id="side-by-side-box-plots" class="section level2">
@@ -647,8 +661,8 @@ ggplot(data = df) +
 <p><img src="dataviz_files/figure-html/unnamed-chunk-25-1.png" width="576" /></p>
 </div>
 </div>
-<div id="bonus-plot---bar-plot-for-categorical-variable" class="section level1">
-<h1>Bonus plot - bar plot for categorical variable</h1>
+<div id="bar-plot-for-a-categorical-variable" class="section level1">
+<h1>Bar plot for a categorical variable</h1>
 <p>In Base R we can visualize the frequencies for a categorical variable as follows:</p>
 <pre class="r"><code>barplot(table(df$month))</code></pre>
 <p><img src="dataviz_files/figure-html/unnamed-chunk-26-1.png" width="576" /></p>
@@ -656,7 +670,7 @@ ggplot(data = df) +
 <pre class="r"><code>ggplot(data=df,aes(x=month))+
   geom_bar(stat=&quot;count&quot;)</code></pre>
 <p><img src="dataviz_files/figure-html/unnamed-chunk-27-1.png" width="576" /></p>
-<p><strong>Note</strong> We can specify colors manually, change bar width, add labels, and even rotate them so they look less crowded. We can also specify the limits of the values on the y-axis to be, say, 0 to 20:</p>
+<p><strong>Note</strong>: We can specify colors manually, change bar width, add labels, and even rotate them so they look less crowded. We can also specify the limits of the values on the y-axis to be, say, 0 to 20:</p>
 <pre class="r"><code>colors=c(&quot;wheat&quot;,&quot;steelblue&quot;,&quot;tomato&quot;,&quot;seagreen&quot;,&quot;yellow&quot;,&quot;purple&quot;,
          &quot;pink&quot;,&quot;orange&quot;,&quot;brown3&quot;,&quot;dodgerblue&quot;,&quot;gray&quot;,&quot;darkblue&quot;)
 ggplot(data=df,aes(x=month))+
