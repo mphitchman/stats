@@ -424,7 +424,7 @@ div.tocify {
 <p><strong>Example 1</strong>: A histogram of all magnitudes (on the <code>richter</code> scale):</p>
 <pre class="r"><code>ggplot(data=df)+
   geom_histogram(aes(x=richter),col=&quot;white&quot;,fill=&quot;steelblue&quot;,bins=10) +
-  ggtitle(&quot;20th century Earthquakes&quot;) +
+  ggtitle(&quot;Major 20th century Earthquakes&quot;) +
   xlab(&quot;Magnitutde on the Richter scale&quot;)</code></pre>
 <p><img src="dataviz_files/figure-html/unnamed-chunk-4-1.png" width="576" /></p>
 <p><strong>Notes on code</strong>:</p>
@@ -457,10 +457,10 @@ div.tocify {
 <h2>Add color and axis labels</h2>
 <pre class="r"><code>ggplot(data = df) +
   geom_histogram(aes(x=richter),bins = 20,col=&quot;blue&quot;,fill=&quot;yellow&quot;) + 
-  ggtitle(&quot;20th century Earthquakes&quot;) +
+  ggtitle(&quot;Major 20th century Earthquakes&quot;) +
   xlab(&quot;Magnitude on the Ricther scale&quot;)</code></pre>
 <p><img src="dataviz_files/figure-html/unnamed-chunk-6-1.png" width="480" /></p>
-<p>The <code>col</code> option colors the boundary of each bar, the <code>fill</code> option colors the interior of each bar. If we want to change the y-axis label, we use the code <code>ylab("enter new label here inside quotes")</code>.</p>
+<p>The <code>col</code> option colors the boundary of each bar, the <code>fill</code> option colors the interior of each bar. If we want to change the y-axis label, we add the layer <code>ylab("enter new label here inside quotes")</code>.</p>
 </div>
 <div id="specify-the-bins" class="section level2">
 <h2>Specify the bins</h2>
@@ -480,36 +480,46 @@ div.tocify {
 <p><img src="dataviz_files/figure-html/unnamed-chunk-8-1.png" width="480" /></p>
 </div>
 </div>
+<div id="add-a-vertical-line-to-a-histogram" class="section level2">
+<h2>Add a vertical line to a histogram</h2>
+<p>We can add a vertical line layer to a plot with <code>geom_vline()</code>. For instance, we may want to clearly mark in a histogram the mean value of the data.</p>
+<pre class="r"><code>ggplot(data = df) +
+  geom_histogram(aes(x=richter),col=&quot;white&quot;,fill=&quot;dodgerblue&quot;,bins=16)+
+  geom_vline(aes(xintercept=mean(richter)),
+             color=&quot;blue&quot;, linetype=&quot;dashed&quot;, size=1)</code></pre>
+<p><img src="dataviz_files/figure-html/unnamed-chunk-9-1.png" width="480" /></p>
+<p>We can add non-vertical lines to plots as well, and go through this in the scatter plots section of this tutorial.</p>
+</div>
 <div id="change-the-theme" class="section level2">
 <h2>Change the theme</h2>
 <p>If you’re not a fan of the gray plot background, you can change the theme. Here are two other options:</p>
 <pre class="r"><code>ggplot(data=df)+
   geom_histogram(aes(x=richter),col=&quot;white&quot;,fill=&quot;steelblue&quot;,bins=10) +
-  ggtitle(&quot;20th century Earthquakes&quot;) +
+  ggtitle(&quot;Major 20th century Earthquakes&quot;) +
   xlab(&quot;Magnitutde on the Richter scale&quot;)+
   theme_classic()</code></pre>
-<p><img src="dataviz_files/figure-html/unnamed-chunk-9-1.png" width="480" /></p>
+<p><img src="dataviz_files/figure-html/unnamed-chunk-10-1.png" width="480" /></p>
 <pre class="r"><code>ggplot(data=df)+
   geom_histogram(aes(x=richter),col=&quot;white&quot;,fill=&quot;steelblue&quot;,bins=10) +
-  ggtitle(&quot;20th century Earthquakes&quot;) +
+  ggtitle(&quot;Major 20th century Earthquakes&quot;) +
   xlab(&quot;Magnitutde on the Richter scale&quot;) + 
   theme_bw()</code></pre>
-<p><img src="dataviz_files/figure-html/unnamed-chunk-10-1.png" width="480" /></p>
+<p><img src="dataviz_files/figure-html/unnamed-chunk-11-1.png" width="480" /></p>
 </div>
-<div id="bonus-round---density-plot" class="section level2">
-<h2>Bonus Round - Density Plot</h2>
+<div id="density-plots" class="section level2">
+<h2>Density Plots</h2>
 <p>Instead of a histogram of counts, we can produce a histogram of relative frequencies by adding the option <code>aes(y = ..density..)</code> as below. This will produce a histogram that records the proportion of the values falling in each bin, not the total counts.</p>
 <pre class="r"><code>ggplot(df) + 
   geom_histogram(aes(x=richter,y = ..density..), bins=16, col=&quot;white&quot;, fill=&quot;dodgerblue&quot;,alpha = 0.4)</code></pre>
-<p><img src="dataviz_files/figure-html/unnamed-chunk-11-1.png" width="480" /></p>
-<p><strong>Note</strong>: The <code>alpha</code> option refers to the opacity of the fill color. Values of alpha range from 0 to 1, with lower values corresponding to more transparent colors.</p>
-<pre class="r"><code>ggplot(df) + 
-  geom_density(aes(x=richter)) + 
-  geom_vline(aes(xintercept=mean(richter)),
-            color=&quot;blue&quot;, linetype=&quot;dashed&quot;, size=1)</code></pre>
 <p><img src="dataviz_files/figure-html/unnamed-chunk-12-1.png" width="480" /></p>
-<p>The <code>geom_density()</code> function gives an idealized density plot rather than a histogram.</p>
-<p>The <code>geom_vline()</code> option places a vertical line in the graph, for which we’ve specified these options: the color is blue, it is dashed, and it hits the x-axis at the mean value of the <code>richter</code> variable.</p>
+<p><strong>Note</strong>: The <code>alpha</code> option refers to the opacity of the fill color. Values of alpha range from 0 to 1, with lower values corresponding to more transparent colors.</p>
+</div>
+<div id="sketch-a-density-curve" class="section level2">
+<h2>Sketch a density curve</h2>
+<p>The <code>geom_density()</code> command gives an idealized density curve rather than a histogram.</p>
+<pre class="r"><code>ggplot(df) + 
+  geom_density(aes(x=richter))</code></pre>
+<p><img src="dataviz_files/figure-html/unnamed-chunk-13-1.png" width="480" /></p>
 </div>
 </div>
 <div id="scatter-plots-with-ggplot" class="section level1">
@@ -522,7 +532,7 @@ div.tocify {
 <p>Although there is likely no association, we can plot earthquake magnitude against the day of the month on which it occurred.</p>
 <pre class="r"><code>ggplot(data = df) +
   geom_point(aes(x=richter,y=day))</code></pre>
-<p><img src="dataviz_files/figure-html/unnamed-chunk-13-1.png" width="480" /></p>
+<p><img src="dataviz_files/figure-html/unnamed-chunk-14-1.png" width="480" /></p>
 </div>
 <div id="add-color-and-axis-labels-1" class="section level2">
 <h2>Add color and axis labels</h2>
@@ -532,7 +542,7 @@ div.tocify {
   ylab(&quot;day of the month&quot;) +
   ggtitle(&quot;Major 20th Century Earthquakes&quot;) + 
   theme_bw()</code></pre>
-<p><img src="dataviz_files/figure-html/unnamed-chunk-14-1.png" width="480" /></p>
+<p><img src="dataviz_files/figure-html/unnamed-chunk-15-1.png" width="480" /></p>
 <p><strong>Notes</strong>:</p>
 <ol style="list-style-type: decimal">
 <li>In this plot we specify the color (“blue”) outside the aesthetic. This if fine if we want a single color for all the points. If we want the color of a point to depend on some categorical variable, as in the plot below, we specify that inside <code>aes()</code>.<br />
@@ -548,7 +558,7 @@ div.tocify {
   xlab(&quot;magnitude&quot;) + 
   ylab(&quot;day of the month&quot;) +
   ggtitle(&quot;Major 20th Century Earthquakes&quot;)</code></pre>
-<p><img src="dataviz_files/figure-html/unnamed-chunk-15-1.png" width="480" /></p>
+<p><img src="dataviz_files/figure-html/unnamed-chunk-16-1.png" width="576" /></p>
 </div>
 <div id="bonus-round---fit-the-line" class="section level2">
 <h2>Bonus Round - Fit the line</h2>
@@ -561,12 +571,12 @@ div.tocify {
 <pre class="r"><code>ggplot(data = df) +
   geom_point(aes(x=richter,y=day))+
   geom_abline(slope = -0.4561, intercept = 20.227)</code></pre>
-<p><img src="dataviz_files/figure-html/unnamed-chunk-16-1.png" width="480" /></p>
+<p><img src="dataviz_files/figure-html/unnamed-chunk-17-1.png" width="480" /></p>
 <p><strong>Note</strong>: We can change the size of the points and the size of the line, and we can change the linetype in the <code>geom_abline()</code> layer.</p>
 <pre class="r"><code>ggplot(data = df) +
   geom_point(aes(x=richter,y=day),size=.5)+
   geom_abline(slope = -0.4561, intercept = 20.227,col=&quot;blue&quot;,linetype=&quot;dashed&quot;,size=.7)</code></pre>
-<p><img src="dataviz_files/figure-html/unnamed-chunk-17-1.png" width="480" /></p>
+<p><img src="dataviz_files/figure-html/unnamed-chunk-18-1.png" width="480" /></p>
 </div>
 <div id="using-geom_smooth" class="section level4">
 <h4>Using geom_smooth()</h4>
@@ -575,7 +585,7 @@ div.tocify {
   geom_point(size=.5)+
   geom_smooth(method=&#39;lm&#39;, formula=y~x,se=FALSE) +
   theme_bw()</code></pre>
-<p><img src="dataviz_files/figure-html/unnamed-chunk-18-1.png" width="480" /></p>
+<p><img src="dataviz_files/figure-html/unnamed-chunk-19-1.png" width="480" /></p>
 <p><strong>Note</strong>: Now the x and y coordinates in the plot are specified within the <code>ggplot</code> command since both the <code>geom_smooth</code> and <code>geom_point</code> commands require them. Alternatively, we could have indicated them in both layers.</p>
 <!--
 The gray bar of varying thickness surrounding the least squares regression line is called a confidence band, something we won't consider here.  To remove it from a plot, add the `se = FALSE` option in your geom_smooth() line.  While we're at it, let's spruce up the look of it all:
@@ -591,10 +601,10 @@ The gray bar of varying thickness surrounding the least squares regression line 
 <p>Key layer: Use the <code>geom_boxplot()</code> plot type command.</p>
 </blockquote>
 <pre class="r"><code>ggplot(data = df) +
-  geom_boxplot(aes(x=richter)) +
+  geom_boxplot(aes(x=richter),width=.2) +
   xlab(&quot;magnitude&quot;) + 
   ggtitle(&quot;Major 20th century earthquakes&quot;)</code></pre>
-<p><img src="dataviz_files/figure-html/unnamed-chunk-19-1.png" width="384" /></p>
+<p><img src="dataviz_files/figure-html/unnamed-chunk-20-1.png" width="384" /></p>
 <p>This plot is unsatisfying because it gives values on the y-axis, which are meaningless in the context of this box plot. We can hide them:</p>
 <pre class="r"><code>ggplot(data = df) +
   geom_boxplot(aes(x=richter)) +
@@ -602,7 +612,7 @@ The gray bar of varying thickness surrounding the least squares regression line 
   ggtitle(&quot;Major 20th century earthquakes&quot;)+
   theme(axis.ticks.y = element_blank(),
         axis.text.y = element_blank())</code></pre>
-<p><img src="dataviz_files/figure-html/unnamed-chunk-20-1.png" width="384" /></p>
+<p><img src="dataviz_files/figure-html/unnamed-chunk-21-1.png" width="384" /></p>
 </div>
 <div id="add-points-to-box-plots" class="section level2">
 <h2>Add points to box plots</h2>
@@ -614,7 +624,7 @@ The gray bar of varying thickness surrounding the least squares regression line 
   ggtitle(&quot;Major 20th century earthquakes&quot;)+
   theme(axis.ticks.y = element_blank(),
         axis.text.y = element_blank())</code></pre>
-<p><img src="dataviz_files/figure-html/unnamed-chunk-21-1.png" width="672" /></p>
+<p><img src="dataviz_files/figure-html/unnamed-chunk-22-1.png" width="672" /></p>
 <p><strong>Note</strong>: The <code>geom_jitter()</code> command is the same as the <code>geom_point()</code> with the exception that the computer randomly moves the points a tiny bit(a little “jitter”). This feature is a nice way to see multiple points that might otherwise be stacked right on top of one another. The <code>height=.1</code> option means I’m letting the y-coordinate of the point (the height) vary plus or minus .1 units from its actual value.</p>
 </div>
 <div id="side-by-side-box-plots" class="section level2">
@@ -626,7 +636,7 @@ The gray bar of varying thickness surrounding the least squares regression line 
   xlab(&quot;magnitude&quot;) + 
   ylab(&quot;month&quot;) + 
   ggtitle(&quot;Major 20th century earthquakes&quot;)</code></pre>
-<p><img src="dataviz_files/figure-html/unnamed-chunk-22-1.png" width="576" /></p>
+<p><img src="dataviz_files/figure-html/unnamed-chunk-23-1.png" width="576" /></p>
 </div>
 <div id="coloring-box-plots" class="section level2">
 <h2>Coloring box plots</h2>
@@ -636,7 +646,7 @@ The gray bar of varying thickness surrounding the least squares regression line 
   xlab(&quot;magnitude&quot;) + 
   ylab(&quot;month&quot;) + 
   ggtitle(&quot;Major 20th century earthquakes&quot;)</code></pre>
-<p><img src="dataviz_files/figure-html/unnamed-chunk-23-1.png" width="576" /></p>
+<p><img src="dataviz_files/figure-html/unnamed-chunk-24-1.png" width="576" /></p>
 </div>
 <div id="ordering-months-chronologically" class="section level2">
 <h2>Ordering months chronologically</h2>
@@ -648,7 +658,7 @@ ggplot(data = df) +
   xlab(&quot;magnitude&quot;) + 
   ylab(&quot;month&quot;) + 
   ggtitle(&quot;Major 20th century earthquakes&quot;)</code></pre>
-<p><img src="dataviz_files/figure-html/unnamed-chunk-24-1.png" width="576" /></p>
+<p><img src="dataviz_files/figure-html/unnamed-chunk-25-1.png" width="576" /></p>
 </div>
 <div id="bonus-round---color-opacity" class="section level2">
 <h2>Bonus Round - Color Opacity</h2>
@@ -658,18 +668,18 @@ ggplot(data = df) +
   xlab(&quot;magnitude&quot;) + 
   ylab(&quot;month&quot;) + 
   ggtitle(&quot;Major 20th century earthquakes&quot;)</code></pre>
-<p><img src="dataviz_files/figure-html/unnamed-chunk-25-1.png" width="576" /></p>
+<p><img src="dataviz_files/figure-html/unnamed-chunk-26-1.png" width="576" /></p>
 </div>
 </div>
 <div id="bar-plot-for-a-categorical-variable" class="section level1">
 <h1>Bar plot for a categorical variable</h1>
 <p>In Base R we can visualize the frequencies for a categorical variable as follows:</p>
 <pre class="r"><code>barplot(table(df$month))</code></pre>
-<p><img src="dataviz_files/figure-html/unnamed-chunk-26-1.png" width="576" /></p>
+<p><img src="dataviz_files/figure-html/unnamed-chunk-27-1.png" width="576" /></p>
 <p>We can also create a bar plot with gglplot with the following code:</p>
 <pre class="r"><code>ggplot(data=df,aes(x=month))+
   geom_bar(stat=&quot;count&quot;)</code></pre>
-<p><img src="dataviz_files/figure-html/unnamed-chunk-27-1.png" width="576" /></p>
+<p><img src="dataviz_files/figure-html/unnamed-chunk-28-1.png" width="576" /></p>
 <p><strong>Note</strong>: We can specify colors manually, change bar width, add labels, and even rotate them so they look less crowded. We can also specify the limits of the values on the y-axis to be, say, 0 to 20:</p>
 <pre class="r"><code>colors=c(&quot;wheat&quot;,&quot;steelblue&quot;,&quot;tomato&quot;,&quot;seagreen&quot;,&quot;yellow&quot;,&quot;purple&quot;,
          &quot;pink&quot;,&quot;orange&quot;,&quot;brown3&quot;,&quot;dodgerblue&quot;,&quot;gray&quot;,&quot;darkblue&quot;)
@@ -678,7 +688,7 @@ ggplot(data=df,aes(x=month))+
   ylim(0,20)+
   ggtitle(&quot;Number of earthquakes by month&quot;)+
   theme(axis.text.x=element_text(angle=60,vjust=.5))</code></pre>
-<p><img src="dataviz_files/figure-html/unnamed-chunk-28-1.png" width="576" /></p>
+<p><img src="dataviz_files/figure-html/unnamed-chunk-29-1.png" width="576" /></p>
 </div>
 <div id="cheat-sheet" class="section level1">
 <h1>Cheat Sheet</h1>
