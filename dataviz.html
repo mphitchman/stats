@@ -486,7 +486,7 @@ div.tocify {
 <pre class="r"><code>ggplot(data = df) +
   geom_histogram(aes(x=richter),col=&quot;white&quot;,fill=&quot;dodgerblue&quot;,bins=16)+
   geom_vline(aes(xintercept=mean(richter)),
-             color=&quot;blue&quot;, linetype=&quot;dashed&quot;, size=1)</code></pre>
+             color=&quot;brown&quot;, linetype=&quot;dashed&quot;, size=1)</code></pre>
 <p><img src="dataviz_files/figure-html/unnamed-chunk-9-1.png" width="480" /></p>
 <p>We can add non-vertical lines to plots as well, and go through this in the scatter plots section of this tutorial.</p>
 </div>
@@ -601,7 +601,7 @@ The gray bar of varying thickness surrounding the least squares regression line 
 <p>Key layer: Use the <code>geom_boxplot()</code> plot type command.</p>
 </blockquote>
 <pre class="r"><code>ggplot(data = df) +
-  geom_boxplot(aes(x=richter),width=.2) +
+  geom_boxplot(aes(x=richter)) +
   xlab(&quot;magnitude&quot;) + 
   ggtitle(&quot;Major 20th century earthquakes&quot;)</code></pre>
 <p><img src="dataviz_files/figure-html/unnamed-chunk-20-1.png" width="384" /></p>
