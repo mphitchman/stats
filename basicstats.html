@@ -13,8 +13,8 @@
 
 <title>MATH 140: Using RStudio</title>
 
-<script src="site_libs/header-attrs-2.10/header-attrs.js"></script>
-<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<script src="site_libs/header-attrs-2.14/header-attrs.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
@@ -62,6 +62,7 @@ if (window.hljs) {
 
 
 
+
 <link rel="stylesheet" href="style.css" type="text/css" />
 
 
@@ -86,6 +87,9 @@ button.code-folding-btn:focus {
 }
 summary {
   display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
 }
 pre code {
   padding: 0;
@@ -311,7 +315,7 @@ div.tocify {
 <div class="navbar navbar-default  navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -333,7 +337,7 @@ div.tocify {
   <a href="data.html">Data</a>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     RStudio
      
     <span class="caret"></span>
@@ -391,7 +395,8 @@ div.tocify {
 
 
 <p>Here we begin to use RStudio to load and analyze data sets.</p>
-<p><strong>I encourage you to reproduce all of the results on this page in your own RStudio session.</strong></p>
+<p><strong>I encourage you to reproduce all of the results on this page
+in your own RStudio session.</strong></p>
 <div id="data" class="section level1">
 <h1>Data</h1>
 <p>In MATH 140 we primarily use RStudio in five ways:</p>
@@ -400,21 +405,32 @@ div.tocify {
 <li>Data visualization</li>
 <li>Data manipulation</li>
 <li>Statistical inference on data</li>
-<li>Simulations to estimate the likelihood of obtaining data from a population with a known distribution.</li>
+<li>Simulations to estimate the likelihood of obtaining data from a
+population with a known distribution.</li>
 </ol>
-<p>In short, it’s all about studying data, so we start with how to enter data into Rstudio.</p>
+<p>In short, it’s all about studying data, so we start with how to enter
+data into Rstudio.</p>
 <p>We enter data in two ways: as a vector or as a data frame.</p>
 <div id="vectors" class="section level2">
 <h2>Vectors</h2>
-<p>A <strong>vector</strong> is an ordered list of values or characters.</p>
+<p>A <strong>vector</strong> is an ordered list of values or
+characters.</p>
 <blockquote>
 <p>Use the <code>c()</code> command to input a vector.</p>
 </blockquote>
-<p>Run this code in your session (feel free to copy, paste, and run):</p>
+<p>Run this code in your session (feel free to copy, paste, and
+run):</p>
 <pre class="r"><code>score = c(219, 223, 186, 256, 295, 211, 175, 318)</code></pre>
-<p>This line creates a vector of values we call <code>score</code>; <code>score</code> records my last eight game scores in Yahtzee. When you run this line in your own RStudio session, you will see the value <code>score</code> in your Environment tab. Check to see it’s there!</p>
-<p><strong>Note</strong>: The letter ‘c’ stands for combine, or concatenate, and the ‘c’ also reminds me to separate the entries in the <code>c()</code> command with commas.</p>
-<p>Having named the vector, we can refer to it by name when we want to analyze it. Here are a few commonly used commands applied to the vector <code>score</code>:</p>
+<p>This line creates a vector of values we call <code>score</code>;
+<code>score</code> records my last eight game scores in Yahtzee. When
+you run this line in your own RStudio session, you will see the value
+<code>score</code> in your Environment tab. Check to see it’s there!</p>
+<p><strong>Note</strong>: The letter ‘c’ stands for combine, or
+concatenate, and the ‘c’ also reminds me to separate the entries in the
+<code>c()</code> command with commas.</p>
+<p>Having named the vector, we can refer to it by name when we want to
+analyze it. Here are a few commonly used commands applied to the vector
+<code>score</code>:</p>
 <table>
 <thead>
 <tr class="header">
@@ -455,11 +471,16 @@ div.tocify {
 </div>
 <div id="data-frames" class="section level2">
 <h2>Data Frames</h2>
-<p>A data frame is essentially a collection of related vectors bound together as columns in a spreadsheet.</p>
+<p>A data frame is essentially a collection of related vectors bound
+together as columns in a spreadsheet.</p>
 <blockquote>
-<p>Use the <code>data.frame()</code> command to create a data frame. Inside the parentheses we list column vectors</p>
+<p>Use the <code>data.frame()</code> command to create a data frame.
+Inside the parentheses we list column vectors</p>
 </blockquote>
-<p><strong>Example 1</strong>: Here’s more information about those eight games of Yahtzee: whether I scored a Yahtzee (vector <code>yahtzee</code>), and my mood at the start of each game (vector <code>mood</code>):</p>
+<p><strong>Example 1</strong>: Here’s more information about those eight
+games of Yahtzee: whether I scored a Yahtzee (vector
+<code>yahtzee</code>), and my mood at the start of each game (vector
+<code>mood</code>):</p>
 <pre class="r"><code>yahtzee=c(&quot;no&quot;,&quot;no&quot;,&quot;no&quot;,&quot;no&quot;,&quot;yes&quot;,&quot;no&quot;,&quot;no&quot;,&quot;yes&quot;)
 mood=c(&quot;content&quot;,&quot;pensive&quot;,&quot;anxious&quot;,&quot;pensive&quot;,&quot;content&quot;,&quot;content&quot;,&quot;pensive&quot;,&quot;anxious&quot;)</code></pre>
 <p>Create a data frame:</p>
@@ -473,14 +494,28 @@ mood=c(&quot;content&quot;,&quot;pensive&quot;,&quot;anxious&quot;,&quot;pensive
 ## 6 content   211      no
 ## 7 pensive   175      no
 ## 8 anxious   318     yes</code></pre>
-<p>Each row gives three pieces of information about a single game, so we had better be sure that we’re consistent with the game order when we enter the three vectors.</p>
-<p><strong>Note</strong>: This data frame has two <strong>categorical variables</strong>: <code>mood</code> and <code>yahtzee</code> and one <strong>numerical variable</strong>: <code>score</code>. When entering categorical data in a vector, we use quotes around each entry. When entering numerical data we do not use quotes.</p>
-<p>The data frame <code>games</code> should appear in your Environment tab after running the lines above. My Environment tab looks like this:</p>
+<p>Each row gives three pieces of information about a single game, so we
+had better be sure that we’re consistent with the game order when we
+enter the three vectors.</p>
+<p><strong>Note</strong>: This data frame has two <strong>categorical
+variables</strong>: <code>mood</code> and <code>yahtzee</code> and one
+<strong>numerical variable</strong>: <code>score</code>. When entering
+categorical data in a vector, we use quotes around each entry. When
+entering numerical data we do not use quotes.</p>
+<p>The data frame <code>games</code> should appear in your Environment
+tab after running the lines above. My Environment tab looks like
+this:</p>
 <center>
 <img src="images/envtab.png" style="width:50.0%" />
 </center>
-<p>Notice that the environment tab indicates whether a vector is categorical (<code>chr</code>) or numerical (<code>num</code> or <code>int</code>).</p>
-<p><strong>Example 2</strong>: Below, we create three vectors, called <code>name</code>, <code>height</code>, and <code>age</code>. These vectors are linked in that each represents a piece of information about characters in Season 1 of <em>Stranger Things</em>. We then assemble these vectors in a <em>data frame</em> in the 4th line below.</p>
+<p>Notice that the environment tab indicates whether a vector is
+categorical (<code>chr</code>) or numerical (<code>num</code> or
+<code>int</code>).</p>
+<p><strong>Example 2</strong>: Below, we create three vectors, called
+<code>name</code>, <code>height</code>, and <code>age</code>. These
+vectors are linked in that each represents a piece of information about
+characters in Season 1 of <em>Stranger Things</em>. We then assemble
+these vectors in a <em>data frame</em> in the 4th line below.</p>
 <pre class="r"><code>name &lt;- c(&quot;Dustin&quot;,&quot;Will&quot;,&quot;Lucas&quot;,&quot;Eleven&quot;,&quot;Mike&quot;)
 height &lt;- c(61.3, 61.9, 63.8, 62.1, 64.3)
 age &lt;- c(12,12,13,11,13)
@@ -492,14 +527,27 @@ sthings &lt;- data.frame(name,height,age)</code></pre>
 ## 4 Eleven   62.1  11
 ## 5   Mike   64.3  13</code></pre>
 <p>Again, do this in your own session.</p>
-<p><strong>Note</strong>: A data frame, also called a <em>data matrix</em> is a two-dimensional array such as you would find in an Excel file or Google sheet. In the data frame <code>sthings</code>, each row is a <em>Stranger Things</em> character, and we’ve got three pieces of information about each: their name, height, and age. In general, the rows of a data matrix are called <em>observations</em>, and the columns give the <em>variables</em>.</p>
+<p><strong>Note</strong>: A data frame, also called a <em>data
+matrix</em> is a two-dimensional array such as you would find in an
+Excel file or Google sheet. In the data frame <code>sthings</code>, each
+row is a <em>Stranger Things</em> character, and we’ve got three pieces
+of information about each: their name, height, and age. In general, the
+rows of a data matrix are called <em>observations</em>, and the columns
+give the <em>variables</em>.</p>
 </div>
 <div id="import-data-files" class="section level2">
 <h2>Import data files</h2>
-<p>A common file type is the .csv file, which stands for <em>comma separated values</em>. With RStudio, such data files are at our fingertips! We can import a .csv file from the web using the <code>read.csv()</code> command. (We can also import other types of spreadsheets with other, similar commands.)</p>
-<p>The following code imports the file called softball.csv from our course resource page, and it names the data matrix <code>wildcats</code> in our RStudio session.</p>
+<p>A common file type is the .csv file, which stands for <em>comma
+separated values</em>. With RStudio, such data files are at our
+fingertips! We can import a .csv file from the web using the
+<code>read.csv()</code> command. (We can also import other types of
+spreadsheets with other, similar commands.)</p>
+<p>The following code imports the file called softball.csv from our
+course resource page, and it names the data matrix <code>wildcats</code>
+in our RStudio session.</p>
 <pre class="r"><code>wildcats &lt;- read.csv(&quot;https://www.mphitchman.com/stats/data/softball.csv&quot;)</code></pre>
-<p>What does the <code>wildcats</code> data set look like? Here’s a look at the first 5 rows:</p>
+<p>What does the <code>wildcats</code> data set look like? Here’s a look
+at the first 5 rows:</p>
 <pre class="r"><code>head(wildcats,5)</code></pre>
 <pre><code>##   Year           Coach  W  L T District NCAA
 ## 1 1999     Laura Kenow 20 17 0      3rd     
@@ -507,15 +555,27 @@ sthings &lt;- data.frame(name,height,age)</code></pre>
 ## 3 2001     Laura Kenow 24 17 0      2nd     
 ## 4 2002 Jackson Vaughan 21 17 0      3rd     
 ## 5 2003 Jackson Vaughan 27 11 0      2nd</code></pre>
-<p>In <code>wildcats</code> each row gives info about a season, and the variables include the year, the coach, wins, losses, and how well the team did in districts and nationals.</p>
-<p>Enter this line in your session and click on <code>wildcats</code> in your Environment tab. The data matrix will appear in the upper left pane of your session in spreadsheet form.</p>
+<p>In <code>wildcats</code> each row gives info about a season, and the
+variables include the year, the coach, wins, losses, and how well the
+team did in districts and nationals.</p>
+<p>Enter this line in your session and click on <code>wildcats</code> in
+your Environment tab. The data matrix will appear in the upper left pane
+of your session in spreadsheet form.</p>
 </div>
-<div id="accessing-column-vectors-in-data-frames" class="section level2">
+<div id="accessing-column-vectors-in-data-frames"
+class="section level2">
 <h2>Accessing column vectors in data frames</h2>
 <blockquote>
-<p>The general format for specifiying a particular column in a data frame is <code>dfname$colname</code>. For instance, <code>wildcats$W</code> will extract the <code>W</code> column of the <code>wildcats</code> data frame, and <code>games$score</code> will extract the <code>score</code> column of the <code>games</code> data frame.</p>
+<p>The general format for specifiying a particular column in a data
+frame is <code>dfname$colname</code>. For instance,
+<code>wildcats$W</code> will extract the <code>W</code> column of the
+<code>wildcats</code> data frame, and <code>games$score</code> will
+extract the <code>score</code> column of the <code>games</code> data
+frame.</p>
 </blockquote>
-<p>To find the average number of wins per season from 1999 to 2020, we can use the <code>mean()</code> command on the <code>W</code> column:</p>
+<p>To find the average number of wins per season from 1999 to 2020, we
+can use the <code>mean()</code> command on the <code>W</code>
+column:</p>
 <pre class="r"><code>mean(wildcats$W)</code></pre>
 <pre><code>## [1] 33.86364</code></pre>
 <p>The average number of losses per season?</p>
@@ -527,6 +587,10 @@ sthings &lt;- data.frame(name,height,age)</code></pre>
 <h1>Descriptive Statistics</h1>
 <p>Here are some common commands for describing data.</p>
 <table>
+<colgroup>
+<col width="14%" />
+<col width="85%" />
+</colgroup>
 <thead>
 <tr class="header">
 <th align="left">function</th>
@@ -536,7 +600,8 @@ sthings &lt;- data.frame(name,height,age)</code></pre>
 <tbody>
 <tr class="odd">
 <td align="left"><code>length()</code></td>
-<td align="left">returns the size of the data set entered in the parentheses</td>
+<td align="left">returns the size of the data set entered in the
+parentheses</td>
 </tr>
 <tr class="even">
 <td align="left"><code>mean()</code></td>
@@ -568,7 +633,8 @@ sthings &lt;- data.frame(name,height,age)</code></pre>
 </tr>
 <tr class="odd">
 <td align="left"><code>summary()</code></td>
-<td align="left">returns 6 statistics: min, Q1, median, mean, Q3, max</td>
+<td align="left">returns 6 statistics: min, Q1, median, mean, Q3,
+max</td>
 </tr>
 <tr class="even">
 <td align="left"><code>fivenum()</code></td>
@@ -576,20 +642,26 @@ sthings &lt;- data.frame(name,height,age)</code></pre>
 </tr>
 <tr class="odd">
 <td align="left"><code>table()</code></td>
-<td align="left">returns the frequency of each unique value of the data</td>
+<td align="left">returns the frequency of each unique value of the
+data</td>
 </tr>
 </tbody>
 </table>
-<p>We can apply these functions to a vector, whether it be a column in a data frame, or a stand-alone vector:</p>
+<p>We can apply these functions to a vector, whether it be a column in a
+data frame, or a stand-alone vector:</p>
 <pre class="r"><code>mean(c(4,5,8,5,4,3,6,7,3,8,9,12,11))</code></pre>
 <pre><code>## [1] 6.538462</code></pre>
 <pre class="r"><code>fivenum(wildcats$W)</code></pre>
 <pre><code>## [1] 12.0 27.0 36.5 39.0 51.0</code></pre>
-<p>The first result above gives the mean of the data just entered with the <code>c()</code> command. The second command gave the 5 number summary for Wildcat wins. A full 25% of the seasons over the 1999-2020 time period saw win totals of at least 39!</p>
+<p>The first result above gives the mean of the data just entered with
+the <code>c()</code> command. The second command gave the 5 number
+summary for Wildcat wins. A full 25% of the seasons over the 1999-2020
+time period saw win totals of at least 39!</p>
 <p>How many games did Linfield softball win between 1999 and 2020?</p>
 <pre class="r"><code>sum(wildcats$W)</code></pre>
 <pre><code>## [1] 745</code></pre>
-<p>Who has coached Linfield softball during this period, and how many seasons has each coach coached?</p>
+<p>Who has coached Linfield softball during this period, and how many
+seasons has each coach coached?</p>
 <pre class="r"><code>table(wildcats$Coach)</code></pre>
 <pre><code>## 
 ## Jackson Vaughan     Laura Kenow 
@@ -604,7 +676,8 @@ m[3] # returns the third element in the vector</code></pre>
 <p><strong>Extracting a particular entry in a data frame</strong></p>
 <pre class="r"><code>games[2,3] # returns the element in row 2, column 3 of the games data frame</code></pre>
 <pre><code>## [1] &quot;no&quot;</code></pre>
-<p><strong>Extracting the subset consisting of all games with score less than 200</strong></p>
+<p><strong>Extracting the subset consisting of all games with score less
+than 200</strong></p>
 <pre class="r"><code>subset(games, score &lt; 200)</code></pre>
 <pre><code>##      mood score yahtzee
 ## 3 anxious   186      no
@@ -617,9 +690,14 @@ m[3] # returns the third element in the vector</code></pre>
 ## 3 anxious   186      no
 ## 4 pensive   256      no
 ## 5 content   295     yes</code></pre>
-<p><strong>Note</strong>: The comma is necessary. In general, the values before the comma (2:5) specify the row numbers, and the values after the comma specify the column numbers. By leaving the column entry blank, R takes <em>all</em> the columns.</p>
+<p><strong>Note</strong>: The comma is necessary. In general, the values
+before the comma (2:5) specify the row numbers, and the values after the
+comma specify the column numbers. By leaving the column entry blank, R
+takes <em>all</em> the columns.</p>
 <p><strong>Restrict a data frame to a few columns</strong></p>
-<p>In the <code>wildcats</code> data frame, suppose we want to focus on wins and losses by season. We can create a new data frame from the old one that has just these columns:</p>
+<p>In the <code>wildcats</code> data frame, suppose we want to focus on
+wins and losses by season. We can create a new data frame from the old
+one that has just these columns:</p>
 <pre class="r"><code>catWL &lt;- wildcats[c(&quot;Year&quot;,&quot;W&quot;,&quot;L&quot;)] 
 head(catWL)</code></pre>
 <pre><code>##   Year  W  L
@@ -630,39 +708,55 @@ head(catWL)</code></pre>
 ## 5 2003 27 11
 ## 6 2004 37  9</code></pre>
 <p><strong>Adding a column to a data matrix</strong></p>
-<p>Suppose we want to add a column to the <code>wildcats</code> data frame that specifies the total number of games played, something we can calculate from existing columns (games played = wins+losses+ties). The following code creates the <code>GP</code> column and tells R how to build it:</p>
+<p>Suppose we want to add a column to the <code>wildcats</code> data
+frame that specifies the total number of games played, something we can
+calculate from existing columns (games played = wins+losses+ties). The
+following code creates the <code>GP</code> column and tells R how to
+build it:</p>
 <pre class="r"><code>wildcats$GP = wildcats$W+wildcats$L+wildcats$T</code></pre>
 <div id="math-with-vectors-and-r-commands" class="section level2">
 <h2>Math with vectors and R commands</h2>
-<p>We can compute the mean of a data set the old-fashioned way, adding up the values and dividing by the number of them:</p>
+<p>We can compute the mean of a data set the old-fashioned way, adding
+up the values and dividing by the number of them:</p>
 <pre class="r"><code>x = c(10,12,8,7,14,25,21)
 sum(x)/length(x)</code></pre>
 <pre><code>## [1] 13.85714</code></pre>
-<p>But, really, why would we, when we can use the <code>mean()</code> command, as we did previously? The point of this first example is to demonstrate that we can do <em>math</em> with these commands.</p>
-<p>Here’s another example. We can add a constant to a vector! What is the result?</p>
+<p>But, really, why would we, when we can use the <code>mean()</code>
+command, as we did previously? The point of this first example is to
+demonstrate that we can do <em>math</em> with these commands.</p>
+<p>Here’s another example. We can add a constant to a vector! What is
+the result?</p>
 <pre class="r"><code>x=10 
 moe = 3 #moe is short for &quot;margin of error&quot;
 x+c(-moe,moe)</code></pre>
 <pre><code>## [1]  7 13</code></pre>
-<p>The result is a vector of length 2 whose values are <code>x</code>-<code>moe</code> and <code>x</code>+<code>moe</code>.</p>
+<p>The result is a vector of length 2 whose values are
+<code>x</code>-<code>moe</code> and <code>x</code>+<code>moe</code>.</p>
 </div>
 </div>
 <div id="basic-data-visualization" class="section level1">
 <h1>Basic Data visualization</h1>
-<p>R has some built-in graphing functions for histograms, boxplots, scatter plots, etc.</p>
+<p>R has some built-in graphing functions for histograms, boxplots,
+scatter plots, etc.</p>
 <div id="histograms" class="section level2">
 <h2>Histograms</h2>
 <p>A basic histogram - of Linfield wins by season.</p>
 <pre class="r"><code>hist(wildcats$W)</code></pre>
 <p><img src="basicstats_files/figure-html/unnamed-chunk-24-1.png" width="480" /></p>
-<p>When presenting data, we have a responsibility to make it readable, so we can do better than the above. We can supply titles, axis labels, annotations, colors, etc to help us visualize the data in a more useful way.</p>
+<p>When presenting data, we have a responsibility to make it readable,
+so we can do better than the above. We can supply titles, axis labels,
+annotations, colors, etc to help us visualize the data in a more useful
+way.</p>
 <pre class="r"><code>hist(wildcats$W,
      main=&quot;Wins by Season, Linfield Softball 1999-2020&quot;,
      xlab=&quot;Wins&quot;,
      col=&quot;purple&quot;
      )</code></pre>
 <p><img src="basicstats_files/figure-html/unnamed-chunk-25-1.png" width="480" /></p>
-<p>We can specify the bins in a histogram with the <code>breaks</code> option. If we have too few bins for the data, we lose all sorts of information, and if we have too many bins we might have a harder time seeing the shape of the distribution through the noise.</p>
+<p>We can specify the bins in a histogram with the <code>breaks</code>
+option. If we have too few bins for the data, we lose all sorts of
+information, and if we have too many bins we might have a harder time
+seeing the shape of the distribution through the noise.</p>
 <pre class="r"><code>hist(wildcats$W,
      main=&quot;Wins by Season - not enough bins!&quot;,
      breaks=1,
@@ -689,17 +783,21 @@ hist(wildcats$W,
 </div>
 <div id="boxplots" class="section level2">
 <h2>Boxplots</h2>
-<p>A boxplot is a visual representation of the 5 number summary, and R loves to make them!</p>
+<p>A boxplot is a visual representation of the 5 number summary, and R
+loves to make them!</p>
 <p>Here’s a boxplot in its simplest form.</p>
 <pre class="r"><code>boxplot(wildcats$W)</code></pre>
 <p><img src="basicstats_files/figure-html/unnamed-chunk-28-1.png" width="384" /></p>
-<p>By default a boxplot is presented vertically, but we can ask for a horizontal boxplot as well, and we can add a splash of color.</p>
+<p>By default a boxplot is presented vertically, but we can ask for a
+horizontal boxplot as well, and we can add a splash of color.</p>
 <pre class="r"><code>boxplot(wildcats$W,
         main=&quot;Linfield softball wins by season (1999-2020)&quot;,
         col=&quot;red&quot;,
         horizontal = TRUE)</code></pre>
 <p><img src="basicstats_files/figure-html/unnamed-chunk-29-1.png" width="480" /></p>
-<p>AND, we can add text to a graph. For instance, we can add the values in the 5 number summary to the boxplot, which gives more precision to the plot!</p>
+<p>AND, we can add text to a graph. For instance, we can add the values
+in the 5 number summary to the boxplot, which gives more precision to
+the plot!</p>
 <pre class="r"><code>boxplot(wildcats$W,
         main=&quot;Linfield softball wins by season (1999-2020)&quot;,
         col=&quot;red&quot;,
@@ -710,21 +808,29 @@ text(x=c(v[1:5]),y=c(rep(1.3,5)),c(v[1:5]),cex=.7,col=&quot;purple&quot;)</code>
 </div>
 <div id="barplots" class="section level2">
 <h2>Barplots</h2>
-<p>For categorical variables it can be useful to make barplots of counts. If we’re considering a vector of values we use the <code>barplot()</code> command in conjuntion with the <code>table()</code> command</p>
+<p>For categorical variables it can be useful to make barplots of
+counts. If we’re considering a vector of values we use the
+<code>barplot()</code> command in conjuntion with the
+<code>table()</code> command</p>
 <pre class="r"><code>barplot(table(wildcats$District),main=&quot;Finish at Districts&quot;,ylab=&quot;count&quot;,xlab=&quot;finish&quot;,col=&quot;#F5D7FB&quot;)</code></pre>
 <p><img src="basicstats_files/figure-html/unnamed-chunk-31-1.png" width="576" /></p>
 </div>
 <div id="choosing-plot-colors" class="section level2">
 <h2>Choosing plot colors</h2>
-<p>If you type <code>colors()</code> at the console prompt you can get a list of names of built in colors.</p>
-<p>You can find color codes on-line too, such as the one I used in the barplot code. Here’s one site for this: <a href="https://htmlcolorcodes.com/">https://htmlcolorcodes.com/</a>.</p>
+<p>If you type <code>colors()</code> at the console prompt you can get a
+list of names of built in colors.</p>
+<p>You can find color codes on-line too, such as the one I used in the
+barplot code. Here’s one site for this: <a
+href="https://htmlcolorcodes.com/">https://htmlcolorcodes.com/</a>.</p>
 </div>
 <div id="scatter-plots" class="section level2">
 <h2>Scatter plots</h2>
-<p>A scatter plot is a useful way to visualize the relationship between two numeric variables. Here’s a scatter plot in its simplest form.</p>
+<p>A scatter plot is a useful way to visualize the relationship between
+two numeric variables. Here’s a scatter plot in its simplest form.</p>
 <pre class="r"><code>plot(x=wildcats$Year,y=wildcats$W)</code></pre>
 <p><img src="basicstats_files/figure-html/unnamed-chunk-32-1.png" width="480" /></p>
-<p>We can change the shape of points in a plot with the <code>pch</code> option, and change the scale of the y-axis.</p>
+<p>We can change the shape of points in a plot with the <code>pch</code>
+option, and change the scale of the y-axis.</p>
 <pre class="r"><code>plot(x=wildcats$Year,y=wildcats$W,
      main=&quot;Linfield softball wins by season&quot;, 
      ylab=&quot;wins&quot;,
@@ -733,9 +839,11 @@ text(x=c(v[1:5]),y=c(rep(1.3,5)),c(v[1:5]),cex=.7,col=&quot;purple&quot;)</code>
      ylim=c(0,60),
      pch=16)</code></pre>
 <p><img src="basicstats_files/figure-html/unnamed-chunk-33-1.png" width="480" /></p>
-<p>A quick guide to pch and point shapes (google “R pch options” for more details):</p>
+<p>A quick guide to pch and point shapes (google “R pch options” for
+more details):</p>
 <p><img src="images/pch.png" style="width:30.0%" /></p>
-<p>As an aside, we can create a line plot as well, by specifying <code>type="l"</code> (that’s an ‘l’ for ‘line’, not the number 1).</p>
+<p>As an aside, we can create a line plot as well, by specifying
+<code>type="l"</code> (that’s an ‘l’ for ‘line’, not the number 1).</p>
 <pre class="r"><code>plot(x=wildcats$Year,y=wildcats$W,
      main=&quot;Linfield softball wins by season&quot;, 
      ylab=&quot;wins&quot;,
@@ -760,16 +868,26 @@ text(x=c(v[1:5]),y=c(rep(1.3,5)),c(v[1:5]),cex=.7,col=&quot;purple&quot;)</code>
 </div>
 <div id="built-in-data-frames" class="section level1">
 <h1>Built-in Data Frames</h1>
-<p>Generally we will work with a data frame that we load from a spreadsheet, such as <code>wildcats</code>, or a data frame that we input via vectors, such as <code>sthings</code>, but R also comes with several built-in data frames. Try entering the following word in the console prompt.</p>
+<p>Generally we will work with a data frame that we load from a
+spreadsheet, such as <code>wildcats</code>, or a data frame that we
+input via vectors, such as <code>sthings</code>, but R also comes with
+several built-in data frames. Try entering the following word in the
+console prompt.</p>
 <pre><code>faithful</code></pre>
-<p>What you see displayed is a data frame! What on earth do these numbers mean?</p>
+<p>What you see displayed is a data frame! What on earth do these
+numbers mean?</p>
 <p><strong>A little EDA (exploratory data analysis)</strong></p>
 <pre class="r"><code>dim(faithful) # This gives the number of rows (observations) and columns (variables)</code></pre>
 <pre><code>## [1] 272   2</code></pre>
-<p>This data frame has 272 rows and 2 columns. What are the variables?</p>
+<p>This data frame has 272 rows and 2 columns. What are the
+variables?</p>
 <pre class="r"><code>colnames(faithful) </code></pre>
 <pre><code>## [1] &quot;eruptions&quot; &quot;waiting&quot;</code></pre>
-<p>The help tab (in the lower right pane) gives information about this data frame (type <em>faithful</em> in the search box.) The variable <code>eruptions</code> gives the duration of an eruption (in minutes), and the second variable, <code>waiting</code>, gives the waiting period (in minutes) until the next eruption.</p>
+<p>The help tab (in the lower right pane) gives information about this
+data frame (type <em>faithful</em> in the search box.) The variable
+<code>eruptions</code> gives the duration of an eruption (in minutes),
+and the second variable, <code>waiting</code>, gives the waiting period
+(in minutes) until the next eruption.</p>
 <p>We can ask for the first 7 rows of the data frame:</p>
 <pre class="r"><code>head(faithful,7) </code></pre>
 <pre><code>##   eruptions waiting
@@ -783,14 +901,16 @@ text(x=c(v[1:5]),y=c(rep(1.3,5)),c(v[1:5]),cex=.7,col=&quot;purple&quot;)</code>
 <p>We can extract the entry in row 6, column 2:</p>
 <pre class="r"><code>faithful[6,2]</code></pre>
 <pre><code>## [1] 55</code></pre>
-<p>We can extract the subset of all the data for which the eruption value is at least 5 minutes:</p>
+<p>We can extract the subset of all the data for which the eruption
+value is at least 5 minutes:</p>
 <pre class="r"><code>subset(faithful, eruptions &gt;= 5)</code></pre>
 <pre><code>##     eruptions waiting
 ## 76      5.067      76
 ## 149     5.100      96
 ## 151     5.033      77
 ## 168     5.000      88</code></pre>
-<p>Only 4 of the 272 eruptions exceeded 5 minutes. Seems like a rare event!</p>
+<p>Only 4 of the 272 eruptions exceeded 5 minutes. Seems like a rare
+event!</p>
 <p>A histogram of eruption duration:</p>
 <pre class="r"><code>hist(faithful$eruptions,
      main=&quot;Old Faithful Eruptions&quot;,
@@ -808,23 +928,28 @@ text(x=c(v[1:5]),y=c(rep(1.3,5)),c(v[1:5]),cex=.7,col=&quot;purple&quot;)</code>
      ) </code></pre>
 <p><img src="basicstats_files/figure-html/unnamed-chunk-42-1.png" width="480" /></p>
 <blockquote>
-<p>You can type <code>data()</code> at the console prompt in RStudio to see a list of all the data sets that come with the program.</p>
+<p>You can type <code>data()</code> at the console prompt in RStudio to
+see a list of all the data sets that come with the program.</p>
 </blockquote>
 </div>
 <div id="test-your-understanding" class="section level1">
 <h1>Test your understanding</h1>
-<p>Below are some bits of code. Can you see what information it will provide?</p>
+<p>Below are some bits of code. Can you see what information it will
+provide?</p>
 <ol style="list-style-type: decimal">
 <li>What does this code give?</li>
 </ol>
 <pre class="r"><code>max(wildcats$W)</code></pre>
 <pre><code>## [1] 51</code></pre>
-<p>ANSWER: The maximum number of wins in a season over this time period.</p>
-<p>Which season was this? Here’s a way to extract the entire season (row) from the data matrix that had the most number of wins:</p>
+<p>ANSWER: The maximum number of wins in a season over this time
+period.</p>
+<p>Which season was this? Here’s a way to extract the entire season
+(row) from the data matrix that had the most number of wins:</p>
 <pre class="r"><code>subset(wildcats, W == max(wildcats$W))</code></pre>
 <pre><code>##    Year           Coach  W L T District NCAA GP
 ## 13 2011 Jackson Vaughan 51 3 0      1st  1st 54</code></pre>
-<p>Wow! What a season! 51 wins against just 3 losses, first in districts, and National Champions!</p>
+<p>Wow! What a season! 51 wins against just 3 losses, first in
+districts, and National Champions!</p>
 <ol start="2" style="list-style-type: decimal">
 <li>What does this code give?</li>
 </ol>
@@ -832,29 +957,37 @@ text(x=c(v[1:5]),y=c(rep(1.3,5)),c(v[1:5]),cex=.7,col=&quot;purple&quot;)</code>
 <pre><code>## 
 ##     1st 2nd 3rd 4th 
 ##  16   2   2   1   1</code></pre>
-<p>ANSWER: It specifies how well Linfield did at Nationals over the 1999-2020 time period. Linfield has finished 1st twice, 2nd twice, 3rd once, and 4th once. The other 16 seasons they didn’t finish as high as 4th.</p>
+<p>ANSWER: It specifies how well Linfield did at Nationals over the
+1999-2020 time period. Linfield has finished 1st twice, 2nd twice, 3rd
+once, and 4th once. The other 16 seasons they didn’t finish as high as
+4th.</p>
 <ol start="3" style="list-style-type: decimal">
 <li>What does this code give?</li>
 </ol>
 <pre class="r"><code>sum(wildcats$District==&quot;1st&quot;)</code></pre>
 <pre><code>## [1] 12</code></pre>
-<p>ANSWER: It gives the number of seasons from 1999-2020 in which Linfield was 1st in the District</p>
+<p>ANSWER: It gives the number of seasons from 1999-2020 in which
+Linfield was 1st in the District</p>
 <ol start="4" style="list-style-type: decimal">
 <li>What does this code give?</li>
 </ol>
 <pre class="r"><code>wildcats$winpct &lt;- wildcats$W/wildcats$GP</code></pre>
-<p>ANSWER: It creates a new column in the data frame wildcats called <code>winpct</code>. This column records the winning percentage for the team each season (wins divided by games played).</p>
+<p>ANSWER: It creates a new column in the data frame wildcats called
+<code>winpct</code>. This column records the winning percentage for the
+team each season (wins divided by games played).</p>
 <ol start="5" style="list-style-type: decimal">
 <li>What does this code give?</li>
 </ol>
 <pre class="r"><code>max(wildcats$winpct)</code></pre>
 <pre><code>## [1] 0.9444444</code></pre>
-<p>ANSWER: It returns the best winning percentage for a season between 1999 and 2020.</p>
+<p>ANSWER: It returns the best winning percentage for a season between
+1999 and 2020.</p>
 <p>Which season was this?</p>
 <pre class="r"><code>subset(wildcats, winpct == max(wildcats$winpct))</code></pre>
 <pre><code>##    Year           Coach  W L T District NCAA GP    winpct
 ## 13 2011 Jackson Vaughan 51 3 0      1st  1st 54 0.9444444</code></pre>
-<p>Not surprisingly, the best winning percentage occurred in the magical 2011 season in which the team went 51-3.</p>
+<p>Not surprisingly, the best winning percentage occurred in the magical
+2011 season in which the team went 51-3.</p>
 <ol start="6" style="list-style-type: decimal">
 <li>What does this code give?</li>
 </ol>
@@ -863,27 +996,42 @@ text(x=c(v[1:5]),y=c(rep(1.3,5)),c(v[1:5]),cex=.7,col=&quot;purple&quot;)</code>
      xlab=&quot;Losses&quot;,
      ylab=&quot;Wins&quot;)</code></pre>
 <p><img src="basicstats_files/figure-html/unnamed-chunk-50-1.png" width="480" /></p>
-<p>ANSWER: Scatterplot of wins vs losses. This plot makes it clear that 2020 was a strange season (the point in the lower left corner). This visual deviation from the trend indicates that something “different” was going on. What was it? (global pandemic!)</p>
+<p>ANSWER: Scatterplot of wins vs losses. This plot makes it clear that
+2020 was a strange season (the point in the lower left corner). This
+visual deviation from the trend indicates that something “different” was
+going on. What was it? (global pandemic!)</p>
 <ol start="7" style="list-style-type: decimal">
 <li>What does this code give?</li>
 </ol>
 <pre class="r"><code>fivenum(wildcats$W[wildcats$Coach==&quot;Jackson Vaughan&quot;])</code></pre>
 <pre><code>## [1] 12 32 37 39 51</code></pre>
-<p>ANSWER: This code gives the 5 number summary for the Linfield softball wins for just the seasons in the data set in which the coach was Jackson Vaughan. More generally, consider this code, which makes use of the <code>aggregate()</code> method:</p>
+<p>ANSWER: This code gives the 5 number summary for the Linfield
+softball wins for just the seasons in the data set in which the coach
+was Jackson Vaughan. More generally, consider this code, which makes use
+of the <code>aggregate()</code> method:</p>
 <pre class="r"><code>aggregate(wildcats$W, by=list(wildcats$Coach), FUN = median)</code></pre>
 <pre><code>##           Group.1  x
 ## 1 Jackson Vaughan 37
 ## 2     Laura Kenow 24</code></pre>
-<p>The <code>aggregate()</code> method executes a function on a variable that has been grouped by a categorical variable. In the code above we have chosen to determine the median number of wins for each coach over this time period.</p>
+<p>The <code>aggregate()</code> method executes a function on a variable
+that has been grouped by a categorical variable. In the code above we
+have chosen to determine the median number of wins for each coach over
+this time period.</p>
 <ol start="8" style="list-style-type: decimal">
-<li>How about this one? <code>x</code> is a vector of three values, <code>xbar</code> is the mean of the values in <code>x</code>. What is <code>v</code>?</li>
+<li>How about this one? <code>x</code> is a vector of three values,
+<code>xbar</code> is the mean of the values in <code>x</code>. What is
+<code>v</code>?</li>
 </ol>
 <pre class="r"><code>x = c(10,12,17)
 xbar = mean(x)
 v = sum((x - mean(x))^2)/(length(x)-1)
 v</code></pre>
 <pre><code>## [1] 13</code></pre>
-<p>ANSWER: This code reproduces the formula for the variance of a set of numbers:<span class="math display">\[s^2 = \frac{1}{n-1}\sum_{i=1}^n(x_i-\overline{x})^2.\]</span> Convinced? let’s check that this really gives the variance of the data set <code>x</code>:</p>
+<p>ANSWER: This code reproduces the formula for the variance of a set of
+numbers:<span class="math display">\[s^2 =
+\frac{1}{n-1}\sum_{i=1}^n(x_i-\overline{x})^2.\]</span> Convinced? let’s
+check that this really gives the variance of the data set
+<code>x</code>:</p>
 <pre class="r"><code>var(x)</code></pre>
 <pre><code>## [1] 13</code></pre>
 <p>Yup.</p>

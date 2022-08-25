@@ -13,8 +13,8 @@
 
 <title>Intro to Statistics Resources</title>
 
-<script src="site_libs/header-attrs-2.10/header-attrs.js"></script>
-<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<script src="site_libs/header-attrs-2.14/header-attrs.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
@@ -59,6 +59,7 @@ if (window.hljs) {
 
 
 
+
 <link rel="stylesheet" href="style.css" type="text/css" />
 
 
@@ -83,6 +84,9 @@ button.code-folding-btn:focus {
 }
 summary {
   display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
 }
 pre code {
   padding: 0;
@@ -235,7 +239,7 @@ $(document).ready(function () {
 <div class="navbar navbar-default  navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -257,7 +261,7 @@ $(document).ready(function () {
   <a href="data.html">Data</a>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     RStudio
      
     <span class="caret"></span>
@@ -319,12 +323,17 @@ cerulean, cosmo, flatly, journal, lumen, paper, readable
 sandstone, simplex, spacelab, united, yeti -->
 <p><strong>Quick Links</strong></p>
 <ul>
-<li><p><a href="calendar.html" target="_blank">Course Schedule</a> - Spring ’22</p></li>
+<li><p><a href="calendar.html" target="_blank">Course Schedule</a> -
+Fall ’22</p></li>
 <li><p><a href="https://athena.cs.linfield.edu/webwork2/MATH140-Hitchman/">WeBWorK</a></p></li>
 <li><p><a href="https://bblearn.linfield.edu/">Blackboard</a></p></li>
-<li><p><em>OpenIntro Stats</em>: <a href="https://www.openintro.org/book/os/">website</a> | <a href="main.pdf" targe="_blank">pdf</a></p></li>
-<li><p><a href="inference_formulas.pdf">Inference Formulas</a> <!--   - <a href="https://forms.gle/TKiQpEWFD97yeTRn9">Achievement Survey</a> --></p></li>
-<li><p><a href="https://forms.gle/GhrcLzv7srov9Ucx9">First Day Survey</a></p>
+<li><p><em>OpenIntro Stats</em>:
+<a href="https://www.openintro.org/book/os/">website</a> |
+<a href="main.pdf" targe="_blank">pdf</a></p></li>
+<li><p><a href="inference_formulas.pdf">Inference Formulas</a>
+<!--   - <a href="https://forms.gle/TKiQpEWFD97yeTRn9">Achievement Survey</a> --></p></li>
+<li><p><a href="https://forms.gle/GhrcLzv7srov9Ucx9">First Day
+Survey</a></p>
 <!-- - <a href="zdistn.pdf">Z-score Distn table</a>
 - <a href="tdistn.pdf">T-score Distn table</a> --></li>
 </ul>

@@ -13,8 +13,8 @@
 
 <title>MATH 140: Scatter plots and Linear Regression</title>
 
-<script src="site_libs/header-attrs-2.10/header-attrs.js"></script>
-<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<script src="site_libs/header-attrs-2.14/header-attrs.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
@@ -62,6 +62,7 @@ if (window.hljs) {
 
 
 
+
 <link rel="stylesheet" href="style.css" type="text/css" />
 
 
@@ -86,6 +87,9 @@ button.code-folding-btn:focus {
 }
 summary {
   display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
 }
 pre code {
   padding: 0;
@@ -311,7 +315,7 @@ div.tocify {
 <div class="navbar navbar-default  navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -333,7 +337,7 @@ div.tocify {
   <a href="data.html">Data</a>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     RStudio
      
     <span class="caret"></span>
@@ -385,7 +389,8 @@ div.tocify {
 
 
 
-<h1 class="title toc-ignore">MATH 140: Scatter plots and Linear Regression</h1>
+<h1 class="title toc-ignore">MATH 140: Scatter plots and Linear
+Regression</h1>
 
 </div>
 
@@ -419,7 +424,10 @@ blockquote {
 </style>
 <div id="the-planets-data" class="section level1">
 <h1>The planets data</h1>
-<p>The following code creates a data frame with 3 variables (named <em>planet</em>, <em>distance</em>, and <em>period</em>) and 9 observations. This data frame encodes information about the 9 planets in the solar system.</p>
+<p>The following code creates a data frame with 3 variables (named
+<em>planet</em>, <em>distance</em>, and <em>period</em>) and 9
+observations. This data frame encodes information about the 9 planets in
+the solar system.</p>
 <pre class="r"><code>planets = data.frame(
   planet=c(&quot;Mercury&quot;,&quot;Venus&quot;,&quot;Earth&quot;,&quot;Mars&quot;,&quot;Jupiter&quot;,&quot;Saturn&quot;,&quot;Uranus&quot;,&quot;Neptune&quot;,&quot;Pluto&quot;),
   distance=c(36,67,93,142,484,887,1765,2791,3654),
@@ -428,39 +436,58 @@ blockquote {
 <p>Notes about this code:</p>
 <ul>
 <li><code>planets</code> is the name of the data frame</li>
-<li><code>data.frame()</code> is the command for creating a data frame</li>
-<li>the data frame has three columns named <code>planet</code>, <code>distance</code>, and <code>period</code></li>
-<li>the column entries are created with the <code>c()</code> command.</li>
-<li>the entries for a categorical variable such as the <em>planet</em> variable are enclosed, individually, with quotes.</li>
+<li><code>data.frame()</code> is the command for creating a data
+frame</li>
+<li>the data frame has three columns named <code>planet</code>,
+<code>distance</code>, and <code>period</code></li>
+<li>the column entries are created with the <code>c()</code>
+command.</li>
+<li>the entries for a categorical variable such as the <em>planet</em>
+variable are enclosed, individually, with quotes.</li>
 <li>the units:
 <ul>
-<li><code>distance</code> is given in millions of miles from the Sun</li>
-<li><code>period</code> is given in Earth days (how long it takes the planet to make one revolution around the Sun)</li>
+<li><code>distance</code> is given in millions of miles from the
+Sun</li>
+<li><code>period</code> is given in Earth days (how long it takes the
+planet to make one revolution around the Sun)</li>
 </ul></li>
 </ul>
 </div>
 <div id="making-a-scatter-plot" class="section level1">
 <h1>Making a scatter plot</h1>
-<p>We can make quick and clear scatter plots using the built-in R command <code>plot()</code>, or higher quality plots using the package <code>ggplot</code>.</p>
+<p>We can make quick and clear scatter plots using the built-in R
+command <code>plot()</code>, or higher quality plots using the package
+<code>ggplot</code>.</p>
 <div id="using-plot" class="section level2">
 <h2>Using <code>plot()</code></h2>
-<p>In the worksheet we choose <code>distance</code> to be the explanatory variable (<span class="math inline">\(x\)</span>), and <code>period</code> to be the response variable (<span class="math inline">\(y\)</span>). The <code>plot()</code> command produces a scatter plot:</p>
+<p>In the worksheet we choose <code>distance</code> to be the
+explanatory variable (<span class="math inline">\(x\)</span>), and
+<code>period</code> to be the response variable (<span
+class="math inline">\(y\)</span>). The <code>plot()</code> command
+produces a scatter plot:</p>
 <pre class="r"><code>plot(x=planets$distance,y=planets$period)</code></pre>
 <p><img src="regression_files/figure-html/unnamed-chunk-2-1.png" width="480" /></p>
-<p>But we should make our graphs more user friendly by adding a plot title and better axis labels:</p>
+<p>But we should make our graphs more user friendly by adding a plot
+title and better axis labels:</p>
 <pre class="r"><code>plot(x=planets$distance,y=planets$period,
      xlab=&quot;distance from sun (millions of miles)&quot;,
      ylab=&quot;period of revolution (earth days)&quot;,
      main=&quot;Planets in our solar system&quot;)</code></pre>
 <p><img src="regression_files/figure-html/unnamed-chunk-3-1.png" width="480" /></p>
-<p>We can even change the look of the points, as discussed in the <a href="https://mphitchman.com/stats/Rlabs/getting-started.html#Scatter_plots">Getting Started in R Studio tutorial</a></p>
+<p>We can even change the look of the points, as discussed in the <a
+href="https://mphitchman.com/stats/basicstats.html#Scatter_plots">Data
+and Descriptive Statistics Tutorial</a></p>
 </div>
 <div id="using-ggplot" class="section level2">
 <h2>Using <code>ggplot()</code></h2>
-<p>The <em>tidyverse</em> package (which you’ve already installed) comes with an excellent graphics package called <em>ggplot</em>. If you load the tidyverse into your RStudio session, you will be able to produce graphics with <em>ggplot</em>.</p>
+<p>The <em>tidyverse</em> package (which you’ve already installed) comes
+with an excellent graphics package called <em>ggplot</em>. If you load
+the tidyverse into your RStudio session, you will be able to produce
+graphics with <em>ggplot</em>.</p>
 <p>To load the tidyverse into your session, run this line:</p>
 <pre><code>library(tidyverse)</code></pre>
-<p>With the tidyverse loaded, you are ready to use the ggplot functions for generating graphs.</p>
+<p>With the tidyverse loaded, you are ready to use the ggplot functions
+for generating graphs.</p>
 <p><strong>Basic scatter plot with ggplot</strong></p>
 <pre class="r"><code>ggplot(data = planets,aes(x=distance,y=period)) +
   geom_point()</code></pre>
@@ -484,7 +511,11 @@ blockquote {
 <div id="the-least-squares-linear-model" class="section level1">
 <h1>The least-squares linear model</h1>
 <blockquote>
-<p>Use the <code>lm()</code> command (“lm” stands for linear model). Running <code>lm(y~x)</code> where y and x are specified columns in your data frame will give the slope and <span class="math inline">\(y\)</span>-intercept of the least-squares regression line:</p>
+<p>Use the <code>lm()</code> command (“lm” stands for linear model).
+Running <code>lm(y~x)</code> where y and x are specified columns in your
+data frame will give the slope and <span
+class="math inline">\(y\)</span>-intercept of the least-squares
+regression line:</p>
 </blockquote>
 <pre class="r"><code>lm(planets$period~planets$distance)</code></pre>
 <pre><code>## 
@@ -494,8 +525,11 @@ blockquote {
 ## Coefficients:
 ##      (Intercept)  planets$distance  
 ##          -4578.8              24.1</code></pre>
-<p>So, the slope of the least-squares line is 24.1 and the <span class="math inline">\(y\)</span>-intercept is -4578.8.</p>
-<p>Better yet, assign a name to the <code>lm()</code> command, like <em>fit</em>, when you run it (as in the code below) and you have quick access to all sorts of useful information:</p>
+<p>So, the slope of the least-squares line is 24.1 and the <span
+class="math inline">\(y\)</span>-intercept is -4578.8.</p>
+<p>Better yet, assign a name to the <code>lm()</code> command, like
+<em>fit</em>, when you run it (as in the code below) and you have quick
+access to all sorts of useful information:</p>
 <pre class="r"><code>fit=lm(planets$period~planets$distance)</code></pre>
 <table>
 <thead>
@@ -507,7 +541,8 @@ blockquote {
 <tbody>
 <tr class="odd">
 <td align="left"><code>fit$coefficients</code></td>
-<td align="left"><span class="math inline">\(y\)</span>-intercept and slope of least-squares line</td>
+<td align="left"><span class="math inline">\(y\)</span>-intercept and
+slope of least-squares line</td>
 </tr>
 <tr class="even">
 <td align="left"><code>fit$residuals</code></td>
@@ -515,7 +550,8 @@ blockquote {
 </tr>
 <tr class="odd">
 <td align="left"><code>fit$fitted.values</code></td>
-<td align="left">list of the predicted values <span class="math inline">\(\hat{y}\)</span></td>
+<td align="left">list of the predicted values <span
+class="math inline">\(\hat{y}\)</span></td>
 </tr>
 </tbody>
 </table>
@@ -524,7 +560,16 @@ blockquote {
 <h1>Plot the least-squares line</h1>
 <div id="using-built-in-r-commands" class="section level2">
 <h2>Using built-in R commands</h2>
-<p>RStudio likes to describe the <span class="math inline">\(y\)</span>-intercept and slope of a line with the constants <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span>, respectively. As in <span class="math display">\[y=a + bx,\]</span> and the command <code>abline(a= ..., b=...)</code> will add a line with <span class="math inline">\(y\)</span>-intercept <span class="math inline">\(a\)</span> and slope <span class="math inline">\(b\)</span> to a plot if you run these lines of code in succession:</p>
+<p>RStudio likes to describe the <span
+class="math inline">\(y\)</span>-intercept and slope of a line with the
+constants <span class="math inline">\(a\)</span> and <span
+class="math inline">\(b\)</span>, respectively. As in <span
+class="math display">\[y=a + bx,\]</span> and the command
+<code>abline(a= ..., b=...)</code> will add a line with <span
+class="math inline">\(y\)</span>-intercept <span
+class="math inline">\(a\)</span> and slope <span
+class="math inline">\(b\)</span> to a plot if you run these lines of
+code in succession:</p>
 <pre class="r"><code>plot(x=planets$distance,y=planets$period,
      xlab=&quot;distance from sun (millions of miles)&quot;,
      ylab=&quot;period of revolution&quot;,
@@ -534,7 +579,9 @@ abline(a=-4578.8,b=24.1)</code></pre>
 </div>
 <div id="making-a-residual-plot" class="section level2">
 <h2>Making a Residual Plot</h2>
-<p>We can plot the <span class="math inline">\(x\)</span>-coordinates against the residuals and add a dashed horizontal line through <span class="math inline">\(y = 0\)</span> with this code</p>
+<p>We can plot the <span class="math inline">\(x\)</span>-coordinates
+against the residuals and add a dashed horizontal line through <span
+class="math inline">\(y = 0\)</span> with this code</p>
 <pre class="r"><code>plot(planets$distance,fit$residuals)
 abline(h=0,lty=2,col=&quot;brown3&quot;)</code></pre>
 <p><img src="regression_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
@@ -543,7 +590,9 @@ abline(h=0,lty=2,col=&quot;brown3&quot;)</code></pre>
 <h2>In ggplot</h2>
 <div id="with-the-geom_abline-command" class="section level3">
 <h3>With the <code>geom_abline()</code> command</h3>
-<p>Here are two approaches. The first adds the line with the <code>geom_abline()</code> command by manually entering the slope and y-intercept as found above:</p>
+<p>Here are two approaches. The first adds the line with the
+<code>geom_abline()</code> command by manually entering the slope and
+y-intercept as found above:</p>
 <pre class="r"><code>ggplot(data = planets,aes(x=distance,y=period)) +
   geom_point(col=&quot;seagreen&quot;) +
   xlab(&quot;distance to Sun (millions of miles)&quot;) + 
@@ -555,7 +604,10 @@ abline(h=0,lty=2,col=&quot;brown3&quot;)</code></pre>
 </div>
 <div id="using-geom_smooth" class="section level3">
 <h3>Using geom_smooth()</h3>
-<p>The second approach to fitting a line to data is to use the <code>geom_smooth()</code>command. The advantage here is that the code generates the line from scratch - you don’t have to manually enter the slope and <span class="math inline">\(y\)</span>-intercept.</p>
+<p>The second approach to fitting a line to data is to use the
+<code>geom_smooth()</code>command. The advantage here is that the code
+generates the line from scratch - you don’t have to manually enter the
+slope and <span class="math inline">\(y\)</span>-intercept.</p>
 <pre class="r"><code>ggplot(data = planets,aes(x=distance,y=period)) +
   geom_point(col=&quot;seagreen&quot;)+
   xlab(&quot;distance to Sun (millions of miles)&quot;) + 
@@ -570,12 +622,25 @@ abline(h=0,lty=2,col=&quot;brown3&quot;)</code></pre>
 </div>
 <div id="bonus-round-a-better-model" class="section level1">
 <h1>Bonus Round: A Better Model</h1>
-<p>The residual plot makes clear that, even though the correlation coefficient is very close to 1, a curved model is better, one that can be represented by a polynomial with a higher power of <span class="math inline">\(x\)</span>.</p>
-<p>To find the nature of the curved fit, we begin by comparing <code>log(x)</code> to <code>log(y)</code>.</p>
+<p>The residual plot makes clear that, even though the correlation
+coefficient is very close to 1, a curved model is better, one that can
+be represented by a polynomial with a higher power of <span
+class="math inline">\(x\)</span>.</p>
+<p>To find the nature of the curved fit, we begin by comparing
+<code>log(x)</code> to <code>log(y)</code>.</p>
 <p><strong>Intermission: Logarithms</strong></p>
-<p>Recall, <span class="math inline">\(\log_{10}(x)\)</span> = the power we need to raise 10 to in order to get <span class="math inline">\(x\)</span>. For instance, <span class="math inline">\(\log_{10}(100) = 2\)</span> since 10^2 = 100$, <span class="math inline">\(\log_{10}(1000) = 3\)</span>, <span class="math inline">\(\log_10(1,000,000) = 6\)</span>, and <span class="math inline">\(\log_{10}(0.1)=-1\)</span> since <span class="math inline">\(10^{-1} = \frac{1}{10}=0.1\)</span>.</p>
+<p>Recall, <span class="math inline">\(\log_{10}(x)\)</span> = the power
+we need to raise 10 to in order to get <span
+class="math inline">\(x\)</span>. For instance, <span
+class="math inline">\(\log_{10}(100) = 2\)</span> since 10^2 = 100$,
+<span class="math inline">\(\log_{10}(1000) = 3\)</span>, <span
+class="math inline">\(\log_10(1,000,000) = 6\)</span>, and <span
+class="math inline">\(\log_{10}(0.1)=-1\)</span> since <span
+class="math inline">\(10^{-1} = \frac{1}{10}=0.1\)</span>.</p>
 <p><strong>End of Intermission</strong></p>
-<p>So, again, to find the nature of the curved fit, we begin by comparing <code>log(x)</code> to <code>log(y)</code>, and see whether the association is linear.</p>
+<p>So, again, to find the nature of the curved fit, we begin by
+comparing <code>log(x)</code> to <code>log(y)</code>, and see whether
+the association is linear.</p>
 <pre class="r"><code>ggplot(data=planets,aes(log10(distance),log10(period)))+
   geom_point()+
   ggtitle(&quot;Plotting log(distance) vs log(period)&quot;)+
@@ -609,12 +674,17 @@ abline(h=0,lty=2,col="brown3")
 Looks linear to me!!
 
 -->
-<p>If the log-log plot is linear, then the slope of the least-squares line for the log-log data will equal the power in the curved fit for <span class="math inline">\(y\)</span> and <span class="math inline">\(x\)</span>.</p>
+<p>If the log-log plot is linear, then the slope of the least-squares
+line for the log-log data will equal the power in the curved fit for
+<span class="math inline">\(y\)</span> and <span
+class="math inline">\(x\)</span>.</p>
 <pre class="r"><code>logfit=lm(log10(planets$period)~log10(planets$distance))
 logfit$coefficients</code></pre>
 <pre><code>##             (Intercept) log10(planets$distance) 
 ##              -0.3922215               1.5013054</code></pre>
-<p>Notice the slope of this linear model is about 1.5, and this explains why we chose the <span class="math inline">\(x^{1.5}\)</span> for the curved fit in the last question of the R Regression activity.</p>
+<p>Notice the slope of this linear model is about 1.5, and this explains
+why we chose the <span class="math inline">\(x^{1.5}\)</span> for the
+curved fit in the last question of the R Regression activity.</p>
 </div>
 
 

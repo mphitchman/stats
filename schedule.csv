@@ -1,32 +1,32 @@
 Date,Topic,Text,Activities,Assignments
-8-Feb,Introduction,Ch 1,"First Day Survey, Statistical Questions",Webwork Ch.1
-10-Feb,Data,Ch 1,random rectangles,"Install R and Rstudio, read ""Getting Started in Rstudio"" in Labs tab"
-15-Feb,Descriptive statistics,2.1,Governors,Webwork Sec 2.1
-17-Feb,Descriptive statistics,2.2,Descriptive statistics using R,Webwork Sec 2.2
-22-Feb,"scatter plots, correlation",8.1,Regression I,Webwork 8 Correlation
-24-Feb,least squares regression,"8.2,3",Regression using R,Webwork 8 Linear Regression
-1-Mar,"least squares regression, probability models","Ch 8, Ch 3","R activity: Starbucks, Random Phones",Term project: Groups Due
-3-Mar,"Quiz 1, probability models",Ch 3,,Webwork Ch. 3
-8-Mar,normal distributions,4.1,normal distributions,"Webwork Sec 4.1, Term Project: 3 Project ideas due"
-10-Mar,normal distributions,"4.1, 5.1",,
-15-Mar,"Sampling distributions, CLT for proportions",5.1,sampling distributions in R,
-17-Mar,"Quiz 2, CLT",5.2,CLT-Proportions,"Webwork Sec 5.1, Term Project: Final Proposal due"
-22-Mar,Spring Break,,,
-24-Mar,Spring Break,,,
-29-Mar,confidence intervals,5.2,confidence intervals - proportion,"Webwork Sec 5.2,3"
-31-Mar,inference on a proportion,"5.3,6.1",flat tire,
-5-Apr,inference on a proportion,"5.3, 6.1",parameters,
-7-Apr,"Quiz 3, CLT for a mean",7.1,CLT-Means,
-12-Apr,interence on means,7.1,Inference on means,Webwork Sec 7.1
-14-Apr,"Inference on 2 means, matched pairs",7.2-3,Inference on 2 menas,Webwork Sec 7.3
-19-Apr,inference on two proportions,6.2,,Term Project: Meeting with Prof this week
-21-Apr,"Quiz 4, TBA",,,
-26-Apr,chi square,"6.3,4",chi square goodness of fit,Webwork Sec 6.2
-28-Apr,chi square,"6.3,4",chi square test of independence,"Webwork Sec 6.3,4"
-3-May,work day,,,
-5-May,"Quiz 5, Regression",,,
-10-May,Inference on Regression,8.4,,
-12-May,ANOVA,7.5,ANOVA,Webwork Sec 7.5
-17-May,Quiz 6 (optional),,,Term Project: Papers Due
-19-May,Reading Day,,,
-26-May,Final Exam Period,,,Project Presentations
+30-Aug,Introduction,Ch 1,"First Day Survey, Statistical Questions",Webwork Ch.1
+1-Sep,Data,Ch 1,random rectangles,"Install R and Rstudio, read ""Getting Started in Rstudio"" in Labs tab"
+6-Sep,Descriptive statistics,2.1,Governors,
+8-Sep,Descriptive statistics,2.2,Descriptive statistics using R,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,

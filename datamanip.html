@@ -13,8 +13,8 @@
 
 <title>MATH 140: Data Management with dplyr</title>
 
-<script src="site_libs/header-attrs-2.10/header-attrs.js"></script>
-<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<script src="site_libs/header-attrs-2.14/header-attrs.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
@@ -61,6 +61,7 @@ if (window.hljs) {
 
 
 
+
 <link rel="stylesheet" href="style.css" type="text/css" />
 
 
@@ -85,6 +86,9 @@ button.code-folding-btn:focus {
 }
 summary {
   display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
 }
 pre code {
   padding: 0;
@@ -237,7 +241,7 @@ $(document).ready(function () {
 <div class="navbar navbar-default  navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -259,7 +263,7 @@ $(document).ready(function () {
   <a href="data.html">Data</a>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     RStudio
      
     <span class="caret"></span>
@@ -316,18 +320,34 @@ $(document).ready(function () {
 </div>
 
 
-<p>We have discussed some basic data manipulation commands in base R in the <a href="basicstats.html#Basic_data_manipulation">data and descriptive statistics page</a>.</p>
-<p>The <code>tidyverse</code> includes the package <code>dplyr</code>, which is designed to help us readily tackle data manipulation tasks, including the sorts of tasks we will encounter in MATH 140.</p>
-<p><strong>I encourage you to replicate all the graphs in this tutorial in your own RStudio session.</strong></p>
-<p>Load the earthquakes data that came with our text. This data set gives us information about all major 20th century earthquakes.</p>
-<p>If you’ve installed the package <code>openintro</code> you can load the data set into your session by loading the package, and then by running <code>df &lt;- earthquakes</code> Alternatively, you can load the data set into your session directly from its url:</p>
+<p>We have discussed some basic data manipulation commands in base R in
+the <a href="basicstats.html#Basic_data_manipulation">data and
+descriptive statistics page</a>.</p>
+<p>The <code>tidyverse</code> includes the package <code>dplyr</code>,
+which is designed to help us readily tackle data manipulation tasks,
+including the sorts of tasks we will encounter in MATH 140.</p>
+<p><strong>I encourage you to reproduce all of the results on this page
+in your own RStudio session.</strong></p>
+<p>Load the earthquakes data that came with our text. This data set
+gives us information about all major 20th century earthquakes.</p>
+<p>If you’ve installed the package <code>openintro</code> you can load
+the data set into your session by loading the package, and then by
+running <code>df &lt;- earthquakes</code> Alternatively, you can load
+the data set into your session directly from its url:</p>
 <pre class="r"><code>df &lt;- read.csv(&quot;https://www.openintro.org/data/csv/earthquakes.csv&quot;)</code></pre>
-<p>To be able to use the <code>dplyr</code> functions in an RStudio session we must load <code>dplyr</code>, which we do when we load the tidyverse:</p>
+<p>To be able to use the <code>dplyr</code> functions in an RStudio
+session we must load <code>dplyr</code>, which we do when we load the
+tidyverse:</p>
 <pre><code>library(tidyverse)</code></pre>
 <blockquote>
-<p>The key to using <code>dplyr</code> is the <code>%&gt;%</code> command, which I read as “then”, followed by an action, such as <code>filter()</code> or <code>select()</code>, which we discuss below.</p>
+<p>The key to using <code>dplyr</code> is the <code>%&gt;%</code>
+command, which I read as “then”, followed by an action, such as
+<code>filter()</code> or <code>select()</code>, which we discuss
+below.</p>
 </blockquote>
-<p>For instance, the following code starts with the data frame <code>df</code>, then finds (via <code>filter()</code>) those earthquakes occurring in the region equal to the United States:</p>
+<p>For instance, the following code starts with the data frame
+<code>df</code>, then finds (via <code>filter()</code>) those
+earthquakes occurring in the region equal to the United States:</p>
 <pre class="r"><code>df %&gt;% filter(region==&quot;United States&quot;)</code></pre>
 <pre><code>## # A tibble: 8 × 7
 ##    year month      day richter area                region        deaths
@@ -340,7 +360,10 @@ $(document).ready(function () {
 ## 6  1992 June        28     7.3 Landers             United States      3
 ## 7  1992 June        28     6.5 Big Bear            United States     NA
 ## 8  1994 January     17     6.8 Northridge          United States     61</code></pre>
-<p><strong>Note</strong>: We use the double equal signs <code>==</code> when we are searching for entries that match a particular value or character. We use a single equal sign (e.g., <code>x = 4</code>) to <em>assign</em> a value or character to a variable.</p>
+<p><strong>Note</strong>: We use the double equal signs <code>==</code>
+when we are searching for entries that match a particular value or
+character. We use a single equal sign (e.g., <code>x = 4</code>) to
+<em>assign</em> a value or character to a variable.</p>
 <p>A brief list of commonly used <code>dplyr</code> action verbs:</p>
 <table>
 <thead>
@@ -381,7 +404,8 @@ $(document).ready(function () {
 </tbody>
 </table>
 <hr />
-<p><strong>Question</strong>: Which earthquakes registered 8.0 or higher on the Richter scale?</p>
+<p><strong>Question</strong>: Which earthquakes registered 8.0 or higher
+on the Richter scale?</p>
 <hr />
 <pre class="r"><code>df %&gt;% filter(richter&gt;=8.0)</code></pre>
 <pre><code>## # A tibble: 12 × 7
@@ -399,7 +423,8 @@ $(document).ready(function () {
 ## 10  1960 May          21     9.5 South                  Chile           1655
 ## 11  1964 March        27     9.2 Alaska                 United States    131
 ## 12  1985 September    19     8   Michoacan              Mexico          9500</code></pre>
-<p>We can also arrange this list of earthquakes in descending order of magnitude on the richter scale:</p>
+<p>We can also arrange this list of earthquakes in descending order of
+magnitude on the richter scale:</p>
 <pre class="r"><code>df %&gt;% filter(richter&gt;=8.0) %&gt;% arrange(desc(richter))</code></pre>
 <pre><code>## # A tibble: 12 × 7
 ##     year month       day richter area                   region        deaths
@@ -417,7 +442,8 @@ $(document).ready(function () {
 ## 11  1945 November     27     8   Makran Coast           Pakistan        4000
 ## 12  1985 September    19     8   Michoacan              Mexico          9500</code></pre>
 <hr />
-<p><strong>Question</strong>: Which earthquakes less than 6 on the richter scale caused the most fatalities?</p>
+<p><strong>Question</strong>: Which earthquakes less than 6 on the
+richter scale caused the most fatalities?</p>
 <hr />
 <p>Here are the top three:</p>
 <pre class="r"><code>head((df %&gt;% filter(richter &lt; 6)) %&gt;% arrange(desc(deaths)),3)</code></pre>
@@ -428,7 +454,8 @@ $(document).ready(function () {
 ## 2  1969 July        25     5.9 Guangdong China                3000
 ## 3  1931 April       27     5.7 Border    Armenia-Azerbaijan   2800</code></pre>
 <hr />
-<p><strong>Question</strong>: Have any major earthquakes occurred in Japan in May?</p>
+<p><strong>Question</strong>: Have any major earthquakes occurred in
+Japan in May?</p>
 <hr />
 <pre class="r"><code>df %&gt;% filter(month==&quot;May&quot;) %&gt;% filter(region==&quot;Japan&quot;)</code></pre>
 <pre><code>## # A tibble: 0 × 7
@@ -441,7 +468,8 @@ $(document).ready(function () {
 ##  December   January      June     March September 
 ##         1         2         1         2         2</code></pre>
 <hr />
-<p><strong>Question</strong>: Find the average magnitude of major earthquakes in the US.</p>
+<p><strong>Question</strong>: Find the average magnitude of major
+earthquakes in the US.</p>
 <hr />
 <pre class="r"><code>df %&gt;% filter(region==&quot;United States&quot;) %&gt;% summarize(avg=mean(richter))</code></pre>
 <pre><code>## # A tibble: 1 × 1
@@ -450,7 +478,9 @@ $(document).ready(function () {
 ## 1  7.15</code></pre>
 <p>It looks like the average is 7.15.</p>
 <hr />
-<p><strong>Question</strong>: Group the earthquakes by month and record how many earthquakes there were in each month, the average magnitude, and the standard deviation of the magnitudes for each month.</p>
+<p><strong>Question</strong>: Group the earthquakes by month and record
+how many earthquakes there were in each month, the average magnitude,
+and the standard deviation of the magnitudes for each month.</p>
 <hr />
 <pre class="r"><code>df %&gt;% group_by(month) %&gt;%
   summarise(size=length(richter),
@@ -471,8 +501,11 @@ $(document).ready(function () {
 ## 10 November      6  7.33 0.493
 ## 11 October       8  7.05 0.760
 ## 12 September     9  7.28 0.618</code></pre>
-<p><strong>Note</strong>: This is a very useful thing to do. Later in the course we will regularly want to find the sample mean, sample size, and sample standard deviation across different groups like this.</p>
-<p>Here’s a nice display of these summary statistics, which uses the package <code>kableExtra</code>:</p>
+<p><strong>Note</strong>: This is a very useful thing to do. Later in
+the course we will regularly want to find the sample mean, sample size,
+and sample standard deviation across different groups like this.</p>
+<p>Here’s a nice display of these summary statistics, which uses the
+package <code>kableExtra</code>:</p>
 <pre class="r"><code>library(kableExtra)
 df %&gt;% group_by(month) %&gt;%
   summarise(size=length(richter),
@@ -669,30 +702,41 @@ September
 </table>
 <div id="combining-dplyr-with-ggplot" class="section level2">
 <h2>Combining dplyr with ggplot</h2>
-<p>The packages <code>dplyr</code> and <code>ggplot2</code> are both a part of the tidyverse and can work together. For instance, we can do a plot on some version of the data frame first modified by dplyr, to answer question.</p>
+<p>The packages <code>dplyr</code> and <code>ggplot2</code> are both a
+part of the tidyverse and can work together. For instance, we can make a
+plot on some version of the data frame first modified by
+<code>dplyr</code>.</p>
 <hr />
-<p><strong>Question</strong>: Make a line plot that shows the cumulative death count from 20th century earthquake. By cumulative death count, we mean that for each year, we want to know the total number of deaths from earthquakes during the century up to and including that year.</p>
+<p><strong>Question</strong>: Make a line plot that shows the cumulative
+death count from 20th century earthquake. By cumulative death count, we
+mean that for each year, we want to know the total number of deaths from
+earthquakes during the century up to and including that year.</p>
 <hr />
 <pre class="r"><code>df %&gt;% mutate(cum.death=cumsum(deaths)) %&gt;%
   ggplot()+
   geom_line(aes(x=year,y=cum.death))+
   ylab(&quot;cumulative major earthquake fatalities&quot;)</code></pre>
 <p><img src="datamanip_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
-<p>It looks like the 70s were particularly devastating. What are those two most devastating earthquakes?</p>
+<p>It looks like the 70s were particularly devastating. What are those
+two most devastating earthquakes?</p>
 <pre class="r"><code>head(df %&gt;% arrange(desc(deaths)),2)</code></pre>
 <pre><code>## # A tibble: 2 × 7
 ##    year month   day richter area     region deaths
 ##   &lt;dbl&gt; &lt;chr&gt; &lt;dbl&gt;   &lt;dbl&gt; &lt;chr&gt;    &lt;chr&gt;   &lt;dbl&gt;
 ## 1  1970 May      31     7.9 Chimbote Peru   700000
 ## 2  1976 July     28     7.5 Tangshan China  255000</code></pre>
-<p><strong>Note</strong>: The <code>cumsum()</code> command is a built-in R command that gives progressive cumulative sums of a vector.</p>
+<p><strong>Note</strong>: The <code>cumsum()</code> command is a
+built-in R command that gives progressive cumulative sums of a
+vector.</p>
 <pre class="r"><code>vec=c(2,4,1,-3)
 cumsum(vec)</code></pre>
 <pre><code>## [1] 2 6 7 4</code></pre>
 </div>
 <div id="cheat-sheet" class="section level1">
 <h1>Cheat Sheet</h1>
-<p>The following page has a downloadable <a href="https://www.rstudio.com/resources/cheatsheets/">dplyr cheat sheet (pdf)</a></p>
+<p>The following page has a downloadable <a
+href="https://www.rstudio.com/resources/cheatsheets/">dplyr cheat sheet
+(pdf)</a></p>
 </div>
 
 

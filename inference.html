@@ -13,8 +13,8 @@
 
 <title>Math 140: Reference Guide to Inference with R</title>
 
-<script src="site_libs/header-attrs-2.10/header-attrs.js"></script>
-<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<script src="site_libs/header-attrs-2.14/header-attrs.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/spacelab.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
@@ -64,6 +64,7 @@ if (window.hljs) {
 
 
 
+
 <link rel="stylesheet" href="style.css" type="text/css" />
 
 
@@ -88,6 +89,9 @@ button.code-folding-btn:focus {
 }
 summary {
   display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
 }
 pre code {
   padding: 0;
@@ -313,7 +317,7 @@ div.tocify {
 <div class="navbar navbar-default  navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -335,7 +339,7 @@ div.tocify {
   <a href="data.html">Data</a>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     RStudio
      
     <span class="caret"></span>
@@ -387,29 +391,49 @@ div.tocify {
 
 
 
-<h1 class="title toc-ignore">Math 140: Reference Guide to Inference with R</h1>
+<h1 class="title toc-ignore">Math 140: Reference Guide to Inference with
+R</h1>
 
 </div>
 
 
 <div id="one-mean" class="section level1">
 <h1>One mean</h1>
-<p><strong>Question:</strong> We want to investigate/estimate the mean of a population.</p>
-<p><strong>Example</strong>: What is the average length (in millimeters) of woolly bear caterpillars</p>
+<p><strong>Question:</strong> We want to investigate/estimate the mean
+of a population.</p>
+<p><strong>Example</strong>: What is the average length (in millimeters)
+of woolly bear caterpillars</p>
 <center>
-<img src="images/wbear.jpeg" title="fig:" style="width:30.0%" alt="The majestic woolly bear caterpillar" />
+<div class="figure">
+<img src="images/wbear.jpeg" style="width:30.0%" alt="" />
+<p class="caption">The majestic woolly bear caterpillar</p>
+</div>
 </center>
 <p><strong>Notation/terminology</strong></p>
 <ul>
-<li><span class="math inline">\(\mu\)</span> - the mean of <em>all</em> elements in the population (which is the unknown parameter of interest)</li>
-<li><span class="math inline">\(n\)</span> - the size of an independent sample of elements gathered from the population.</li>
-<li><span class="math inline">\(\overline{x}\)</span> - the mean of the <span class="math inline">\(n\)</span> values in the sample.</li>
-<li><span class="math inline">\(s\)</span> - the standard deviation of the <span class="math inline">\(n\)</span> values in the sample.</li>
+<li><span class="math inline">\(\mu\)</span> - the mean of <em>all</em>
+elements in the population (which is the unknown parameter of
+interest)</li>
+<li><span class="math inline">\(n\)</span> - the size of an independent
+sample of elements gathered from the population.</li>
+<li><span class="math inline">\(\overline{x}\)</span> - the mean of the
+<span class="math inline">\(n\)</span> values in the sample.</li>
+<li><span class="math inline">\(s\)</span> - the standard deviation of
+the <span class="math inline">\(n\)</span> values in the sample.</li>
 </ul>
 <div id="confidence-interval-for-mu" class="section level2">
-<h2>Confidence Interval for <span class="math inline">\(\mu\)</span></h2>
-<p>We use the formula <span class="math display">\[\overline{x} \pm t^*\cdot\text{SE}\]</span> where <span class="math display">\[\text{SE}=\frac{s}{\sqrt{n}},\]</span> and <span class="math inline">\(t^*\)</span> is the value in the <span class="math inline">\(T\)</span>-distribution with <span class="math inline">\(n-1\)</span> degrees of freedom that corresponds to the desired confidence level.</p>
-<p>We include the entire calculation in one code chunk, starting with entering the raw data (a fictitious sample of 20 woolly bear caterpillar lengths).</p>
+<h2>Confidence Interval for <span
+class="math inline">\(\mu\)</span></h2>
+<p>We use the formula <span class="math display">\[\overline{x} \pm
+t^*\cdot\text{SE}\]</span> where <span
+class="math display">\[\text{SE}=\frac{s}{\sqrt{n}},\]</span> and <span
+class="math inline">\(t^*\)</span> is the value in the <span
+class="math inline">\(T\)</span>-distribution with <span
+class="math inline">\(n-1\)</span> degrees of freedom that corresponds
+to the desired confidence level.</p>
+<p>We include the entire calculation in one code chunk, starting with
+entering the raw data (a fictitious sample of 20 woolly bear caterpillar
+lengths).</p>
 <p><strong>Calculate the confidence interval in R</strong></p>
 <pre class="r"><code># the data in vector form
 wb = c(52.0, 48.9, 47.3, 47.3, 48.6, 48.8, 42.8, 44.3, 46.7, 46.4, 
@@ -441,19 +465,38 @@ cat(paste0("sample mean = ",round(xbar,4),"\n","t* = ",round(tstar,3),"\n",
 ## 95% confidence interval for mu: 46.78 to 48.76.
 ```
 -->
-<p><strong>Interpretation</strong> We are 95% confident that the population mean <span class="math inline">\(\mu\)</span> length of woolly bear caterpillars is between 46.8 and 48.8 millimeters.</p>
-<p><strong>Remark</strong> 95% confidence does <strong>not</strong> refer to likelihood of individual caterpillar lengths landing in the interval - it is just making a claim about the <em>average</em> length of all woolly bear caterpillars. For instance, in our sample, only 8 of the 20 observations fall within the range of the interval.</p>
+<p><strong>Interpretation</strong> We are 95% confident that the
+population mean <span class="math inline">\(\mu\)</span> length of
+woolly bear caterpillars is between 46.8 and 48.8 millimeters.</p>
+<p><strong>Remark</strong> 95% confidence does <strong>not</strong>
+refer to likelihood of individual caterpillar lengths landing in the
+interval - it is just making a claim about the <em>average</em> length
+of all woolly bear caterpillars. For instance, in our sample, only 8 of
+the 20 observations fall within the range of the interval.</p>
 </div>
 <div id="significance-test" class="section level2">
 <h2>Significance Test</h2>
-<p>To test the null hypothesis <span class="math inline">\(H_o: \mu = \mu_0\)</span> against one of three possible alternatives:</p>
+<p>To test the null hypothesis <span class="math inline">\(H_o: \mu =
+\mu_0\)</span> against one of three possible alternatives:</p>
 <ul>
-<li><span class="math inline">\(H_a: \mu &gt; \mu_o\)</span> (one-sided, <code>greater</code> than <span class="math inline">\(\mu_o\)</span>)</li>
-<li><span class="math inline">\(H_a: \mu &lt; \mu_o\)</span> (one-sided, <code>less</code> than <span class="math inline">\(\mu_o\)</span>)</li>
-<li><span class="math inline">\(H_a: \mu \neq \mu_0\)</span> (<code>two.sided</code>)</li>
+<li><span class="math inline">\(H_a: \mu &gt; \mu_o\)</span> (one-sided,
+<code>greater</code> than <span
+class="math inline">\(\mu_o\)</span>)</li>
+<li><span class="math inline">\(H_a: \mu &lt; \mu_o\)</span> (one-sided,
+<code>less</code> than <span class="math inline">\(\mu_o\)</span>)</li>
+<li><span class="math inline">\(H_a: \mu \neq \mu_0\)</span>
+(<code>two.sided</code>)</li>
 </ul>
-<p>Suppose we want to test the average length of all woolly bear caterpillars is 45 mm or not (perhaps a paper we read claimed the average length of wb caterpillars is 45 millimeters and we want to check whether that seems reasonable for wb caterpillars in our neck of the woods). We choose the hypotheses <span class="math display">\[H_o: \mu = 45 ~~\text{against}~~H_a: \mu\neq 45.\]</span></p>
-<p><strong>Test statistic</strong>: This is a t-score computed under the assumption that <span class="math inline">\(H_o\)</span> is true: <span class="math display">\[t= \frac{\overline{x}-\mu_0}{\text{SE}}\]</span> where <span class="math inline">\(\text{SE}=s/\sqrt{n}\)</span>.</p>
+<p>Suppose we want to test the average length of all woolly bear
+caterpillars is 45 mm or not (perhaps a paper we read claimed the
+average length of wb caterpillars is 45 millimeters and we want to check
+whether that seems reasonable for wb caterpillars in our neck of the
+woods). We choose the hypotheses <span class="math display">\[H_o: \mu =
+45 ~~\text{against}~~H_a: \mu\neq 45.\]</span></p>
+<p><strong>Test statistic</strong>: This is a t-score computed under the
+assumption that <span class="math inline">\(H_o\)</span> is true: <span
+class="math display">\[t= \frac{\overline{x}-\mu_0}{\text{SE}}\]</span>
+where <span class="math inline">\(\text{SE}=s/\sqrt{n}\)</span>.</p>
 <p><strong>Calculate the test statistic in R</strong></p>
 <pre class="r"><code># Value of mean under the null hypothesis
 mu0 = 45 
@@ -469,27 +512,53 @@ SE = s/sqrt(n)
 t = (xbar-mu0)/SE
 t</code></pre>
 <pre><code>## [1] 5.860202</code></pre>
-<p>We can determine the p-value with the <code>pt()</code> function. <em>How</em> to use the <code>pt()</code> function depends on the alternative hypothesis.</p>
+<p>We can determine the p-value with the <code>pt()</code> function.
+<em>How</em> to use the <code>pt()</code> function depends on the
+alternative hypothesis.</p>
 <p>In this case the p-value is</p>
 <pre class="r"><code>2*pt(-abs(t),n-1)</code></pre>
 <pre><code>## [1] 1.209613e-05</code></pre>
-<p><strong>Note</strong>: The p-value above is given in <strong>scientific notation: 1.21e-05</strong> stands for <span class="math inline">\(1.21 \times 10^{-5} = 0.0000121\)</span>, which is, of course, a tiny p-value.</p>
-<p><strong>Conclusion</strong> This p-value is so small that we have convincing evidence that the null hypothesis is false. We have good reason to believe the average length of all woolly bear caterpillars is not 45 millimeters.</p>
+<p><strong>Note</strong>: The p-value above is given in
+<strong>scientific notation: 1.21e-05</strong> stands for <span
+class="math inline">\(1.21 \times 10^{-5} = 0.0000121\)</span>, which
+is, of course, a tiny p-value.</p>
+<p><strong>Conclusion</strong> This p-value is so small that we have
+convincing evidence that the null hypothesis is false. We have good
+reason to believe the average length of all woolly bear caterpillars is
+not 45 millimeters.</p>
 </div>
 </div>
 <div id="one-proportion" class="section level1">
 <h1>One proportion</h1>
-<p><strong>Question</strong>: We want to estimate/investigate the proportion of <em>all</em> elements in a population having a certain feature.</p>
-<p><strong>Example</strong>: Estimate the proportion of all Linfield Students who would pick 3 or 7 if asked to pick a random number between 1 and 10.</p>
+<p><strong>Question</strong>: We want to estimate/investigate the
+proportion of <em>all</em> elements in a population having a certain
+feature.</p>
+<p><strong>Example</strong>: Estimate the proportion of all Linfield
+Students who would pick 3 or 7 if asked to pick a random number between
+1 and 10.</p>
 <p><strong>Notation/terminology</strong></p>
 <ul>
-<li><span class="math inline">\(p\)</span> - proportion of <em>all</em> elements in the population having the feature. Generally, <span class="math inline">\(p\)</span> is an unknown parameter, called the population proportion, and it’s what we want to estimate/investigate via a sample.</li>
-<li><span class="math inline">\(n\)</span> - the size of an independent sample of elements gathered from the population.</li>
-<li><span class="math inline">\(\hat{p}\)</span> - the proportion of elements in the sample that have the feature. Note: <span class="math inline">\(\hat{p}=x/n\)</span>, where <span class="math inline">\(x\)</span> is the number of <em>successes</em>, i.e., the number of observations having the feature of interest.</li>
+<li><span class="math inline">\(p\)</span> - proportion of <em>all</em>
+elements in the population having the feature. Generally, <span
+class="math inline">\(p\)</span> is an unknown parameter, called the
+population proportion, and it’s what we want to estimate/investigate via
+a sample.</li>
+<li><span class="math inline">\(n\)</span> - the size of an independent
+sample of elements gathered from the population.</li>
+<li><span class="math inline">\(\hat{p}\)</span> - the proportion of
+elements in the sample that have the feature. Note: <span
+class="math inline">\(\hat{p}=x/n\)</span>, where <span
+class="math inline">\(x\)</span> is the number of <em>successes</em>,
+i.e., the number of observations having the feature of interest.</li>
 </ul>
 <div id="confidence-interval-for-p" class="section level2">
 <h2>Confidence Interval for <span class="math inline">\(p\)</span></h2>
-<p><span class="math display">\[\hat{p} \pm z^* \cdot \text{SE}\]</span> where <span class="math display">\[SE \approx \sqrt{\frac{\hat{p}(1-\hat{p})}{n}},\]</span> and <span class="math inline">\(z^*\)</span> is the value in the standard normal distribution <span class="math inline">\(N(0,1)\)</span> that corresponds to the desired confidence level.</p>
+<p><span class="math display">\[\hat{p} \pm z^* \cdot \text{SE}\]</span>
+where <span class="math display">\[SE \approx
+\sqrt{\frac{\hat{p}(1-\hat{p})}{n}},\]</span> and <span
+class="math inline">\(z^*\)</span> is the value in the standard normal
+distribution <span class="math inline">\(N(0,1)\)</span> that
+corresponds to the desired confidence level.</p>
 <p><strong>Calculate the confidence interval in R</strong></p>
 <pre class="r"><code># Using class data from the 2021-22 academic year
 n=86 #sample size
@@ -501,18 +570,32 @@ zstar = qnorm(C + (1-C)/2)
 MOE = zstar*SE #margin of error
 phat + c(-MOE,MOE) #Confidence Interval</code></pre>
 <pre><code>## [1] 0.2920152 0.4986824</code></pre>
-<p><strong>Interpretation</strong>: We are 95% confident that the proportion of all Linfield students who would pick 3 ro 7 on the random number question is between .292 and .499.</p>
+<p><strong>Interpretation</strong>: We are 95% confident that the
+proportion of all Linfield students who would pick 3 ro 7 on the random
+number question is between .292 and .499.</p>
 </div>
 <div id="hypothesis-test" class="section level2">
 <h2>Hypothesis test</h2>
-<p>To test the null hypothesis <span class="math display">\[H_o: p = p_0\]</span> against one of three possible alternatives:</p>
+<p>To test the null hypothesis <span class="math display">\[H_o: p =
+p_0\]</span> against one of three possible alternatives:</p>
 <ul>
-<li><span class="math inline">\(H_a: p &gt; p_o\)</span> (one-sided, <code>greater</code> than <span class="math inline">\(p_o\)</span>)</li>
-<li><span class="math inline">\(H_a: p &lt; p_o\)</span> (one-sided, <code>less</code> than <span class="math inline">\(p_o\)</span>)</li>
-<li><span class="math inline">\(H_a: p \neq p_0\)</span> (<code>two.sided</code>)</li>
+<li><span class="math inline">\(H_a: p &gt; p_o\)</span> (one-sided,
+<code>greater</code> than <span class="math inline">\(p_o\)</span>)</li>
+<li><span class="math inline">\(H_a: p &lt; p_o\)</span> (one-sided,
+<code>less</code> than <span class="math inline">\(p_o\)</span>)</li>
+<li><span class="math inline">\(H_a: p \neq p_0\)</span>
+(<code>two.sided</code>)</li>
 </ul>
-<p><strong>Test statistic</strong>. This is a z-score computed under the assumption that <span class="math inline">\(H_o\)</span> is true: <span class="math display">\[z = \frac{\hat{p}-p_o}{\text{SE}}\]</span> where <span class="math display">\[\text{SE}=\sqrt{\frac{p_o(1-p_o)}{n}}.\]</span></p>
-<p>Suppose we want to test the claim that 20% of all Linfield students would pick 3 or 7 on the random number question (since 3 and 7 make up 2 of the possible 10 choices). We test the hypotheses <span class="math display">\[H_o: p = 0.2 ~~\text{against}~~H_a: p \neq 0.2.\]</span></p>
+<p><strong>Test statistic</strong>. This is a z-score computed under the
+assumption that <span class="math inline">\(H_o\)</span> is true: <span
+class="math display">\[z = \frac{\hat{p}-p_o}{\text{SE}}\]</span> where
+<span
+class="math display">\[\text{SE}=\sqrt{\frac{p_o(1-p_o)}{n}}.\]</span></p>
+<p>Suppose we want to test the claim that 20% of all Linfield students
+would pick 3 or 7 on the random number question (since 3 and 7 make up 2
+of the possible 10 choices). We test the hypotheses <span
+class="math display">\[H_o: p = 0.2 ~~\text{against}~~H_a: p \neq
+0.2.\]</span></p>
 <p><strong>Calculate the test statistic in R</strong></p>
 <pre class="r"><code>p0=.2
 n=86 #sample size
@@ -522,17 +605,32 @@ SE = sqrt(p0*(1-p0)/n) # If Ho is true, this is the standard error!!
 z = (phat-p0)/SE
 z</code></pre>
 <pre><code>## [1] 4.528976</code></pre>
-<p>We can determine the p-value with the <code>pnorm()</code> function. <em>How</em> to use the <code>pnorm()</code> function depends on the alternative hypothesis.</p>
+<p>We can determine the p-value with the <code>pnorm()</code> function.
+<em>How</em> to use the <code>pnorm()</code> function depends on the
+alternative hypothesis.</p>
 <p>In this case, since we have a 2-sided alternative, the p-value is</p>
 <pre class="r"><code>2*pnorm(-abs(z))</code></pre>
 <pre><code>## [1] 5.92701e-06</code></pre>
-<p><strong>Conclusion</strong> This p-value is so small that we reject the null and conclude that <span class="math inline">\(p \neq .2\)</span>. This conclusion agrees with the fact that our confidence interval above did not include .2 within it! We are confident that <span class="math inline">\(p \neq .2\)</span>.</p>
+<p><strong>Conclusion</strong> This p-value is so small that we reject
+the null and conclude that <span class="math inline">\(p \neq
+.2\)</span>. This conclusion agrees with the fact that our confidence
+interval above did not include .2 within it! We are confident that <span
+class="math inline">\(p \neq .2\)</span>.</p>
 </div>
 </div>
 <div id="using-t.test" class="section level1">
 <h1>Using <code>t.test()</code></h1>
-<p>The <code>t.test()</code> function is a <em>black box</em> r command that does confidence interval and test of significance calculations for us in one fell swoop for both a single population mean and for the difference of two means. (If you type t.test in the RStudio help search box you can get information about options.)</p>
-<p>The following code reproduces the test of significance we just ran through, and it will also give the 95% confidence interval we calculated. Essentially we input the data vector, the value of the mean under the null hypothesis, and the nature of our alternative hypothesis (<code>greater</code>, <code>less</code>, or <code>two.sided</code>).</p>
+<p>The <code>t.test()</code> function is a <em>black box</em> r command
+that does confidence interval and test of significance calculations for
+us in one fell swoop for both a single population mean and for the
+difference of two means. (If you type t.test in the RStudio help search
+box you can get information about options.)</p>
+<p>The following code reproduces the test of significance we just ran
+through, and it will also give the 95% confidence interval we
+calculated. Essentially we input the data vector, the value of the mean
+under the null hypothesis, and the nature of our alternative hypothesis
+(<code>greater</code>, <code>less</code>, or
+<code>two.sided</code>).</p>
 <pre class="r"><code>wb = c(52.0, 48.9, 47.3, 47.3, 48.6, 48.8, 42.8, 44.3, 46.7, 46.4, 
        47.5, 51.4, 49.0, 47.7, 48.5, 48.5, 45.8, 49.3, 48.1, 46.5)
 t.test(wb, mu=45, alternative=&quot;two.sided&quot;)</code></pre>
@@ -547,7 +645,11 @@ t.test(wb, mu=45, alternative=&quot;two.sided&quot;)</code></pre>
 ## sample estimates:
 ## mean of x 
 ##     47.77</code></pre>
-<p><strong>Example</strong>: Does the sample recorded below under the name <code>obs</code>, drawn from a population with unknown mean <span class="math inline">\(\mu\)</span>, provide statistically significant evidence at the <span class="math inline">\(\alpha = .05\)</span> level that <span class="math inline">\(\mu\)</span> is less than 10?</p>
+<p><strong>Example</strong>: Does the sample recorded below under the
+name <code>obs</code>, drawn from a population with unknown mean <span
+class="math inline">\(\mu\)</span>, provide statistically significant
+evidence at the <span class="math inline">\(\alpha = .05\)</span> level
+that <span class="math inline">\(\mu\)</span> is less than 10?</p>
 <pre class="r"><code>obs &lt;- c(10.1,9.4,9.8,8.6,10.2,9.1,10.0,8.9,9.4,9.7,10.3,9.6)
 t.test(obs,mu=10,alternative=&quot;less&quot;)</code></pre>
 <pre><code>## 
@@ -561,17 +663,31 @@ t.test(obs,mu=10,alternative=&quot;less&quot;)</code></pre>
 ## sample estimates:
 ## mean of x 
 ##  9.591667</code></pre>
-<p><strong>Conclusion</strong> The p-value of .01125 is less than 0.05. If the population mean were 10, the chances of gathering a random sample of size 12 having sample mean less than or equal to 9.59 is about 1.1% - this likelihood is small enough that we reject the null. We believe the population that this sample was drawn from has population mean less than 10.</p>
+<p><strong>Conclusion</strong> The p-value of .01125 is less than 0.05.
+If the population mean were 10, the chances of gathering a random sample
+of size 12 having sample mean less than or equal to 9.59 is about 1.1% -
+this likelihood is small enough that we reject the null. We believe the
+population that this sample was drawn from has population mean less than
+10.</p>
 </div>
 <div id="matched-pairs" class="section level1">
 <h1>Matched Pairs</h1>
-<p><strong>Data</strong>: Consider pre- and post-test scores for 14 students enrolled in a course.</p>
+<p><strong>Data</strong>: Consider pre- and post-test scores for 14
+students enrolled in a course.</p>
 <pre class="r"><code>pre=c(52,49,55,37,68,72,64,71,81,57,52,66,71,65)
 post=c(56,61,65,43,65,78,77,73,82,61,54,63,71,72)</code></pre>
 <p>Are students improving test scores as a result of the course?</p>
-<p>Let <span class="math inline">\(\mu_{\text{diff}}=\)</span> the average difference (post-pre) in test scores for all students who take the course.</p>
-<p><strong>Note</strong>: The <code>pre</code> and <code>post</code> data need to have been ordered to match according to student for this to work. So, the first student had pre and post-test scores of 52 and 56, the second student had pre and post-test scores of 49 and 61, etc.</p>
-<p>We test <span class="math display">\[H_o: \mu_{\text{diff}}=0~~\text{against}~~ H_a: \mu_{\text{diff}}&gt;0,\]</span> by doing a 1-sample <span class="math inline">\(t\)</span>-test on the difference</p>
+<p>Let <span class="math inline">\(\mu_{\text{diff}}=\)</span> the
+average difference (post-pre) in test scores for all students who take
+the course.</p>
+<p><strong>Note</strong>: The <code>pre</code> and <code>post</code>
+data need to have been ordered to match according to student for this to
+work. So, the first student had pre and post-test scores of 52 and 56,
+the second student had pre and post-test scores of 49 and 61, etc.</p>
+<p>We test <span class="math display">\[H_o:
+\mu_{\text{diff}}=0~~\text{against}~~ H_a:
+\mu_{\text{diff}}&gt;0,\]</span> by doing a 1-sample <span
+class="math inline">\(t\)</span>-test on the difference</p>
 <pre class="r"><code>diff=post-pre
 t.test(diff,mu=0,alternative=&quot;greater&quot;)</code></pre>
 <pre><code>## 
@@ -585,27 +701,51 @@ t.test(diff,mu=0,alternative=&quot;greater&quot;)</code></pre>
 ## sample estimates:
 ## mean of x 
 ##  4.357143</code></pre>
-<p><strong>Conclusion</strong>: With such a small p-value we reject the null hypothesis in favor of the alternative and conclude that the average difference (post-test minus pre-test) is positive, suggesting the course helps improve test scores, on average!</p>
+<p><strong>Conclusion</strong>: With such a small p-value we reject the
+null hypothesis in favor of the alternative and conclude that the
+average difference (post-test minus pre-test) is positive, suggesting
+the course helps improve test scores, on average!</p>
 </div>
 <div id="two-means" class="section level1">
 <h1>Two means</h1>
-<p><strong>Question</strong>: Is there a difference between two population means?</p>
-<p><strong>Example</strong>: Is there a difference in the silver content (% Ag) in coins during two different eras of the reign of King Manuel, I, Comnenus (1143-1180)? 16 coins have been found and measured, 9 of the coins came from an early coinage, and 7 of the coins came from a coinage many years later.</p>
+<p><strong>Question</strong>: Is there a difference between two
+population means?</p>
+<p><strong>Example</strong>: Is there a difference in the silver content
+(% Ag) in coins during two different eras of the reign of King Manuel,
+I, Comnenus (1143-1180)? 16 coins have been found and measured, 9 of the
+coins came from an early coinage, and 7 of the coins came from a coinage
+many years later.</p>
 <center>
-<img src="images/coin.jpeg" title="fig:" style="width:30.0%" alt="Byzantine coin" />
+<div class="figure">
+<img src="images/coin.jpeg" style="width:30.0%" alt="" />
+<p class="caption">Byzantine coin</p>
+</div>
 </center>
 <p><strong>Notation/terminology</strong></p>
 <ul>
-<li><span class="math inline">\(\mu_1\)</span> - the mean silver content of <em>all</em> coins produced in the early coinage</li>
-<li><span class="math inline">\(\mu_2\)</span> - the mean silver content of <em>all</em> coins produced in the later coinage</li>
-<li><span class="math inline">\(n_1\)</span>, <span class="math inline">\(\overline{x}_1\)</span>, <span class="math inline">\(s_1\)</span> - the sample size, sample mean, and sample standard deviation of the sample gathered from the first population.</li>
-<li><span class="math inline">\(n_2\)</span>, <span class="math inline">\(\overline{x}_2\)</span>, <span class="math inline">\(s_2\)</span> - the sample size, sample mean, and sample standard deviation of the sample gathered from the first population.</li>
+<li><span class="math inline">\(\mu_1\)</span> - the mean silver content
+of <em>all</em> coins produced in the early coinage</li>
+<li><span class="math inline">\(\mu_2\)</span> - the mean silver content
+of <em>all</em> coins produced in the later coinage</li>
+<li><span class="math inline">\(n_1\)</span>, <span
+class="math inline">\(\overline{x}_1\)</span>, <span
+class="math inline">\(s_1\)</span> - the sample size, sample mean, and
+sample standard deviation of the sample gathered from the first
+population.</li>
+<li><span class="math inline">\(n_2\)</span>, <span
+class="math inline">\(\overline{x}_2\)</span>, <span
+class="math inline">\(s_2\)</span> - the sample size, sample mean, and
+sample standard deviation of the sample gathered from the first
+population.</li>
 </ul>
 <p><strong>The Data</strong></p>
 <pre class="r"><code>Ag1 &lt;- c(5.9,6.8,6.4,7.0,6.6,7.7,7.2,6.9,6.2)
 Ag2 &lt;- c(5.3,5.6,5.5,5.1,6.2,5.8,5.8) </code></pre>
-<p>These data appear in <em>The Handbook of Small Data Sets</em> (p. 118), and are based on this article:</p>
-<p>Hendy, M.F. and Charles J.A. (1970), <em>The production techniques, silver content and circulation history of the twelfth-century Byzantine Trachy.</em> Archaeonetry, 12. 13-21)</p>
+<p>These data appear in <em>The Handbook of Small Data Sets</em>
+(p. 118), and are based on this article:</p>
+<p>Hendy, M.F. and Charles J.A. (1970), <em>The production techniques,
+silver content and circulation history of the twelfth-century Byzantine
+Trachy.</em> Archaeonetry, 12. 13-21)</p>
 <p><strong>Summary Statistics</strong></p>
 <pre class="r"><code>#first sample
 n1 = length(Ag1)
@@ -617,8 +757,12 @@ n2 = length(Ag2)
 xbar2 = mean(Ag2)
 s2 = sd(Ag2)</code></pre>
 <div id="confidence-interval-for-mu_1-mu_2" class="section level2">
-<h2>Confidence Interval for <span class="math inline">\(\mu_1-\mu_2\)</span></h2>
-<p>We use the formula <span class="math display">\[(\overline{x}_1-\overline{x}_2) \pm t^*\cdot \text{SE},\]</span> where <span class="math display">\[\text{SE}=\sqrt{\frac{s_1^2}{n_1}+\frac{s_2^2}{n_2}}\]</span></p>
+<h2>Confidence Interval for <span
+class="math inline">\(\mu_1-\mu_2\)</span></h2>
+<p>We use the formula <span
+class="math display">\[(\overline{x}_1-\overline{x}_2) \pm t^*\cdot
+\text{SE},\]</span> where <span
+class="math display">\[\text{SE}=\sqrt{\frac{s_1^2}{n_1}+\frac{s_2^2}{n_2}}\]</span></p>
 <p><strong>Calculate the confidence interval in R</strong></p>
 <pre class="r"><code># Confidence Level
 C=.95
@@ -629,11 +773,20 @@ SE = sqrt(s1^2/n1 + s2^2/n2) # standard error
 moe=tstar*SE # margin of error
 (xbar1-xbar2)+c(-moe,moe) #confidence interval</code></pre>
 <pre><code>## [1] 0.5744126 1.6859049</code></pre>
-<p><strong>Interpretation</strong> We believe with 95% confidence that the difference in the average silver content from the early coinage and the average silver content from the later coinage is between 0.57 and 1.69. Since this entire interval consists of positive values, we believe the average silver content in coins produced early in the reign is greater than the average silver content in coins produces later in the reign.</p>
+<p><strong>Interpretation</strong> We believe with 95% confidence that
+the difference in the average silver content from the early coinage and
+the average silver content from the later coinage is between 0.57 and
+1.69. Since this entire interval consists of positive values, we believe
+the average silver content in coins produced early in the reign is
+greater than the average silver content in coins produces later in the
+reign.</p>
 </div>
 <div id="significance-test-1" class="section level2">
 <h2>Significance Test</h2>
-<p>To test <span class="math display">\[H_o: \mu_1 - \mu_2 = 0 ~~\text{against}~~ H_a: \mu_1 - \mu_2 \neq 0,\]</span> the 2-sample test statistic is given by the formula <span class="math display">\[t = \frac{\overline{x}_1-\overline{x}_2}{\sqrt{\frac{s_1^2}{n_1}+\frac{s_2^2}{n_2}}}\]</span></p>
+<p>To test <span class="math display">\[H_o: \mu_1 - \mu_2 = 0
+~~\text{against}~~ H_a: \mu_1 - \mu_2 \neq 0,\]</span> the 2-sample test
+statistic is given by the formula <span class="math display">\[t =
+\frac{\overline{x}_1-\overline{x}_2}{\sqrt{\frac{s_1^2}{n_1}+\frac{s_2^2}{n_2}}}\]</span></p>
 <p><strong>Calculate the test statistic in R</strong></p>
 <pre class="r"><code>## Test statistic
 SE = sqrt(s1^2/n1 + s2^2/n2) # standard error
@@ -655,8 +808,18 @@ t</code></pre>
 ## sample estimates:
 ## mean of x mean of y 
 ##  6.744444  5.614286</code></pre>
-<p><strong>Conclusion</strong> With such a small p-value we reject the null hypothesis in favor of the alternative and conclude that there is a difference in average silver content of coins produced during these two eras.</p>
-<p><strong>Note on df</strong>: For the 2-sample t-test, R’s built-in <code>t.test()</code> function results is the same test statistic as the one we produce following the formula in the book, but it assumes a different, less conservative degrees of freedom than what we’ve done in class This creates a slightly different, less conservative margin of error in confidence intervals, and a slightly different, less conservative p-value in significance tests, than what we do by hand. If interested, see the course notes for the df formula that R uses.</p>
+<p><strong>Conclusion</strong> With such a small p-value we reject the
+null hypothesis in favor of the alternative and conclude that there is a
+difference in average silver content of coins produced during these two
+eras.</p>
+<p><strong>Note on df</strong>: For the 2-sample t-test, R’s built-in
+<code>t.test()</code> function results is the same test statistic as the
+one we produce following the formula in the book, but it assumes a
+different, less conservative degrees of freedom than what we’ve done in
+class This creates a slightly different, less conservative margin of
+error in confidence intervals, and a slightly different, less
+conservative p-value in significance tests, than what we do by hand. If
+interested, see the course notes for the df formula that R uses.</p>
 <!--
 FYI, here is the formula that the built-in function uses to determine df:
 
@@ -666,7 +829,11 @@ $$df = \frac{\left(\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2} \right)^2}{\frac{1}{n_1
 </div>
 <div id="t.test-and-data-frames" class="section level1">
 <h1><code>t.test()</code> and data frames</h1>
-<p>Data from on-line surveys such as you’d build with Google Forms is stored as a long data frame, where each row in the spreadsheet contains all the answers from an individual respondent, and each column has all the responses to a particular question. In long form, the coin data in the example above would look like this:</p>
+<p>Data from on-line surveys such as you’d build with Google Forms is
+stored as a long data frame, where each row in the spreadsheet contains
+all the answers from an individual respondent, and each column has all
+the responses to a particular question. In long form, the coin data in
+the example above would look like this:</p>
 <table class="table table-striped table-hover" style="width: auto !important; ">
 <thead>
 <tr>
@@ -809,7 +976,9 @@ late
 </tr>
 </tbody>
 </table>
-<p>We can use the <code>t.test()</code> command as follows to run the 2-sample <span class="math inline">\(t\)</span>-test when the data are given as a long form data matrix:</p>
+<p>We can use the <code>t.test()</code> command as follows to run the
+2-sample <span class="math inline">\(t\)</span>-test when the data are
+given as a long form data matrix:</p>
 <pre class="r"><code>t.test(Ag~coinage,data=df,alternative=&quot;two.sided&quot;)</code></pre>
 <pre><code>## 
 ##  Welch Two Sample t-test
@@ -822,7 +991,9 @@ late
 ## sample estimates:
 ## mean in group early  mean in group late 
 ##            6.744444            5.614286</code></pre>
-<p>Also, if we load the tidyverse (with <code>library(tidyverse)</code>) into our session, we can easily extract sample sizes and sample means and sample standard deviations by group as follows:</p>
+<p>Also, if we load the tidyverse (with <code>library(tidyverse)</code>)
+into our session, we can easily extract sample sizes and sample means
+and sample standard deviations by group as follows:</p>
 <pre class="r"><code>df %&gt;% 
   group_by(coinage) %&gt;%
   summarize(size=length(Ag),avg=mean(Ag),stdev=sd(Ag)) </code></pre>
@@ -834,20 +1005,36 @@ late
 </div>
 <div id="two-proportions" class="section level1">
 <h1>Two proportions</h1>
-<p><strong>Question</strong>: We want to estimate/investigate the difference between two population proportions <span class="math inline">\(p_1 - p_2\)</span>.</p>
-<p><strong>Example</strong>: Is there a difference between the proportion of all Linfield Students that have tested positive for COVID-19 at least once and the proportion of all Oregonians that have tested positive for COVID-19 at least once?</p>
+<p><strong>Question</strong>: We want to estimate/investigate the
+difference between two population proportions <span
+class="math inline">\(p_1 - p_2\)</span>.</p>
+<p><strong>Example</strong>: Is there a difference between the
+proportion of all Linfield Students that have tested positive for
+COVID-19 at least once and the proportion of all Oregonians that have
+tested positive for COVID-19 at least once?</p>
 <p><strong>Notation/terminology</strong></p>
 <ul>
-<li><span class="math inline">\(p_1\)</span> - proportion of <em>all</em> elements in population 1 having the feature under investigation.</li>
-<li><span class="math inline">\(p_2\)</span> - the proportion of <em>all</em> elements in population 2 having the feature under investigation.</li>
-<li><span class="math inline">\(n_1\)</span>, <span class="math inline">\(n_2\)</span> - the sizes of the two independent samples from the two populations.</li>
-<li><span class="math inline">\(\hat{p_1}\)</span> - the proportion of elements in the sample from population 1 that have the feature.</li>
-<li><span class="math inline">\(\hat{p_2}\)</span> - the proportion of elements in the sample from population 2 that have the feature.</li>
+<li><span class="math inline">\(p_1\)</span> - proportion of
+<em>all</em> elements in population 1 having the feature under
+investigation.</li>
+<li><span class="math inline">\(p_2\)</span> - the proportion of
+<em>all</em> elements in population 2 having the feature under
+investigation.</li>
+<li><span class="math inline">\(n_1\)</span>, <span
+class="math inline">\(n_2\)</span> - the sizes of the two independent
+samples from the two populations.</li>
+<li><span class="math inline">\(\hat{p_1}\)</span> - the proportion of
+elements in the sample from population 1 that have the feature.</li>
+<li><span class="math inline">\(\hat{p_2}\)</span> - the proportion of
+elements in the sample from population 2 that have the feature.</li>
 </ul>
 <div id="confidence-interval-for-p_1-p_2" class="section level2">
-<h2>Confidence Interval for <span class="math inline">\(p_1-p_2\)</span></h2>
+<h2>Confidence Interval for <span
+class="math inline">\(p_1-p_2\)</span></h2>
 <p>The formula for the confidence interval:</p>
-<p><span class="math display">\[(\hat{p_1}-\hat{p_2}) \pm z^* \cdot \text{SE}\]</span> where <span class="math display">\[SE \approx \sqrt{\frac{\hat{p_1}(1-\hat{p_1})}{n}+\frac{\hat{p_2}(1-\hat{p_2})}{n}}.\]</span></p>
+<p><span class="math display">\[(\hat{p_1}-\hat{p_2}) \pm z^* \cdot
+\text{SE}\]</span> where <span class="math display">\[SE \approx
+\sqrt{\frac{\hat{p_1}(1-\hat{p_1})}{n}+\frac{\hat{p_2}(1-\hat{p_2})}{n}}.\]</span></p>
 <p><strong>Calculate the interval in R</strong></p>
 <pre class="r"><code># (using artificial data)
 n1=64 #sample size from pop&#39;n 1
@@ -862,18 +1049,43 @@ zstar = qnorm(C + (1-C)/2)
 MOE = zstar*SE #margin of error
 round((phat1-phat2) + c(-MOE,MOE),3) #Confidence Interval</code></pre>
 <pre><code>## [1] 0.032 0.315</code></pre>
-<p><strong>Interpretation</strong>: We believe that the difference in population proportions, <span class="math inline">\(p_1 - p_2\)</span>, is in the range provided by the interval. Since the entire range of values in the interval is positive, the interval provides strong evidence that the difference <span class="math inline">\(p_1-p_2\)</span> is positive. In other words, we have reason to believe that <span class="math inline">\(p_1 &gt; p_2\)</span>. We have reason to believe that the proportion of Linfield students that have tested positive for COVID-19 at least once is greater than the state-wide proportion.</p>
+<p><strong>Interpretation</strong>: We believe that the difference in
+population proportions, <span class="math inline">\(p_1 - p_2\)</span>,
+is in the range provided by the interval. Since the entire range of
+values in the interval is positive, the interval provides strong
+evidence that the difference <span
+class="math inline">\(p_1-p_2\)</span> is positive. In other words, we
+have reason to believe that <span class="math inline">\(p_1 &gt;
+p_2\)</span>. We have reason to believe that the proportion of Linfield
+students that have tested positive for COVID-19 at least once is greater
+than the state-wide proportion.</p>
 </div>
 <div id="hypothesis-test-1" class="section level2">
 <h2>Hypothesis test</h2>
-<p>To test the null hypothesis <span class="math display">\[H_o: p_1-p_2 = 0\]</span> against one of these three alternative hypotheses:</p>
+<p>To test the null hypothesis <span class="math display">\[H_o: p_1-p_2
+= 0\]</span> against one of these three alternative hypotheses:</p>
 <ul>
-<li><span class="math inline">\(H_a: p_1-p_2 &gt; 0\)</span> (one-sided, <code>greater</code> than <span class="math inline">\(p_o\)</span>)</li>
-<li><span class="math inline">\(H_a: p_1-p_2 &lt; 0\)</span> (one-sided, <code>less</code> than <span class="math inline">\(p_o\)</span>)</li>
-<li><span class="math inline">\(H_a: p_1-p_2 \neq 0\)</span> (<code>two.sided</code>)</li>
+<li><span class="math inline">\(H_a: p_1-p_2 &gt; 0\)</span> (one-sided,
+<code>greater</code> than <span class="math inline">\(p_o\)</span>)</li>
+<li><span class="math inline">\(H_a: p_1-p_2 &lt; 0\)</span> (one-sided,
+<code>less</code> than <span class="math inline">\(p_o\)</span>)</li>
+<li><span class="math inline">\(H_a: p_1-p_2 \neq 0\)</span>
+(<code>two.sided</code>)</li>
 </ul>
-<p><strong>Test statistic</strong>: This is a z-score computed under the assumption that <span class="math inline">\(H_o\)</span> is true: <span class="math display">\[z = \frac{\hat{p_1}-\hat{p_2}}{\text{SE}}\]</span> where <span class="math display">\[SE \approx \sqrt{\frac{\hat{p}(1-\hat{p})}{n}+\frac{\hat{p}(1-\hat{p})}{n}},\]</span> and in this formula, <span class="math inline">\(\hat{p}\)</span> denotes the <em>pooled sample proportion</em>, <span class="math inline">\(\displaystyle\hat{p}=\frac{x_1+x_2}{n_1+n_2}\)</span>.</p>
-<p>Suppose we want to test the claim that the proportion of Linfield students who have tested positive for COVID-19 is the same as the state-wide proportion. We choose the hypotheses <span class="math display">\[H_o: p_1-p_2 = 0 ~~\text{against}~~H_a: p_1-p_2 \neq 0.\]</span></p>
+<p><strong>Test statistic</strong>: This is a z-score computed under the
+assumption that <span class="math inline">\(H_o\)</span> is true: <span
+class="math display">\[z =
+\frac{\hat{p_1}-\hat{p_2}}{\text{SE}}\]</span> where <span
+class="math display">\[SE \approx
+\sqrt{\frac{\hat{p}(1-\hat{p})}{n}+\frac{\hat{p}(1-\hat{p})}{n}},\]</span>
+and in this formula, <span class="math inline">\(\hat{p}\)</span>
+denotes the <em>pooled sample proportion</em>, <span
+class="math inline">\(\displaystyle\hat{p}=\frac{x_1+x_2}{n_1+n_2}\)</span>.</p>
+<p>Suppose we want to test the claim that the proportion of Linfield
+students who have tested positive for COVID-19 is the same as the
+state-wide proportion. We choose the hypotheses <span
+class="math display">\[H_o: p_1-p_2 = 0 ~~\text{against}~~H_a: p_1-p_2
+\neq 0.\]</span></p>
 <p><strong>Calculate the test statistic in R</strong></p>
 <pre class="r"><code># population 1
 n1=64 
@@ -890,14 +1102,22 @@ SE = sqrt(phat*(1-phat)/n1+phat*(1-phat)/n2)
 z = (phat1-phat2)/SE
 z</code></pre>
 <pre><code>## [1] 2.462664</code></pre>
-<p>We can determine the p-value with the <code>pnorm()</code> function. <em>How</em> to use the <code>pnorm()</code> function depends on the alternative hypothesis.</p>
+<p>We can determine the p-value with the <code>pnorm()</code> function.
+<em>How</em> to use the <code>pnorm()</code> function depends on the
+alternative hypothesis.</p>
 </div>
 </div>
 <div id="chi-square-goodness-of-fit" class="section level1">
 <h1>Chi-square Goodness of Fit</h1>
-<p><strong>Question</strong>: Do observations in a random sample follow a known distribution?</p>
-<p><strong>Example</strong>: Consider the population of Oregon towns and cities, and focus on the leading digit of each of these population numbers, as in the table below. <em>Note</em>: <a href="https://www.oregon-demographics.com/cities_by_population">Data found here</a>.</p>
-We display the first four and last four rows of this large data frame (that has 373 rows) The data frame is called <code>orcities</code>.
+<p><strong>Question</strong>: Do observations in a random sample follow
+a known distribution?</p>
+<p><strong>Example</strong>: Consider the population of Oregon towns and
+cities, and focus on the leading digit of each of these population
+numbers, as in the table below. <em>Note</em>: <a
+href="https://www.oregon-demographics.com/cities_by_population">Data
+found here</a>.</p>
+We display the first four and last four rows of this large data frame
+(that has 373 rows) The data frame is called <code>orcities</code>.
 <table class="table table-striped table-hover" style="width: auto !important; ">
 <thead>
 <tr>
@@ -1083,8 +1303,11 @@ $\vdots$ & $\vdots$ & $\vdots$ \\
 \end{tabular}
 \end{table}
 -->
-<p>We ask this question of the data: Is it reasonable to expect that each of the digits 1-9 occur with equal frequency? A chi-square goodness of fit test can answer this question.</p>
-<p>Below is the table of observed first digit frequencies, which we can obtain from the data frame above by running</p>
+<p>We ask this question of the data: Is it reasonable to expect that
+each of the digits 1-9 occur with equal frequency? A chi-square goodness
+of fit test can answer this question.</p>
+<p>Below is the table of observed first digit frequencies, which we can
+obtain from the data frame above by running</p>
 <pre class="r"><code>table(orcities$lead.digit)</code></pre>
 <pre><code>## 
 ##   1   2   3   4   5   6   7   8   9 
@@ -1095,7 +1318,10 @@ $\vdots$ & $\vdots$ & $\vdots$ \\
 <pre class="r"><code>round(X$expected,1)</code></pre>
 <pre><code>##    1    2    3    4    5    6    7    8    9 
 ## 41.4 41.4 41.4 41.4 41.4 41.4 41.4 41.4 41.4</code></pre>
-<p>If all nine digits 1-9 arise with equal probability (1/9), we would expect about 41.4 occurrences of each digit in a sample of size 373. The observed counts appear to have a much different distribution than this.</p>
+<p>If all nine digits 1-9 arise with equal probability (1/9), we would
+expect about 41.4 occurrences of each digit in a sample of size 373. The
+observed counts appear to have a much different distribution than
+this.</p>
 <p>Results:</p>
 <pre class="r"><code>X</code></pre>
 <pre><code>## 
@@ -1103,9 +1329,26 @@ $\vdots$ & $\vdots$ & $\vdots$ \\
 ## 
 ## data:  table(orcities$lead.digit)
 ## X-squared = 218.66, df = 8, p-value &lt; 2.2e-16</code></pre>
-<p><strong>Conclusion</strong>: With such a small p-value (well, well below <span class="math inline">\(\alpha = .05\)</span>)) we reject the claim that all 9 digits 1-9 appear with equal frequency in a distribution of city populations.</p>
-<p><strong>Example 2</strong>. <strong>Benford’s Law</strong> asserts that in many distributions (but not all) the distribution of “leading digits” follows this specific, non-uniform distribution:</p>
+<p><strong>Conclusion</strong>: With such a small p-value (well, well
+below <span class="math inline">\(\alpha = .05\)</span>)) we reject the
+claim that all 9 digits 1-9 appear with equal frequency in a
+distribution of city populations.</p>
+<p><strong>Example 2</strong>. <strong>Benford’s Law</strong> asserts
+that in many distributions (but not all) the distribution of “leading
+digits” follows this specific, non-uniform distribution:</p>
 <table>
+<colgroup>
+<col width="23%" />
+<col width="8%" />
+<col width="8%" />
+<col width="8%" />
+<col width="8%" />
+<col width="8%" />
+<col width="8%" />
+<col width="8%" />
+<col width="8%" />
+<col width="8%" />
+</colgroup>
 <thead>
 <tr class="header">
 <th align="left">Leading Digit</th>
@@ -1144,14 +1387,19 @@ probability & .301 & .176 & .125 & .097 & .079 & .067 & .058 & .051 & .046 \\ \h
 \end{tabular}
 \end{table}
 -->
-<p>(These probabilities might seem artifical, but, according to Benford’s Law, the probability that a leading digit is <span class="math inline">\(k\)</span> is given mathematically by <span class="math inline">\(\log_{10}\left(\frac{k+1}{k}\right)\)</span>.)</p>
-<p>Is it plausible that Oregon town populations adhere to this distribution?</p>
+<p>(These probabilities might seem artifical, but, according to
+Benford’s Law, the probability that a leading digit is <span
+class="math inline">\(k\)</span> is given mathematically by <span
+class="math inline">\(\log_{10}\left(\frac{k+1}{k}\right)\)</span>.)</p>
+<p>Is it plausible that Oregon town populations adhere to this
+distribution?</p>
 <pre class="r"><code>X=chisq.test(table(orcities$lead.digit),p = c(.301,.176,.125,.097,.079,.067,.058,.051,.046))</code></pre>
 <p>Expected counts:</p>
 <pre class="r"><code>X$expected</code></pre>
 <pre><code>##       1       2       3       4       5       6       7       8       9 
 ## 112.273  65.648  46.625  36.181  29.467  24.991  21.634  19.023  17.158</code></pre>
-<p>These expected counts look much closer to the observed counts! Let’s view the results of the test:</p>
+<p>These expected counts look much closer to the observed counts! Let’s
+view the results of the test:</p>
 <p>Here are the results of the chi-square test:</p>
 <pre class="r"><code>X</code></pre>
 <pre><code>## 
@@ -1159,14 +1407,21 @@ probability & .301 & .176 & .125 & .097 & .079 & .067 & .058 & .051 & .046 \\ \h
 ## 
 ## data:  table(orcities$lead.digit)
 ## X-squared = 8.9896, df = 8, p-value = 0.3432</code></pre>
-<p><strong>Conclusion</strong>: Here the p-value is far larger than .05, suggesting we do not have reason to reject the null hypothesis that population figures in Oregon follow Benford’s Law. Restating this double negative, it is reasonable, based on this test, to argue that Oregon populations follow Benford’s Law.</p>
+<p><strong>Conclusion</strong>: Here the p-value is far larger than .05,
+suggesting we do not have reason to reject the null hypothesis that
+population figures in Oregon follow Benford’s Law. Restating this double
+negative, it is reasonable, based on this test, to argue that Oregon
+populations follow Benford’s Law.</p>
 </div>
 <div id="chi-square-test-of-independence" class="section level1">
 <h1>Chi-square Test of Independence</h1>
-<p><strong>Question</strong>: Are two categorical variables associated?</p>
-<p><strong>Example</strong>: Is there an association between the wall color in a room and the mood of people resting in the room?</p>
+<p><strong>Question</strong>: Are two categorical variables
+associated?</p>
+<p><strong>Example</strong>: Is there an association between the wall
+color in a room and the mood of people resting in the room?</p>
 <p><strong>The Data</strong></p>
-<p>Here are the first five rows of the data frame, called <code>df</code>, which has 100 rows total.</p>
+<p>Here are the first five rows of the data frame, called
+<code>df</code>, which has 100 rows total.</p>
 <table class="table table-striped table-hover" style="width: auto !important; ">
 <thead>
 <tr>
@@ -1248,25 +1503,49 @@ X$expected</code></pre>
 ## 
 ## data:  table(df$mood, df$color)
 ## X-squared = 4.6183, df = 6, p-value = 0.5936</code></pre>
-<p><strong>Conclusion</strong>: We have no statistical evidence of an association (since the p-value is so large, <span class="math inline">\(P&gt;.5\)</span>).</p>
+<p><strong>Conclusion</strong>: We have no statistical evidence of an
+association (since the p-value is so large, <span
+class="math inline">\(P&gt;.5\)</span>).</p>
 </div>
 <div id="anova" class="section level1">
 <h1>ANOVA</h1>
-<p><strong>Question</strong>: We are interested in comparing more than two population means.</p>
-<p><strong>Example</strong>: We investigate whether there is a difference in average weight-loss for participants in different exercise programs: one that focuses on long exercise periods, one focusing on short exercise periods, and one focusing on short exercise periods with equipment.</p>
+<p><strong>Question</strong>: We are interested in comparing more than
+two population means.</p>
+<p><strong>Example</strong>: We investigate whether there is a
+difference in average weight-loss for participants in different exercise
+programs: one that focuses on long exercise periods, one focusing on
+short exercise periods, and one focusing on short exercise periods with
+equipment.</p>
 <p><strong>Notation/terminology</strong></p>
 <ul>
-<li><span class="math inline">\(k\)</span> denotes the number of groups we’re comparing</li>
-<li><span class="math inline">\(\mu_i\)</span> - the (unknown) population mean for group <span class="math inline">\(i\)</span> (where <span class="math inline">\(i = 1, 2, \ldots, k\)</span>)</li>
-<li><span class="math inline">\(n_i\)</span> - the sample size of the independent sample gathered from group <span class="math inline">\(i\)</span>.</li>
-<li><span class="math inline">\(\overline{x}_i\)</span> - the sample mean of the <span class="math inline">\(n_i\)</span> values in the sample from group <span class="math inline">\(i\)</span>.</li>
-<li><span class="math inline">\(s_i\)</span> - the sample standard deviation of the <span class="math inline">\(n_i\)</span> values in the sample from group <span class="math inline">\(i\)</span>.</li>
-<li><span class="math inline">\(N\)</span> the overall sample size (<span class="math inline">\(N = n_1 + n_2 + \cdots + n_k\)</span>)</li>
-<li>MSG - the “mean square for groups” which measures the variation across all the group sample means</li>
-<li>MSE = the “mean square for error” which measures the overall variation of all <span class="math inline">\(N\)</span> data points</li>
+<li><span class="math inline">\(k\)</span> denotes the number of groups
+we’re comparing</li>
+<li><span class="math inline">\(\mu_i\)</span> - the (unknown)
+population mean for group <span class="math inline">\(i\)</span> (where
+<span class="math inline">\(i = 1, 2, \ldots, k\)</span>)</li>
+<li><span class="math inline">\(n_i\)</span> - the sample size of the
+independent sample gathered from group <span
+class="math inline">\(i\)</span>.</li>
+<li><span class="math inline">\(\overline{x}_i\)</span> - the sample
+mean of the <span class="math inline">\(n_i\)</span> values in the
+sample from group <span class="math inline">\(i\)</span>.</li>
+<li><span class="math inline">\(s_i\)</span> - the sample standard
+deviation of the <span class="math inline">\(n_i\)</span> values in the
+sample from group <span class="math inline">\(i\)</span>.</li>
+<li><span class="math inline">\(N\)</span> the overall sample size
+(<span class="math inline">\(N = n_1 + n_2 + \cdots + n_k\)</span>)</li>
+<li>MSG - the “mean square for groups” which measures the variation
+across all the group sample means</li>
+<li>MSE = the “mean square for error” which measures the overall
+variation of all <span class="math inline">\(N\)</span> data points</li>
 </ul>
 <p><strong>The Data</strong></p>
-<p>It is convenient to encode the data as a <strong>long form</strong> data matrix, in which each row corresponds to a participant in the study, and we have two columns: one that specifies which group the participant was in, and one that records the value of interest (weight-loss in our example). Here are the first ten rows of the data frame:</p>
+<p>It is convenient to encode the data as a <strong>long form</strong>
+data matrix, in which each row corresponds to a participant in the
+study, and we have two columns: one that specifies which group the
+participant was in, and one that records the value of interest
+(weight-loss in our example). Here are the first ten rows of the data
+frame:</p>
 <table class="table table-striped table-hover" style="width: auto !important; ">
 <thead>
 <tr>
@@ -1361,7 +1640,10 @@ Equip
 </tr>
 </tbody>
 </table>
-<p>With the <code>tidyverse</code> loaded into your session, here is a quick way to extract summary statistics (the data frame with the <code>program</code> and <code>weight.loss</code> columns is called <code>df</code>)</p>
+<p>With the <code>tidyverse</code> loaded into your session, here is a
+quick way to extract summary statistics (the data frame with the
+<code>program</code> and <code>weight.loss</code> columns is called
+<code>df</code>)</p>
 <pre class="r"><code>df %&gt;% 
   group_by(program) %&gt;%
   summarize(size=length(weight.loss),
@@ -1373,7 +1655,9 @@ Equip
 ## 1 Equip      42  9.26  4.33
 ## 2 Long       37 11.0   4.34
 ## 3 Short      36  8.48  3.12</code></pre>
-<p>We note that the number of groups in this study is <span class="math inline">\(k = 3\)</span>, and the total sample size is <span class="math inline">\(N = 115\)</span>.</p>
+<p>We note that the number of groups in this study is <span
+class="math inline">\(k = 3\)</span>, and the total sample size is <span
+class="math inline">\(N = 115\)</span>.</p>
 <p>Side-by-side box plots:</p>
 <pre class="r"><code>ggplot(df)+
   geom_boxplot(aes(x=program,y=weight.loss,fill=program),show.legend=FALSE)+
@@ -1389,8 +1673,18 @@ Equip
 ## Residuals 112 1785.78  15.944                  
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
-<p><strong>Conclusion</strong>: From the print out, the test statistic from our data is <span class="math inline">\(F = 3.74\)</span>, and this statistic lives in an F-distribution with numerator df = 2 and denominator df = 112.<br />
-The p-value for this test is .02677, which indicates the probability of having observed such a difference among group sample means if in fact all groups have the same population mean. Since this likelihood is so small (indeed it’s less than .05), we have reason to reject the null and conclude that there is a difference in average weight-loss for these different exercise programs. We note that the components of <span class="math inline">\(F = MSG/MSE\)</span> appear in the display above. MSG = 59.632 and MSE = 15.944.</p>
+<p><strong>Conclusion</strong>: From the print out, the test statistic
+from our data is <span class="math inline">\(F = 3.74\)</span>, and this
+statistic lives in an F-distribution with numerator df = 2 and
+denominator df = 112.<br />
+The p-value for this test is .02677, which indicates the probability of
+having observed such a difference among group sample means if in fact
+all groups have the same population mean. Since this likelihood is so
+small (indeed it’s less than .05), we have reason to reject the null and
+conclude that there is a difference in average weight-loss for these
+different exercise programs. We note that the components of <span
+class="math inline">\(F = MSG/MSE\)</span> appear in the display above.
+MSG = 59.632 and MSE = 15.944.</p>
 <!-- Default Statcounter code for math 140 resources pages-->
 <script type="text/javascript">
 var sc_project=12608389;
