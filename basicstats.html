@@ -577,10 +577,10 @@ frame.</p>
 can use the <code>mean()</code> command on the <code>W</code>
 column:</p>
 <pre class="r"><code>mean(wildcats$W)</code></pre>
-<pre><code>## [1] 33.86364</code></pre>
+<pre><code>## [1] 34.20833</code></pre>
 <p>The average number of losses per season?</p>
 <pre class="r"><code>mean(wildcats$L)</code></pre>
-<pre><code>## [1] 9.772727</code></pre>
+<pre><code>## [1] 9.708333</code></pre>
 </div>
 </div>
 <div id="descriptive-statistics" class="section level1">
@@ -652,20 +652,20 @@ data frame, or a stand-alone vector:</p>
 <pre class="r"><code>mean(c(4,5,8,5,4,3,6,7,3,8,9,12,11))</code></pre>
 <pre><code>## [1] 6.538462</code></pre>
 <pre class="r"><code>fivenum(wildcats$W)</code></pre>
-<pre><code>## [1] 12.0 27.0 36.5 39.0 51.0</code></pre>
+<pre><code>## [1] 12 29 37 39 51</code></pre>
 <p>The first result above gives the mean of the data just entered with
 the <code>c()</code> command. The second command gave the 5 number
 summary for Wildcat wins. A full 25% of the seasons over the 1999-2020
 time period saw win totals of at least 39!</p>
 <p>How many games did Linfield softball win between 1999 and 2020?</p>
 <pre class="r"><code>sum(wildcats$W)</code></pre>
-<pre><code>## [1] 745</code></pre>
+<pre><code>## [1] 821</code></pre>
 <p>Who has coached Linfield softball during this period, and how many
 seasons has each coach coached?</p>
 <pre class="r"><code>table(wildcats$Coach)</code></pre>
 <pre><code>## 
 ## Jackson Vaughan     Laura Kenow 
-##              19               3</code></pre>
+##              21               3</code></pre>
 </div>
 <div id="basic-data-manipulation" class="section level1">
 <h1>Basic data manipulation</h1>
@@ -956,7 +956,7 @@ districts, and National Champions!</p>
 <pre class="r"><code>table(wildcats$NCAA)</code></pre>
 <pre><code>## 
 ##     1st 2nd 3rd 4th 
-##  16   2   2   1   1</code></pre>
+##  18   2   2   1   1</code></pre>
 <p>ANSWER: It specifies how well Linfield did at Nationals over the
 1999-2020 time period. Linfield has finished 1st twice, 2nd twice, 3rd
 once, and 4th once. The other 16 seasons they didn’t finish as high as
@@ -965,7 +965,7 @@ once, and 4th once. The other 16 seasons they didn’t finish as high as
 <li>What does this code give?</li>
 </ol>
 <pre class="r"><code>sum(wildcats$District==&quot;1st&quot;)</code></pre>
-<pre><code>## [1] 12</code></pre>
+<pre><code>## [1] 13</code></pre>
 <p>ANSWER: It gives the number of seasons from 1999-2020 in which
 Linfield was 1st in the District</p>
 <ol start="4" style="list-style-type: decimal">
@@ -1004,14 +1004,14 @@ going on. What was it? (global pandemic!)</p>
 <li>What does this code give?</li>
 </ol>
 <pre class="r"><code>fivenum(wildcats$W[wildcats$Coach==&quot;Jackson Vaughan&quot;])</code></pre>
-<pre><code>## [1] 12 32 37 39 51</code></pre>
+<pre><code>## [1] 12 32 38 39 51</code></pre>
 <p>ANSWER: This code gives the 5 number summary for the Linfield
 softball wins for just the seasons in the data set in which the coach
 was Jackson Vaughan. More generally, consider this code, which makes use
 of the <code>aggregate()</code> method:</p>
 <pre class="r"><code>aggregate(wildcats$W, by=list(wildcats$Coach), FUN = median)</code></pre>
 <pre><code>##           Group.1  x
-## 1 Jackson Vaughan 37
+## 1 Jackson Vaughan 38
 ## 2     Laura Kenow 24</code></pre>
 <p>The <code>aggregate()</code> method executes a function on a variable
 that has been grouped by a categorical variable. In the code above we
