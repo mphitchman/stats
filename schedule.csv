@@ -1,32 +1,9 @@
 Date,Topic,Text,Activities,Assignments
 30-Aug,Introduction,Ch 1,"First Day Survey, Statistical Questions",Webwork Ch.1
 1-Sep,Data,Ch 1,random rectangles,"Install R and Rstudio, read ""Getting Started in Rstudio"" in Labs tab"
-6-Sep,Descriptive statistics,2.1,Governors,
+6-Sep,Descriptive statistics,2.1,Governors,Webwork Sec 2.1
 8-Sep,Descriptive statistics,2.2,Descriptive statistics using R,
-,,,,
-,,,,
-,,,,
-,,,,
-,,,,
-,,,,
-,,,,
-,,,,
-,,,,
-,,,,
-,,,,
-,,,,
-,,,,
-,,,,
-,,,,
-,,,,
-,,,,
-,,,,
-,,,,
-,,,,
-,,,,
-,,,,
-,,,,
-,,,,
-,,,,
-,,,,
-,,,,
+13-Sep,"scatter plots, correlation",8.1,Regression I,Webwork 8 Correlation
+15-Sep,least squares regression,"8.2,3",Regression using R,Webwork 8 Linear Regression
+20-Sep,"least squares regression, probability models","8.3, Ch. 3",Random Phones,Webwork Ch. 3
+22-Sep,"Quiz 1,probability models",Ch. 3,,
