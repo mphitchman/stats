@@ -1,0 +1,51 @@
+Timestamp,achieve,degree,eyecolor,year,int.ext,height,phone.usage,haircut,random,study,run,shoes,abolish.penny,sleep,bedtime,countries,states,class.dread
+2023/01/03 8:05:09 AM PST,To win an Olympic gold medal,School of Nursing,Brown,1st year,6,64,3,35,2,7,0,16,Yes,6,midnight,7,26,3
+2023/01/03 8:05:17 AM PST,To win an Olympic gold medal,School of Nursing,Hazel,1st year,5,68,7 or more,45,8,10,10,8,No,7,midnight,5,12,2
+2023/01/03 8:05:24 AM PST,To win a Nobel Prize,School of Business,Blue,1st year,2,65,4,NA,7,20,0,75,No,7.5,11:00 PM,9,20,2
+2023/01/03 8:05:35 AM PST,To win a Nobel Prize,School of Nursing,Green,1st year,4,59,5,420,2,6,0,15,No,9,11:00 PM,2,6,2
+2023/01/03 8:05:38 AM PST,To win a Nobel Prize,College of Arts and Sciences,Brown,2nd year,3,61,3,200,7,12,2,10,No,8,10:00 PM,2,7,4
+2023/01/03 8:05:43 AM PST,To win an Olympic gold medal,School of Business,Brown,1st year,5,63,5,0,2,6,2,11,No,6,11:00 PM,2,9,1
+2023/01/03 8:05:47 AM PST,To win a Nobel Prize,School of Business,Brown,2nd year,3,61,5,0,9,10,5,20,Yes,6,midnight,2,6,3
+2023/01/03 8:05:55 AM PST,To win a Nobel Prize,School of Nursing,Blue,1st year,5,75,5,20,1,6,0,6,No,6,midnight,3,8,3
+2023/01/03 8:05:56 AM PST,To become President of the United States,School of Nursing,Other,1st year,2,66,6,75,4,10,2,20,Yes,8,midnight,1,9,4
+2023/01/03 8:05:56 AM PST,To win an Olympic gold medal,School of Nursing,Blue,1st year,2,68,6,25,3,5,0,12,No,7,11:00 PM,1,7,4
+2023/01/03 8:06:10 AM PST,To win a Nobel Prize,College of Arts and Sciences,Hazel,1st year,2,62,3,90,5,5,1,18,Yes,10,10:00 PM,2,10,2
+2023/01/03 8:06:10 AM PST,To win a Nobel Prize,College of Arts and Sciences,Brown,1st year,1,69,3,18,4,6,20,3,Yes,8,11:00 PM,1,8,2
+2023/01/03 8:06:16 AM PST,To win an Olympic gold medal,School of Business,Hazel,1st year,2,70,5,30,7,7,3,7,No,7,11:00 PM,4,8,2
+2023/01/03 8:06:23 AM PST,To win an Olympic gold medal,School of Nursing,Brown,1st year,2,61,3,50,4,15,5,13,No,9,10:00 PM,1,24,4
+2023/01/03 8:06:24 AM PST,To win a Nobel Prize,School of Business,Blue,3rd year,3,68,3,,3,10,0,25,Yes,6,10:00 PM,17,23,2
+2023/01/03 8:06:29 AM PST,To win a Nobel Prize,School of Nursing,Green,1st year,2,60,4,60,6,8,3,8,No,7,midnight,2,7,2
+2023/01/03 8:06:32 AM PST,To win an Olympic gold medal,School of Business,Blue,1st year,4,69,3,0,9,3,2,10,No,7,midnight,3,8,3
+2023/01/03 8:06:32 AM PST,To win an Olympic gold medal,,Hazel,1st year,4,69,5,225,7,3.5,1.5,8,No,7.5,midnight,4,9,4
+2023/01/03 8:06:34 AM PST,To win an Olympic gold medal,School of Business,Green,1st year,3,66,7 or more,0,1,7,6,15,No,7,10:00 PM,2,15,3
+2023/01/03 8:06:34 AM PST,To win an Olympic gold medal,School of Nursing,Brown,1st year,3,69,3,30,2,2,2,10,No,7,midnight,3,9,3
+2023/01/03 8:06:51 AM PST,To win an Olympic gold medal,College of Arts and Sciences,Brown,1st year,3,60,4,40,8,5,5,10,No,8,10:00 PM,1,9,1
+2023/01/03 8:07:02 AM PST,To win an Olympic gold medal,College of Arts and Sciences,Hazel,1st year,2,68,5,,6,6,2,9,No,7,midnight,4,8,3
+2023/01/03 8:07:14 AM PST,To win a Nobel Prize,School of Business,Blue,1st year,3,69,4,35,5,8,6,5,No,7,midnight,1,8,3
+2023/01/03 8:07:22 AM PST,To win a Nobel Prize,College of Arts and Sciences,Brown,1st year,3,72,4,30,10,14,14,15,No,6,11:00 PM,1,5,4
+2023/01/03 8:07:46 AM PST,To become President of the United States,College of Arts and Sciences,Brown,1st year,5,66,3,30,9,14,5,3,No,6,10:00 PM,3,6,3
+2023/01/03 8:17:53 AM PST,To win an Olympic gold medal,School of Business,Blue,1st year,3,68,4,15,7,4,3,10,No,8,before 10 pm,1,4,3
+2023/01/03 10:44:49 AM PST,To win an Olympic gold medal,College of Arts and Sciences,Green,1st year,5,69,5,240,7,20,0,20,No,8,11:00 PM,3,10,4
+2023/01/03 10:44:56 AM PST,To win an Olympic gold medal,School of Business,Blue,1st year,5,73,3,25,3,3,5,14,No,7,midnight,5,36,3
+2023/01/03 10:45:43 AM PST,To win an Academy Award,College of Arts and Sciences,Other,2nd year,2,60,7 or more,80,7,5,3,24,Yes,5,midnight,1,6,2
+2023/01/03 10:45:43 AM PST,To win an Olympic gold medal,School of Business,Brown,1st year,3,63,5,60,5,7,5,20,No,7,midnight,3,6,4
+2023/01/03 10:45:46 AM PST,To win a Nobel Prize,School of Nursing,Blue,1st year,3,65,6,95,10,5,0,25,No,8,1:00 AM,3,15,2
+2023/01/03 10:45:49 AM PST,To win an Olympic gold medal,College of Arts and Sciences,Blue,1st year,3,67,2,198,3,10,1,25,No,8,10:00 PM,1,16,3
+2023/01/03 10:45:51 AM PST,To win an Olympic gold medal,School of Business,Brown,1st year,5,70,3,35,5,10,2,10,No,7.5,11:00 PM,3,12,3
+2023/01/03 10:45:51 AM PST,To win an Olympic gold medal,College of Arts and Sciences,Blue,1st year,3,72,5,30,8,3,2,8,No,8,midnight,2,15,2
+2023/01/03 10:45:54 AM PST,To win a Nobel Prize,School of Nursing,Brown,1st year,3,63,4,0,4,4,3,6,No,7,midnight,1,7,3
+2023/01/03 10:45:57 AM PST,To win a Nobel Prize,College of Arts and Sciences,Brown,1st year,4,69,3,40,4,8,0,10,Yes,8,11:00 PM,1,9,3
+2023/01/03 10:46:10 AM PST,To win an Olympic gold medal,College of Arts and Sciences,Brown,1st year,4,69,2,NA,4,6,8,16,No,7,11:00 PM,2,9,3
+2023/01/03 10:46:11 AM PST,To win an Olympic gold medal,College of Arts and Sciences,Blue,2nd year,3,67,3,0,7,10,15,14,No,8,11:00 PM,3,10,3
+2023/01/03 10:46:16 AM PST,To win an Olympic gold medal,School of Nursing,Brown,1st year,3,61,5,0,7,7,5,6,No,9,midnight,2,5,1
+2023/01/03 10:46:35 AM PST,To win a Nobel Prize,School of Nursing,Hazel,1st year,4,71,7 or more,120,3,10,0,8,No,6,1:00 AM,6,6,4
+2023/01/03 10:46:40 AM PST,To win an Olympic gold medal,School of Business,Green,1st year,2,75,5,25,3,3,4,8,No,6,after 1 am,1,20,2
+2023/01/03 10:46:47 AM PST,To win a Nobel Prize,School of Nursing,Brown,1st year,4,61,4,65,3,5,0,25,No,10,midnight,1,7,3
+2023/01/03 10:46:51 AM PST,To win an Olympic gold medal,School of Business,Brown,1st year,5,73,2,40,9,9,5,7,Yes,7,midnight,1,5,1
+2023/01/03 10:46:51 AM PST,To win a Nobel Prize,College of Arts and Sciences,Brown,2nd year,2,64,5,NA,8,NA,0,8,No,9,midnight,2,5,2
+2023/01/03 10:47:03 AM PST,To win an Olympic gold medal,School of Nursing,Brown,1st year,3,66,7 or more,20,7,2.5,0,13,Yes,7,1:00 AM,5,6,2
+2023/01/03 10:47:04 AM PST,To win a Nobel Prize,College of Arts and Sciences,Blue,1st year,4,54,4,40,5,,0.5,10,No,7,1:00 AM,3,45,3
+2023/01/03 10:47:19 AM PST,To win a Nobel Prize,College of Arts and Sciences,Green,4th year,4,71,2,16,7,5.5,0,3,No,8,midnight,3,12,3
+2023/01/03 10:47:27 AM PST,To win a Nobel Prize,College of Arts and Sciences,Brown,1st year,3,67,3,110,8,12,3,13,Yes,8,midnight,5,8,2
+2023/01/03 10:47:31 AM PST,To win an Academy Award,School of Business,Blue,1st year,6,61,2,195,8,50,0,15,No,7,11:00 PM,1,4,3
+2023/01/03 10:47:39 AM PST,To win an Olympic gold medal,School of Nursing,Hazel,2nd year,3,64,2,55,7,20,35,20,Yes,8,10:00 PM,2,15,2
