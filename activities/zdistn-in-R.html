@@ -1661,7 +1661,7 @@ ggplot(df)+
   ggtitle(&quot;Length and Width Distributions&quot;)
 
 #create a standardized score column for the length:
-df$Z_L = (df$length-mean(df$length))/sd($length)
+df$Z_L = (df$length-mean(df$length))/sd(df$length)
 
 #plot the lengths
 ggplot(df)+geom_histogram(aes(x=Z_L),col=&quot;white&quot;,fill=&quot;purple&quot;,binwidth=.2,alpha=.4)+
