@@ -1612,7 +1612,7 @@ xbar=10.2 #sample mean
 sigma = 2 #population standard deviation (if you happen to know it!)
 C = .95 # confidence level
 SE = sigma/sqrt(n) #standard error
-zstar = qnorm(C + (1-C)/2,df) #z score associated with given confidence level (1.96 for 95%)
+zstar = qnorm(C + (1-C)/2) #z score associated with given confidence level (1.96 for 95%)
 MOE = zstar*SE
 xbar + c(-MOE,MOE) #Confidence Interval (low to high)</code></pre>
 </div>
