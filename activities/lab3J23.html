@@ -1948,48 +1948,21 @@ sugar.</p>
 in the data set <code>sbuck</code> is our response variable? Which
 variable is our explanatory variable?</p>
 </blockquote>
-<p>We first conduct <strong>exploratory data analysis</strong> on our
-data set. This process of visualizing and otherwise exploring the data
-provides information that will help us decide on statistical techniques
-appropriate for the task we are trying to accomplish. This is the first
-step in any modeling task.
-<!--Why? Because we need to choose a form for our model! Understanding the data will help us decide what models are appropriate for our research question.--></p>
-<p>The process of conducting EDA is different for different types of
-data.</p>
-<table>
-<thead>
-<tr class="header">
-<th align="left">Variable(s)</th>
-<th align="left">Useful tools</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">1 numerical</td>
-<td align="left">5 number summary, box plot, histogram</td>
-</tr>
-<tr class="even">
-<td align="left">1 categorical</td>
-<td align="left">table, bar plot</td>
-</tr>
-<tr class="odd">
-<td align="left">1 numerical and 1 categorical</td>
-<td align="left">side by side box plot</td>
-</tr>
-<tr class="even">
-<td align="left">2 numerical</td>
-<td align="left">scatter plot, correlation coefficient</td>
-</tr>
-</tbody>
-</table>
 <blockquote>
-<p><strong>b)</strong> Use one visualization to explore the relationship
-between Calories and Sugars, making sure that the explanatory variable
-you identified in Q1a is on the <span class="math inline">\(x\)</span>-axis. Show the plot in your answer
-(using ggplot), and clearly label your axes. In your written solution to
-part (b) write a sentence or two describing the direction, form, and
-strength of any association you see.</p>
+<p><strong>b)</strong> Since we’re comparing two numerical variables a
+scatter plot is a good place to start in our exploratory data analysis.
+In the Q1b code chunck adapt the code below to first glimpse at the
+relationship between Calories and Sugars. Make sure that the explanatory
+variable you identified in Q1a is on the <span class="math inline">\(x\)</span>-axis. Clearly label your axes and
+provide a title. In your written solution to part (b) write a sentence
+or two describing the direction, form, and strength of any association
+you see.</p>
 </blockquote>
+<pre class="r"><code>ggplot(sbuck,aes(x=   ,y=   ))+
+  geom_point(col=&quot;chocolate&quot;,size=.9)+
+  ggtitle(&quot;add title&quot;)+
+  xlab(&quot;add x-axis label&quot;)+
+  ylab(&quot;add y-axis label&quot;)</code></pre>
 <blockquote>
 <p><strong>c)</strong> Based on the plot of Sugars and Calories, does it
 look like it would be reasonable to consider a linear model for the
@@ -2001,8 +1974,9 @@ Sugars and Calories? What does this number tell us about the strength
 and direction of the linear relationship between these two
 variables?</p>
 </blockquote>
-<p>Recall, to find the correlation coefficient between two variables we
-use the <code>cor()</code> command.</p>
+<p>Recall, to find the correlation coefficient between
+<code>Sugars</code> and <code>Calories</code> we can run the code
+<code>cor(sbuck$Calories,sbuck$Sugars)</code>.</p>
 </div>
 <div id="q2---build-the-model" class="section level1">
 <h1>Q2 - Build the model</h1>
@@ -2013,7 +1987,7 @@ indicate the data set, the chosen response variable, and the chosen
 explanatory variable.</p>
 <blockquote>
 <p><strong>a)</strong> Create the linear model by running the code
-<code>fit = lm(Calories ~ Sugars, data = sbuck)</code><br />
+<code>fit = lm(Calories~Sugars, data = sbuck)</code><br />
 (Just run the code in the Q2a code chunk - you don’t need to supply any
 written answer here.)</p>
 </blockquote>
