@@ -29,6 +29,9 @@
        h6 {font-size: 12px;}
        code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
        pre:not([class]) { background-color: white }</style>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
@@ -224,6 +227,69 @@ $(document).ready(function () {
 
 
 
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+
 
 </head>
 
@@ -231,6 +297,16 @@ $(document).ready(function () {
 
 
 <div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
 
 
 
@@ -254,7 +330,7 @@ $(document).ready(function () {
   <a href="slides.html">Slides</a>
 </li>
 <li>
-  <a href="activities.html">Activities</a>
+  <a href="activities.html">Activities and Labs</a>
 </li>
 <li>
   <a href="data.html">Data</a>
@@ -273,10 +349,10 @@ $(document).ready(function () {
       <a href="basicstats.html">Data and Descriptive Statistics</a>
     </li>
     <li>
-      <a href="dataviz.html">Data Visualization</a>
+      <a href="dataviz.html">Data Visualization with ggplot</a>
     </li>
     <li>
-      <a href="datamanip.html">Data Manipulation</a>
+      <a href="datamanip.html">Data Manipulation with dplyr</a>
     </li>
     <li>
       <a href="regression.html">Linear Regression</a>
@@ -317,6 +393,8 @@ $(document).ready(function () {
 </div>
 
 
+<div id="intro-to-dplyr" class="section level1">
+<h1>Intro to <code>dplyr</code></h1>
 <p>We have discussed some basic data manipulation commands in base R in
 the <a href="basicstats.html#Basic_data_manipulation">data and
 descriptive statistics page</a>.</p>
@@ -342,6 +420,50 @@ command, which I read as “then”, followed by an action, such as
 <code>filter()</code> or <code>select()</code>, which we discuss
 below.</p>
 </blockquote>
+<p>A brief list of commonly used <code>dplyr</code> action verbs:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">dplyr command</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><code>select()</code></td>
+<td align="left">selecting columns (variables)</td>
+</tr>
+<tr class="even">
+<td align="left"><code>filter()</code></td>
+<td align="left">filter (subset) rows</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>group_by()</code></td>
+<td align="left">group the data</td>
+</tr>
+<tr class="even">
+<td align="left"><code>summarise()</code></td>
+<td align="left">summarize or aggregate the data</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>arrange()</code></td>
+<td align="left">sort the data</td>
+</tr>
+<tr class="even">
+<td align="left"><code>join()</code></td>
+<td align="left">joining data frames</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>mutate()</code></td>
+<td align="left">create new variables (columns)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="filter" class="section level1">
+<h1>Filter</h1>
+<p>We use the <code>filter()</code> action to find those rows
+(observations) that meet some criterion for a variable.</p>
 <p>For instance, the following code starts with the data frame
 <code>df</code>, then finds (via <code>filter()</code>) those
 earthquakes occurring in the region equal to the United States:</p>
@@ -361,45 +483,6 @@ earthquakes occurring in the region equal to the United States:</p>
 when we are searching for entries that match a particular value or
 character. We use a single equal sign (e.g., <code>x = 4</code>) to
 <em>assign</em> a value or character to a variable.</p>
-<p>A brief list of commonly used <code>dplyr</code> action verbs:</p>
-<table>
-<thead>
-<tr class="header">
-<th align="left">dplyr command</th>
-<th align="left">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">select()</td>
-<td align="left">selecting columns (variables)</td>
-</tr>
-<tr class="even">
-<td align="left">filter()</td>
-<td align="left">filter (subset) rows</td>
-</tr>
-<tr class="odd">
-<td align="left">group_by()</td>
-<td align="left">group the data</td>
-</tr>
-<tr class="even">
-<td align="left">summarise()</td>
-<td align="left">summarize or aggregate the data</td>
-</tr>
-<tr class="odd">
-<td align="left">arrange()</td>
-<td align="left">sort the data</td>
-</tr>
-<tr class="even">
-<td align="left">join()</td>
-<td align="left">joining data frames</td>
-</tr>
-<tr class="odd">
-<td align="left">mutate()</td>
-<td align="left">create new variables</td>
-</tr>
-</tbody>
-</table>
 <hr />
 <p><strong>Question</strong>: Which earthquakes registered 8.0 or higher
 on the Richter scale?</p>
@@ -420,8 +503,9 @@ on the Richter scale?</p>
 ## 10  1960 May          21     9.5 South                  Chile           1655
 ## 11  1964 March        27     9.2 Alaska                 United States    131
 ## 12  1985 September    19     8   Michoacan              Mexico          9500</code></pre>
-<p>We can also arrange this list of earthquakes in descending order of
-magnitude on the richter scale:</p>
+<p>After filtering, then we can <code>arrange()</code> (sort) this list
+of earthquakes in descending order of magnitude on the richter
+scale:</p>
 <pre class="r"><code>df %&gt;% filter(richter&gt;=8.0) %&gt;% arrange(desc(richter))</code></pre>
 <pre><code>## # A tibble: 12 × 7
 ##     year month       day richter area                   region        deaths
@@ -442,7 +526,7 @@ magnitude on the richter scale:</p>
 <p><strong>Question</strong>: Which earthquakes less than 6 on the
 richter scale caused the most fatalities?</p>
 <hr />
-<p>Here are the top three:</p>
+<p>We can use the <code>head()</code> command to list the top three:</p>
 <pre class="r"><code>head((df %&gt;% filter(richter &lt; 6)) %&gt;% arrange(desc(deaths)),3)</code></pre>
 <pre><code>## # A tibble: 3 × 7
 ##    year month      day richter area      region             deaths
@@ -468,16 +552,37 @@ Japan in May?</p>
 <p><strong>Question</strong>: Find the average magnitude of major
 earthquakes in the US.</p>
 <hr />
-<pre class="r"><code>df %&gt;% filter(region==&quot;United States&quot;) %&gt;% summarize(avg=mean(richter))</code></pre>
-<pre><code>## # A tibble: 1 × 1
-##     avg
-##   &lt;dbl&gt;
-## 1  7.15</code></pre>
+<pre class="r"><code>mean((df %&gt;% filter(region==&quot;United States&quot;))$richter)</code></pre>
+<pre><code>## [1] 7.15</code></pre>
 <p>It looks like the average is 7.15.</p>
+</div>
+<div id="select" class="section level1">
+<h1>Select</h1>
+<p>We can <code>select()</code> certain columns to display (and choose
+the order in which to display them). The code below creates a new data
+frame called <code>df1</code>, obtained from df by selecting just the
+region, richter, and deaths variables. Then we display the first 5 rows
+of <code>df1</code>.</p>
+<pre class="r"><code>df1 = df %&gt;% select(region, richter, deaths)
+head(df1,5)</code></pre>
+<pre><code>## # A tibble: 5 × 3
+##   region    richter deaths
+##   &lt;chr&gt;       &lt;dbl&gt;  &lt;dbl&gt;
+## 1 Guatemala     7.5   2000
+## 2 Russia        6.4   4700
+## 3 Turkey        7     3500
+## 4 Turkey        5.8   1000
+## 5 India         7.5  19000</code></pre>
+</div>
+<div id="summary-statistics-by-group" class="section level1">
+<h1>Summary statistics by group</h1>
 <hr />
-<p><strong>Question</strong>: Group the earthquakes by month and record
-how many earthquakes there were in each month, the average magnitude,
-and the standard deviation of the magnitudes for each month.</p>
+<p><strong>Task</strong>: Group the earthquakes by month and record</p>
+<ol style="list-style-type: decimal">
+<li>how many earthquakes there were in each month,</li>
+<li>the average magnitude, and</li>
+<li>the standard deviation of the magnitudes for each month.</li>
+</ol>
 <hr />
 <pre class="r"><code>df %&gt;% group_by(month) %&gt;%
   summarise(size=length(richter),
@@ -697,8 +802,9 @@ September
 </tr>
 </tbody>
 </table>
-<div id="combining-dplyr-with-ggplot" class="section level2">
-<h2>Combining dplyr with ggplot</h2>
+</div>
+<div id="combining-dplyr-with-ggplot" class="section level1">
+<h1>Combining dplyr with ggplot</h1>
 <p>The packages <code>dplyr</code> and <code>ggplot2</code> are both a
 part of the tidyverse and can work together. For instance, we can make a
 plot on some version of the data frame first modified by
@@ -713,7 +819,7 @@ earthquakes during the century up to and including that year.</p>
   ggplot()+
   geom_line(aes(x=year,y=cum.death))+
   ylab(&quot;cumulative major earthquake fatalities&quot;)</code></pre>
-<p><img src="datamanip_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
+<p><img src="datamanip_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
 <p>It looks like the 70s were particularly devastating. What are those
 two most devastating earthquakes?</p>
 <pre class="r"><code>head(df %&gt;% arrange(desc(deaths)),2)</code></pre>
@@ -738,6 +844,8 @@ href="https://www.rstudio.com/resources/cheatsheets/">dplyr cheat sheet
 
 
 
+</div>
+</div>
 
 </div>
 
@@ -770,6 +878,35 @@ $(document).ready(function () {
 
 <!-- code folding -->
 
+<script>
+$(document).ready(function ()  {
+
+    // temporarily add toc-ignore selector to headers for the consistency with Pandoc
+    $('.unlisted.unnumbered').addClass('toc-ignore')
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
 
 <!-- dynamically load mathjax for compatibility with self-contained -->
 <script>
