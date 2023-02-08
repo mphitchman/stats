@@ -120,6 +120,7 @@ Timestamp,achieve,degree
 2023/01/03 8:06:24 AM PST,Nobel,business
 2023/01/03 8:06:29 AM PST,Nobel,nursing
 2023/01/03 8:06:32 AM PST,gold,business
+2023/01/03 8:06:32 AM PST,gold,
 2023/01/03 8:06:34 AM PST,gold,business
 2023/01/03 8:06:34 AM PST,gold,nursing
 2023/01/03 8:06:51 AM PST,gold,CAS
@@ -152,3 +153,58 @@ Timestamp,achieve,degree
 2023/01/03 10:47:27 AM PST,Nobel,CAS
 2023/01/03 10:47:31 AM PST,Oscar,business
 2023/01/03 10:47:39 AM PST,gold,nursing
+2/7/23 10:13,president,nursing
+2/7/23 10:13,gold,CAS
+2/7/23 10:14,Oscar,CAS
+2/7/23 10:14,Nobel,nursing
+2/7/23 10:14,president,CAS
+2/7/23 10:14,Oscar,CAS
+2/7/23 10:14,gold,nursing
+2/7/23 10:14,Nobel,CAS
+2/7/23 10:14,Nobel,CAS
+2/7/23 10:15,gold,nursing
+2/7/23 10:15,president,CAS
+2/7/23 10:15,Oscar,nursing
+2/7/23 10:15,president,nursing
+2/7/23 10:15,Nobel,nursing
+2/7/23 10:15,president,nursing
+2/7/23 10:15,Nobel,nursing
+2/7/23 10:15,Oscar,nursing
+2/7/23 10:15,gold,CAS
+2/7/23 10:15,gold,business
+2/7/23 10:15,Nobel,business
+2/7/23 10:15,gold,business
+2/7/23 10:15,Nobel,nursing
+2/7/23 10:16,Nobel,CAS
+2/7/23 10:16,gold,CAS
+2/7/23 11:48,Nobel,nursing
+2/7/23 12:04,gold,business
+2/7/23 13:21,gold,
+2/7/23 14:57,Nobel,CAS
+2/7/23 18:04,gold,nursing
+2/8/23 10:02,Oscar,business
+2/8/23 10:02,president,business
+2/8/23 10:02,gold,CAS
+2/8/23 10:02,president,CAS
+2/8/23 10:02,Oscar,business
+2/8/23 10:03,Nobel,CAS
+2/8/23 10:03,president,CAS
+2/8/23 10:03,Nobel,nursing
+2/8/23 10:03,gold,business
+2/8/23 10:03,gold,business
+2/8/23 10:03,gold,nursing
+2/8/23 10:03,Nobel,nursing
+2/8/23 10:03,Oscar,business
+2/8/23 10:04,Nobel,nursing
+2/8/23 10:04,Oscar,nursing
+2/8/23 10:04,Nobel,nursing
+2/8/23 10:04,gold,nursing
+2/8/23 10:04,Nobel,business
+2/8/23 10:05,gold,business
+2/8/23 10:05,gold,nursing
+2/8/23 10:05,Nobel,CAS
+2/8/23 10:05,president,CAS
+2/8/23 10:05,president,business
+2/8/23 10:07,Oscar,CAS
+2/8/23 10:08,gold,business
+2/8/23 10:09,gold,CAS
