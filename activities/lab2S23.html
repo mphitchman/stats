@@ -1581,9 +1581,6 @@ just numbers.</p></li>
 <li><p>Each group will submit one lab report (the final knitted .html
 file) as an attachment in an email to me.</p></li>
 </ol>
-</div>
-<div id="exercises-coming-soon" class="section level1">
-<h1>Exercises Coming Soon</h1>
 <!-- 
 The first data frame is related to deaths in the UK fronm the Delta variant of COVID-19.  Information about the data set can be found [https://www.openintro.org/data/index.php?data=simpsons_paradox_covid](here).  Load the data set by running this line of code:  
 
@@ -1592,101 +1589,190 @@ df1 <- read.csv("https://www.openintro.org/data/csv/simpsons_paradox_covid.csv")
 
 ```
 -->
-<!--
-# Q1 Using `prop.test()`
-
-According to Google, 45\% of people in the US have brown eyes. Of the $n = 105$ Linfield students who have completed Hitchman's MATH 140 survey in 2023, 57 indicated they had Brown eyes. Does this sample provide statistically significant evidence at the $\alpha=.05$ level that the proportion of Linfield students with brown eyes is different than .45?
-
-> a. State hypotheses for the appropriate test in the written solution to this part.
-
-> b. Let R do the calculations of the appropriate test with the `prop.test()` command, by running appropriate code in the Q1 b) code chunk. 
-
-In the code below, you will want to input:  
-
-  - `x` = number of successes in your sample
-  - `n` = number of trials (sample size)
-  - `p` = value of *p* assumed to be true in the null hypothesis
-  - `alternative` = choose one (and enter with quotes): 
-    - "two.sided", 
-    - "less", or 
-    - "greater"
-  
-
-```r
-prop.test(x= ,n= ,p= ,alternative= , correct=F)
-```
-
-A note on the printed results of this code: The Z test statistic we compute by hand will equal the square root of the $X^2$ value in the result; and the P-value we've been calculating will match the P-value in the result.  The confidence interval they report is different than the one we've been computing however.
-
-> c. What is the p-value for this test? At the $\alpha = .05$  level do we reject the null hypothesis in favor of the alternative? Explain in the context of brown eyed Linfield students.
-
-
-
-# Q2 Using `t.test()` 
-
-> a. Enter the following data as a vector named `kbear` in your Q2 a) code chunk (remember to use the `c()` command!). These data corresponds to 45 trampoline lap times for Kaizo the wonder dog. Also, determine the sample mean and sample standard deviation of this data set. Record your answers in the written solution to this part.
-
-```
-6.9,7.1,7.0,6.8,6.9,6.9,7.0,6.9,7.0,6.8,7.1,6.6,7.0,6.6,7.1,6.7,6.8,6.9,7.0,6.8,6.6,6.8,6.4,6.8,7.1,6.5,6.9,7.0,7.0,7.0,7.2,6.7,7.2,6.6,6.7,6.9,6.9,7.2,6.8,6.9,6.9,6.4,6.6,7.1,6.9
-```
-
-In R we can use the built-in `t.test()` command to determine level C confidence intervals for a populaiton mean.  
-
-> b. Run the code `t.test(kbear, conf.level=0.95)` in the Q2 b) code chunk.  Then record the calculated 95% confidence interval in your written solution.  (We note that this confidence interval does match the one we would calculate by hand.) Does this interval provide strong evidence that Kbear's true average lap time is under 7 seconds? 
-
-
-> c. **Check**: Is the confidence interval reliable? Reliability *red flags* include small sample size, and strong skewness or outliers in the sample data.  Here $n = 45$, so our method is  reliable if these data don't show strong skewness or big outliers.  Make a histogram (`hist(kbear)` of the lap times to check the shape of the data set, and state your conclusion about the reliability of the test in the Q1 c) written solution.
-
-# Q3 The Speed of Light 
-
-> a. The famous Michelson and Morley data set gives measurements for the speed of light.  Information about the data set can be found in the RStudio help menu by typing `morley`.  Load the data set into your session by running this line of code in the Q3 a) code chunk. 
-```
-df <- morley
-```
-Note, the speed measurements are in the `Speed` column of `df` (in units of km/s, with 299000 subtracted from the measurements to make the numbers look nicer).
-
-> b. Use `t.test()` to determine a 99% CI for $\mu$, the true value of the speed of light, according to these data.
-
-> b. Google the speed of light (in units of km/s) and record your answer in your written answer to this question.
-
-> c. Does your confidence interval capture the accepted value for the speed of light today?
-
-
-# Q4 MLB Game Lengths
-
-After the 2022 season Major League Baseball made some rule changes meant to speed up the pace of play and shorten the duration of games. We investigate whether so far this year the rules seem to be working.
-
-> a. Below are the game lengths (in minutes) for all the games played this season on March 30, March 31, April 1, April 4, April 9, and April 12 (randomly chosen dates by yours truly). Copy and paste this into your Q4 a) code chunk to load the data set.  
-```
-mlb23=c(153,187,141,190,134,184,152,182,162,218,158,176,155,134,150,191,151,152,192,190,141,144,184,136,138,174,168,160,134,124,129,160,147,161,185,175,172,117,165,165,156,152,137,140,150,152,161,151,145,171,164,157,171,151,154,160,160,142,170,164,160,152,144,190,162,158,159,148,141,228,172,169,153,151,167,135,211,165,170)
-```
-
-> b. Determine the sample size, sample mean, and sample standard deviation of this data set, and make a histogram of these times to check for extreme skewness and outliers. 
-
-From 2000 to 2022, the average game length was 3 hours and 3 minutes, or 183 minutes. Does our 2023 game sample provide statistically significant evidence at the $\alpha=.05$ level that the new average game length is less than 183 minutes?  The summary statistics found in (b) might suggest this, but we can be more rigorous in our decision-making by doing a test of hypothesis.
-
-> c. State hypotheses for the appropriate test.
-
-> d. Let R do the calculations of the appropriate test with the `t.test()` command. 
-
-In the code below, you will want to input:  
-
-  - `x` = the data vector (by its name)
-  - `mu` = the value of the mean assumed in the null hypothesis
-  - `alternative` = choose one (and enter with quotes): 
-      - "two.sided", 
-      - "less", or 
-      - "greater"
-  
-
-```r
-t.test(x= ,mu= ,alternative= )
-```
-
-> e. What is the p-value for this test? At the $\alpha = .05$ level do we reject the null hypothesis in favor of the alternative?
-
-> f. Provide a 95% confidence interval estimate of the new, 2023 true average game time length with the using the `t.test()` command as follows: `t.test(mlb23, conf.level=.95)`.  Interpret this interval for the casual baseball fan!
-
+</div>
+<div id="q1-using-prop.test" class="section level1">
+<h1>Q1 Using <code>prop.test()</code></h1>
+<p>According to Google, 45% of people in the US have brown eyes. Of the
+<span class="math inline">\(n = 105\)</span> Linfield students who have
+completed Hitchman’s MATH 140 survey in 2023, 57 indicated they had
+Brown eyes. Does this sample provide statistically significant evidence
+at the <span class="math inline">\(\alpha=.05\)</span> level that the
+proportion of Linfield students with brown eyes is different than
+.45?</p>
+<blockquote>
+<ol style="list-style-type: lower-alpha">
+<li>State hypotheses for the appropriate test in the written solution to
+this part.</li>
+</ol>
+</blockquote>
+<blockquote>
+<ol start="2" style="list-style-type: lower-alpha">
+<li>Let R do the calculations of the appropriate test with the
+<code>prop.test()</code> command, by running appropriate code in the Q1
+b) code chunk.</li>
+</ol>
+</blockquote>
+<p>In the code below, you will want to input:</p>
+<ul>
+<li><code>x</code> = number of successes in your sample</li>
+<li><code>n</code> = number of trials (sample size)</li>
+<li><code>p</code> = value of <em>p</em> assumed to be true in the null
+hypothesis</li>
+<li><code>alternative</code> = choose one (and enter with quotes):
+<ul>
+<li>“two.sided”,</li>
+<li>“less”, or</li>
+<li>“greater”</li>
+</ul></li>
+</ul>
+<pre class="r"><code>prop.test(x= ,n= ,p= ,alternative= , correct=F)</code></pre>
+<p>A note on the printed results of this code: The Z test statistic we
+compute by hand will equal the square root of the <span class="math inline">\(X^2\)</span> value in the result; and the P-value
+we’ve been calculating will match the P-value in the result. The
+confidence interval they report is different than the one we’ve been
+computing however.</p>
+<blockquote>
+<ol start="3" style="list-style-type: lower-alpha">
+<li>What is the p-value for this test? At the <span class="math inline">\(\alpha = .05\)</span> level do we reject the null
+hypothesis in favor of the alternative? Explain in the context of brown
+eyed Linfield students.</li>
+</ol>
+</blockquote>
+</div>
+<div id="q2-using-t.test" class="section level1">
+<h1>Q2 Using <code>t.test()</code></h1>
+<blockquote>
+<ol style="list-style-type: lower-alpha">
+<li>Enter the following data as a vector named <code>kbear</code> in
+your Q2 a) code chunk (remember to use the <code>c()</code> command!).
+These data corresponds to 45 trampoline lap times for Kaizo the wonder
+dog. Also, determine the sample mean and sample standard deviation of
+this data set. Record your answers in the written solution to this
+part.</li>
+</ol>
+</blockquote>
+<pre><code>6.9,7.1,7.0,6.8,6.9,6.9,7.0,6.9,7.0,6.8,7.1,6.6,7.0,6.6,7.1,6.7,6.8,6.9,7.0,6.8,6.6,6.8,6.4,6.8,7.1,6.5,6.9,7.0,7.0,7.0,7.2,6.7,7.2,6.6,6.7,6.9,6.9,7.2,6.8,6.9,6.9,6.4,6.6,7.1,6.9</code></pre>
+<p>In R we can use the built-in <code>t.test()</code> command to
+determine level C confidence intervals for a populaiton mean.</p>
+<blockquote>
+<ol start="2" style="list-style-type: lower-alpha">
+<li>Run the code <code>t.test(kbear, conf.level=0.95)</code> in the Q2
+b) code chunk. Then record the calculated 95% confidence interval in
+your written solution. (We note that this confidence interval does match
+the one we would calculate by hand.) Does this interval provide strong
+evidence that Kbear’s true average lap time is under 7 seconds?</li>
+</ol>
+</blockquote>
+<blockquote>
+<ol start="3" style="list-style-type: lower-alpha">
+<li><strong>Check</strong>: Is the confidence interval reliable?
+Reliability <em>red flags</em> include small sample size, and strong
+skewness or outliers in the sample data. Here <span class="math inline">\(n = 45\)</span>, so our method is reliable if
+these data don’t show strong skewness or big outliers. Make a histogram
+(<code>hist(kbear)</code> of the lap times to check the shape of the
+data set, and state your conclusion about the reliability of the test in
+the Q1 c) written solution.</li>
+</ol>
+</blockquote>
+</div>
+<div id="q3-the-speed-of-light" class="section level1">
+<h1>Q3 The Speed of Light</h1>
+<blockquote>
+<ol style="list-style-type: lower-alpha">
+<li>The famous Michelson and Morley data set gives measurements for the
+speed of light. Information about the data set can be found in the
+RStudio help menu by typing <code>morley</code>. Load the data set into
+your session by running this line of code in the Q3 a) code chunk.</li>
+</ol>
+</blockquote>
+<pre><code>df &lt;- morley</code></pre>
+<p>Note, the speed measurements are in the <code>Speed</code> column of
+<code>df</code> (in units of km/s, with 299000 subtracted from the
+measurements to make the numbers look nicer).</p>
+<blockquote>
+<ol start="2" style="list-style-type: lower-alpha">
+<li>Use <code>t.test()</code> to determine a 99% CI for <span class="math inline">\(\mu\)</span>, the true value of the speed of
+light, according to these data.</li>
+</ol>
+</blockquote>
+<blockquote>
+<ol start="2" style="list-style-type: lower-alpha">
+<li>Google the speed of light (in units of km/s) and record your answer
+in your written answer to this question.</li>
+</ol>
+</blockquote>
+<blockquote>
+<ol start="3" style="list-style-type: lower-alpha">
+<li>Does your confidence interval capture the accepted value for the
+speed of light today?</li>
+</ol>
+</blockquote>
+</div>
+<div id="q4-mlb-game-lengths" class="section level1">
+<h1>Q4 MLB Game Lengths</h1>
+<p>After the 2022 season Major League Baseball made some rule changes
+meant to speed up the pace of play and shorten the duration of games. We
+investigate whether so far this year the rules seem to be working.</p>
+<blockquote>
+<ol style="list-style-type: lower-alpha">
+<li>Below are the game lengths (in minutes) for all the games played
+this season on March 30, March 31, April 1, April 4, April 9, and April
+12 (randomly chosen dates by yours truly). Copy and paste this into your
+Q4 a) code chunk to load the data set.</li>
+</ol>
+</blockquote>
+<pre><code>mlb23=c(153,187,141,190,134,184,152,182,162,218,158,176,155,134,150,191,151,152,192,190,141,144,184,136,138,174,168,160,134,124,129,160,147,161,185,175,172,117,165,165,156,152,137,140,150,152,161,151,145,171,164,157,171,151,154,160,160,142,170,164,160,152,144,190,162,158,159,148,141,228,172,169,153,151,167,135,211,165,170)</code></pre>
+<blockquote>
+<ol start="2" style="list-style-type: lower-alpha">
+<li>Determine the sample size, sample mean, and sample standard
+deviation of this data set, and make a histogram of these times to check
+for extreme skewness and outliers.</li>
+</ol>
+</blockquote>
+<p>From 2000 to 2022, the average game length was 3 hours and 3 minutes,
+or 183 minutes. Does our 2023 game sample provide statistically
+significant evidence at the <span class="math inline">\(\alpha=.05\)</span> level that the new average
+game length is less than 183 minutes? The summary statistics found in
+(b) might suggest this, but we can be more rigorous in our
+decision-making by doing a test of hypothesis.</p>
+<blockquote>
+<ol start="3" style="list-style-type: lower-alpha">
+<li>State hypotheses for the appropriate test.</li>
+</ol>
+</blockquote>
+<blockquote>
+<ol start="4" style="list-style-type: lower-alpha">
+<li>Let R do the calculations of the appropriate test with the
+<code>t.test()</code> command.</li>
+</ol>
+</blockquote>
+<p>In the code below, you will want to input:</p>
+<ul>
+<li><code>x</code> = the data vector (by its name)</li>
+<li><code>mu</code> = the value of the mean assumed in the null
+hypothesis</li>
+<li><code>alternative</code> = choose one (and enter with quotes):
+<ul>
+<li>“two.sided”,</li>
+<li>“less”, or</li>
+<li>“greater”</li>
+</ul></li>
+</ul>
+<pre class="r"><code>t.test(x= ,mu= ,alternative= )</code></pre>
+<blockquote>
+<ol start="5" style="list-style-type: lower-alpha">
+<li>What is the p-value for this test? At the <span class="math inline">\(\alpha = .05\)</span> level do we reject the null
+hypothesis in favor of the alternative?</li>
+</ol>
+</blockquote>
+<blockquote>
+<ol start="6" style="list-style-type: lower-alpha">
+<li>Provide a 95% confidence interval estimate of the new, 2023 true
+average game time length with the using the <code>t.test()</code>
+command as follows: <code>t.test(mlb23, conf.level=.95)</code>.
+Interpret this interval for the casual baseball fan!</li>
+</ol>
+</blockquote>
 <!--
 # Q4 The Covid data.
 
@@ -1704,7 +1790,6 @@ t.test(x= ,mu= ,alternative= )
 
 > g. Moral.
 -->
-<p>–&gt;</p>
 </div>
 
 
