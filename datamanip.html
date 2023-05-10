@@ -540,8 +540,8 @@ Japan in May?</p>
 <hr />
 <pre class="r"><code>df %&gt;% filter(month==&quot;May&quot;) %&gt;% filter(region==&quot;Japan&quot;)</code></pre>
 <pre><code>## # A tibble: 0 × 7
-## # … with 7 variables: year &lt;dbl&gt;, month &lt;chr&gt;, day &lt;dbl&gt;, richter &lt;dbl&gt;,
-## #   area &lt;chr&gt;, region &lt;chr&gt;, deaths &lt;dbl&gt;</code></pre>
+## # ℹ 7 variables: year &lt;dbl&gt;, month &lt;chr&gt;, day &lt;dbl&gt;, richter &lt;dbl&gt;, area &lt;chr&gt;,
+## #   region &lt;chr&gt;, deaths &lt;dbl&gt;</code></pre>
 <p>Nope! The table has 0 rows.</p>
 <p>As a check, here’s a table of earthquakes by month in Japan:</p>
 <pre class="r"><code>table((df %&gt;% filter(region==&quot;Japan&quot;))$month)</code></pre>
