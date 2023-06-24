@@ -16,7 +16,7 @@
 <script src="site_libs/header-attrs-2.19/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<link href="site_libs/bootstrap-3.3.5/css/spacelab.min.css" rel="stylesheet" />
+<link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
@@ -358,12 +358,12 @@ div.tocify {
       <a href="regression.html">Linear Regression</a>
     </li>
     <li>
-      <a href="inference.html">Inference</a>
-    </li>
-    <li>
       <a href="references.html">Other Resources</a>
     </li>
   </ul>
+</li>
+<li>
+  <a href="inference.html">Inference</a>
 </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -399,22 +399,26 @@ R</h1>
 <p><strong>Question:</strong> We want to investigate/estimate the mean
 of a population.</p>
 <p><strong>Example</strong>: What is the average length (in millimeters)
-of woolly bear caterpillars</p>
+of woolly bear caterpillars?</p>
 <center>
 <div class="figure">
 <img src="images/wbear.jpeg" style="width:30.0%" alt="" />
 <p class="caption">The majestic woolly bear caterpillar</p>
 </div>
 </center>
-<p><strong>Notation/terminology</strong></p>
+<p><strong>Parameter of Interest</strong></p>
 <ul>
 <li><span class="math inline">\(\mu\)</span> - the mean of <em>all</em>
-elements in the population (which is the unknown parameter of
-interest)</li>
-<li><span class="math inline">\(n\)</span> - the size of an independent
-sample of elements gathered from the population.</li>
-<li><span class="math inline">\(\overline{x}\)</span> - the mean of the
-<span class="math inline">\(n\)</span> values in the sample.</li>
+elements in the population (which is unknown)</li>
+</ul>
+<p><strong>Estimating <span class="math inline">\(\mu\)</span> from a
+simple random sample</strong></p>
+<p>From a simple random sample drawn from the population we find three
+values:</p>
+<ul>
+<li><span class="math inline">\(n\)</span> - the sample size</li>
+<li><span class="math inline">\(\overline{x}\)</span> - the sample mean
+of the <span class="math inline">\(n\)</span> values in the sample.</li>
 <li><span class="math inline">\(s\)</span> - the standard deviation of
 the <span class="math inline">\(n\)</span> values in the sample.</li>
 </ul>
@@ -428,10 +432,7 @@ class="math inline">\(t^*\)</span> is the value in the <span
 class="math inline">\(T\)</span>-distribution with <span
 class="math inline">\(n-1\)</span> degrees of freedom that corresponds
 to the desired confidence level.</p>
-<p>We include the entire calculation in one code chunk, starting with
-entering the raw data (a fictitious sample of 20 woolly bear caterpillar
-lengths).</p>
-<p><strong>Calculate the confidence interval in R</strong></p>
+<p><strong>Code to calculate the confidence interval in R</strong></p>
 <pre class="r"><code># the data in vector form
 wb = c(52.0, 48.9, 47.3, 47.3, 48.6, 48.8, 42.8, 44.3, 46.7, 46.4, 
        47.5, 51.4, 49.0, 47.7, 48.5, 48.5, 45.8, 49.3, 48.1, 46.5) 
@@ -443,25 +444,9 @@ C = .95 # confidence level
 df = n-1 #degrees of freedom
 SE = s/sqrt(n)
 tstar = qt(C + (1-C)/2,df)
-MOE = tstar*SE
-xbar + c(-MOE,MOE) #Confidence Interval</code></pre>
+MOE = tstar*SE #margin of error
+xbar + c(-MOE,MOE) #returns confidence interval (low to high)</code></pre>
 <pre><code>## [1] 46.78067 48.75933</code></pre>
-<!--
-We can also ask Rstudio to print a summary:
-
-```r
-cat(paste0("sample mean = ",round(xbar,4),"\n","t* = ",round(tstar,3),"\n",
-           "MOE = ",round(MOE,4),"\n",
-           C*100,"% confidence interval for ", expression(mu),": ",round(xbar - MOE,2), " to ", round(xbar + MOE,2),"."))
-```
-
-```
-## sample mean = 47.77
-## t* = 2.093
-## MOE = 0.9893
-## 95% confidence interval for mu: 46.78 to 48.76.
-```
--->
 <p><strong>Interpretation</strong> We are 95% confident that the
 population mean <span class="math inline">\(\mu\)</span> length of
 woolly bear caterpillars is between 46.8 and 48.8 millimeters.</p>
@@ -471,8 +456,8 @@ interval - it is just making a claim about the <em>average</em> length
 of all woolly bear caterpillars. For instance, in our sample, only 8 of
 the 20 observations fall within the range of the interval.</p>
 </div>
-<div id="significance-test" class="section level2">
-<h2>Significance Test</h2>
+<div id="hypothesis-test" class="section level2">
+<h2>Hypothesis Test</h2>
 <p>To test the null hypothesis <span class="math inline">\(H_o: \mu =
 \mu_0\)</span> against one of three possible alternatives:</p>
 <ul>
@@ -524,99 +509,8 @@ convincing evidence that the null hypothesis is false. We have good
 reason to believe the average length of all woolly bear caterpillars is
 not 45 millimeters.</p>
 </div>
-</div>
-<div id="one-proportion" class="section level1">
-<h1>One proportion</h1>
-<p><strong>Question</strong>: We want to estimate/investigate the
-proportion of <em>all</em> elements in a population having a certain
-feature.</p>
-<p><strong>Example</strong>: Estimate the proportion of all Linfield
-Students who would pick 3 or 7 if asked to pick a random number between
-1 and 10.</p>
-<p><strong>Notation/terminology</strong></p>
-<ul>
-<li><span class="math inline">\(p\)</span> - proportion of <em>all</em>
-elements in the population having the feature. Generally, <span
-class="math inline">\(p\)</span> is an unknown parameter, called the
-population proportion, and it’s what we want to estimate/investigate via
-a sample.</li>
-<li><span class="math inline">\(n\)</span> - the size of an independent
-sample of elements gathered from the population.</li>
-<li><span class="math inline">\(\hat{p}\)</span> - the proportion of
-elements in the sample that have the feature. Note: <span
-class="math inline">\(\hat{p}=x/n\)</span>, where <span
-class="math inline">\(x\)</span> is the number of <em>successes</em>,
-i.e., the number of observations having the feature of interest.</li>
-</ul>
-<div id="confidence-interval-for-p" class="section level2">
-<h2>Confidence Interval for <span class="math inline">\(p\)</span></h2>
-<p><span class="math display">\[\hat{p} \pm z^* \cdot \text{SE}\]</span>
-where <span class="math display">\[SE \approx
-\sqrt{\frac{\hat{p}(1-\hat{p})}{n}},\]</span> and <span
-class="math inline">\(z^*\)</span> is the value in the standard normal
-distribution <span class="math inline">\(N(0,1)\)</span> that
-corresponds to the desired confidence level.</p>
-<p><strong>Calculate the confidence interval in R</strong></p>
-<pre class="r"><code># Using class data from the 2021-22 academic year
-n=86 #sample size
-x=34 #successes 
-C = .95 # confidence level
-phat = x/n
-SE = sqrt(phat*(1-phat)/n)
-zstar = qnorm(C + (1-C)/2)
-MOE = zstar*SE #margin of error
-phat + c(-MOE,MOE) #Confidence Interval</code></pre>
-<pre><code>## [1] 0.2920152 0.4986824</code></pre>
-<p><strong>Interpretation</strong>: We are 95% confident that the
-proportion of all Linfield students who would pick 3 ro 7 on the random
-number question is between .292 and .499.</p>
-</div>
-<div id="hypothesis-test" class="section level2">
-<h2>Hypothesis test</h2>
-<p>To test the null hypothesis <span class="math display">\[H_o: p =
-p_0\]</span> against one of three possible alternatives:</p>
-<ul>
-<li><span class="math inline">\(H_a: p &gt; p_o\)</span> (one-sided,
-<code>greater</code> than <span class="math inline">\(p_o\)</span>)</li>
-<li><span class="math inline">\(H_a: p &lt; p_o\)</span> (one-sided,
-<code>less</code> than <span class="math inline">\(p_o\)</span>)</li>
-<li><span class="math inline">\(H_a: p \neq p_0\)</span>
-(<code>two.sided</code>)</li>
-</ul>
-<p><strong>Test statistic</strong>. This is a z-score computed under the
-assumption that <span class="math inline">\(H_o\)</span> is true: <span
-class="math display">\[z = \frac{\hat{p}-p_o}{\text{SE}}\]</span> where
-<span
-class="math display">\[\text{SE}=\sqrt{\frac{p_o(1-p_o)}{n}}.\]</span></p>
-<p>Suppose we want to test the claim that 20% of all Linfield students
-would pick 3 or 7 on the random number question (since 3 and 7 make up 2
-of the possible 10 choices). We test the hypotheses <span
-class="math display">\[H_o: p = 0.2 ~~\text{against}~~H_a: p \neq
-0.2.\]</span></p>
-<p><strong>Calculate the test statistic in R</strong></p>
-<pre class="r"><code>p0=.2
-n=86 #sample size
-x=34 #successes
-phat = x/n
-SE = sqrt(p0*(1-p0)/n) # If Ho is true, this is the standard error!!
-z = (phat-p0)/SE
-z</code></pre>
-<pre><code>## [1] 4.528976</code></pre>
-<p>We can determine the p-value with the <code>pnorm()</code> function.
-<em>How</em> to use the <code>pnorm()</code> function depends on the
-alternative hypothesis.</p>
-<p>In this case, since we have a 2-sided alternative, the p-value is</p>
-<pre class="r"><code>2*pnorm(-abs(z))</code></pre>
-<pre><code>## [1] 5.92701e-06</code></pre>
-<p><strong>Conclusion</strong> This p-value is so small that we reject
-the null and conclude that <span class="math inline">\(p \neq
-.2\)</span>. This conclusion agrees with the fact that our confidence
-interval above did not include .2 within it! We are confident that <span
-class="math inline">\(p \neq .2\)</span>.</p>
-</div>
-</div>
-<div id="using-t.test" class="section level1">
-<h1>Using <code>t.test()</code></h1>
+<div id="using-t.test" class="section level2">
+<h2>Using <code>t.test()</code></h2>
 <p>The <code>t.test()</code> function is a <em>black box</em> r command
 that does confidence interval and test of significance calculations for
 us in one fell swoop for both a single population mean and for the
@@ -666,6 +560,101 @@ of size 12 having sample mean less than or equal to 9.59 is about 1.1% -
 this likelihood is small enough that we reject the null. We believe the
 population that this sample was drawn from has population mean less than
 10.</p>
+</div>
+</div>
+<div id="one-proportion" class="section level1">
+<h1>One proportion</h1>
+<p><strong>Question</strong>: We want to estimate/investigate the
+proportion of <em>all</em> elements in a population having a certain
+feature.</p>
+<p><strong>Example</strong>: Estimate the proportion of all Linfield
+Students who would pick 3 or 7 if asked to pick a random number between
+1 and 10.</p>
+<p><strong>Parameter of Interest</strong></p>
+<ul>
+<li><span class="math inline">\(p\)</span> - proportion of <em>all</em>
+elements in the population having the feature. Generally, <span
+class="math inline">\(p\)</span> is unknown, and our goal is to estimate
+it and/or make some claim about it.</li>
+</ul>
+<p><strong>Estimating <span
+class="math inline">\(p\)</span></strong></p>
+<p>From a simple random sample drawn from the population we find three
+values:</p>
+<ul>
+<li><span class="math inline">\(n\)</span> - the sample size.</li>
+<li><span class="math inline">\(\hat{p}\)</span> - the proportion of
+elements in the sample that have the feature. Note: <span
+class="math inline">\(\hat{p}=x/n\)</span>, where <span
+class="math inline">\(x\)</span> is the number of <em>successes</em>,
+i.e., the number of observations having the feature of interest.</li>
+</ul>
+<div id="confidence-interval-for-p" class="section level2">
+<h2>Confidence Interval for <span class="math inline">\(p\)</span></h2>
+<p><span class="math display">\[\hat{p} \pm z^* \cdot \text{SE}\]</span>
+where <span class="math display">\[SE \approx
+\sqrt{\frac{\hat{p}(1-\hat{p})}{n}},\]</span> and <span
+class="math inline">\(z^*\)</span> is the value in the standard normal
+distribution <span class="math inline">\(N(0,1)\)</span> that
+corresponds to the desired confidence level.</p>
+<p><strong>Calculate the confidence interval in R</strong></p>
+<pre class="r"><code># Using class data from the 2021-22 academic year
+n=86 #sample size
+x=34 #successes 
+C = .95 # confidence level
+phat = x/n
+SE = sqrt(phat*(1-phat)/n)
+zstar = qnorm(C + (1-C)/2)
+MOE = zstar*SE #margin of error
+phat + c(-MOE,MOE) #Confidence Interval</code></pre>
+<pre><code>## [1] 0.2920152 0.4986824</code></pre>
+<p><strong>Interpretation</strong>: We are 95% confident that the
+proportion of all Linfield students who would pick 3 or 7 on the random
+number question is between .292 and .499.</p>
+</div>
+<div id="hypothesis-test-1" class="section level2">
+<h2>Hypothesis test</h2>
+<p>To test the null hypothesis <span class="math display">\[H_o: p =
+p_0\]</span> against one of three possible alternatives:</p>
+<ul>
+<li><span class="math inline">\(H_a: p &gt; p_o\)</span> (one-sided,
+<code>greater</code> than <span class="math inline">\(p_o\)</span>)</li>
+<li><span class="math inline">\(H_a: p &lt; p_o\)</span> (one-sided,
+<code>less</code> than <span class="math inline">\(p_o\)</span>)</li>
+<li><span class="math inline">\(H_a: p \neq p_0\)</span>
+(<code>two.sided</code>)</li>
+</ul>
+<p><strong>Test statistic</strong>. This is a z-score computed under the
+assumption that <span class="math inline">\(H_o\)</span> is true: <span
+class="math display">\[z = \frac{\hat{p}-p_o}{\text{SE}}\]</span> where
+<span
+class="math display">\[\text{SE}=\sqrt{\frac{p_o(1-p_o)}{n}}.\]</span></p>
+<p>Suppose we want to test the claim that 20% of all Linfield students
+would pick 3 or 7 on the random number question (since 3 and 7 make up 2
+of the possible 10 choices). We test the hypotheses <span
+class="math display">\[H_o: p = 0.2 ~~\text{against}~~H_a: p \neq
+0.2.\]</span></p>
+<p><strong>Calculate the test statistic in R</strong></p>
+<pre class="r"><code>p0=.2
+n=86 #sample size
+x=34 #successes
+phat = x/n
+SE = sqrt(p0*(1-p0)/n) # If Ho is true, this is the standard error!!
+z = (phat-p0)/SE
+z</code></pre>
+<pre><code>## [1] 4.528976</code></pre>
+<p>We can determine the p-value with the <code>pnorm()</code> function.
+<em>How</em> to use the <code>pnorm()</code> function depends on the
+alternative hypothesis.</p>
+<p>In this case, since we have a 2-sided alternative, the p-value is</p>
+<pre class="r"><code>2*pnorm(-abs(z))</code></pre>
+<pre><code>## [1] 5.92701e-06</code></pre>
+<p><strong>Conclusion</strong> This p-value is so small that we reject
+the null and conclude that <span class="math inline">\(p \neq
+.2\)</span>. This conclusion agrees with the fact that our confidence
+interval above did not include .2 within it! We are confident that <span
+class="math inline">\(p \neq .2\)</span>.</p>
+</div>
 </div>
 <div id="matched-pairs" class="section level1">
 <h1>Matched Pairs</h1>
@@ -718,12 +707,20 @@ many years later.</p>
 <p class="caption">Byzantine coin</p>
 </div>
 </center>
-<p><strong>Notation/terminology</strong></p>
+<p><strong>Parameters of Interest</strong></p>
 <ul>
 <li><span class="math inline">\(\mu_1\)</span> - the mean silver content
 of <em>all</em> coins produced in the early coinage</li>
 <li><span class="math inline">\(\mu_2\)</span> - the mean silver content
 of <em>all</em> coins produced in the later coinage</li>
+<li>In fact, we’ll be interested in the difference <span
+class="math inline">\(\mu_1 - \mu_2\)</span>.</li>
+</ul>
+<p><strong>Estimating <span class="math inline">\(\mu_1-\mu_2\)</span>
+from a simple random sample</strong></p>
+<p>From 2 independent simple random samples drawn from the two
+populations we find these six values:</p>
+<ul>
 <li><span class="math inline">\(n_1\)</span>, <span
 class="math inline">\(\overline{x}_1\)</span>, <span
 class="math inline">\(s_1\)</span> - the sample size, sample mean, and
@@ -761,7 +758,17 @@ class="math display">\[(\overline{x}_1-\overline{x}_2) \pm t^*\cdot
 \text{SE},\]</span> where <span
 class="math display">\[\text{SE}=\sqrt{\frac{s_1^2}{n_1}+\frac{s_2^2}{n_2}}\]</span></p>
 <p><strong>Calculate the confidence interval in R</strong></p>
-<pre class="r"><code># Confidence Level
+<pre class="r"><code>#first sample
+n1 = length(Ag1)
+xbar1 = mean(Ag1)
+s1 = sd(Ag1)
+
+#second sample
+n2 = length(Ag2)
+xbar2 = mean(Ag2)
+s2 = sd(Ag2)
+
+# Confidence Level
 C=.95
 # Finding t* with rule of thumb
 df = min(n1-1,n2-1)
@@ -778,14 +785,24 @@ the average silver content in coins produced early in the reign is
 greater than the average silver content in coins produces later in the
 reign.</p>
 </div>
-<div id="significance-test-1" class="section level2">
+<div id="significance-test" class="section level2">
 <h2>Significance Test</h2>
 <p>To test <span class="math display">\[H_o: \mu_1 - \mu_2 = 0
 ~~\text{against}~~ H_a: \mu_1 - \mu_2 \neq 0,\]</span> the 2-sample test
 statistic is given by the formula <span class="math display">\[t =
 \frac{\overline{x}_1-\overline{x}_2}{\sqrt{\frac{s_1^2}{n_1}+\frac{s_2^2}{n_2}}}\]</span></p>
 <p><strong>Calculate the test statistic in R</strong></p>
-<pre class="r"><code>## Test statistic
+<pre class="r"><code>#first sample
+n1 = length(Ag1)
+xbar1 = mean(Ag1)
+s1 = sd(Ag1)
+
+#second sample
+n2 = length(Ag2)
+xbar2 = mean(Ag2)
+s2 = sd(Ag2)
+
+## Test statistic
 SE = sqrt(s1^2/n1 + s2^2/n2) # standard error
 t = (xbar1-xbar2)/SE
 t</code></pre>
@@ -1009,7 +1026,7 @@ class="math inline">\(p_1 - p_2\)</span>.</p>
 proportion of all Linfield Students that have tested positive for
 COVID-19 at least once and the proportion of all Oregonians that have
 tested positive for COVID-19 at least once?</p>
-<p><strong>Notation/terminology</strong></p>
+<p><strong>Parameters of Interest</strong></p>
 <ul>
 <li><span class="math inline">\(p_1\)</span> - proportion of
 <em>all</em> elements in population 1 having the feature under
@@ -1017,13 +1034,20 @@ investigation.</li>
 <li><span class="math inline">\(p_2\)</span> - the proportion of
 <em>all</em> elements in population 2 having the feature under
 investigation.</li>
-<li><span class="math inline">\(n_1\)</span>, <span
-class="math inline">\(n_2\)</span> - the sizes of the two independent
-samples from the two populations.</li>
-<li><span class="math inline">\(\hat{p_1}\)</span> - the proportion of
-elements in the sample from population 1 that have the feature.</li>
-<li><span class="math inline">\(\hat{p_2}\)</span> - the proportion of
-elements in the sample from population 2 that have the feature.</li>
+<li>In fact, we’ll be interested in the difference <span
+class="math inline">\(p_1 - p_2\)</span>.</li>
+</ul>
+<p><strong>Estimating <span class="math inline">\(p_1-p_2\)</span> from
+a simple random sample</strong></p>
+<p>From 2 independent simple random samples drawn from the two
+populations we find these values:</p>
+<ul>
+<li><span class="math inline">\(n_1\)</span>, and <span
+class="math inline">\(\hat{p}_1\)</span> - the sample size and sample
+proportion from population 1 that have the feature.</li>
+<li><span class="math inline">\(n_2\)</span> and <span
+class="math inline">\(\hat{p_2}\)</span> - the sample size and sample
+proportion from population 2 that have the feature.</li>
 </ul>
 <div id="confidence-interval-for-p_1-p_2" class="section level2">
 <h2>Confidence Interval for <span
@@ -1057,7 +1081,7 @@ p_2\)</span>. We have reason to believe that the proportion of Linfield
 students that have tested positive for COVID-19 at least once is greater
 than the state-wide proportion.</p>
 </div>
-<div id="hypothesis-test-1" class="section level2">
+<div id="hypothesis-test-2" class="section level2">
 <h2>Hypothesis test</h2>
 <p>To test the null hypothesis <span class="math display">\[H_o: p_1-p_2
 = 0\]</span> against one of these three alternative hypotheses:</p>
@@ -1659,7 +1683,7 @@ class="math inline">\(N = 115\)</span>.</p>
 <pre class="r"><code>ggplot(df)+
   geom_boxplot(aes(x=program,y=weight.loss,fill=program),show.legend=FALSE)+
   ggtitle(&quot;Weight loss by exercise program&quot;)</code></pre>
-<p><img src="inference_files/figure-html/unnamed-chunk-40-1.png" width="288" /></p>
+<p><img src="inference_files/figure-html/unnamed-chunk-39-1.png" width="288" /></p>
 <p><strong>Running anova in R</strong>:</p>
 <pre class="r"><code>anova(lm(weight.loss~program,data=df))</code></pre>
 <pre><code>## Analysis of Variance Table

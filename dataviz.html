@@ -356,12 +356,12 @@ div.tocify {
       <a href="regression.html">Linear Regression</a>
     </li>
     <li>
-      <a href="inference.html">Inference</a>
-    </li>
-    <li>
       <a href="references.html">Other Resources</a>
     </li>
   </ul>
+</li>
+<li>
+  <a href="inference.html">Inference</a>
 </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -398,16 +398,15 @@ ggplot</h1>
 href="basicstats.html#Basic_data_visualization">data and descriptive
 statistics page</a>.</p>
 <p>We can also produce superb graphics using the powerful package
-<em>ggplot2</em>.</p>
-<p>In this tutorial we focus on producing these types of graphics with
-ggplot2:</p>
+<em>ggplot2</em>. We focus here on producing the following types of
+plots:</p>
 <ol style="list-style-type: decimal">
 <li>histograms</li>
 <li>scatter plots</li>
 <li>box plots, and</li>
 <li>bar plots</li>
 </ol>
-<p><strong>I encourage you to replicate all the graphs in this tutorial
+<p><strong>I encourage you to replicate all the plots in this tutorial
 in your own RStudio session.</strong></p>
 <p>The <em>ggplot2</em> package is part of the <em>tidyverse</em>
 package, so begin your session by loading the tidyverse. Recall, to do
@@ -422,7 +421,7 @@ earthquakes.</p>
 <p>If you have installed the <code>openintro</code> package, and loaded
 it into your session, run this line</p>
 <pre class="r"><code>df &lt;- earthquakes</code></pre>
-<p>Alternatively, you can load the data set into your session directly
+<p>Alternatively, you can load the data frame into your session directly
 from its url:</p>
 <pre class="r"><code>df &lt;- read.csv(&quot;https://www.openintro.org/data/csv/earthquakes.csv&quot;)</code></pre>
 <p>Here are the first three rows of the data frame</p>
@@ -456,17 +455,17 @@ bins to make.</li>
 <li>The second layer provides a plot title</li>
 <li>The third layer provides an x-axis label.</li>
 </ol>
-<p><strong>Remarks</strong>:</p>
+<p><strong>Additional Notes on code</strong>:</p>
 <ol style="list-style-type: decimal">
 <li><p>We specify variables involved in a plot within the
 <code>aes()</code> command, <code>aes</code> being short for
 <em>aesthetic</em>. The dots and lines in plots have certain locations,
 colors, shapes, and sizes. In ggplot, these features are called
 <em>aesthetics</em>.</p></li>
-<li><p>Add that <code>+</code> sign at the end of a line if you plan to
-add another layer.</p></li>
-<li><p>Plotting data with ggplot requires the data to be within a data
-frame.</p></li>
+<li><p>Add a <code>+</code> sign at the end of a line if you plan to add
+another layer.</p></li>
+<li><p>Plotting data with <strong>ggplot requires the data to be within
+a data frame</strong>.</p></li>
 </ol>
 </div>
 <div id="histograms-with-ggplot" class="section level1">
@@ -499,15 +498,15 @@ change the y-axis label, we add the layer
 specify the bin widths with the <code>binwidth</code> option inside the
 <code>geom_histogram()</code> command, or you can specify the total
 number of bins with the <code>bins</code> option.</p>
-<div id="using-binwidth-option" class="section level4">
-<h4>Using <code>binwidth</code> option</h4>
+<div id="using-binwidth-option" class="section level3">
+<h3>Using <code>binwidth</code> option</h3>
 <p>In the following graph, each bin has width 0.4.</p>
 <pre class="r"><code>ggplot(data = df) +
   geom_histogram(aes(x=richter),col=&quot;white&quot;,binwidth = 0.4)</code></pre>
 <p><img src="dataviz_files/figure-html/unnamed-chunk-7-1.png" width="480" /></p>
 </div>
-<div id="using-the-bins-option" class="section level4">
-<h4>Using the <code>bins</code> option</h4>
+<div id="using-the-bins-option" class="section level3">
+<h3>Using the <code>bins</code> option</h3>
 <p>In the following plot we create 16 equal width bins</p>
 <pre class="r"><code>ggplot(data = df) +
   geom_histogram(aes(x=richter),col=&quot;white&quot;,bins = 16)</code></pre>
@@ -597,8 +596,8 @@ This if fine if we want a single color for all the points. If we want
 the color of a point to depend on some categorical variable, as in the
 plot below, we specify that inside <code>aes()</code>.<br />
 </li>
-<li>R has lots (657) of built-in color names. You can see the names in
-RStudio if you run <code>colors()</code>.</li>
+<li>R has lots of built-in color names. You can see the names in RStudio
+if you run <code>colors()</code>.</li>
 </ol>
 </div>
 <div id="add-color-by-category" class="section level2">
@@ -616,8 +615,8 @@ command.</p>
 <div id="bonus-round---fit-the-line" class="section level2">
 <h2>Bonus Round - Fit the line</h2>
 <p>We have two ways to add a line to a plot in ggplot.</p>
-<div id="using-geom_abline" class="section level4">
-<h4>Using geom_abline()</h4>
+<div id="using-geom_abline" class="section level3">
+<h3>Using geom_abline()</h3>
 <p>The first approach is to add the line by specifying the slope and
 y-intercept using <code>geom_abline(slope = , intercept = )</code>.</p>
 <p>For instance, the slope and <span
@@ -639,8 +638,8 @@ size of the line, and we can change the linetype in the
   geom_abline(slope = -0.4561, intercept = 20.227,col=&quot;blue&quot;,linetype=&quot;dashed&quot;,size=.7)</code></pre>
 <p><img src="dataviz_files/figure-html/unnamed-chunk-18-1.png" width="480" /></p>
 </div>
-<div id="using-geom_smooth" class="section level4">
-<h4>Using geom_smooth()</h4>
+<div id="using-geom_smooth" class="section level3">
+<h3>Using geom_smooth()</h3>
 <p>The second approach to fitting a line to data is to use the
 <code>geom_smooth()</code>command. Here’s how to add the least squares
 regression line to the scatter plot:</p>

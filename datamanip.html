@@ -358,12 +358,12 @@ div.tocify {
       <a href="regression.html">Linear Regression</a>
     </li>
     <li>
-      <a href="inference.html">Inference</a>
-    </li>
-    <li>
       <a href="references.html">Other Resources</a>
     </li>
   </ul>
+</li>
+<li>
+  <a href="inference.html">Inference</a>
 </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -503,9 +503,8 @@ on the Richter scale?</p>
 ## 10  1960 May          21     9.5 South                  Chile           1655
 ## 11  1964 March        27     9.2 Alaska                 United States    131
 ## 12  1985 September    19     8   Michoacan              Mexico          9500</code></pre>
-<p>After filtering, then we can <code>arrange()</code> (sort) this list
-of earthquakes in descending order of magnitude on the richter
-scale:</p>
+<p>After filtering, we can <code>arrange()</code> (sort) this list of
+earthquakes in descending order of magnitude on the richter scale:</p>
 <pre class="r"><code>df %&gt;% filter(richter&gt;=8.0) %&gt;% arrange(desc(richter))</code></pre>
 <pre><code>## # A tibble: 12 × 7
 ##     year month       day richter area                   region        deaths
