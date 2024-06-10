@@ -401,9 +401,10 @@ of a population.</p>
 <p><strong>Example</strong>: What is the average length (in millimeters)
 of woolly bear caterpillars?</p>
 <center>
-<div class="figure">
-<img src="images/wbear.jpeg" style="width:30.0%" alt="" />
-<p class="caption">The majestic woolly bear caterpillar</p>
+<div class="float">
+<img src="images/wbear.jpeg" style="width:30.0%"
+alt="The majestic woolly bear caterpillar" />
+<div class="figcaption">The majestic woolly bear caterpillar</div>
 </div>
 </center>
 <p><strong>Parameter of Interest</strong></p>
@@ -702,9 +703,9 @@ I, Comnenus (1143-1180)? 16 coins have been found and measured, 9 of the
 coins came from an early coinage, and 7 of the coins came from a coinage
 many years later.</p>
 <center>
-<div class="figure">
-<img src="images/coin.jpeg" style="width:30.0%" alt="" />
-<p class="caption">Byzantine coin</p>
+<div class="float">
+<img src="images/coin.jpeg" style="width:30.0%" alt="Byzantine coin" />
+<div class="figcaption">Byzantine coin</div>
 </div>
 </center>
 <p><strong>Parameters of Interest</strong></p>
@@ -1143,34 +1144,29 @@ We display the first four and last four rows of this large data frame
 <thead>
 <tr>
 <th style="text-align:left;">
+city
 </th>
 <th style="text-align:right;">
-rank
-</th>
-<th style="text-align:left;">
-city
+pop_year
 </th>
 <th style="text-align:right;">
 population
 </th>
 <th style="text-align:right;">
-lead.digit
+lead_digit
 </th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td style="text-align:left;">
-1
-</td>
-<td style="text-align:right;">
-1
-</td>
-<td style="text-align:left;">
 Portland
 </td>
 <td style="text-align:right;">
-645291
+2023
+</td>
+<td style="text-align:right;">
+630498
 </td>
 <td style="text-align:right;">
 6
@@ -1178,50 +1174,41 @@ Portland
 </tr>
 <tr>
 <td style="text-align:left;">
-2
+Eugene
 </td>
 <td style="text-align:right;">
-2
+2023
 </td>
+<td style="text-align:right;">
+177899
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
 <td style="text-align:left;">
 Salem
 </td>
 <td style="text-align:right;">
-169259
+2023
+</td>
+<td style="text-align:right;">
+177432
 </td>
 <td style="text-align:right;">
 1
 </td>
 </tr>
 <tr>
-<td style="text-align:left;">
-3
-</td>
-<td style="text-align:right;">
-3
-</td>
-<td style="text-align:left;">
-Eugene
-</td>
-<td style="text-align:right;">
-168302
-</td>
-<td style="text-align:right;">
-1
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-4
-</td>
-<td style="text-align:right;">
-4
-</td>
 <td style="text-align:left;">
 Gresham
 </td>
 <td style="text-align:right;">
-110494
+2023
+</td>
+<td style="text-align:right;">
+110685
 </td>
 <td style="text-align:right;">
 1
@@ -1229,16 +1216,13 @@ Gresham
 </tr>
 <tr>
 <td style="text-align:left;">
-370
+Hillsboro
 </td>
 <td style="text-align:right;">
-370
-</td>
-<td style="text-align:left;">
-Granite
+2023
 </td>
 <td style="text-align:right;">
-19
+107730
 </td>
 <td style="text-align:right;">
 1
@@ -1246,16 +1230,13 @@ Granite
 </tr>
 <tr>
 <td style="text-align:left;">
-371
+Bend
 </td>
 <td style="text-align:right;">
-371
-</td>
-<td style="text-align:left;">
-Bellfountain
+2023
 </td>
 <td style="text-align:right;">
-16
+104557
 </td>
 <td style="text-align:right;">
 1
@@ -1263,16 +1244,13 @@ Bellfountain
 </tr>
 <tr>
 <td style="text-align:left;">
-372
+Beaverton
 </td>
 <td style="text-align:right;">
-372
-</td>
-<td style="text-align:left;">
-Shaniko
+2023
 </td>
 <td style="text-align:right;">
-9
+96945
 </td>
 <td style="text-align:right;">
 9
@@ -1280,65 +1258,63 @@ Shaniko
 </tr>
 <tr>
 <td style="text-align:left;">
-373
+Medford
 </td>
 <td style="text-align:right;">
-373
+2023
 </td>
+<td style="text-align:right;">
+85098
+</td>
+<td style="text-align:right;">
+8
+</td>
+</tr>
+<tr>
 <td style="text-align:left;">
-Lonerock
+Corvallis
 </td>
 <td style="text-align:right;">
-8
+2023
 </td>
 <td style="text-align:right;">
-8
+61087
+</td>
+<td style="text-align:right;">
+6
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Springfield
+</td>
+<td style="text-align:right;">
+2023
+</td>
+<td style="text-align:right;">
+61085
+</td>
+<td style="text-align:right;">
+6
 </td>
 </tr>
 </tbody>
 </table>
-<!--
-
-\begin{table}[ht]
-\centering
-\begin{tabular}{cll c}
-  \hline
- & city & population & lead.digit\\ 
-  \hline
-1 & Portland & 645,291 & 6\\ 
-  2 & Salem & 169,259 & 1\\ 
-  3 & Eugene & 168,302 & 1\\ 
-  4 & Gresham & 110,494 & 1\\ 
-  5 & Hillsboro & 106,543 & 1\\ 
-  6 & Beaverton & 97,861 & 9\\ 
-  7 & Bend & 93,917 & 9\\ 
-  8 & Medford & 81,145 & 8 \\ 
-  9 & Springfield & 62,077 & 6\\ 
-  10 & Corvallis & 58,028 & 5\\ 
-$\vdots$ & $\vdots$ & $\vdots$ \\
-  370 & Granite &  19 & 1\\ 
-  371 & Bellfountain &  16 & 1\\ 
-  372 & Shaniko & 9 & 9\\ 
-  373 & Lonerock & 8 & 8\\ 
-   \hline
-\end{tabular}
-\end{table}
--->
 <p>We ask this question of the data: Is it reasonable to expect that
 each of the digits 1-9 occur with equal frequency? A chi-square goodness
 of fit test can answer this question.</p>
 <p>Below is the table of observed first digit frequencies, which we can
 obtain from the data frame above by running</p>
-<pre class="r"><code>table(orcities$lead.digit)</code></pre>
+<pre class="r"><code>table(orcities$lead_digit)</code></pre>
 <pre><code>## 
 ##   1   2   3   4   5   6   7   8   9 
-## 122  61  50  30  29  17  19  20  25</code></pre>
+## 150  72  55  34  28  28  14  20  18</code></pre>
 <p><strong>Run the chi-square test in R</strong></p>
-<pre class="r"><code>X=chisq.test(table(orcities$lead.digit),p = c(rep(1/9,9)))</code></pre>
+<pre class="r"><code>X=chisq.test(table(orcities$lead_digit),p = c(rep(1/9,9)))</code></pre>
 <p>Expected counts (rounded to 1 decimal point):</p>
 <pre class="r"><code>round(X$expected,1)</code></pre>
 <pre><code>##    1    2    3    4    5    6    7    8    9 
-## 41.4 41.4 41.4 41.4 41.4 41.4 41.4 41.4 41.4</code></pre>
+## 46.6 46.6 46.6 46.6 46.6 46.6 46.6 46.6 46.6</code></pre>
 <p>If all nine digits 1-9 arise with equal probability (1/9), we would
 expect about 41.4 occurrences of each digit in a sample of size 373. The
 observed counts appear to have a much different distribution than
@@ -1348,12 +1324,12 @@ this.</p>
 <pre><code>## 
 ##  Chi-squared test for given probabilities
 ## 
-## data:  table(orcities$lead.digit)
-## X-squared = 218.66, df = 8, p-value &lt; 2.2e-16</code></pre>
-<p><strong>Conclusion</strong>: With such a small p-value (well, well
-below <span class="math inline">\(\alpha = .05\)</span>)) we reject the
-claim that all 9 digits 1-9 appear with equal frequency in a
-distribution of city populations.</p>
+## data:  table(orcities$lead_digit)
+## X-squared = 318.89, df = 8, p-value &lt; 2.2e-16</code></pre>
+<p><strong>Conclusion</strong>: With such a small p-value (essentially
+0, and well, well below <span class="math inline">\(\alpha =
+.05\)</span>)) we reject the claim that all 9 digits 1-9 appear with
+equal frequency in a distribution of city populations.</p>
 <p><strong>Example 2</strong>. <strong>Benford’s Law</strong> asserts
 that in many distributions (but not all) the distribution of “leading
 digits” follows this specific, non-uniform distribution:</p>
@@ -1399,26 +1375,17 @@ digits” follows this specific, non-uniform distribution:</p>
 </tr>
 </tbody>
 </table>
-<!--
-\begin{table}[ht]
-\centering
-\begin{tabular}{l | c  c  c  c  c  c  c   c  c} \hline
-Leading digit & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 \\ \hline
-probability & .301 & .176 & .125 & .097 & .079 & .067 & .058 & .051 & .046 \\ \hline
-\end{tabular}
-\end{table}
--->
 <p>(These probabilities might seem artifical, but, according to
 Benford’s Law, the probability that a leading digit is <span
 class="math inline">\(k\)</span> is given mathematically by <span
 class="math inline">\(\log_{10}\left(\frac{k+1}{k}\right)\)</span>.)</p>
 <p>Is it plausible that Oregon town populations adhere to this
 distribution?</p>
-<pre class="r"><code>X=chisq.test(table(orcities$lead.digit),p = c(.301,.176,.125,.097,.079,.067,.058,.051,.046))</code></pre>
+<pre class="r"><code>X=chisq.test(table(orcities$lead_digit),p = c(.301,.176,.125,.097,.079,.067,.058,.051,.046))</code></pre>
 <p>Expected counts:</p>
 <pre class="r"><code>X$expected</code></pre>
 <pre><code>##       1       2       3       4       5       6       7       8       9 
-## 112.273  65.648  46.625  36.181  29.467  24.991  21.634  19.023  17.158</code></pre>
+## 126.119  73.744  52.375  40.643  33.101  28.073  24.302  21.369  19.274</code></pre>
 <p>These expected counts look much closer to the observed counts! Let’s
 view the results of the test:</p>
 <p>Here are the results of the chi-square test:</p>
@@ -1426,13 +1393,13 @@ view the results of the test:</p>
 <pre><code>## 
 ##  Chi-squared test for given probabilities
 ## 
-## data:  table(orcities$lead.digit)
-## X-squared = 8.9896, df = 8, p-value = 0.3432</code></pre>
-<p><strong>Conclusion</strong>: Here the p-value is far larger than .05,
-suggesting we do not have reason to reject the null hypothesis that
-population figures in Oregon follow Benford’s Law. Restating this double
-negative, it is reasonable, based on this test, to argue that Oregon
-populations follow Benford’s Law.</p>
+## data:  table(orcities$lead_digit)
+## X-squared = 11.106, df = 8, p-value = 0.1958</code></pre>
+<p><strong>Conclusion</strong>: Here the p-value is larger than .05,
+suggesting we do not have strong evidence to reject the null hypothesis
+that population figures in Oregon follow Benford’s Law. Perhaps
+Benford’s Law is a reasonable model for the leading digit counts for
+Oregon city and town populations.</p>
 </div>
 <div id="chi-square-test-of-independence" class="section level1">
 <h1>Chi-square Test of Independence</h1>
