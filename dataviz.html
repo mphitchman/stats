@@ -622,33 +622,40 @@ y-intercept using <code>geom_abline(slope = , intercept = )</code>.</p>
 <p>For instance, the slope and <span
 class="math inline">\(y\)</span>-intercept for the least squares line in
 the faithful example are 20.227 and -0.4561, respectively (found by
-using the code `lm(day~richter,df)).</p>
-<p>Knowing these values we can add a line to a scatter plot by having
-two layers in our plot: a <code>geom_point</code> layer which plots the
-points, and a <code>geom_abline</code> layer which plots the line.</p>
+using the code <code>lm(day~richter,df)</code>).</p>
+<p>Knowing the slope and intercept values, we include the least-squares
+line in a scatter plot by having two layers in our plot: - a
+<code>geom_point</code> layer which plots the points, and = a
+<code>geom_abline</code> layer which plots the line.</p>
 <pre class="r"><code>ggplot(data = df) +
   geom_point(aes(x=richter,y=day))+
   geom_abline(slope = -0.4561, intercept = 20.227)</code></pre>
 <p><img src="dataviz_files/figure-html/unnamed-chunk-17-1.png" width="480" /></p>
-<p><strong>Note</strong>: We can change the size of the points and the
-size of the line, and we can change the linetype in the
-<code>geom_abline()</code> layer.</p>
+<p><strong>Note</strong>: We can change the size of the points
+(<code>size</code>) and the thickness of the line
+(<code>linewidth</code>), as well as the <code>linetype</code> (to
+dashed, for instance), by adding these options to their respective
+layers.</p>
 <pre class="r"><code>ggplot(data = df) +
   geom_point(aes(x=richter,y=day),size=.5)+
-  geom_abline(slope = -0.4561, intercept = 20.227,col=&quot;blue&quot;,linetype=&quot;dashed&quot;,size=.7)</code></pre>
+  geom_abline(slope = -0.4561, intercept = 20.227,col=&quot;blue&quot;,
+              linetype = &quot;dashed&quot;,
+              linewidth = .7)</code></pre>
 <p><img src="dataviz_files/figure-html/unnamed-chunk-18-1.png" width="480" /></p>
 </div>
 <div id="using-geom_smooth" class="section level3">
 <h3>Using geom_smooth()</h3>
-<p>The second approach to fitting a line to data is to use the
-<code>geom_smooth()</code>command. Here’s how to add the least squares
-regression line to the scatter plot:</p>
+<p>The second approach to fitting the least squares regression line to a
+scatter plot is to use a <code>geom_smooth()</code> layer:</p>
 <pre class="r"><code>ggplot(data = df,aes(x=richter,y=day)) +
-  geom_point(size=.5)+
-  geom_smooth(method=&#39;lm&#39;, formula=y~x,se=FALSE) +
+  geom_point(size = .5)+
+  geom_smooth(method = &#39;lm&#39;, 
+              formula = y~x, 
+              se = FALSE) +
   theme_bw()</code></pre>
 <p><img src="dataviz_files/figure-html/unnamed-chunk-19-1.png" width="480" /></p>
-<p><strong>Note</strong>: Now the x and y coordinates in the plot are
+<p><strong>Note</strong>: Now the <span class="math inline">\(x\)</span>
+and <span class="math inline">\(y\)</span> coordinates in the plot are
 specified within the <code>ggplot</code> command since both the
 <code>geom_smooth</code> and <code>geom_point</code> commands require
 them. Alternatively, we could have indicated them in both layers.</p>
@@ -663,7 +670,7 @@ The gray bar of varying thickness surrounding the least squares regression line 
 <div id="basic-box-plot" class="section level2">
 <h2>Basic box plot</h2>
 <blockquote>
-<p>Key layer: Use the <code>geom_boxplot()</code> plot type command.</p>
+<p>Key layer command: <code>geom_boxplot()</code></p>
 </blockquote>
 <pre class="r"><code>ggplot(data = df) +
   geom_boxplot(aes(x=richter)) +
@@ -694,27 +701,44 @@ them:</p>
 <p><img src="dataviz_files/figure-html/unnamed-chunk-22-1.png" width="672" /></p>
 <p><strong>Note</strong>: The <code>geom_jitter()</code> command is the
 same as the <code>geom_point()</code> with the exception that the
-computer randomly moves the points a tiny bit(a little “jitter”). This
+computer randomly moves the points a tiny bit (a little “jitter”). This
 feature is a nice way to see multiple points that might otherwise be
 stacked right on top of one another. The <code>height=.1</code> option
-means I’m letting the y-coordinate of the point (the height) vary plus
-or minus .1 units from its actual value.</p>
+in the <code>geom_jitter</code> layer means I’m letting the y-coordinate
+of the point (the height) vary plus or minus .1 units from its actual
+value.</p>
 </div>
 <div id="side-by-side-box-plots" class="section level2">
 <h2>Side-by-side box plots</h2>
-<p>The package <code>ggplot</code> makes nice side-by-side box plots
-quite easily.</p>
-<p>If <span class="math inline">\(x\)</span> is a numerical variable and
-<span class="math inline">\(y\)</span> is a categorical variable, we can
-determine side-by-side box plots for the values of <span
-class="math inline">\(x\)</span> grouped by the values of <span
-class="math inline">\(y\)</span>.</p>
+<p>ggplot <strong>loves</strong> to make side-by-side box plots from a
+data frame that has at least one numeric variable and one categorical
+variable.</p>
+<p>Say we want to compare earthquake magnitudes (which is numeric) by
+month (which is categorical)!</p>
 <pre class="r"><code>ggplot(data = df) +
   geom_boxplot(aes(x=richter,y=month)) +
   xlab(&quot;magnitude&quot;) + 
   ylab(&quot;month&quot;) + 
-  ggtitle(&quot;Major 20th century earthquakes&quot;)</code></pre>
+  ggtitle(&quot;Major 20th century earthquake magnitudes, by month&quot;)</code></pre>
 <p><img src="dataviz_files/figure-html/unnamed-chunk-23-1.png" width="576" /></p>
+<p>Notes on plot code:</p>
+<ol style="list-style-type: decimal">
+<li>In the data frame <code>df</code>, <code>richter</code> is numeric,
+and <code>month</code> is categorical.</li>
+<li>Setting <code>x=richter</code> and <code>y=month</code> inside the
+<code>geom_boxplot()</code> aestheic groups the data by
+<code>month</code> and produces a box plot of earthquake magnitudes for
+each month in <code>month</code>.</li>
+<li>We can run the box plots vertically if we switch the roles of <span
+class="math inline">\(x\)</span> and <span
+class="math inline">\(y\)</span>:</li>
+</ol>
+<pre class="r"><code>ggplot(data = df) +
+  geom_boxplot(aes(x=month, y=richter)) +
+  xlab(&quot;month&quot;) + 
+  ylab(&quot;magnitude&quot;) + 
+  ggtitle(&quot;Major 20th century earthquake magnitudes, by month&quot;)</code></pre>
+<p><img src="dataviz_files/figure-html/unnamed-chunk-24-1.png" width="576" /></p>
 </div>
 <div id="coloring-box-plots" class="section level2">
 <h2>Coloring box plots</h2>
@@ -725,7 +749,7 @@ using the <code>fill</code> option.</p>
   xlab(&quot;magnitude&quot;) + 
   ylab(&quot;month&quot;) + 
   ggtitle(&quot;Major 20th century earthquakes&quot;)</code></pre>
-<p><img src="dataviz_files/figure-html/unnamed-chunk-24-1.png" width="576" /></p>
+<p><img src="dataviz_files/figure-html/unnamed-chunk-25-1.png" width="576" /></p>
 </div>
 <div id="ordering-months-chronologically" class="section level2">
 <h2>Ordering months chronologically</h2>
@@ -740,7 +764,7 @@ ggplot(data = df) +
   xlab(&quot;magnitude&quot;) + 
   ylab(&quot;month&quot;) + 
   ggtitle(&quot;Major 20th century earthquakes&quot;)</code></pre>
-<p><img src="dataviz_files/figure-html/unnamed-chunk-25-1.png" width="576" /></p>
+<p><img src="dataviz_files/figure-html/unnamed-chunk-26-1.png" width="576" /></p>
 </div>
 <div id="bonus-round---color-opacity" class="section level2">
 <h2>Bonus Round - Color Opacity</h2>
@@ -754,7 +778,7 @@ color “orange” but with different alpha values.</p>
   xlab(&quot;magnitude&quot;) + 
   ylab(&quot;month&quot;) + 
   ggtitle(&quot;Major 20th century earthquakes&quot;)</code></pre>
-<p><img src="dataviz_files/figure-html/unnamed-chunk-26-1.png" width="576" /></p>
+<p><img src="dataviz_files/figure-html/unnamed-chunk-27-1.png" width="576" /></p>
 </div>
 </div>
 <div id="bar-plot-for-a-categorical-variable" class="section level1">
@@ -762,12 +786,12 @@ color “orange” but with different alpha values.</p>
 <p>In Base R we can visualize the frequencies for a categorical variable
 as follows:</p>
 <pre class="r"><code>barplot(table(df$month))</code></pre>
-<p><img src="dataviz_files/figure-html/unnamed-chunk-27-1.png" width="576" /></p>
+<p><img src="dataviz_files/figure-html/unnamed-chunk-28-1.png" width="576" /></p>
 <p>We can also create a bar plot with gglplot with the following
 code:</p>
 <pre class="r"><code>ggplot(data=df,aes(x=month))+
   geom_bar(stat=&quot;count&quot;)</code></pre>
-<p><img src="dataviz_files/figure-html/unnamed-chunk-28-1.png" width="576" /></p>
+<p><img src="dataviz_files/figure-html/unnamed-chunk-29-1.png" width="576" /></p>
 <p><strong>Note</strong>: We can specify colors manually, change bar
 width, add labels, and even rotate them so they look less crowded. We
 can also specify the limits of the values on the y-axis to be, say, 0 to
@@ -779,7 +803,7 @@ ggplot(data=df,aes(x=month))+
   ylim(0,20)+
   ggtitle(&quot;Number of earthquakes by month&quot;)+
   theme(axis.text.x=element_text(angle=60,vjust=.5))</code></pre>
-<p><img src="dataviz_files/figure-html/unnamed-chunk-29-1.png" width="576" /></p>
+<p><img src="dataviz_files/figure-html/unnamed-chunk-30-1.png" width="576" /></p>
 </div>
 <div id="cheat-sheet" class="section level1">
 <h1>Cheat Sheet</h1>
