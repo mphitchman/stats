@@ -1,99 +1,101 @@
-eventnum,name,Film,award,date_of_award,years,days,age_at_award
-1,Emil Jannings,"The Last Command, The Way of All Flesh",best actor,16-May-29,44,297,44.80
-2,Warner Baxter,In Old Arizona,best actor,3-Apr-30,41,5,41.00
-3,George Arliss,Disraeli,best actor,5-Nov-30,62,209,62.60
-4,Lionel Barrymore,A Free Soul,best actor,10-Nov-31,53,196,53.50
-5,Wallace Beery,The Champ,best actor,18-Nov-32,47,231,47.60
-6,Fredric March,Dr. Jekyll and Mr. Hyde,best actor,18-Nov-32,35,79,35.20
-7,Charles Laughton,The Private Life of Henry VIII,best actor,16-Mar-34,34,258,34.70
-8,Clark Gable,It Happened One Night,best actor,27-Feb-35,34,26,34.10
-9,Victor McLaglen,The Informer,best actor,5-Mar-36,49,86,49.20
-10,Paul Muni,The Story of Louis Pasteur,best actor,4-Mar-37,41,163,41.40
-11,Spencer Tracy,Captains Courageous,best actor,10-Mar-38,37,339,37.90
-12,Spencer Tracy,Boys Town,best actor,23-Feb-39,38,324,38.90
-13,Robert Donat,"Goodbye, Mr. Chips",best actor,29-Feb-40,34,348,35.00
-14,James Stewart,The Philadelphia Story,best actor,27-Feb-41,32,283,32.80
-15,Gary Cooper,Sergeant York,best actor,26-Feb-42,40,295,40.80
-16,James Cagney,Yankee Doodle Dandy,best actor,4-Mar-43,43,230,43.60
-17,Paul Lukas,Watch on the Rhine,best actor,2-Mar-44,48,281,48.80
-18,Bing Crosby,Going My Way,best actor,15-Mar-45,41,316,41.90
-19,Ray Milland,The Lost Weekend,best actor,7-Mar-46,39,63,39.20
-20,Fredric March,The Best Years of Our Lives,best actor,13-Mar-47,49,194,49.50
-21,Ronald Colman,A Double Life,best actor,20-Mar-48,57,40,57.10
-22,Laurence Olivier,Hamlet,best actor,24-Mar-49,41,306,41.80
-23,Broderick Crawford,All the King's Men,best actor,23-Mar-50,38,104,38.30
-24,Jos√© Ferrer,Cyrano de Bergerac,best actor,29-Mar-51,39,80,39.20
-25,Humphrey Bogart,The African Queen,best actor,30-Mar-52,52,96,52.30
-26,Gary Cooper,High Noon,best actor,19-Mar-53,51,316,51.90
-27,William Holden,Stalag 17,best actor,25-Mar-54,35,342,35.90
-28,Marlon Brando,On the Waterfront,best actor,30-Mar-55,30,361,31.00
-29,Ernest Borgnine,Marty,best actor,21-Mar-56,39,57,39.20
-30,Yul Brynner,The King and I,best actor,27-Mar-57,36,259,36.70
-31,Alec Guinness,The Bridge on the River Kwai,best actor,26-Mar-58,43,358,44.00
-32,David Niven,Separate Tables,best actor,6-Apr-59,49,36,49.10
-33,Charlton Heston,Ben-Hur,best actor,4-Apr-60,36,183,36.50
-34,Burt Lancaster,Elmer Gantry,best actor,17-Apr-61,47,166,47.50
-35,Maximilian Schell,Judgment at Nuremberg,best actor,9-Apr-62,31,122,31.30
-36,Gregory Peck,To Kill a Mockingbird,best actor,8-Apr-63,47,3,47.00
-37,Sidney Poitier,Lilies of the Field,best actor,13-Apr-64,37,53,37.10
-38,Rex Harrison,My Fair Lady,best actor,5-Apr-65,57,31,57.10
-39,Lee Marvin,Cat Ballou,best actor,18-Apr-66,42,58,42.20
-40,Paul Scofield,A Man for All Seasons,best actor,10-Apr-67,45,79,45.20
-41,Rod Steiger,In the Heat of the Night,best actor,10-Apr-68,42,362,43.00
-42,Cliff Robertson,Charly,best actor,14-Apr-69,45,217,45.60
-43,John Wayne,True Grit,best actor,7-Apr-70,62,316,62.90
-44,George C. Scott,Patton,best actor,15-Apr-71,43,179,43.50
-45,Gene Hackman,The French Connection,best actor,10-Apr-72,42,71,42.20
-46,Marlon Brando,The Godfather,best actor,27-Mar-73,48,358,49.00
-47,Jack Lemmon,Save the Tiger,best actor,2-Apr-74,49,53,49.10
-48,Art Carney,Harry and Tonto,best actor,8-Apr-75,56,155,56.40
-49,Jack Nicholson,One Flew Over the Cuckoo's Nest,best actor,29-Mar-76,38,342,38.90
-50,Peter Finch,Network,best actor,28-Mar-77,60,180,60.50
-51,Richard Dreyfuss,The Goodbye Girl,best actor,3-Apr-78,30,156,30.40
-52,Jon Voight,Coming Home,best actor,9-Apr-79,40,101,40.30
-53,Dustin Hoffman,Kramer vs. Kramer,best actor,14-Apr-80,42,250,42.70
-54,Robert De Niro,Raging Bull,best actor,31-Mar-81,37,226,37.60
-55,Henry Fonda,On Golden Pond,best actor,29-Mar-82,76,317,76.90
-56,Ben Kingsley,Gandhi,best actor,11-Apr-83,39,101,39.30
-57,Robert Duvall,Tender Mercies,best actor,9-Apr-84,53,95,53.30
-58,F. Murray Abraham,Amadeus,best actor,25-Mar-85,45,152,45.40
-59,William Hurt,Kiss of the Spider Woman,best actor,24-Mar-86,36,4,36.00
-60,Paul Newman,The Color of Money,best actor,30-Mar-87,62,63,62.20
-61,Michael Douglas,Wall Street,best actor,11-Apr-88,43,199,43.50
-62,Dustin Hoffman,Rain Man,best actor,27-Mar-89,51,231,51.60
-63,Daniel Day-Lewis,My Left Foot,best actor,26-Mar-90,32,331,32.90
-64,Jeremy Irons,Reversal of Fortune,best actor,25-Mar-91,42,187,42.50
-65,Anthony Hopkins,The Silence of the Lambs,best actor,30-Mar-92,54,90,54.20
-66,Al Pacino,Scent of a Woman,best actor,29-Mar-93,52,338,52.90
-67,Tom Hanks,Philadelphia,best actor,21-Mar-94,37,255,37.70
-68,Tom Hanks,Forrest Gump,best actor,27-Mar-95,38,261,38.70
-69,Nicolas Cage,Leaving Las Vegas,best actor,25-Mar-96,32,78,32.20
-70,Geoffrey Rush,Shine,best actor,24-Mar-97,45,261,45.70
-71,Jack Nicholson,As Good as It Gets,best actor,23-Mar-98,60,335,60.90
-72,Roberto Benigni,Life Is Beautiful,best actor,21-Mar-99,46,145,46.40
-73,Kevin Spacey,American Beauty,best actor,26-Mar-00,40,244,40.70
-74,Russell Crowe,Gladiator,best actor,25-Mar-01,36,352,37.00
-75,Denzel Washington,Training Day,best actor,24-Mar-02,47,86,47.20
-76,Adrien Brody,The Pianist,best actor,23-Mar-03,29,343,29.90
-77,Sean Penn,Mystic River,best actor,29-Feb-04,43,196,43.50
-78,Jamie Foxx,Ray,best actor,27-Feb-05,37,76,37.20
-79,Philip Seymour Hoffman,Capote,best actor,5-Mar-06,38,225,38.60
-80,Forest Whitaker,The Last King of Scotland,best actor,25-Feb-07,45,225,45.60
-81,Daniel Day-Lewis,There Will Be Blood,best actor,24-Feb-08,50,301,50.80
-82,Sean Penn,Milk,best actor,22-Feb-09,48,189,48.50
-83,Jeff Bridges,Crazy Heart,best actor,7-Mar-10,60,93,60.30
-84,Colin Firth,The King's Speech,best actor,27-Feb-11,50,170,50.50
-85,Jean Dujardin,The Artist,best actor,26-Feb-12,39,252,39.70
-86,Daniel Day-Lewis,Lincoln,best actor,24-Feb-13,55,301,55.80
-87,Matthew McConaughey,Dallas Buyers Club,best actor,2-Mar-14,44,118,44.30
-88,Eddie Redmayne,The Theory of Everything,best actor,22-Feb-15,33,47,33.10
-89,Leonardo DiCaprio,The Revenant,best actor,28-Feb-16,41,109,41.30
-90,Casey Affleck,Manchester by the Sea,best actor,26-Feb-17,41,198,41.50
-91,Gary Oldman,Darkest Hour,best actor,4-Mar-18,59,348,60.00
-92,Rami Malek,Bohemian Rhapsody,best actor,24-Feb-19,37,288,37.80
-93,Joaquin Phoenix,Joker,best actor,9-Feb-20,45,104,45.30
-94,Anthony Hopkins,The Father,best actor,25-Apr-21,83,115,83.30
-95,Will Smith,King Richard,best actor,27-Mar-22,53,196,53.50
+ceremony,name,Film,award,date_of_award,years,days,age_at_award
+1,Emil Jannings,"The Last Command, The Way of All Flesh",best actor,16-May-29,44,297,44.8
+2,Warner Baxter,In Old Arizona,best actor,3-Apr-30,41,5,41
+3,George Arliss,Disraeli,best actor,5-Nov-30,62,209,62.6
+4,Lionel Barrymore,A Free Soul,best actor,10-Nov-31,53,196,53.5
+5,Wallace Beery,The Champ,best actor,18-Nov-32,47,231,47.6
+5,Fredric March,Dr. Jekyll and Mr. Hyde,best actor,18-Nov-32,35,79,35.2
+6,Charles Laughton,The Private Life of Henry VIII,best actor,16-Mar-34,34,258,34.7
+7,Clark Gable,It Happened One Night,best actor,27-Feb-35,34,26,34.1
+8,Victor McLaglen,The Informer,best actor,5-Mar-36,49,86,49.2
+9,Paul Muni,The Story of Louis Pasteur,best actor,4-Mar-37,41,163,41.4
+10,Spencer Tracy,Captains Courageous,best actor,10-Mar-38,37,339,37.9
+11,Spencer Tracy,Boys Town,best actor,23-Feb-39,38,324,38.9
+12,Robert Donat,"Goodbye, Mr. Chips",best actor,29-Feb-40,34,348,35
+13,James Stewart,The Philadelphia Story,best actor,27-Feb-41,32,283,32.8
+14,Gary Cooper,Sergeant York,best actor,26-Feb-42,40,295,40.8
+15,James Cagney,Yankee Doodle Dandy,best actor,4-Mar-43,43,230,43.6
+16,Paul Lukas,Watch on the Rhine,best actor,2-Mar-44,48,281,48.8
+17,Bing Crosby,Going My Way,best actor,15-Mar-45,41,316,41.9
+18,Ray Milland,The Lost Weekend,best actor,7-Mar-46,39,63,39.2
+19,Fredric March,The Best Years of Our Lives,best actor,13-Mar-47,49,194,49.5
+20,Ronald Colman,A Double Life,best actor,20-Mar-48,57,40,57.1
+21,Laurence Olivier,Hamlet,best actor,24-Mar-49,41,306,41.8
+22,Broderick Crawford,All the King's Men,best actor,23-Mar-50,38,104,38.3
+23,Jos√© Ferrer,Cyrano de Bergerac,best actor,29-Mar-51,39,80,39.2
+24,Humphrey Bogart,The African Queen,best actor,30-Mar-52,52,96,52.3
+25,Gary Cooper,High Noon,best actor,19-Mar-53,51,316,51.9
+26,William Holden,Stalag 17,best actor,25-Mar-54,35,342,35.9
+27,Marlon Brando,On the Waterfront,best actor,30-Mar-55,30,361,31
+28,Ernest Borgnine,Marty,best actor,21-Mar-56,39,57,39.2
+29,Yul Brynner,The King and I,best actor,27-Mar-57,36,259,36.7
+30,Alec Guinness,The Bridge on the River Kwai,best actor,26-Mar-58,43,358,44
+31,David Niven,Separate Tables,best actor,6-Apr-59,49,36,49.1
+32,Charlton Heston,Ben-Hur,best actor,4-Apr-60,36,183,36.5
+33,Burt Lancaster,Elmer Gantry,best actor,17-Apr-61,47,166,47.5
+34,Maximilian Schell,Judgment at Nuremberg,best actor,9-Apr-62,31,122,31.3
+35,Gregory Peck,To Kill a Mockingbird,best actor,8-Apr-63,47,3,47
+36,Sidney Poitier,Lilies of the Field,best actor,13-Apr-64,37,53,37.1
+37,Rex Harrison,My Fair Lady,best actor,5-Apr-65,57,31,57.1
+38,Lee Marvin,Cat Ballou,best actor,18-Apr-66,42,58,42.2
+39,Paul Scofield,A Man for All Seasons,best actor,10-Apr-67,45,79,45.2
+40,Rod Steiger,In the Heat of the Night,best actor,10-Apr-68,42,362,43
+41,Cliff Robertson,Charly,best actor,14-Apr-69,45,217,45.6
+42,John Wayne,True Grit,best actor,7-Apr-70,62,316,62.9
+43,George C. Scott,Patton,best actor,15-Apr-71,43,179,43.5
+44,Gene Hackman,The French Connection,best actor,10-Apr-72,42,71,42.2
+45,Marlon Brando,The Godfather,best actor,27-Mar-73,48,358,49
+46,Jack Lemmon,Save the Tiger,best actor,2-Apr-74,49,53,49.1
+47,Art Carney,Harry and Tonto,best actor,8-Apr-75,56,155,56.4
+48,Jack Nicholson,One Flew Over the Cuckoo's Nest,best actor,29-Mar-76,38,342,38.9
+49,Peter Finch,Network,best actor,28-Mar-77,60,180,60.5
+50,Richard Dreyfuss,The Goodbye Girl,best actor,3-Apr-78,30,156,30.4
+51,Jon Voight,Coming Home,best actor,9-Apr-79,40,101,40.3
+52,Dustin Hoffman,Kramer vs. Kramer,best actor,14-Apr-80,42,250,42.7
+53,Robert De Niro,Raging Bull,best actor,31-Mar-81,37,226,37.6
+54,Henry Fonda,On Golden Pond,best actor,29-Mar-82,76,317,76.9
+55,Ben Kingsley,Gandhi,best actor,11-Apr-83,39,101,39.3
+56,Robert Duvall,Tender Mercies,best actor,9-Apr-84,53,95,53.3
+57,F. Murray Abraham,Amadeus,best actor,25-Mar-85,45,152,45.4
+58,William Hurt,Kiss of the Spider Woman,best actor,24-Mar-86,36,4,36
+59,Paul Newman,The Color of Money,best actor,30-Mar-87,62,63,62.2
+60,Michael Douglas,Wall Street,best actor,11-Apr-88,43,199,43.5
+61,Dustin Hoffman,Rain Man,best actor,27-Mar-89,51,231,51.6
+62,Daniel Day-Lewis,My Left Foot,best actor,26-Mar-90,32,331,32.9
+63,Jeremy Irons,Reversal of Fortune,best actor,25-Mar-91,42,187,42.5
+64,Anthony Hopkins,The Silence of the Lambs,best actor,30-Mar-92,54,90,54.2
+65,Al Pacino,Scent of a Woman,best actor,29-Mar-93,52,338,52.9
+66,Tom Hanks,Philadelphia,best actor,21-Mar-94,37,255,37.7
+67,Tom Hanks,Forrest Gump,best actor,27-Mar-95,38,261,38.7
+68,Nicolas Cage,Leaving Las Vegas,best actor,25-Mar-96,32,78,32.2
+69,Geoffrey Rush,Shine,best actor,24-Mar-97,45,261,45.7
+70,Jack Nicholson,As Good as It Gets,best actor,23-Mar-98,60,335,60.9
+71,Roberto Benigni,Life Is Beautiful,best actor,21-Mar-99,46,145,46.4
+72,Kevin Spacey,American Beauty,best actor,26-Mar-00,40,244,40.7
+73,Russell Crowe,Gladiator,best actor,25-Mar-01,36,352,37
+74,Denzel Washington,Training Day,best actor,24-Mar-02,47,86,47.2
+75,Adrien Brody,The Pianist,best actor,23-Mar-03,29,343,29.9
+76,Sean Penn,Mystic River,best actor,29-Feb-04,43,196,43.5
+77,Jamie Foxx,Ray,best actor,27-Feb-05,37,76,37.2
+78,Philip Seymour Hoffman,Capote,best actor,5-Mar-06,38,225,38.6
+79,Forest Whitaker,The Last King of Scotland,best actor,25-Feb-07,45,225,45.6
+80,Daniel Day-Lewis,There Will Be Blood,best actor,24-Feb-08,50,301,50.8
+81,Sean Penn,Milk,best actor,22-Feb-09,48,189,48.5
+82,Jeff Bridges,Crazy Heart,best actor,7-Mar-10,60,93,60.3
+83,Colin Firth,The King's Speech,best actor,27-Feb-11,50,170,50.5
+84,Jean Dujardin,The Artist,best actor,26-Feb-12,39,252,39.7
+85,Daniel Day-Lewis,Lincoln,best actor,24-Feb-13,55,301,55.8
+86,Matthew McConaughey,Dallas Buyers Club,best actor,2-Mar-14,44,118,44.3
+87,Eddie Redmayne,The Theory of Everything,best actor,22-Feb-15,33,47,33.1
+88,Leonardo DiCaprio,The Revenant,best actor,28-Feb-16,41,109,41.3
+89,Casey Affleck,Manchester by the Sea,best actor,26-Feb-17,41,198,41.5
+90,Gary Oldman,Darkest Hour,best actor,4-Mar-18,59,348,60
+91,Rami Malek,Bohemian Rhapsody,best actor,24-Feb-19,37,288,37.8
+92,Joaquin Phoenix,Joker,best actor,9-Feb-20,45,104,45.3
+93,Anthony Hopkins,The Father,best actor,25-Apr-21,83,115,83.3
+94,Will Smith,King Richard,best actor,27-Mar-22,53,196,53.5
+95,Brendan Fraser,The Whale,best actor,12-Mar-23,54,100,54.28
+96,Cillian Murphy,Oppenheimer,best actor,10-Mar-24,47,290,47.79
 1,Janet Gaynor,"7th Heaven, Street Angel, and Sunrise: A Song of Two Humans",best actress,16-May-29,22,222,22.61
 2,Mary Pickford,Coquette,best actress,3-Apr-30,37,360,37.98
 3,Norma Shearer,The Divorcee,best actress,5-Nov-30,28,87,28.24
@@ -135,57 +137,59 @@ eventnum,name,Film,award,date_of_award,years,days,age_at_award
 39,Elizabeth Taylor,Who's Afraid of Virginia Woolf?,best actress,10-Apr-67,35,42,35.11
 40,Katharine Hepburn,Guess Who's Coming to Dinner,best actress,10-Apr-68,60,334,60.91
 41,Katharine Hepburn,The Lion in Winter,best actress,14-Apr-69,61,337,61.92
-42,Barbra Streisand,Funny Girl,best actress,14-Apr-69,26,355,26.97
-43,Maggie Smith,The Prime of Miss Jean Brodie,best actress,7-Apr-70,35,100,35.27
-44,Glenda Jackson,Women in Love,best actress,15-Apr-71,34,341,34.93
-45,Jane Fonda,Klute,best actress,10-Apr-72,34,111,34.3
-46,Liza Minnelli,Cabaret,best actress,27-Mar-73,27,15,27.04
-47,Glenda Jackson,A Touch of Class,best actress,2-Apr-74,37,328,37.9
-48,Ellen Burstyn,Alice Doesn't Live Here Anymore,best actress,8-Apr-75,42,122,42.33
-49,Louise Fletcher,One Flew Over the Cuckoo's Nest,best actress,29-Mar-76,41,251,41.69
-50,Faye Dunaway,Network,best actress,28-Mar-77,36,73,36.2
-51,Diane Keaton,Annie Hall,best actress,3-Apr-78,32,88,32.24
-52,Jane Fonda,Coming Home,best actress,9-Apr-79,41,109,41.3
-53,Sally Field,Norma Rae,best actress,14-Apr-80,33,160,33.44
-54,Sissy Spacek,Coal Miner's Daughter,best actress,31-Mar-81,31,96,31.26
-55,Katharine Hepburn,On Golden Pond,best actress,29-Mar-82,74,321,74.88
-56,Meryl Streep,Sophie's Choice,best actress,11-Apr-83,33,293,33.8
-57,Shirley MacLaine,Terms of Endearment,best actress,9-Apr-84,49,351,49.96
-58,Sally Field,Places in the Heart,best actress,25-Mar-85,38,139,38.38
-59,Geraldine Page,The Trip to Bountiful,best actress,24-Mar-86,61,122,61.33
-60,Marlee Matlin,Children of a Lesser God,best actress,30-Mar-87,21,218,21.6
-61,Cher,Moonstruck,best actress,11-Apr-88,41,327,41.89
-62,Jodie Foster,The Accused,best actress,27-Mar-89,26,128,26.35
-63,Jessica Tandy,Driving Miss Daisy,best actress,26-Mar-90,80,292,80.8
-64,Kathy Bates,Misery,best actress,25-Mar-91,42,270,42.74
-65,Jodie Foster,The Silence of the Lambs,best actress,30-Mar-92,29,132,29.36
-66,Emma Thompson,Howards End,best actress,29-Mar-93,33,348,33.95
-67,Holly Hunter,The Piano,best actress,21-Mar-94,36,1,36
-68,Jessica Lange,Blue Sky,best actress,27-Mar-95,45,341,45.93
-69,Susan Sarandon,Dead Man Walking,best actress,25-Mar-96,49,173,49.47
-70,Frances McDormand,Fargo,best actress,24-Mar-97,39,274,39.75
-71,Helen Hunt,As Good as It Gets,best actress,23-Mar-98,34,281,34.77
-72,Gwyneth Paltrow,Shakespeare in Love,best actress,21-Mar-99,26,175,26.48
-73,Hilary Swank,Boys Don't Cry,best actress,26-Mar-00,25,240,25.66
-74,Julia Roberts,Erin Brockovich,best actress,25-Mar-01,33,148,33.4
-75,Halle Berry,Monster's Ball,best actress,24-Mar-02,35,222,35.61
-76,Nicole Kidman,The Hours,best actress,23-Mar-03,35,276,35.75
-77,Charlize Theron,Monster,best actress,29-Feb-04,28,206,28.56
-78,Hilary Swank,Million Dollar Baby,best actress,27-Feb-05,30,212,30.58
-79,Reese Witherspoon,Walk the Line,best actress,5-Mar-06,29,348,29.95
-80,Helen Mirren,The Queen,best actress,25-Feb-07,61,214,61.58
-81,Marion Cotillard,La Vie en rose,best actress,24-Feb-08,32,147,32.4
-82,Kate Winslet,The Reader,best actress,22-Feb-09,33,140,33.38
-83,Sandra Bullock,The Blind Side,best actress,7-Mar-10,45,224,45.61
-84,Natalie Portman,Black Swan,best actress,27-Feb-11,29,263,29.72
-85,Meryl Streep,The Iron Lady,best actress,26-Feb-12,62,249,62.68
-86,Jennifer Lawrence,Silver Linings Playbook,best actress,24-Feb-13,22,193,22.53
-87,Cate Blanchett,Blue Jasmine,best actress,2-Mar-14,44,292,44.8
-88,Julianne Moore,Still Alice,best actress,22-Feb-15,54,81,54.22
-89,Brie Larson,Room,best actress,28-Feb-16,26,150,26.41
-90,Emma Stone,La La Land,best actress,26-Feb-17,28,112,28.31
-91,Frances McDormand,"Three Billboards Outside Ebbing, Missouri",best actress,4-Mar-18,60,254,60.69
-92,Olivia Colman,The Favourite,best actress,24-Feb-19,45,25,45.07
-93,Renée Zellweger,Judy,best actress,9-Feb-20,50,290,50.79
-94,Frances McDormand,Nomadland,best actress,25-Apr-21,63,306,63.84
-95,Jessica Chastain,The Eyes of Tammy Faye,best actress,27-Mar-22,45,3,45.01
+41,Barbra Streisand,Funny Girl,best actress,14-Apr-69,26,355,26.97
+42,Maggie Smith,The Prime of Miss Jean Brodie,best actress,7-Apr-70,35,100,35.27
+43,Glenda Jackson,Women in Love,best actress,15-Apr-71,34,341,34.93
+44,Jane Fonda,Klute,best actress,10-Apr-72,34,111,34.3
+45,Liza Minnelli,Cabaret,best actress,27-Mar-73,27,15,27.04
+46,Glenda Jackson,A Touch of Class,best actress,2-Apr-74,37,328,37.9
+47,Ellen Burstyn,Alice Doesn't Live Here Anymore,best actress,8-Apr-75,42,122,42.33
+48,Louise Fletcher,One Flew Over the Cuckoo's Nest,best actress,29-Mar-76,41,251,41.69
+49,Faye Dunaway,Network,best actress,28-Mar-77,36,73,36.2
+50,Diane Keaton,Annie Hall,best actress,3-Apr-78,32,88,32.24
+51,Jane Fonda,Coming Home,best actress,9-Apr-79,41,109,41.3
+52,Sally Field,Norma Rae,best actress,14-Apr-80,33,160,33.44
+53,Sissy Spacek,Coal Miner's Daughter,best actress,31-Mar-81,31,96,31.26
+54,Katharine Hepburn,On Golden Pond,best actress,29-Mar-82,74,321,74.88
+55,Meryl Streep,Sophie's Choice,best actress,11-Apr-83,33,293,33.8
+56,Shirley MacLaine,Terms of Endearment,best actress,9-Apr-84,49,351,49.96
+57,Sally Field,Places in the Heart,best actress,25-Mar-85,38,139,38.38
+58,Geraldine Page,The Trip to Bountiful,best actress,24-Mar-86,61,122,61.33
+59,Marlee Matlin,Children of a Lesser God,best actress,30-Mar-87,21,218,21.6
+60,Cher,Moonstruck,best actress,11-Apr-88,41,327,41.89
+61,Jodie Foster,The Accused,best actress,27-Mar-89,26,128,26.35
+62,Jessica Tandy,Driving Miss Daisy,best actress,26-Mar-90,80,292,80.8
+63,Kathy Bates,Misery,best actress,25-Mar-91,42,270,42.74
+64,Jodie Foster,The Silence of the Lambs,best actress,30-Mar-92,29,132,29.36
+65,Emma Thompson,Howards End,best actress,29-Mar-93,33,348,33.95
+66,Holly Hunter,The Piano,best actress,21-Mar-94,36,1,36
+67,Jessica Lange,Blue Sky,best actress,27-Mar-95,45,341,45.93
+68,Susan Sarandon,Dead Man Walking,best actress,25-Mar-96,49,173,49.47
+69,Frances McDormand,Fargo,best actress,24-Mar-97,39,274,39.75
+70,Helen Hunt,As Good as It Gets,best actress,23-Mar-98,34,281,34.77
+71,Gwyneth Paltrow,Shakespeare in Love,best actress,21-Mar-99,26,175,26.48
+72,Hilary Swank,Boys Don't Cry,best actress,26-Mar-00,25,240,25.66
+73,Julia Roberts,Erin Brockovich,best actress,25-Mar-01,33,148,33.4
+74,Halle Berry,Monster's Ball,best actress,24-Mar-02,35,222,35.61
+75,Nicole Kidman,The Hours,best actress,23-Mar-03,35,276,35.75
+76,Charlize Theron,Monster,best actress,29-Feb-04,28,206,28.56
+77,Hilary Swank,Million Dollar Baby,best actress,27-Feb-05,30,212,30.58
+78,Reese Witherspoon,Walk the Line,best actress,5-Mar-06,29,348,29.95
+79,Helen Mirren,The Queen,best actress,25-Feb-07,61,214,61.58
+80,Marion Cotillard,La Vie en rose,best actress,24-Feb-08,32,147,32.4
+81,Kate Winslet,The Reader,best actress,22-Feb-09,33,140,33.38
+82,Sandra Bullock,The Blind Side,best actress,7-Mar-10,45,224,45.61
+83,Natalie Portman,Black Swan,best actress,27-Feb-11,29,263,29.72
+84,Meryl Streep,The Iron Lady,best actress,26-Feb-12,62,249,62.68
+85,Jennifer Lawrence,Silver Linings Playbook,best actress,24-Feb-13,22,193,22.53
+86,Cate Blanchett,Blue Jasmine,best actress,2-Mar-14,44,292,44.8
+87,Julianne Moore,Still Alice,best actress,22-Feb-15,54,81,54.22
+88,Brie Larson,Room,best actress,28-Feb-16,26,150,26.41
+89,Emma Stone,La La Land,best actress,26-Feb-17,28,112,28.31
+90,Frances McDormand,"Three Billboards Outside Ebbing, Missouri",best actress,4-Mar-18,60,254,60.69
+91,Olivia Colman,The Favourite,best actress,24-Feb-19,45,25,45.07
+92,Renée Zellweger,Judy,best actress,9-Feb-20,50,290,50.79
+93,Frances McDormand,Nomadland,best actress,25-Apr-21,63,306,63.84
+94,Jessica Chastain,The Eyes of Tammy Faye,best actress,27-Mar-22,45,3,45.01
+95,Michelle Yeoh,Everything Everywhere All at Once,best actress,12-Mar-23,60,219,60.6
+96,Emma Stone,Poor Things,best actress,10-Mar-24,35,126,35.34
