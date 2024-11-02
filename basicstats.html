@@ -13,7 +13,7 @@
 
 <title>MATH 140: Using RStudio</title>
 
-<script src="site_libs/header-attrs-2.19/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.27/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
@@ -29,14 +29,14 @@
        h6 {font-size: 12px;}
        code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
        pre:not([class]) { background-color: white }</style>
-<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<script src="site_libs/jqueryui-1.13.2/jquery-ui.min.js"></script>
 <link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
 <script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
-<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
-<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-6.4.2/css/all.min.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-6.4.2/css/v4-shims.min.css" rel="stylesheet" />
 
 <style type="text/css">
   code{white-space: pre-wrap;}
@@ -395,19 +395,17 @@ div.tocify {
 in your own RStudio session.</strong></p>
 <div id="data" class="section level1">
 <h1>Data</h1>
-<p>In MATH 140 we use R to manage, explore, and analyze data. Yep, we
-use R to conduct</p>
-<ul>
-<li>exploratory data analysis (EDA),</li>
-<li>data visualization,</li>
-<li>data manipulation,</li>
-<li>statistical inference on data, and</li>
-<li>simulations to estimate the likelihood of obtaining data from a
+<p>In MATH 140 we primarily use RStudio in five ways:</p>
+<ol style="list-style-type: decimal">
+<li>Exploratory data analysis</li>
+<li>Data visualization</li>
+<li>Data manipulation</li>
+<li>Statistical inference on data</li>
+<li>Simulations to estimate the likelihood of obtaining data from a
 population with a known distribution.</li>
-</ul>
-<p>We will either enter data manually in R (as <strong>vectors</strong>
-or <strong>data frames</strong>), or import data in R via spreadsheet
-files.</p>
+</ol>
+<p>In short, it’s all about studying data.</p>
+<p>We enter data in two ways: as a vector or as a data frame.</p>
 <div id="vectors" class="section level2">
 <h2>Vectors</h2>
 <p>A <strong>vector</strong> is an ordered list of values or
@@ -415,18 +413,19 @@ characters.</p>
 <blockquote>
 <p>Use the <code>c()</code> command to input a vector.</p>
 </blockquote>
-<p>Run this code in your session (copy, paste, and run):</p>
+<p>Run this code in your session (feel free to copy, paste, and
+run):</p>
 <pre class="r"><code>score = c(219, 223, 186, 256, 295, 211, 175, 318)</code></pre>
-<p>You have created a vector called <code>score</code> that contains
-eight numbers. In fact, <code>score</code> is a record of my last eight
-<em>Yahtzee</em> game scores. After you run the line above in your own
-session, you will see the value <code>score</code> in your Environment
-tab. Check that it’s there!</p>
+<p>This line creates a vector of numerical values we call
+<code>score</code>; <code>score</code> records my last eight
+<em>Yahtzee</em> game scores. Run this line in your own session, and you
+will see the value <code>score</code> in your Environment tab.
+Check!</p>
 <p><strong>Note</strong>: The letter ‘c’ stands for combine, or
 concatenate, and the ‘c’ also reminds me to separate the entries in the
 <code>c()</code> command with commas.</p>
 <p>Having named the vector, we can refer to it by name when we want to
-do anything with it. For instance:</p>
+analyze it. For instance:</p>
 <table>
 <thead>
 <tr class="header">
@@ -468,29 +467,16 @@ do anything with it. For instance:</p>
 <div id="data-frames" class="section level2">
 <h2>Data Frames</h2>
 <p>A data frame is a collection of related vectors bound together as
-columns in a spreadsheet:</p>
-<center>
-<img src="images/sheet.png" style="width:40.0%" />
-</center>
-<p>We can either create a data frame in R by assembling defined vectors,
-or we import a spreadsheet file as a data frame. We look at both options
-below.</p>
-<p><strong>Pro Tip:</strong> Do not enter data by hand if you don’t have
-to. It’s much, much easier (and less prone to error) to load saved
-spreadsheets into R than it is to retype the entries by hand in R.</p>
+columns in a spreadsheet.</p>
 <blockquote>
-<p>Using the <code>data.frame()</code> command to create a data frame
-from vectors.</p>
+<p>Use the <code>data.frame()</code> command to create a data frame.
+Inside the parentheses we list column vectors.</p>
 </blockquote>
-</div>
-<div id="example-1-the-yahtzee-data-frame." class="section level2">
-<h2>Example 1: The Yahtzee data frame.</h2>
-<p>As the spreadsheet pictured above shows, I have two other bits of
-information about those eight Yahtzee games I played: whether I scored a
-Yahtzee (vector <code>yahtzee</code>) during the game, and my mood at
-the start of each game (vector <code>mood</code>):</p>
-<pre class="r"><code>score = c(219, 223, 186, 256, 295, 211, 175, 318)
-yahtzee=c(&quot;no&quot;,&quot;no&quot;,&quot;no&quot;,&quot;no&quot;,&quot;yes&quot;,&quot;no&quot;,&quot;no&quot;,&quot;yes&quot;)
+<p><strong>Example 1</strong>: I have two other bits of information
+about those 8 Yahtzee games: whether I scored a Yahtzee (vector
+<code>yahtzee</code>) during the game, and my mood at the start of each
+game (vector <code>mood</code>):</p>
+<pre class="r"><code>yahtzee=c(&quot;no&quot;,&quot;no&quot;,&quot;no&quot;,&quot;no&quot;,&quot;yes&quot;,&quot;no&quot;,&quot;no&quot;,&quot;yes&quot;)
 mood=c(&quot;content&quot;,&quot;pensive&quot;,&quot;anxious&quot;,&quot;pensive&quot;,&quot;content&quot;,&quot;content&quot;,&quot;pensive&quot;,&quot;anxious&quot;)</code></pre>
 <p><strong>Note</strong>: If I’m not entering numerical values, I need
 to use quotes around each entry in the vector.</p>
@@ -523,66 +509,29 @@ this:</p>
 <p>Notice that the environment tab indicates whether a vector is
 categorical (<code>chr</code>) or numerical (<code>num</code> or
 <code>int</code>).</p>
-</div>
-<div id="example-2-simulated-data-in-a-data-frame"
-class="section level2">
-<h2>Example 2: Simulated data in a data frame</h2>
-<pre class="r"><code>color=sample(c(&quot;red&quot;,&quot;blue&quot;,&quot;purple&quot;),size=100,replace=TRUE,prob=c(.2,.2,.6))
-roll=sample(1:4,size=100,replace=TRUE)
-df=data.frame(color,roll)
-dim(df)</code></pre>
-<pre><code>## [1] 100   2</code></pre>
-<p>Unpacking the above code.</p>
-<ul>
-<li>Big picture: We create a data frame called <code>df</code> that has
-two columns, called <code>color</code> and <code>roll</code>, and 100
-rows.</li>
-<li>Each vector is created using the <code>sample()</code> command in
-R.<br />
-</li>
-<li>The vector <code>color</code> is created by drawing 100 times from
-the set of colors <code>c("red","blue","purple")</code>, where, for each
-draw, the probability of selecting “red” is 0.2, the probability of
-selecting “blue” is 0.2, and the probability of selecting “purple” is
-0.6.</li>
-<li>The vector <code>roll</code> is created by drawing 100 times from
-the set of numbers 1 through 4 (all numbers equally likely to be
-drawn).</li>
-<li>The last command, <code>dim(df)</code>, returns the number of rows
-(100) and columns (2) in <code>df</code>.</li>
-<li>We can also check out the first few rows directly (I choose 8 rows,
-of course):</li>
-</ul>
-<pre class="r"><code>head(df,8)</code></pre>
-<pre><code>##    color roll
-## 1 purple    4
-## 2   blue    2
-## 3 purple    3
-## 4 purple    4
-## 5 purple    1
-## 6    red    3
-## 7   blue    2
-## 8 purple    4</code></pre>
-<p>I hear you asking, <span style="color: blue;">“Why would you want to
-build this <code>df</code>?” </span></p>
-<p>Imagine wanting to simulate the following game: I have 10 4-sided
-dice in a box, 6 of them are purple, 2 are red, and 2 are blue. I want
-to pick a die at random from the box, roll it once, and record the roll;
-and I want to play this game 100 times and record the results.</p>
-<p>And now I hear you asking <span style="color: blue;">“Again, why
-would I want to do this?”</span></p>
-<p>OK, suppose a campus community is, politically, 20% democrat (blue),
-20% republican (red), and 60% independent (purple). We pick 100 people
-at random and ask them their opinion on some question that has 4
-possible answers. The above <code>df</code> simulates what sort of
-results we should expect if each person’s answer is random, and
-independent of their political affiliation. Seeing what sorts of results
-to expect if political affiliation is not a factor helps us to
-investigate whether real data we gather suggests political affiliation
-<em>is</em> a factor in one’s views on this question.</p>
-<p>OK, this ends the brief introduction to building data frames in R
-from scratch. Again, generally data frames are more easily entered in R
-by importing them from spreadsheet files.</p>
+<p><strong>Example 2</strong>: Below, we create three vectors, called
+<code>name</code>, <code>height</code>, and <code>age</code>. These
+vectors are linked in that each represents a piece of information about
+characters in Season 1 of <em>Stranger Things</em>. We then assemble
+these vectors in a <em>data frame</em> in the 4th line below.</p>
+<pre class="r"><code>name &lt;- c(&quot;Dustin&quot;,&quot;Will&quot;,&quot;Lucas&quot;,&quot;Eleven&quot;,&quot;Mike&quot;)
+height &lt;- c(61.3, 61.9, 63.8, 62.1, 64.3)
+age &lt;- c(12,12,13,11,13)
+sthings &lt;- data.frame(name,height,age)</code></pre>
+<pre><code>##     name height age
+## 1 Dustin   61.3  12
+## 2   Will   61.9  12
+## 3  Lucas   63.8  13
+## 4 Eleven   62.1  11
+## 5   Mike   64.3  13</code></pre>
+<p>Again, do this in your own session.</p>
+<p><strong>Note</strong>: A data frame, also called a <em>data
+matrix</em>, is a two-dimensional array such as you would find in a
+Google sheet. In the data frame <code>sthings</code>, each row is a
+<em>Stranger Things</em> character, and we’ve got three pieces of
+information about each: their name, height, and age. In general, the
+rows of a data matrix are called <em>observations</em>, and the columns
+give the <em>variables</em>.</p>
 </div>
 <div id="import-data-files" class="section level2">
 <h2>Import data files</h2>
@@ -614,15 +563,14 @@ of your session in spreadsheet form.</p>
 <div id="columns-in-data-frames" class="section level2">
 <h2>Columns in data frames</h2>
 <blockquote>
-<p>The dollar sign <code>$</code> is the key to extracting columns from
-a data frame. We get to a column by entering:
-<code>dfname$colname</code>.</p>
+<p>The general format for specifiying a particular column in a data
+frame is <code>dfname$colname</code>. For instance,
+<code>wildcats$W</code> will extract the <code>W</code> column of the
+<code>wildcats</code> data frame, and <code>games$score</code> will
+extract the <code>score</code> column of the <code>games</code> data
+frame.</p>
 </blockquote>
-<p>For instance, <code>wildcats$W</code> will extract the <code>W</code>
-column of the <code>wildcats</code> data frame, and
-<code>games$score</code> will extract the <code>score</code> column of
-the <code>games</code> data frame (my yahtzee games defined above).</p>
-<p>To find the average number of wins per season from 1999 to 2024, we
+<p>To find the average number of wins per season from 1999 to 2020, we
 can use the <code>mean()</code> command on the <code>W</code> column of
 the <code>wildcats</code> data frame:</p>
 <pre class="r"><code>mean(wildcats$W)</code></pre>
@@ -713,20 +661,16 @@ data</td>
 </tr>
 </tbody>
 </table>
-<p>Don’t you want to know the distribution of colored dice randomly
-chosen in Example 2 above!?</p>
-<pre class="r"><code>table(df$color) </code></pre>
-<pre><code>## 
-##   blue purple    red 
-##     21     60     19</code></pre>
-<p>The average of a bunch of numbers (need <code>c()</code>!!):</p>
 <pre class="r"><code>mean(c(4,5,8,5,4,3,6,7,3,8,9,12,11))</code></pre>
 <pre><code>## [1] 6.538462</code></pre>
-<p>The 5 number summary for the <code>W</code> column of the
-<code>wildcats</code> data frame.</p>
 <pre class="r"><code>fivenum(wildcats$W)</code></pre>
 <pre><code>## [1] 12.0 31.0 37.5 39.0 51.0</code></pre>
-<p>How many games did Linfield softball win between 1999 and 2024?</p>
+<p>The first result above gives the mean of the data just entered with
+the <code>c()</code> command. The second command gave the 5 number
+summary for the <code>W</code> column of the <code>wildcats</code> data
+frame. It looks like Linfield Softball won at least 39 games during 25%
+of the seasons over the 1999-2020 time period!</p>
+<p>How many games did Linfield softball win between 1999 and 2020?</p>
 <pre class="r"><code>sum(wildcats$W)</code></pre>
 <pre><code>## [1] 917</code></pre>
 <p>Who has coached Linfield softball during this period, and how many
@@ -738,14 +682,15 @@ seasons has each coach coached?</p>
 </div>
 <div id="basic-data-manipulation" class="section level1">
 <h1>Basic Data Manipulation</h1>
-<p>Extracting a particular entry in a vector:</p>
+<p><strong>Extracting a particular entry in a vector</strong></p>
 <pre class="r"><code>m = c(10,12,14,16,9,13)
 m[3] # returns the third element in the vector</code></pre>
 <pre><code>## [1] 14</code></pre>
-<p>Extracting a particular entry in a data frame:</p>
+<p><strong>Extracting a particular entry in a data frame</strong></p>
 <pre class="r"><code>games[2,3] # returns the element in row 2, column 3 of the games data frame</code></pre>
 <pre><code>## [1] &quot;no&quot;</code></pre>
-<p>Extracting specific rows (by row numbers), say rows 2 through 5:</p>
+<p><strong>Extracting specific rows (by rownumbers), say rows 2 through
+5</strong></p>
 <pre class="r"><code>games[2:5,] </code></pre>
 <pre><code>##      mood score yahtzee
 ## 2 pensive   223      no
@@ -758,8 +703,9 @@ comma specify the column numbers. By leaving the column entry blank, R
 takes <em>all</em> the columns.</p>
 <div id="filter-by-rows-having-some-feature" class="section level2">
 <h2>Filter by rows having some feature</h2>
-<p>We filter the Yahtzee <code>games</code> data frame built above to
-just those rows meeting various conditions.</p>
+<p>In the following examples, we filter the Yahtzee <code>games</code>
+data frame built above to just those rows meeting various
+conditions.</p>
 <p><strong>List all games in which my mood was
 <code>anxious</code></strong></p>
 <pre class="r"><code>subset(games,mood==&quot;anxious&quot;)</code></pre>
@@ -783,10 +729,8 @@ and mood content)</strong></p>
 new one, which we do by giving it a name:</p>
 <pre class="r"><code>fun.games=subset(games,score&gt;=200&amp;mood==&quot;content&quot;)</code></pre>
 <p>Running that line would add the data frame fun.games to my RStudio
-session, and it will appear in my Environment tab. Check!</p>
-</div>
-<div id="restricting-columns" class="section level2">
-<h2>Restricting Columns</h2>
+session, and it will appear in my Environment tab. Check! ## Restricting
+Columns</p>
 <p>In the <code>wildcats</code> data frame, suppose we want to focus on
 wins and losses by season. We can create a new data frame from the old
 one that has just these columns:</p>
@@ -818,18 +762,18 @@ scatter plots, etc.</p>
 <h2>Histograms</h2>
 <p>A basic histogram - of Linfield wins by season.</p>
 <pre class="r"><code>hist(wildcats$W)</code></pre>
-<p><img src="basicstats_files/figure-html/unnamed-chunk-26-1.png" width="480" /></p>
+<p><img src="basicstats_files/figure-html/unnamed-chunk-25-1.png" width="480" /></p>
 <p>When presenting data, we have a responsibility to make it readable,
 so we can do better than the above. We can supply titles, axis labels,
 annotations, colors, etc to help us visualize the data in a more useful
 way.</p>
 <pre class="r"><code>hist(wildcats$W,
-     main=&quot;Wins by Season, Linfield Softball 1999-2024&quot;,
+     main=&quot;Wins by Season, Linfield Softball 1999-2020&quot;,
      xlab=&quot;Wins&quot;,
      col=&quot;purple&quot;,
      breaks=10
      )</code></pre>
-<p><img src="basicstats_files/figure-html/unnamed-chunk-27-1.png" width="480" /></p>
+<p><img src="basicstats_files/figure-html/unnamed-chunk-26-1.png" width="480" /></p>
 <p>We specify the bins in a histogram with the <code>breaks</code>
 option. If we have too few bins for the data, we lose all sorts of
 information, and if we have too many bins we might have a harder time
@@ -845,7 +789,7 @@ hist(wildcats$W,
      )
 ```
 
-<img src="basicstats_files/figure-html/unnamed-chunk-28-1.png" width="480" />
+<img src="basicstats_files/figure-html/unnamed-chunk-27-1.png" width="480" />
 
 
 If we have too many bins for the data, we can lose sight of the overall shape of the data:
@@ -853,7 +797,7 @@ If we have too many bins for the data, we can lose sight of the overall shape of
 
 ``` r
 hist(wildcats$W,
-     main="Wins by Season, Linfield Softball 1999-2024",
+     main="Wins by Season, Linfield Softball 1999-2020",
      breaks=30,
      xlab="Wins",
      col="white",
@@ -861,7 +805,7 @@ hist(wildcats$W,
      )
 ```
 
-<img src="basicstats_files/figure-html/unnamed-chunk-29-1.png" width="480" />
+<img src="basicstats_files/figure-html/unnamed-chunk-28-1.png" width="480" />
 -->
 </div>
 <div id="boxplots" class="section level2">
@@ -870,24 +814,24 @@ hist(wildcats$W,
 loves to make them!</p>
 <p>Here’s a boxplot in its simplest form.</p>
 <pre class="r"><code>boxplot(wildcats$W)</code></pre>
-<p><img src="basicstats_files/figure-html/unnamed-chunk-30-1.png" width="384" /></p>
+<p><img src="basicstats_files/figure-html/unnamed-chunk-29-1.png" width="384" /></p>
 <p>By default a boxplot is presented vertically, but we can ask for a
 horizontal boxplot as well, and we can add a splash of color.</p>
 <pre class="r"><code>boxplot(wildcats$W,
-        main=&quot;Linfield softball wins by season (1999-2024)&quot;,
+        main=&quot;Linfield softball wins by season (1999-2020)&quot;,
         col=&quot;red&quot;,
         horizontal = TRUE)</code></pre>
-<p><img src="basicstats_files/figure-html/unnamed-chunk-31-1.png" width="480" /></p>
+<p><img src="basicstats_files/figure-html/unnamed-chunk-30-1.png" width="480" /></p>
 <p>AND, we can add text to a graph. For instance, we can add the values
 in the 5 number summary to the boxplot, which gives more precision to
 the plot!</p>
 <pre class="r"><code>boxplot(wildcats$W,
-        main=&quot;Linfield softball wins by season (1999-2024)&quot;,
+        main=&quot;Linfield softball wins by season (1999-2020)&quot;,
         col=&quot;red&quot;,
         horizontal = TRUE)
 v&lt;-fivenum(wildcats$W)
 text(x=c(v[1:5]),y=c(rep(1.3,5)),c(v[1:5]),cex=.7,col=&quot;purple&quot;)</code></pre>
-<p><img src="basicstats_files/figure-html/unnamed-chunk-32-1.png" width="480" /></p>
+<p><img src="basicstats_files/figure-html/unnamed-chunk-31-1.png" width="480" /></p>
 </div>
 <div id="barplots" class="section level2">
 <h2>Barplots</h2>
@@ -896,7 +840,7 @@ counts. If we’re considering a vector of values we use the
 <code>barplot()</code> command in conjuntion with the
 <code>table()</code> command</p>
 <pre class="r"><code>barplot(table(wildcats$District),main=&quot;Finish at Districts&quot;,ylab=&quot;count&quot;,xlab=&quot;finish&quot;,col=&quot;#F5D7FB&quot;)</code></pre>
-<p><img src="basicstats_files/figure-html/unnamed-chunk-33-1.png" width="576" /></p>
+<p><img src="basicstats_files/figure-html/unnamed-chunk-32-1.png" width="576" /></p>
 </div>
 <div id="choosing-plot-colors" class="section level2">
 <h2>Choosing plot colors</h2>
@@ -911,7 +855,7 @@ href="https://htmlcolorcodes.com/">https://htmlcolorcodes.com/</a>.</p>
 <p>A scatter plot is a useful way to visualize the relationship between
 two numeric variables. Here’s a scatter plot in its simplest form.</p>
 <pre class="r"><code>plot(x=wildcats$Year,y=wildcats$W)</code></pre>
-<p><img src="basicstats_files/figure-html/unnamed-chunk-34-1.png" width="480" /></p>
+<p><img src="basicstats_files/figure-html/unnamed-chunk-33-1.png" width="480" /></p>
 <p>We can change the shape of points in a plot with the <code>pch</code>
 option, and change the scale of the y-axis.</p>
 <pre class="r"><code>plot(x=wildcats$Year,y=wildcats$W,
@@ -921,7 +865,7 @@ option, and change the scale of the y-axis.</p>
      col=&quot;brown3&quot;,
      ylim=c(0,60),
      pch=16)</code></pre>
-<p><img src="basicstats_files/figure-html/unnamed-chunk-35-1.png" width="480" /></p>
+<p><img src="basicstats_files/figure-html/unnamed-chunk-34-1.png" width="480" /></p>
 <p>A quick guide to pch and point shapes (google “R pch options” for
 more details):</p>
 <p><img src="images/pch.png" style="width:30.0%" /></p>
@@ -934,14 +878,14 @@ more details):</p>
      col=&quot;purple&quot;,
      ylim=c(0,60),
      type=&quot;l&quot;)</code></pre>
-<p><img src="basicstats_files/figure-html/unnamed-chunk-36-1.png" width="480" /></p>
+<p><img src="basicstats_files/figure-html/unnamed-chunk-35-1.png" width="480" /></p>
 <!--
 ## Stacked dot plot
 
 
 ``` r
 stripchart(wildcats$W,
-           main="Linfield Softball (1999-2024)", # title
+           main="Linfield Softball (1999-2020)", # title
            xlab="Wins per season", #x-axis label
            ylab="", #y axis label (empty for this chart)
            method = "stack", #
@@ -950,7 +894,7 @@ stripchart(wildcats$W,
            )
 ```
 
-<img src="basicstats_files/figure-html/unnamed-chunk-37-1.png" width="672" />
+<img src="basicstats_files/figure-html/unnamed-chunk-36-1.png" width="672" />
 
 
 -->
@@ -998,7 +942,7 @@ event!</p>
      xlab=&quot;Duration (minutes)&quot;,
      col=&quot;wheat&quot;
      ) </code></pre>
-<p><img src="basicstats_files/figure-html/unnamed-chunk-43-1.png" width="480" /></p>
+<p><img src="basicstats_files/figure-html/unnamed-chunk-42-1.png" width="480" /></p>
 <p>A scatter plot:</p>
 <pre class="r"><code>plot(x=faithful$eruptions, y=faithful$waiting,
      main=&quot;Old Faithful Eruptions&quot;,
@@ -1007,7 +951,7 @@ event!</p>
      pch=16,
      col=&quot;wheat&quot;
      ) </code></pre>
-<p><img src="basicstats_files/figure-html/unnamed-chunk-44-1.png" width="480" /></p>
+<p><img src="basicstats_files/figure-html/unnamed-chunk-43-1.png" width="480" /></p>
 </div>
 </div>
 <div id="test-your-understanding" class="section level1">
@@ -1036,15 +980,15 @@ districts, and National Champions!</p>
 ##     1st 2nd 3rd 4th 
 ##  19   2   2   2   1</code></pre>
 <p>ANSWER: It specifies how well Linfield did at Nationals over the
-1999-2024 time period. Linfield has finished 1st twice, 2nd twice, 3rd
-once, and 4th once. The other seasons they didn’t finish as high as
+1999-2020 time period. Linfield has finished 1st twice, 2nd twice, 3rd
+once, and 4th once. The other 16 seasons they didn’t finish as high as
 4th.</p>
 <ol start="3" style="list-style-type: decimal">
 <li>What does this code give?</li>
 </ol>
 <pre class="r"><code>sum(wildcats$District==&quot;1st&quot;)</code></pre>
 <pre><code>## [1] 15</code></pre>
-<p>ANSWER: It gives the number of seasons from 1999-2024 in which
+<p>ANSWER: It gives the number of seasons from 1999-2020 in which
 Linfield was 1st in the District</p>
 <ol start="4" style="list-style-type: decimal">
 <li>What does this code give?</li>
@@ -1059,7 +1003,7 @@ team each season (wins divided by games played).</p>
 <pre class="r"><code>max(wildcats$winpct)</code></pre>
 <pre><code>## [1] 0.9444444</code></pre>
 <p>ANSWER: It returns the best winning percentage for a season between
-1999 and 2024.</p>
+1999 and 2020.</p>
 <p>Which season was this?</p>
 <pre class="r"><code>subset(wildcats, winpct == max(wildcats$winpct))</code></pre>
 <pre><code>##    Year           Coach  W L T District NCAA GP    winpct
@@ -1070,14 +1014,14 @@ team each season (wins divided by games played).</p>
 <li>What does this code give?</li>
 </ol>
 <pre class="r"><code>plot(x=wildcats$L, y=wildcats$W,cex=.7,
-     main=&quot;Linfield Softball (1999-2024)&quot;,
+     main=&quot;Linfield Softball (1999-2020)&quot;,
      xlab=&quot;Losses&quot;,
      ylab=&quot;Wins&quot;)</code></pre>
-<p><img src="basicstats_files/figure-html/unnamed-chunk-52-1.png" width="480" /></p>
+<p><img src="basicstats_files/figure-html/unnamed-chunk-51-1.png" width="480" /></p>
 <p>ANSWER: Scatterplot of wins vs losses. This plot makes it clear that
-2020 was a strange season. This visual deviation from the trend
-indicates that something “different” was going on. Hmm… global
-pandemic?</p>
+2020 was a strange season (the point in the lower left corner). This
+visual deviation from the trend indicates that something “different” was
+going on. What was it? (global pandemic!)</p>
 <ol start="7" style="list-style-type: decimal">
 <li>What does this code give?</li>
 </ol>

@@ -13,7 +13,7 @@
 
 <title>Tips for Getting Started with RStudio in MATH 140</title>
 
-<script src="site_libs/header-attrs-2.19/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.27/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
@@ -29,14 +29,14 @@
        h6 {font-size: 12px;}
        code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
        pre:not([class]) { background-color: white }</style>
-<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<script src="site_libs/jqueryui-1.13.2/jquery-ui.min.js"></script>
 <link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
 <script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
-<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
-<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-6.4.2/css/all.min.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-6.4.2/css/v4-shims.min.css" rel="stylesheet" />
 
 <style type="text/css">
   code{white-space: pre-wrap;}
@@ -425,6 +425,9 @@ click on “base”, then click on the Download link.</li>
 <li>If you are macOS user: Click on “Download R for (Mac) OS X”, then
 under “Latest release:” click on R-X.X.X.pkg, where R-X.X.X is the
 version number.</li>
+<li>If you are a Linux user: Click on “Download R for Linux” and choose
+your distribution for more information on installing R for your
+setup.</li>
 </ul>
 <ol start="2" style="list-style-type: decimal">
 <li><strong>You must do this second</strong>: Download and install
@@ -457,18 +460,14 @@ a file that helps us investigate a data set related to the current
 governors of the 50 U.S. States.</p>
 <p><strong>Lower Left: Console</strong><br />
 The console pane has a command line prompt <code>&gt;</code> at which we
-can enter commands.</p>
-<blockquote>
-<p><strong><em>Pro Tip</em></strong>: At the console prompt click the up
-and down arrows to scroll through previously entered commands. It can be
-much faster (and more accurate) than typing in a needed command
-again.</p>
-</blockquote>
-<p>We can use RStudio as a calculator, we can ask it to print
-statements, and we can do some programming, and other cool things:</p>
+can enter commands. We can use RStudio as a calculator, we can ask it to
+print statements, and we can do some programming, and other cool
+things:</p>
 <center>
 <img src="images/console_screen.png" style="width:45.0%" />
 </center>
+<p><strong><em>Pro Tip</em></strong>: At the console prompt click the up
+and down arrows to scroll through previously entered commands.</p>
 <p><strong>Upper Right: Workspace Browser</strong><br />
 The workspace browser has several tabs. The two we will use most are
 these:</p>
@@ -522,40 +521,39 @@ RStudio project you work on. For instance, you might create a folder
 called “lab1” in your “math140” folder ahead of our first lab.</p></li>
 </ol>
 </div>
-<div id="create-project-files" class="section level2">
-<h2>4. Create Project Files</h2>
+<div id="create-projects" class="section level2">
+<h2>4. Create Projects</h2>
 <p>Project files in Rstudio help you organize your work, and connect
-RStudio with your computer’s file system.</p>
-<p><strong>Scene</strong>: You want to do some amazing data analysis on
-data you have gathered and stored in a spreadsheet on your computer. You
-have saved your spreadsheet in a folder called <em>Taffy</em> for
-reasons that are both personal and practical :).</p>
-<p><strong>Question</strong>: How can I use RStudio to easily access
-this spreadsheet and all the plots and analysis I intend to do with
-R?</p>
-<p><strong>Answer</strong>: Create a project file in RStudio!</p>
-<p>To create a project to connect to the existing folder <em>Taffy</em>
-on your computer, follow these steps:</p>
+RStudio with your computer’s file system.<br />
+By the end of the term your “math140” folder may have 5 or 6 different
+subfolders. One for each lab, one for your term project, one for top
+secret data analysis - who knows. If you attach a project file to each
+of these subfolders then it is easy in RStudio to shift between these
+projects.</p>
+<p>To create a project, follow these steps:</p>
 <ol style="list-style-type: decimal">
-<li><p>Get started from the File menu (<em>File -&gt; New Project</em>),
-or by moving the cursor to the upper-right corner of your RStudio window
-and selecting <em>Project &gt; New Project</em>.
+<li><p>Open RStudio</p></li>
+<li><p>Create a project from the File menu (<em>File -&gt; New
+Project</em>), or by moving the cursor to the upper-right corner of your
+RStudio window and selecting <em>Project &gt; New Project</em>.
 <!-- as pictured: <center>![](images/project.png){width=65%}</center>--></p></li>
 <li><p>Select <em>Existing Directory</em> in the pop-up menu.</p></li>
-<li><p>Click <em>Browse</em> and navigate to where you created your
-folder <strong>Taffy</strong>. Select this folder and then click
-<em>Create Project</em>.</p></li>
+<li><p>Click <em>Browse</em> and navigate to where you created the lab1
+folder. Select this folder and then click <em>Create
+Project</em>.</p></li>
 </ol>
 <ul>
 <li><p>Your R project has now been created. Note that in the upper
 right-hand corner, the program indicates that you are working on the
-project named <strong>Taffy</strong>. In the future you can click on
-this spot in the upper right corner to change the project you want to
-work on or create a new one.</p></li>
+project named lab1. In the future you can click on this spot in the
+upper right corner to change the project you want to work on or create a
+new one.</p></li>
 <li><p>Note also that if you click on the <strong>Files</strong> tab in
-the lower right pane in RStudio, you will see all the files in your
-<strong>Taffy</strong> folder.</p></li>
-<li><p>My mature project folders often contain three types of files:</p>
+the lower right pane in RStudio, you can access the file system on your
+computer. By default, RStudio will show the contents of your current
+project folder</p></li>
+<li><p>In addition to the project file itself, my mature project folders
+often contain three types of files:</p>
 <ul>
 <li>R script files (discussed below)</li>
 <li>data files (usually .csv files)</li>
@@ -566,24 +564,22 @@ the lower right pane in RStudio, you will see all the files in your
 </div>
 <div id="scripts" class="section level2">
 <h2>5. Scripts</h2>
-<p>Scripts are files for saving commands you have created to do some
-cool stuff in R. RStudio can use loaded script files to execute these
-commands one line at a time, or in large chunks at a time. Script files
-also enable to easily share code with lab/project partners.</p>
-<p>To create a script, follow <em>File -&gt; New File -&gt; R
-Script</em>, or go to the upper left corner of your RStudio window and
-click on the green + symbol. Then select R script.</p>
-<blockquote>
-<p><strong><em>Pro Tip</em></strong>: Use <em>comments</em> to help your
-future self or a project partner understand the commands that appear in
-a script file. Comment lines begin with a #.</p>
-</blockquote>
-<center>
-<img src="images/script.png" style="width:65.0%" />
-</center>
+<p>Think of a script as a place to write down commands you want to use
+in a project.<br />
+To create a script, you can follow <em>File -&gt; New File -&gt; R
+Script</em>, or, even faster, go to the upper left corner of your
+RStudio window and click on the green + symbol. Then select R
+script.<br />
+Script files also enable to easily share code with lab/project
+partners.<br />
+Add comments to script files (begin a line with a pound sign #) to help
+your future self or a project partner understand the commands that
+follow.</p>
+<!--
+<center>![](images/script.png){width=65%}</center>
+-->
 <p><em>To execute lines of code in your script</em>, place your cursor
-anywhere on that line of code and click <em>Run</em> (you will see
-results below in the console prompt).</p>
+anywhere on that line of code and click <em>Run</em>.</p>
 <p>Alternatively, you can use a keyboard shortcut:</p>
 <ul>
 <li><em>Command + return</em> on a Mac</li>
@@ -600,8 +596,8 @@ page, and give it the name <code>gov</code>, we enter the following at
 the console prompt in RStudio (you can copy and paste!):</p>
 <pre><code>gov = read.csv(&quot;https://mphitchman.com/stats/data/governors.csv&quot;)</code></pre>
 </div>
-<div id="read-your-own-.csv-files" class="section level2">
-<h2>7. Read your own .csv files</h2>
+<div id="read-local-.csv-files" class="section level2">
+<h2>7. Read local .csv files</h2>
 <p><strong>Scene</strong>: You ask 50 people to fill out a Google Form
 for a statistics project. You download the results of the survey as a
 .csv file to your computer (‘csv’ stands for comma separated
@@ -624,12 +620,11 @@ to the <em>Files tab</em> in the lower right pane, navigating to the
 folder you want, then clicking on <em>More</em> and selecting <em>Set as
 Working Directory</em>.)</p>
 <p><strong>Example</strong>: On my desktop I have a folder called
-<em>awesome</em>. In this folder I have a script file called
-<em>legos.R</em>, and I also have a data file called
-<em>legosets.csv</em>. If I set my working directory in RStudio to the
-<em>awesome</em> folder, then the following line in my <em>legos.R</em>
-script will read the data file into my RStudio session, and give it the
-working name ‘legos’:</p>
+‘awesome’. In this folder I have a script file called <em>legos.R</em>,
+and I also have a data file called <em>legosets.csv</em>. If I set my
+working directory in RStudio to the ‘awesome’ folder, then the following
+line in my <em>legos.R</em> script will read the data file into my
+RStudio session, and give it the working name ‘legos’:</p>
 <pre><code>legos = read.csv(&quot;legosets.csv&quot;)</code></pre>
 </div>
 <div id="packages" class="section level2">
