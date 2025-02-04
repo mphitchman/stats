@@ -547,13 +547,11 @@ haven’t loaded the tidyverse into your session).</p>
 indicates the delimiter: we separate by the space (between the name and
 the handedness). The <code>remove = TRUE</code> option eliminates the
 original column.</p>
-<blockquote>
-<p><strong>e)</strong> <em>Mapping a categorical variable to different
-values.</em> It turns out that the <code>color</code> column is an
-artifact of old data entry practices, and each color actually represents
-a region of the US. That is, the <code>color</code> column actually
-tells us the region in the US in which the rectangle lives:</p>
-</blockquote>
+<p><em>Mapping a categorical variable to different values.</em> It turns
+out that the <code>color</code> column is an artifact of old data entry
+practices, and each color actually represents a region of the US. That
+is, the <code>color</code> column actually tells us the region in the US
+in which the rectangle lives:</p>
 <ul>
 <li>blue &lt;–&gt; northwest</li>
 <li>green &lt;–&gt; southwest</li>
@@ -561,21 +559,15 @@ tells us the region in the US in which the rectangle lives:</p>
 <li>red &lt;–&gt; southeast</li>
 <li>yellow &lt;–&gt; northeast</li>
 </ul>
-<p>We can convert the <code>color</code> column to a <code>region</code>
-column as follows (again, we are using a command from the tidyverse
-package)</p>
-<pre class="r"><code>rect &lt;- rect |&gt; 
-  mutate(region=recode(color,
-                       &#39;blue&#39;=&#39;nw&#39;,
-                       &#39;green&#39;=&#39;sw&#39;,
-                       &#39;orange&#39;=&#39;mw&#39;,
-                       &#39;red&#39;=&#39;se&#39;,
-                       &#39;yellow&#39;=&#39;ne&#39;)
-         )</code></pre>
 <blockquote>
-<p><strong>f)</strong> Now you try: adapt the code above to mutate the
-<code>Hand</code> column to get rid of those unfortunate
-parentheses.</p>
+<p><strong>e)</strong> Create a new columns called <code>region</code>
+from the <code>color</code> column by <em>recoding</em> the color values
+to regions. (See <a href="https://mphitchman.com/stats/sports/actionverbs.html">action
+verbs</a> for code help.)</p>
+</blockquote>
+<blockquote>
+<p><strong>f)</strong> Mutate (with recoding) the <code>Hand</code>
+column to get rid of those unfortunate parentheses.</p>
 </blockquote>
 </div>
 <div id="q4-now-that-we-have-finished-pre-processing-the-data-answer-the-following-questions." class="section level2">
