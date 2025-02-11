@@ -922,20 +922,22 @@ Roberto Alomar
 </tbody>
 </table>
 <blockquote>
-<p><strong>a)</strong> In R, place the stolen base, caught stealing, and
-game counts in the vectors SB, CS, and G.</p>
+<p><strong>a)</strong> In R, place the stolen bases, caught stealing,
+and game counts in vectors entitled <code>SB</code>, <code>CS</code>,
+and <code>G</code>.</p>
 </blockquote>
 <blockquote>
 <p><strong>b)</strong> For all players, compute the number of stolen
-base attempts SB + CS and store in the vector SB_Attempt.</p>
+base attempts SB + CS and store in the vector
+<code>SB_Attempt</code>.</p>
 </blockquote>
 <blockquote>
 <p><strong>c)</strong> For all players, compute the success rate
-Success.Rate = SB / SB.Attempt.</p>
+<code>Success_Rate</code> = SB / SB.Attempt.</p>
 </blockquote>
 <blockquote>
 <p><strong>d)</strong> Compute the number of stolen bases per game
-SB_Game = SB / Game for each player</p>
+<code>SB_Game</code> = SB / G for each player</p>
 </blockquote>
 <blockquote>
 <p><strong>e)</strong> Construct a scatterplot of the stolen bases per
@@ -946,12 +948,12 @@ greatest number of stolen bases per game?</p>
 </div>
 <div id="q4-character-factor-and-logical-variables" class="section level2">
 <h2>Q4: Character, Factor, and Logical Variables</h2>
-<p>Suppose a golfer records their outcomes in a round of 18 holes.</p>
+<p>Suppose a golfer records their outcomes in a round of 18 holes:</p>
 <p>par, par, birdie, par, par, bogey, birdie, par, bogey, double bogey,
 par, birdie, par, par, par, bogey, par, par</p>
 <blockquote>
-<p><strong>a)</strong> Use the <code>c()</code> function to collect
-these outcomes in a character vector <code>scores</code>.</p>
+<p><strong>a)</strong> Use the <code>c()</code> function to record these
+outcomes in a character vector <code>scores</code>.</p>
 </blockquote>
 <blockquote>
 <p><strong>b)</strong> Use the <code>table()</code> function to
@@ -971,7 +973,7 @@ to a factor variable <code>f_scores</code>. Then use the
   levels = c(&quot;birdie&quot;,&quot;par&quot;,&quot;bogey&quot;,&quot;double bogey&quot;))</code></pre>
 <blockquote>
 <p><strong>d)</strong> Suppose you want to focus only on birdies.
-Describe what is done in each of the followin statements:</p>
+Describe what is done in each of the following statements:</p>
 </blockquote>
 <pre class="r"><code>scores == &quot;birdie&quot;
 which(scores == &quot;birdie&quot;)
@@ -982,13 +984,15 @@ sum(scores == &quot;birdie&quot;)</code></pre>
 <blockquote>
 <p><strong>a)</strong> Read the <strong>Lahman</strong>
 <code>Pitching</code> data into R by running
-<code>library(Lahman)</code>.</p>
+<code>library(Lahman)</code></p>
 </blockquote>
 <blockquote>
-<p><strong>b)</strong> The following script computes the cumulative
-strikeouts, cumulative walks, cumulative home runs allowed, mid career
-year, and the total innings pitched (measured in terms of outs) for all
-pitchers in the data file.</p>
+<p><strong>b)</strong> The following script loads the <em>tidyverse</em>
+package into your session, and then creates a new data frame called
+<code>career_pitching</code> which records the cumulative strikeouts,
+cumulative walks, cumulative home runs allowed, mid career year, and the
+total innings pitched (measured in terms of outs) for all pitchers in
+the data file. Run this code in your script.</p>
 </blockquote>
 <pre class="r"><code>career_pitching &lt;- Pitching |&gt; 
   group_by(playerID) |&gt; 
@@ -1003,20 +1007,22 @@ pitchers in the data file.</p>
 <p><strong>c)</strong> This new data frame is called
 <code>career_pitching</code>. If you take a peek at it, pitchers are
 identified by a playerID. Often we can tell who the pitcher is by the
-playerID, but we can add the pitcher names by merging via the
-<code>inner_join()</code> function the <code>career_pitching</code> data
+playerID, but we can add the pitcher names by merging (via a function
+called <code>inner_join()</code>) the <code>career_pitching</code> data
 frame and the <code>People</code> data frame from
 <strong>Lahman</strong>. Do so as follows:</p>
 </blockquote>
 <pre class="r"><code>career_pitching &lt;- inner_join(career_pitching,
                               People |&gt;
-                                select(playerID,nameFirst,nameLast),by=&#39;playerID&#39;)</code></pre>
+                                select(playerID,nameFirst,nameLast),
+                              by=&#39;playerID&#39;)</code></pre>
 <blockquote>
 <p><strong>d)</strong> Use the <code>filter()</code> function to
 construct a new data frame <code>career_10k</code> consisting of data
 for only those pitchers with at least 10,000 career IPouts (pitching
-outs).</p>
+outs). Here’s one approach:</p>
 </blockquote>
+<pre class="r"><code>career_10k &lt;- career_pitching |&gt; filter(IPouts &gt;= 10000)</code></pre>
 <blockquote>
 <p><strong>e)</strong> For the pitchers with at least 10,000 pitching
 outs, construct a scatterplot of mid career year and ratio of strikeouts
