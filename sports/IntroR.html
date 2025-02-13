@@ -933,7 +933,7 @@ base attempts SB + CS and store in the vector
 </blockquote>
 <blockquote>
 <p><strong>c)</strong> For all players, compute the success rate
-<code>Success_Rate</code> = SB / SB.Attempt.</p>
+<code>Success_Rate</code> = SB / SB_Attempt.</p>
 </blockquote>
 <blockquote>
 <p><strong>d)</strong> Compute the number of stolen bases per game
@@ -994,7 +994,8 @@ cumulative walks, cumulative home runs allowed, mid career year, and the
 total innings pitched (measured in terms of outs) for all pitchers in
 the data file. Run this code in your script.</p>
 </blockquote>
-<pre class="r"><code>career_pitching &lt;- Pitching |&gt; 
+<pre class="r"><code>library(tidyverse)
+career_pitching &lt;- Pitching |&gt; 
   group_by(playerID) |&gt; 
   summarize(
     SO = sum(SO, na.rm = TRUE),
