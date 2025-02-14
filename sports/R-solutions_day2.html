@@ -11,7 +11,7 @@
 
 
 
-<title>R-practice_day2.knit</title>
+<title>R-solutions_day2.knit</title>
 
 <script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
 // be compatible with the behavior of Pandoc < 2.8).
@@ -352,41 +352,51 @@ display: none;
 </div>
 
 
-<div id="in-class-r-practice---feb-13" class="section level1">
-<h1>In class R Practice - Feb 13</h1>
-<ol style="list-style-type: decimal">
-<li>Create a new script.</li>
-<li>Record (as comment) your name in line 1.</li>
-<li>Define the vectors <code>v</code> and <code>w</code> by running the
-following lines of code</li>
-</ol>
-<pre class="r"><code>v &lt;- round(rbinom(150,200,.4),2)
-w &lt;- sample(letters[1:8],150,replace=TRUE)</code></pre>
-<ol start="4" style="list-style-type: decimal">
-<li>Find the minimum value in <code>v</code>.</li>
-<li>Find the maximum value in <code>v</code>.</li>
-<li>Determine the sum of the values in <code>v</code>.</li>
-<li>Find the average (mean) value in <code>v</code>.</li>
-<li>Determine how many entries in <code>v</code> are less than 70.</li>
-<li>Which is larger: the number of entries in <code>v</code> less than
-70, or the number of entries in <code>v</code> greater than 90?</li>
-<li>Create a new vector <code>sq</code> in which each entry is the
-square of the corresponding entry in <code>v</code>.</li>
-<li>Create a new vector <code>bob</code> in which each entry is five
-less than the corresponding entry in <code>v</code>.</li>
-<li>Determine how many times ‘d’ appears in <code>w</code>.</li>
-<li>Determine the frequency distribution of the vector <code>w</code>.
-Which value occurs the most often?</li>
-<li>Create a data frame <code>df</code> with two columns. Name the first
-column <strong>letter</strong> and set it equal to the vector
-<code>w</code>, and name the second column <strong>value</strong> and
-set it equal to the vector <code>v</code>.</li>
-<li>Group the rows by letter and compute the average value within each
-group.</li>
-<li>Find the average value associated with the vowels.</li>
-</ol>
-<p><a href="https://mphitchman.com/stats/sports/R-solutions_day2.html">mph
-code</a></p>
+<div id="solutions-r-practice-on-213" class="section level4">
+<h4>Solutions: R practice on 2/13</h4>
+<pre class="r"><code># mph answers
+#3
+v &lt;- round(rbinom(150,200,.4),2)
+w &lt;- sample(letters[1:8],150,replace=TRUE)
+#4
+min(v)
+#5
+max(v)
+#6
+sum(v)
+#7
+mean(v)
+#8
+sum(v &lt; 70)
+#9
+#compare answer to #8 with
+sum(v &gt; 90)
+#or ask R:
+sum(v &lt; 70) &gt; sum(v &lt; 90)
+#10
+sq &lt;- v*v
+# or
+sq &lt;- v^2
+#11
+bob &lt;- v - 5
+#12
+sum(w == &#39;d&#39;)
+#13
+table(w)
+#check by inspection of the table which letter appeared the most
+#14
+df &lt;- data.frame(letter = w, 
+                 value = v)
+#15
+library(tidyverse)
+df |&gt; group_by(letter) |&gt; summarize(avg = mean(value))
+#16
+#one approach to filtering df to have just the vowels
+vowels &lt;- df |&gt; filter(letter %in% c(&#39;a&#39;,&#39;e&#39;))
+#a second approach
+vowels &lt;- df |&gt; filter(letter == &#39;a&#39; | letter == &#39;e&#39;)
+#then we want
+mean(vowels$value)</code></pre>
 </div>
 
 
