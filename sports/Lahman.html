@@ -449,7 +449,9 @@ variables? How are the various pitchers identified?</p>
 -->
 <blockquote>
 <p><strong>b)</strong> Add player names to this table via the
-<code>People</code> table, which links names with playerID.</p>
+<code>People</code> table, which links names with playerID. Hint: the
+<em>Intro to action verbs with dplyr</em> tutorial has examples of
+joining two data frames via a common column.</p>
 </blockquote>
 </div>
 <div id="q2-strikeouts" class="section level2">
@@ -467,10 +469,10 @@ Strikeouts per 9 innings pitched)?</p>
 Here's the top 10:
 -->
 <blockquote>
-<p><strong>c)</strong> Noticing a lot of recent years in that list,
-let’s make a line plot of the league average K9 rate for each season.
-(x-axis is the year, y-axis is the league average K9). Notice anything
-intersting about the plot?</p>
+<p><strong>c)</strong> You may notice several recent years in that list.
+Are strikeouts on the rise? Make a line plot of the league average K9
+rate for each season. (x-axis is the year, y-axis is the league average
+K9). Notice anything intersting about the plot?</p>
 </blockquote>
 <blockquote>
 <p><strong>d)</strong> MLB lowered the pitching mound to 10 inches for
@@ -480,46 +482,43 @@ plot by adding the layer
 that may have affected the strikeout rates.</p>
 </blockquote>
 </div>
-<div id="q3-home-runs" class="section level2">
-<h2>Q3 Home runs</h2>
-<blockquote>
-<p><strong>a)</strong> Among pitchers with at least 100 IP, who has the
-highest single season HR9 rate (where HR9 = Home runs allowed per 9
-innings pitched)?</p>
-</blockquote>
+<div id="q3-among-pitchers-with-at-least-100-ip-who-has-the-highest-single-season-hr9-rate-where-hr9-home-runs-allowed-per-9-innings-pitched" class="section level2">
+<h2>Q3 Among pitchers with at least 100 IP, who has the highest single
+season HR9 rate (where HR9 = Home runs allowed per 9 innings
+pitched)?</h2>
 </div>
-<div id="q3-filter-the-pitching-table-to-include-data-from-only-two-teams-of-your-choice-and-for-just-the-three-years-2021-2023.-make-sure-you-get-your-teams-teamids-correct-how-many-different-pitchers-pitched-for-each-of-your-teams-over-this-three-year-window" class="section level2">
-<h2>Q3 Filter the pitching table to include data from only two teams of
+<div id="q4-filter-the-pitching-table-to-include-data-from-only-two-teams-of-your-choice-and-for-just-the-three-years-2021-2023.-make-sure-you-get-your-teams-teamids-correct-how-many-different-pitchers-pitched-for-each-of-your-teams-over-this-three-year-window" class="section level2">
+<h2>Q4 Filter the pitching table to include data from only two teams of
 your choice, and for just the three years 2021-2023. Make sure you get
 your teams’ <code>teamID</code>s correct! How many different pitchers
 pitched for each of your teams over this three year window?</h2>
 </div>
-<div id="q4-determine-how-many-games-your-two-teams-won-in-each-of-those-three-seasons.-check-at-mlb.com-to-see-that-your-win-totals-match-their-standings." class="section level2">
-<h2>Q4 Determine how many games your two teams won in each of those
+<div id="q5-determine-how-many-games-your-two-teams-won-in-each-of-those-three-seasons.-check-at-mlb.com-to-see-that-your-win-totals-match-their-standings." class="section level2">
+<h2>Q5 Determine how many games your two teams won in each of those
 three seasons. Check at mlb.com to see that your win totals match their
 standings.</h2>
 </div>
-<div id="q5-determine-the-cumulative-earned-run-average-for-your-two-teams-over-this-three-year-span.-recall-era-fracerip9.-notice-that-the-pitching-table-gives-ipouts-not-ip-where-ipouts-3-x-ip.-be-sure-to-round-the-era-values-to-two-decimal-places." class="section level2">
-<h2>Q5 Determine the cumulative earned run average for your two teams
+<div id="q6-determine-the-cumulative-earned-run-average-for-your-two-teams-over-this-three-year-span.-recall-era-fracerip9.-notice-that-the-pitching-table-gives-ipouts-not-ip-where-ipouts-3-x-ip.-be-sure-to-round-the-era-values-to-two-decimal-places." class="section level2">
+<h2>Q6 Determine the cumulative earned run average for your two teams
 over this three year span. Recall, <span class="math display">\[ERA =
 \frac{ER}{IP}*9.\]</span> Notice that the pitching table gives
 <em>IPouts</em>, not <em>IP</em>, where <em>IPouts = 3 x IP</em>. Be
 sure to round the ERA values to two decimal places.</h2>
 </div>
-<div id="q6-intermediate-plot-the-number-of-wins-by-year-for-each-of-your-two-teams-on-the-same-plot.-use-data-from-1990-2023.-notice-anything-interesting-about-your-plot" class="section level2">
-<h2>Q6 (Intermediate) Plot the number of wins by year for each of your
+<div id="q7-intermediate-plot-the-number-of-wins-by-year-for-each-of-your-two-teams-on-the-same-plot.-use-data-from-1990-2023.-notice-anything-interesting-about-your-plot" class="section level2">
+<h2>Q7 (Intermediate) Plot the number of wins by year for each of your
 two teams on the same plot. Use data from 1990-2023. Notice anything
 interesting about your plot?</h2>
 </div>
-<div id="q7-advanced-over-the-three-seasons-2021-2023-determine-the-number-of-pitchers-used-by-each-of-the-30-teams-in-mlb.-describe-the-resulting-distribution-of-values-with-a-plot-perhaps.-which-team-used-the-most-pitchers-which-used-the-fewest-does-the-number-of-pitchers-used-appear-to-associate-with-team-performance-in-any-way" class="section level2">
-<h2>Q7 (Advanced) Over the three seasons 2021-2023 determine the number
+<div id="q8-advanced-over-the-three-seasons-2021-2023-determine-the-number-of-pitchers-used-by-each-of-the-30-teams-in-mlb.-describe-the-resulting-distribution-of-values-with-a-plot-perhaps.-which-team-used-the-most-pitchers-which-used-the-fewest-does-the-number-of-pitchers-used-appear-to-associate-with-team-performance-in-any-way" class="section level2">
+<h2>Q8 (Advanced) Over the three seasons 2021-2023 determine the number
 of pitchers used by each of the 30 teams in MLB. Describe the resulting
 distribution of values (with a plot, perhaps). Which team used the most
 pitchers? Which used the fewest? Does the number of pitchers used appear
 to associate with team performance in any way?</h2>
 </div>
-<div id="q8.-state-your-own-question-about-pitching-that-can-be-addressed-by-this-data-table-and-investigate-an-evidence-based-answer-to-this-question.-provide-tables-summary-statistics-andor-plots-to-support-your-answer." class="section level2">
-<h2>Q8. State your own question about pitching that can be addressed by
+<div id="q9.-state-your-own-question-about-pitching-that-can-be-addressed-by-this-data-table-and-investigate-an-evidence-based-answer-to-this-question.-provide-tables-summary-statistics-andor-plots-to-support-your-answer." class="section level2">
+<h2>Q9. State your own question about pitching that can be addressed by
 this data table, and investigate an evidence-based answer to this
 question. Provide tables, summary statistics, and/or plots to support
 your answer.</h2>
