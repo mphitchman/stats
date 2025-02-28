@@ -407,7 +407,7 @@ border-bottom: 1px solid seagreen;
 </style>
 <div id="predicting-expected-wins" class="section level2">
 <h2>Predicting Expected Wins</h2>
-<p>Bill James, a pioneer in baseball analytics developed a formula for
+<p>Bill James, a pioneer in baseball analytics, developed a formula for
 predicting team winning percentage from the team’s total runs scored
 (<em>RF</em>) and total runs allowed (<em>RA</em>). The formula has a
 Pythagorean Theorem sort of vibe, and has been called the Pythagorean
@@ -427,39 +427,43 @@ less than 5%. Can we generally expect this kind of accuracy?</p>
 <p>Here’s a link to the team totals for the 2023 and 2024 seasons</p>
 <pre><code>df &lt;- read.csv(&#39;https://raw.githubusercontent.com/mphitchman/survey/refs/heads/main/mlb2324.csv&#39;)</code></pre>
 <p>In this assignment you will create your answers to the following
-questions in an R markdown file (I will provide a template), and then
-upload the markdown file into blackboard.</p>
+questions in an R markdown file (see Blackboard for a template), and
+then upload the finished markdown file into blackboard. Make sure it
+knits as you want it to (check the resulting html file for errors,
+typos, etc) before you upload the .Rmd file to Blackboard.</p>
 </div>
 <div id="q0.-load-the-data-using-the-link-above-and-call-it-df" class="section level2">
 <h2>Q0. Load the data using the link above, and call it
 <code>df</code></h2>
 </div>
-<div id="q1.-create-an-expected-wins-column-using-the-fact-that-each-team-plays-162-games-in-the-regular-season.-then-produce-a-table-displaying-the-year-the-team-the-wins-and-the-expected-wins-of-the-8-teams-with-the-highest-expected-win-counts." class="section level2">
-<h2>Q1. Create an expected wins column, using the fact that each team
-plays 162 games in the regular season. Then produce a table displaying
-the year, the team, the wins, and the expected wins of the 8 teams with
-the highest expected win counts.</h2>
+<div id="q1.-add-an-expected-wins-column-to-df-using-the-fact-that-each-team-plays-162-games-in-the-regular-season.-then-display-a-table-of-the-8-teams-with-the-highest-expected-win-counts-from-df.-please-only-include-the-year-the-team-the-wins-and-the-expected-wins-of-thes-8-teams-in-your-table." class="section level2">
+<h2>Q1. Add an expected wins column to <code>df</code>, using the fact
+that each team plays 162 games in the regular season. Then display a
+table of the 8 teams with the highest expected win counts from
+<code>df</code>. Please only include the year, the team, the wins, and
+the expected wins of thes 8 teams in your table.</h2>
 </div>
-<div id="q2.-produce-a-nicely-annotated-plot-of-expected-wins-x-vs-actual-wins-y-and-color-your-dots-according-to-the-season-for-each-team.-also-include-the-line-yx-in-your-plot-to-help-give-an-idea-of-how-close-expected-wins-x-are-to-the-actual-wins-y-generally." class="section level2">
-<h2>Q2. Produce a nicely annotated plot of expected wins (x) vs actual
-wins (y), and color your dots according to the season for each team.
-Also include the line <span class="math inline">\(y=x\)</span> in your
-plot to help give an idea of how close expected wins (x) are to the
-actual wins (y) generally.</h2>
+<div id="q2.-using-the-full-data-set-df-produce-a-nicely-annotated-plot-of-expected-wins-x-vs-actual-wins-y-and-color-your-dots-according-to-the-season-for-each-team.-also-include-the-line-yx-in-your-plot-to-help-give-an-idea-of-how-close-expected-wins-x-are-to-the-actual-wins-y-generally." class="section level2">
+<h2>Q2. Using the full data set <code>df</code>, produce a nicely
+annotated plot of expected wins (x) vs actual wins (y), and color your
+dots according to the season for each team. Also include the line <span class="math inline">\(y=x\)</span> in your plot to help give an idea of
+how close expected wins (x) are to the actual wins (y) generally.</h2>
 </div>
-<div id="q3.-create-a-percentage-error-xw---ww100-column-for-each-team-in-the-data.-then-report-how-often-the-percentage-error-is-less-than-10.-also-determine-the-five-number-summary-for-the-percentage-error.-what-range-of-values-describes-the-middle-50-of-the-distribution-of-percentage-errors" class="section level2">
-<h2>Q3. Create a percentage error (xW - W)/W*100 column for each team in
-the data. Then report how often the percentage error is less than 10%.
-Also determine the five number summary for the percentage error. What
-range of values describes the middle 50% of the distribution of
+<div id="q3.-add-a-percentage-error-column-pct_error-xw---ww100-to-the-data-frame-df.-then-report-the-proportion-of-teams-over-these-two-seasons-with-percentage-error-less-than-10.-also-determine-the-five-number-summary-for-the-percentage-error-column.-what-range-of-values-describes-the-middle-50-of-the-distribution-of-percentage-errors" class="section level2">
+<h2>Q3. Add a percentage error column <code>pct_error</code> = (xW -
+W)/W*100 to the data frame <code>df</code>. Then report the proportion
+of teams over these two seasons with percentage error less than 10%.
+Also determine the five number summary for the percentage error column.
+What range of values describes the middle 50% of the distribution of
 percentage errors?</h2>
 </div>
-<div id="q4.-we-might-say-a-team-is-overachieving-if-their-actual-win-total-far-exceeds-their-expected-wins-based-on-this-formula.-which-three-teams-in-2024-were-the-greatest-overachievers-output-a-table-to-show-this.-how-about-2023-table-please.-which-three-teams-were-the-greatest-underachievers-two-more-tables-please." class="section level2">
-<h2>Q4. We might say a team is ‘overachieving’ if their actual win total
-far exceeds their expected wins based on this formula. Which three teams
-in 2024 were the greatest overachievers? (Output a table to show this.)
-How about 2023? (Table, please.) Which three teams were the greatest
-underachievers? (Two more tables, please.)</h2>
+<div id="q4.-we-might-say-a-team-is-overachieving-if-their-actual-win-total-exceeds-their-expected-wins-based-on-this-formula.-which-three-teams-in-2024-were-the-greatest-overachievers-output-a-table-to-show-this.-how-about-2023-table-please.-which-three-teams-were-the-greatest-underachievers-in-each-of-these-seasons-two-more-tables-please." class="section level2">
+<h2>Q4. We might say a team is <em>overachieving</em> if their actual
+win total exceeds their expected wins based on this formula. Which three
+teams in 2024 were the greatest overachievers? (Output a table to show
+this.) How about 2023? (Table, please.) Which three teams were the
+greatest underachievers in each of these seasons? (Two more tables,
+please.)</h2>
 <!--
 
 
