@@ -1795,7 +1795,6 @@ into your session as well.</p>
 the Lahman <code>Pitching</code> data, adding an innings pitched column
 (IP). Note we only consider seasons since 1903 (the year of the first
 World Series).</p>
-<pre><code>pit &lt;- Pitching |&gt; filter(yearID &gt;= 1903) |&gt; mutate(IP = IPouts/3)</code></pre>
 <blockquote>
 <p><strong>a)</strong> From <code>pit</code> create a data frame called
 <code>R9_by_year</code> that groups the pitching data by year and
@@ -1923,7 +1922,7 @@ which counts how many times outs they created. The formulas for each are
 given below.</p>
 </blockquote>
 <pre><code>TB = H + X2B + 2*X3B + 3*HR,
-outs = AB-H+GIDP+CS+SH+SF</code></pre>
+outs = AB - H + GIDP + CS + SH + SF</code></pre>
 <blockquote>
 <p><strong>b)</strong> Prior to 1955, MLB did not record certain
 statistics, including sacrifice flies (SF). SF is used in the
@@ -1944,6 +1943,8 @@ Formulas for each are given below</p>
 OBP = (H + BB + HBP)/(AB + BB + HBP + SF)
 SLG = TB/AB
 OPS = OBP + SLG</code></pre>
+<p>See the <a href="https://mphitchman.com/stats/sports/baseball_basics.html">baseball
+basics</a> presentation for a discussion of these rate stats.</p>
 <blockquote>
 <p><strong>d)</strong> Chose a particular season after 1954 (make sure
 each group member picks a different season) and make a new data frame
