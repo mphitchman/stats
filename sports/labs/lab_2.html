@@ -2313,7 +2313,7 @@ fielding error allows runner to advance to 3rd, batter to advance to 2nd
 </tbody>
 </table>
 <blockquote>
-<p><strong>c)</strong> Use the Law of Conditional Expectations to
+<p><strong>c)</strong> Use the Law of Conditional Expectation to
 determine the expected number of runs scored by the team if they attempt
 to bunt.</p>
 </blockquote>
@@ -2369,7 +2369,7 @@ develop, strategy may change as well.</p>
 <p>Considering the Lahman <code>Batting</code> data, we can get a rough
 picture of how often sacrifice bunts have been successfully employed
 over the years. The following code groups players by year (starting in
-1903), and computes thet total number of sac bunts (SH) at at-bats (AB),
+1903), and computes the total number of sac bunts (SH) at at-bats (AB),
 and creates an SH/AB column called SH_rate:</p>
 <pre class="r"><code>sacbunt_by_year &lt;- Batting |&gt; 
   filter(yearID &gt;= 1903) |&gt;
@@ -2443,7 +2443,7 @@ inning due to PA) + (runs scored due to PA).</p>
 <p>For instance, if the lead-off hitter hits a home run, their RE24
 contribution is 0 + 1 = 1. Why? After the home run, the team still has
 bases empty with no outs, so there’s 0 change in the run expectancy for
-the inning), and 1 run scored on the play.</p>
+the remainder of the inning), and 1 run scored on the play.</p>
 <p>If the lead-off hitter strikes out, their RE24 contribution is: <span class="math display">\[(0.274 - 0.514) + 0 = -0.240.\]</span></p>
 <p>On the other hand, if a batter strikes out with 2 outs and the bases
 loaded, their RE24 contribution is: (0 - 0.763) = -0.763. (Run
