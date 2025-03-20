@@ -2072,24 +2072,26 @@ _ 2 3
 </tr>
 </tbody>
 </table>
-<p><strong>How to read this table?</strong></p>
+<p><strong>How to read this table</strong></p>
 <ul>
-<li>The 8 rows represent the different base runner situations possible
-during a plate appearance. (For instance, “1_3” means the team has base
-runners at 1st and 3rd base). (RoB stands for “runners on base”).</li>
-<li>The 3 columns represent the different number of outs in the inning
-that are possible at the start of a plate appearance.</li>
+<li>The rows represent the 8 possible base runner states, from no one on
+any base up to the bases being loaded. For instance, “1_3” means the
+team has base runners at 1st and 3rd base. Here, RoB stands for “runners
+on base”.</li>
+<li>The columns represent the 3 possible out states (0, 1 or 2
+outs).</li>
 <li>In total, then, there are 24 possible RoB/Outs states considered in
 this table.</li>
 <li>The value in each cell gives the average number of runs scored by
 MLB teams for the remainder of the inning when batting in the state
 corresponding to the cell.</li>
 </ul>
-<p>For instance, when a team has the bases loaded loaded (RoB = 123)
-with one out, the average number of runs to score in the remainder of
-the inning is 1.579 runs. You can also check that when a team has
-runners at 1st and 3rd with 2 outs, the expected (average) number of
-runs scored in the remainder of the inning is 0.488 runs.</p>
+<p>We see from the table that when a team has the bases loaded loaded
+(RoB = 123) with one out, the average number of runs to score in the
+remainder of the inning is 1.579 runs (over this 2016-2021 period). You
+can also check that when a team has runners at 1st and 3rd with 2 outs,
+the expected (average) number of runs scored in the remainder of the
+inning is 0.488 runs.</p>
 <p>Of course some teams are likely to score more runs than average, if
 they have above average hitters. So we might think about 2.272 runs as
 being the expected number of runs scored when a team full of average
@@ -2106,196 +2108,494 @@ statistic, commonly called RE24 (a nod to the Run Expectancy matrix and
 its 24 different baseball states). This statistic is discussed in the
 article linked above that you are to read prior to lab.</p></li>
 </ul>
+<p>As already mentioned, in this lab we use the 2016-2021 matrix to
+analyze certain team strategies in MLB baseball. The power of R is not
+necessary to answer these questions, but you may want to use code chunks
+to serve as a calculator in your calculations.</p>
+</div>
+</div>
+<div id="q1.-bunting" class="section level1">
+<h1>Q1. Bunting</h1>
+<p>Suppose a team has a runner on 1st base with 0 outs. Is it a good
+strategy for the next batter to attempt to bunt?</p>
+<p>Bunts can be an effective way to advance the base runner from first
+to second, usually at the cost of an out (the batter is often). Let’s
+suppose an average hitter who is also an average bunter is at the plate.
+Suppose also that history shows the following likelihoods for the
+outcomes of this hitter’s bunt attempts:</p>
+<table class=" lightable-classic" style="font-family: &quot;Arial Narrow&quot;, &quot;Source Sans Pro&quot;, sans-serif; width: auto !important; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+outcome
+</th>
+<th style="text-align:right;">
+probability
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+runner advances to 2nd, batter is safe!
+</td>
+<td style="text-align:right;">
+0.10
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+runner advances to 2nd, batter is out
+</td>
+<td style="text-align:right;">
+0.68
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+runner is out at 2nd, batter safe at first
+</td>
+<td style="text-align:right;">
+0.08
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+batter is out, and runner remains at 1st
+</td>
+<td style="text-align:right;">
+0.11
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+both runners out
+</td>
+<td style="text-align:right;">
+0.02
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+fielding error allows runner to advance to 3rd, batter to advance to 2nd
+</td>
+<td style="text-align:right;">
+0.01
+</td>
+</tr>
+</tbody>
+</table>
+<p>By far the most likely outcome is that the runner on 1st advances to
+2nd while the batter is thrown out at 1st. The batter is credited with a
+sacrifice bunt in this case.</p>
+<blockquote>
+<p><strong>a)</strong> If the team choses not to bunt, what are the
+expected runs for the remainder of the inning?</p>
+</blockquote>
+<blockquote>
+<p><strong>b)</strong> For each of the outcomes of a bunt attempt
+complete the table below by recording the resulting RoB and Out states,
+and the resulting expected runs for the batting team found in the Run
+Expectancy Matrix.</p>
+</blockquote>
+<p>The first row has been completed. If the runner advances to 2nd and
+the batter is safe at 1st after the bunt, the new runner state is ‘12_’,
+the out state is still 0, and from the table the run expectation is now
+1.478.</p>
+<table class="table table-striped table-hover" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+outcome
+</th>
+<th style="text-align:center;">
+probability
+</th>
+<th style="text-align:center;">
+RoB
+</th>
+<th style="text-align:center;">
+Outs
+</th>
+<th style="text-align:center;">
+RExp
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+runner advances to 2nd, batter is safe!
+</td>
+<td style="text-align:center;border-left:1px solid;">
+0.10
+</td>
+<td style="text-align:center;border-left:1px solid;">
+12_
+</td>
+<td style="text-align:center;border-left:1px solid;">
+0
+</td>
+<td style="text-align:center;border-left:1px solid;">
+1.478
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+runner advances to 2nd, batter is out
+</td>
+<td style="text-align:center;border-left:1px solid;">
+0.68
+</td>
+<td style="text-align:center;border-left:1px solid;">
+</td>
+<td style="text-align:center;border-left:1px solid;">
+</td>
+<td style="text-align:center;border-left:1px solid;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+runner is out at 2nd, batter safe at first
+</td>
+<td style="text-align:center;border-left:1px solid;">
+0.08
+</td>
+<td style="text-align:center;border-left:1px solid;">
+</td>
+<td style="text-align:center;border-left:1px solid;">
+</td>
+<td style="text-align:center;border-left:1px solid;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+batter is out, and runner remains at 1st
+</td>
+<td style="text-align:center;border-left:1px solid;">
+0.11
+</td>
+<td style="text-align:center;border-left:1px solid;">
+</td>
+<td style="text-align:center;border-left:1px solid;">
+</td>
+<td style="text-align:center;border-left:1px solid;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+both runners out
+</td>
+<td style="text-align:center;border-left:1px solid;">
+0.02
+</td>
+<td style="text-align:center;border-left:1px solid;">
+</td>
+<td style="text-align:center;border-left:1px solid;">
+</td>
+<td style="text-align:center;border-left:1px solid;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+fielding error allows runner to advance to 3rd, batter to advance to 2nd
+</td>
+<td style="text-align:center;border-left:1px solid;">
+0.01
+</td>
+<td style="text-align:center;border-left:1px solid;">
+</td>
+<td style="text-align:center;border-left:1px solid;">
+</td>
+<td style="text-align:center;border-left:1px solid;">
+</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>c)</strong> Use the Law of Conditional Expectations to
+determine the expected number of runs scored by the team if they attempt
+to bunt.</p>
+</blockquote>
+<blockquote>
+<p><strong>d)</strong> Which strategy is better, attempting the bunt or
+letting the batter <em>swing away</em>, in terms of leading to a higher
+expected number of runs for the remainder of the inning?</p>
+</blockquote>
+</div>
+<div id="q2-bunt-when-a-poor-hitter-is-up" class="section level1">
+<h1>Q2 Bunt when a poor hitter is up?</h1>
+<p>Suppose a really, really poor hitter is at the plate, one that…</p>
+<ul>
+<li>strikes out or hits into an out that does not advance the runner 70%
+of the time,</li>
+<li>walks 5% of the time (advancing the runner to 2nd),</li>
+<li>gets a single that advances the runner to 3rd 10% of the time</li>
+<li>gets a single that advances the runner to 2nd 5% of the time</li>
+<li>hits into a double play 10% of the time.</li>
+</ul>
+<p>Suppose further that this hitter is an average bunter, whose bunt
+outcome probabilities match those you assumed in (b).</p>
+<blockquote>
+<p>If the hitter described above is at the plate, is it a good strategy
+to bunt?</p>
+</blockquote>
+</div>
+<div id="q3-bunt-if-were-playing-for-one-run" class="section level1">
+<h1>Q3 Bunt if we’re playing for one run?</h1>
+<p>In the first two questions we assessed a strategy in terms of the
+total number of expected runs for the remainder of the inning, but what
+if we only need one run to win the game? Tie game, bottom of the 9th,
+runner on first and no outs, average hitter at the plate. Is bunting a
+good strategy?</p>
+<p>Consult the <a href="https://www.tangotiger.net/re24.html">Tom Tango
+site</a> to find a probability matrix for scoring <em>at least one
+run</em> in each of the 24 RoB/Out states.</p>
+<p><strong>a)</strong> Assuming a runner is on first with no outs, what
+is the probability the team scores at least 1 run?</p>
+<p><strong>b)</strong> Assume now the batter is asked to bunt, and the
+outcomes and their probabilities from <strong>Q2</strong> still apply.
+Determine the probability that the team scores at least one run by
+asking the batter to bunt.</p>
+</div>
+<div id="q4.-changing-strategies-over-time" class="section level1">
+<h1>Q4. Changing Strategies over time</h1>
+<p>As hitting levels change, so should strategy. As sports analytics
+develop, strategy may change as well.</p>
+<p>Considering the Lahman <code>Batting</code> data, we can get a rough
+picture of how often sacrifice bunts have been successfully employed
+over the years. The following code groups players by year (starting in
+1903), and computes thet total number of sac bunts (SH) at at-bats (AB),
+and creates an SH/AB column called SH_rate:</p>
+<pre class="r"><code>sacbunt_by_year &lt;- Batting |&gt; 
+  filter(yearID &gt;= 1903) |&gt;
+  select(yearID, SH, AB) |&gt; 
+  group_by(yearID) |&gt; 
+  summarize_all(sum) |&gt; 
+  mutate(SH_rate = SH/AB*100)</code></pre>
+<blockquote>
+<p>Make a line plot of the SH_rate variable by the year, and comment on
+how the use of sac bunts has changed over the years. Which periods in
+history marked the two most precipitous drops in the sac bunt rate? Can
+you offer any explanations as to why they happened then?</p>
+</blockquote>
+</div>
+<div id="q5-stealing-2nd-base" class="section level1">
+<h1>Q5 Stealing 2nd base</h1>
+<p>Load the Lahman library to access the <code>Batting</code> data.
+Let’s do a quick bit of codind to determine the probability of a
+successful base stealing attempt during our time window of 2016-2019,
+2021. Here’s one approach to getting started:</p>
+<pre class="r"><code>library(Lahman)
+df &lt;- Batting |&gt; filter(yearID %in% c(2016:2019, 2021)) 
+
+total_SB &lt;- sum(df$SB)
+total_CS &lt;- sum(df$CS)</code></pre>
+<p>Note that these totals represent stolen bases of all bases (2nd, 3rd,
+and home). Most of these attempts were no doubt an effort to steal 2nd
+base, but some were attempts to steal 3rd, and a few were made to steal
+home. Nonetheless, we compute the overall success rate of stolen base
+attempts in part (a) below, and view that as our value for the stolen
+base percentage in attempts to steal 2nd base.</p>
+<p><strong>a)</strong> Determine the overall stolen base success rate
+over these 5 seasons.</p>
+<p><strong>b)</strong> If a team has an average base stealer on 1st base
+with no outs, is it a good strategy to attempt a steal of 2nd? Base your
+answer on a comparison of expected runs scored.</p>
+<p><strong>c)</strong> Suppose a runner is on 1st base with no outs, and
+their stolen base success rate is <code>p</code>. Find the ‘break-even’
+value for the stolen base success rate <code>p</code> so that it is a
+good strategy (in terms of expected runs scored) to attempt the stolen
+base.</p>
+<p><strong>d)</strong> Repeat part (c) except assume the runner is on
+1st base with one out.</p>
+<p><strong>e)</strong> Repeat part (c) except assume the runner is on
+2nd (and attempting to steal 3rd) with 1 out.</p>
+<div id="re24-for-a-player" class="section level2">
+<h2>RE24 for a player</h2>
+<p>Suppose a batter leads off an inning with a single. At the start of
+the inning, the team’s run expectation, according to the table, is 0.514
+runs. Thanks to the batter, the team now has a runner on 1st with no
+outs, and the team’s run expectation (from the table) is now 0.899. The
+change in run expectation (0.899 - 0.514) can be attributed to the
+player, and in this way we can define a new statistic for player
+performance, called RE24. Each plate appearance contributes something
+(positive or negative) to a player’s RE24 total. This contribution is
+defined as:</p>
+<blockquote>
+<p>RE24 for a plate appearance = (change in run expectancy for the
+inning due to PA) + (runs scored due to PA).</p>
+</blockquote>
+<p>For instance, if the lead-off hitter hits a home run, their RE24
+contribution is 0 + 1 = 1. Why? After the home run, the team still has
+bases empty with no outs, so there’s 0 change in the run expectancy for
+the inning), and 1 run scored on the play.</p>
+<p>If the lead-off hitter strikes out, their RE24 contribution is: <span class="math display">\[(0.274 - 0.514) + 0 = -0.240.\]</span></p>
+<p>On the other hand, if a batter strikes out with 2 outs and the bases
+loaded, their RE24 contribution is: (0 - 0.763) = -0.763. (Run
+expectation is 0 after the strike out because there are now 3
+outs!).</p>
+<p>In summary, a player statistic RE24 reveals how many runs the player
+helped to create by increasing the expectation that runs will score in
+an inning, plus any runs that actually score in their plate appearances.
+An RE24 that is positive is above average, which is zero. An RE24 that
+is negative is below average.</p>
+</div>
+</div>
+<div id="q6-calculating-player-re24" class="section level1">
+<h1>Q6 Calculating player RE24</h1>
+<blockquote>
+<p>Determine the total contribution to RE24 for Shohei Ohtani (then on
+the Angels) for his game against YOUR Seattle Mariners on September 25,
+2021:</p>
+</blockquote>
+<table class="table table-striped" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+Date
+</th>
+<th style="text-align:left;">
+Inning
+</th>
+<th style="text-align:right;">
+Outs
+</th>
+<th style="text-align:left;">
+RoB
+</th>
+<th style="text-align:left;">
+Description
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+9/25
+</td>
+<td style="text-align:left;">
+b6
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:left;">
+_ _ _
+</td>
+<td style="text-align:left;">
+Shohei Ohtani struck out swinging
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+9/25
+</td>
+<td style="text-align:left;">
+b5
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:left;">
+1 _ _
+</td>
+<td style="text-align:left;">
+Shohei Ohtani walked. Brandon Marsh advanced to 2B
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+9/25
+</td>
+<td style="text-align:left;">
+b3
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:left;">
+123
+</td>
+<td style="text-align:left;">
+Shohei Ohtani walked. Jared Walsh scored. Luis Rengifo advanced to 3B.
+Brandon Marsh advanced to 2B.
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+9/25
+</td>
+<td style="text-align:left;">
+b3
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:left;">
+1 _ _
+</td>
+<td style="text-align:left;">
+Shohei Ohtani tripled to right (Liner). Brandon Marsh scored.
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+9/25
+</td>
+<td style="text-align:left;">
+b1
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:left;">
+1 _ _
+</td>
+<td style="text-align:left;">
+Shohei Ohtani tripled to right (Liner). Brandon Marsh scored.
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="q7-re24-as-a-measure-of-hitting-performance" class="section level1">
+<h1>Q7 RE24 as a measure of hitting performance</h1>
+<p>Load a data set we call <code>df</code> of all 2021 MLB hitters by
+running this code</p>
+<pre><code>df &lt;- read.csv(&quot;https://mphitchman.com/stats/sports/data/RE24_2021.csv&quot;)</code></pre>
+<blockquote>
+<p><strong>a)</strong> Use ggplot to make a nice visual of the
+distribution of the RE24 statistic for all MLB batters in 2021. Describe
+the key features of the distribution (center, shape, spread). Does your
+visual support the notion from the pre-lab article that a positive RE24
+is above average, and a negative RE24 is below average?</p>
+</blockquote>
+<blockquote>
+<p><strong>b)</strong> Use ggplot to make a nice visual indicating the
+association between a player’s RE24 and their weighted on base average
+(wOBA - a statistic we deemed “awesome” in Lab 1). Discuss how these
+variables appear to be associated.</p>
+</blockquote>
+<blockquote>
+<p><strong>c)</strong> In your opinion, does RE24 bring new, useful
+information to a batter’s contribution to a team’s offense not already
+given by wOBA? Justify your answer in a few sentences.</p>
+</blockquote>
 <!--
-As already mentioned, in this lab we use the 2016-2021 matrix to analyze certain team strategies in MLB baseball. The power of R is not necessary to answer these questions, but you may want to use code chunks to serve as a calculator in your calculations.
 
-
-# Q1. Bunting
-
-Suppose a team has a runner on 1st base with 0 outs. Is it a good strategy for the next batter to attempt to bunt?
-
-Bunts can be an effective way to advance the base runner from first to second, usually at the cost of an out (the batter is often). Let's suppose an average hitter who is also an average bunter is at the plate. Suppose also that history shows the following likelihoods for the outcomes of this hitter's bunt attempts:
-
-<table class=" lightable-classic" style='font-family: "Arial Narrow", "Source Sans Pro", sans-serif; width: auto !important; margin-left: auto; margin-right: auto;'>
- <thead>
-  <tr>
-   <th style="text-align:left;"> outcome </th>
-   <th style="text-align:right;"> probability </th>
-  </tr>
- </thead>
-<tbody>
-  <tr>
-   <td style="text-align:left;"> runner advances to 2nd, batter is safe! </td>
-   <td style="text-align:right;"> 0.10 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> runner advances to 2nd, batter is out </td>
-   <td style="text-align:right;"> 0.68 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> runner is out at 2nd, batter safe at first </td>
-   <td style="text-align:right;"> 0.08 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> batter is out, and runner remains at 1st </td>
-   <td style="text-align:right;"> 0.11 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> both runners out </td>
-   <td style="text-align:right;"> 0.02 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> fielding error allows runner to advance to 3rd, batter to advance to 2nd </td>
-   <td style="text-align:right;"> 0.01 </td>
-  </tr>
-</tbody>
-</table>
-
-By far the most likely outcome is that the runner on 1st advances to 2nd while the batter is thrown out at 1st. The batter is credited with a sacrifice bunt in this case.
-
-
-> **a)** If the team choses not to bunt, what are the expected runs for the inning?
-
-
-> **b)** For each of the outcomes of a bunt attempt complete the table below by recording the resulting RoB/Out state, and the resulting expected runs for the batting team found in the Run Expectancy Matrix.
-
-<table class=" lightable-classic" style='font-family: "Arial Narrow", "Source Sans Pro", sans-serif; width: auto !important; margin-left: auto; margin-right: auto;'>
- <thead>
-  <tr>
-   <th style="text-align:left;"> outcome </th>
-   <th style="text-align:right;"> probability </th>
-   <th style="text-align:left;"> RoB </th>
-   <th style="text-align:right;"> Outs </th>
-   <th style="text-align:right;"> RExp </th>
-  </tr>
- </thead>
-<tbody>
-  <tr>
-   <td style="text-align:left;"> runner advances to 2nd, batter is safe! </td>
-   <td style="text-align:right;"> 0.10 </td>
-   <td style="text-align:left;"> 1 2 _ </td>
-   <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 1.478 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> runner advances to 2nd, batter is out </td>
-   <td style="text-align:right;"> 0.68 </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:right;"> NA </td>
-   <td style="text-align:right;"> NA </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> runner is out at 2nd, batter safe at first </td>
-   <td style="text-align:right;"> 0.08 </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:right;"> NA </td>
-   <td style="text-align:right;"> NA </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> batter is out, and runner remains at 1st </td>
-   <td style="text-align:right;"> 0.11 </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:right;"> NA </td>
-   <td style="text-align:right;"> NA </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> both runners out </td>
-   <td style="text-align:right;"> 0.02 </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:right;"> NA </td>
-   <td style="text-align:right;"> NA </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> fielding error allows runner to advance to 3rd, batter to advance to 2nd </td>
-   <td style="text-align:right;"> 0.01 </td>
-   <td style="text-align:left;">  </td>
-   <td style="text-align:right;"> NA </td>
-   <td style="text-align:right;"> NA </td>
-  </tr>
-</tbody>
-</table>
-
-> **c)** Use the Law of Conditional Expectations to determine the expected number of runs scored by the team if they attempt to bunt.
-
-> **d)** Which strategy is better, attempting the bunt or letting the batter ``swing away'', in terms of leading to a higher expected number of runs for the inning?
-
-# Q2 Bunting when a poor hitter is up?
-
-Suppose a really, really poor hitter is at the plate, one that... 
-
-- strikes out or hits into an out that does not advance the runner 70\% of the time,
-- walks 5\% of the time (advancing the runner to 2nd), 
-- gets a single that advances the runner to 3rd 10\% of the time 
-- gets a single that advances the runner to 2nd 5\% of the time
-- hits into a double play 10\% of the time.
-
-Suppose further that this hitter is an average bunter, whose bunt outcome probabilities match those you assumed in (b). If this hitter is at the plate, is it a good strategy to bunt?
-
-# Q3 Bunting if we're playing for one run?
-
-In the first two questions we assessed a strategy in terms of the total number of expected runs for the inning, but what if we only need one run to win the game? Tie game, bottom of the 9th, runner on first and no outs, average hitter at the plate. Is bunting a good strategy?
-
-Consult the [Tom Tango site](https://www.tangotiger.net/re24.html) to find a probability matrix for scoring *at least one run* in each of the 24 RoB/Out states. 
-
-**a)** Assuming a runner is on first with no outs, what is the probability the team scores at least 1 run?
-
-**b)** Assume now the batter is asked to bunt, and the outcomes and their probabilities from **Q2** still apply. Use the total law of probability to determine the probability that the team scores at least one run by asking the batter to bunt.
-
-# Q4 Stealing 2nd base
-
-Load the Lahman library to access the `Batting` data. Let's do a quick bit of code to determine the probability of a successful base stealing attempt during our time window of 2016-2019, 2021. Here's one approach:
-
-
-``` r
-library(Lahman)
-df <- Batting |> 
-  filter(yearID %in% c(2016:2019, 2021)) |> 
-  select(playerID,SB,CS) |> 
-  mutate(attempts = SB + CS)
-```
-
-Now these numbers include *all* stolen base attempts. Most of these attempts were an effort to steal 2nd base, but some were attempts to steal 3rd, and probably a few were made to steal home. Nonetheless, let's compute the overall success rate of stolen base attempts, and view that as our value for the stolen base percentage in attempts to steal 2nd base.
-
-**a)** Use the data frame `df` defined above to determine the overall stolen base success rate over these 5 seasons.
-
-**b)** If a team has an average base stealer on 1st base with no outs, is it a good strategy to attempt a steal of 2nd? Base your answer on a comparison of expected runs scored.
-
-**c)** Suppose a base runner is on 1st base with no outs. Find the 'break-even' value for $p$, the probability that the runner is successful in a stolen base attempt. That is, find the value of $p$ so that the expected number of runs if the runner does not attempt to steal is equal to the expected number of runs if they do attempt to steal.
-
-**d)** Repeat part (c) except assume the runner is on 1st base with one out.
-
-**e)** Repeat part (c) except assume the runner is on 2nd (and attempting to steal 3rd) with 1 outs.
-
-# Q5. Tagging up at 3rd
+# Q unused Tagging up at 3rd
 
 Suppose a team has a runner on 3rd base with one out. The batter hits a fly ball to the outfield. Let $p$ denote the probability that the runner on 3rd successfully scores if they tag up and try to make it home on the play. How large must $p$ be in order to justify the attempt to score? Compare expected runs scored for each strategy (tagging up and attempting to score from third vs staying put at third).
 
-# Q6. Changing Strategies
 
-As hitting levels change, so should strategy. As sports analytics develop, strategy may change as well. 
-
-Considering the Lahman `Batting` data, we can get a rough picture of how often sacrifice bunts have been successfully employed over the years. 
-The following code groups players by year (starting in 1903), and computes thet total number of sac bunts (SH) at at-bats (AB), and creates an SH/AB column called SH_rate:
-
-
-``` r
-sacbunt_by_year <- Batting |> 
-  select(yearID, SH, AB) |> 
-  group_by(yearID) |> 
-  summarize_all(sum) |> 
-  mutate(SH_rate = SH/AB*100)
-```
-
-Make a line plot of the SH_rate variable by the year, and comment on how the use of sac bunts has changed over the years. Which periods in history marked the two most precipitous drops in the sac bunt rate? Can you offer any explanations as to why they happened then?
-
-
-As we saw in Lab 1, in some periods of MLB history runs were hard to come by compared to others. Perhaps the sacrifice bunt is a better strategy when runs are hard to come by? 
-
-We can also check easily enough with the `Batting` data how the number of sacrifice buns (SH) has changed over time
+->
 
 
 
--->
+
+
+
 <!-- Default Statcounter code for math 140 resources pages-->
 <script type="text/javascript">
 var sc_project=12608389;
@@ -2309,7 +2609,6 @@ var sc_security="1d868be4";
 </div>
 </noscript>
 <!-- End of Statcounter Code -->
-</div>
 </div>
 
 
