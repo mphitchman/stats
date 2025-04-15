@@ -9,9 +9,10 @@
 <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
+<meta name="author" content="DATA 299: Sports Analytics - Hitchman" />
 
 
-<title>Sports Analytics Resources</title>
+<title>Homework 7: NFL play by play and Chapter 4 of Severini</title>
 
 <script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
 // be compatible with the behavior of Pandoc < 2.8).
@@ -1501,7 +1502,9 @@ border-radius: 0px;
 
 
 
-<h1 class="title toc-ignore">Sports Analytics Resources</h1>
+<h1 class="title toc-ignore">Homework 7: NFL play by play and Chapter 4
+of Severini</h1>
+<h4 class="author">DATA 299: Sports Analytics - Hitchman</h4>
 
 </div>
 
@@ -1531,95 +1534,106 @@ border-left: 1px solid seagreen;
 border-bottom: 1px solid seagreen;
 }
 </style>
-<div id="learning-r" class="section level1">
-<h1>Learning R</h1>
+<div id="homework-setup" class="section level1">
+<h1>Homework Setup</h1>
+<p>If you haven’t already, install the following package.</p>
 <ul>
-<li><a href="https://mphitchman.com/math340/sampling-in-R.html">Intro
-to data types, basic statistics, sampling, repeated sampling</a></li>
-<li><a href="https://beanumber.github.io/abdwr3e/02-intro.html">ABDR
-Chapter 2: Introduction to R</a></li>
-<li><a href="https://beanumber.github.io/abdwr3e/03-graphics2.html">ABDR
-Chapter 3: Graphics</a></li>
-<li><a href="dataverbs.html">Intro to data verbs with
-<em>dplyr</em></a></li>
-<li><a href="https://mphitchman.com/math340/R-sim-probability.html">estimating
-probability via simulation</a></li>
-<li><a href="intro_to_markdown.html">Quick R Markdown Starter</a></li>
+<li><code>nflfastR</code> #for access to lots of great NFL data
+(including all play-by-play data and player statistics)</li>
 </ul>
+<p>For future use you might also enjoy installing</p>
+<ul>
+<li><code>teamcolors</code> for using team colors (from many, many
+sports) in visuals - fun!</li>
+</ul>
+<p>Then load these packages into your session</p>
+<pre><code>library(tidyverse)
+library(nflfastR)
+library(teamcolors) #optional :)</code></pre>
 </div>
-<div id="r-practice" class="section level1">
-<h1>R Practice</h1>
-<ul>
-<li><a href="Rpractice/day2.html">Feb 13 (defining vectors and data
-frames)</a> | <a href="Rpractice/day2_solns.html">solutions</a></li>
-<li><a href="Rpractice/day3.html">Feb 18 (data verbs and loading data
-frames)</a> | <a href="Rpractice/day3_solns.html">solutions</a></li>
-<li><a href="Rpractice/day4.html">Feb 20 (general R check up)</a> |
-<a href="Rpractice/day4_solns.html">solutions</a></li>
-<li><a href="Rpractice/Rpractice_4.html">March 13 (sampling and
-simulating probability)</a> |
-<a href="Rpractice/Rpractice_4_solns.html">solutions</a></li>
-</ul>
+<div id="homework-objectives" class="section level1">
+<h1>Homework Objectives</h1>
+<p>Practice the statistical methods of Chapter 4 in Severini, and get
+acquainted with the nfl play-by-play data and practice data manipulation
+and visualization.</p>
 </div>
-<div id="homework" class="section level1">
-<h1>Homework</h1>
-<ul>
-<li>Hmk 1: <a href="hmk/IntroR.html">Intro to R part I</a></li>
-<li>Hmk 2: <a href="hmk/Lahman.html">Intro to R part II:
-Baseball</a></li>
-<li>Hmk 3: <a href="hmk/Ch2_hmk.html">Chapter 2: Descriptive
-Statistics</a></li>
-<li>Hmk 4: <a href="hmk/pythag.html">Expected Wins in MLB (and writing
-an R markdown file)</a></li>
-<li>Hmk 5: Probability (on Blackboard)</li>
-<li>Hmk 6: <a href="hmk/hmk6_streaks.html">Simulating Likelihood in
-Sports</a></li>
-<li>Hmk 7: <a href="hmk/nfl_hmk.html">Intro to NFLfastR, and Ch. 4 of
-Severini</a></li>
-</ul>
+<div id="q0-load-play-by-play-data" class="section level1">
+<h1>Q0 Load play-by-play data</h1>
+<p>Run the code below which loads play-by-play data for all 2024 NFL
+games into a data frame called <code>df</code>.</p>
+<pre class="r"><code>df &lt;-load_pbp(seasons = 2024)</code></pre>
 </div>
-<div id="labs" class="section level1">
-<h1>Labs</h1>
-<ul>
-<li><a href="https://mphitchman.com/stats/sports/labs/lab_1.html">Lab
-1: A hitter’s contribution to team runs</a></li>
-<li><a href="https://mphitchman.com/stats/sports/labs/lab_2.html">Lab
-2: The Run Expectancy Matrix and RE24</a></li>
-</ul>
+<div id="q1-familiarize-yourself-with-the-play-by-play" class="section level1">
+<h1>Q1 Familiarize yourself with the play-by-play</h1>
+<p>Code answers to the following questions.</p>
+<blockquote>
+<p><strong>a)</strong> How many games were played in the regular season?
+How many in the post-season?</p>
+</blockquote>
+<blockquote>
+<p><strong>b)</strong> How many touchdowns were scored in the regular
+season? the post-season?</p>
+</blockquote>
+<blockquote>
+<p><strong>c)</strong> How many touchdowns per game were scored in the
+regular season? in the post-season?</p>
+</blockquote>
+<blockquote>
+<p><strong>d)</strong> Using techniques from Chapter 4, does there
+appear to be a statistically significant difference between the average
+touchdowns scored in regular season games and the average in post-season
+games?</p>
+</blockquote>
 </div>
-<div id="presentations" class="section level1">
-<h1>Presentations</h1>
-<ul>
-<li><a href="https://mphitchman.com/stats/sports/baseball_basics.html">Baseball
-basics</a></li>
-<li><a href="https://mphitchman.com/stats/sports/slides/summary_stats_handout.pdf">Descriptive
-Statistics</a></li>
-<li><a href="https://mphitchman.com/stats/sports/slides/probability_handout.pdf">Probability</a></li>
-<li><a href="https://mphitchman.com/stats/sports/slides/statistical_methods_handout.pdf">Statistical
-Methods</a></li>
-<li><a href="https://mphitchman.com/stats/sports/slides/linear-models-handout.pdf">Statistical
-Methods</a> |
-<a href="https://mphitchman.com/stats/sports/slides/regression_R.html">code</a></li>
-</ul>
+<div id="q2-sacks" class="section level1">
+<h1>Q2 Sacks</h1>
+<p>The <code>sack</code> column in <code>df</code> records whether a
+sack occurred (1) or not (0) on a given play, so we can filter all plays
+to just the sacks by running</p>
+<pre class="r"><code>df2 &lt;- df |&gt; filter(sack == 1)</code></pre>
+<blockquote>
+<p><strong>a)</strong> How many sacks occurred in 2024?</p>
+</blockquote>
+<blockquote>
+<p><strong>b)</strong> How many sacks did each team create on defense?
+Present your results with a table.</p>
+</blockquote>
+<blockquote>
+<p><strong>c)</strong> How many sacks did each team allow against them?
+Present your results with a table.</p>
+</blockquote>
+<blockquote>
+<p><strong>d)</strong> Determine each team’s sack differential (sacks
+created minus sacks allowed), and present your results with a table,
+sorted from highest differential to lowest.</p>
+</blockquote>
 </div>
-<div id="data-sets" class="section level1">
-<h1>Data sets</h1>
-<ul>
-<li><a href="http://www.taseverini.com/Datasets.html">textbook data
-sets</a></li>
-<li><a href="https://mphitchman.com/stats/data/softball.csv">Linfield
-Softball (csv)</a></li>
-<li><a href="data/fangraphs_guts.csv">Fangraphs Guts (csv)</a></li>
-<li><a href="data/rectangles.csv">Rectangles! (csv)</a></li>
-<li><a href="data/NFL_hall_of_fame.csv">NFL Hall of Fame (csv)</a></li>
-<li><a href="data/batted_ball_aug_24.csv">MLB batted ball events, August
-2024 (csv) </a></li>
-<li><a href="data/pga2024.csv">PGA golf 2024 (csv)</a></li>
-<li><a href="data/league_results.xlsx">Total points (runs) in NFL, MLB,
-and NBA games (xlsx)</a></li>
-<li><a href="data/RE24_2021.csv">MLB 2021 hitting with RE24</a></li>
-<li><a href="data/nfl24_standings.csv">NFL Standings 2024</a></li>
-</ul>
+<div id="q3-rushing-attack" class="section level1">
+<h1>Q3 Rushing Attack</h1>
+<p>The following code restricts the play by play to those that were
+either a pass or a run:</p>
+<pre class="r"><code>df3 &lt;- df |&gt; filter(play_type %in% c(&quot;run&quot;,&quot;pass&quot;))</code></pre>
+<blockquote>
+<p><strong>a)</strong> Restricting to just rush and passing plays, which
+team had the highest percentage of rushing plays? Answer this question
+by presenting a table with each teams rush play percentage, arranged
+from highest to lowest run percentage.</p>
+</blockquote>
+<blockquote>
+<p><strong>b)</strong> Determine each team’s yards gained per carry on
+rushing plays, and yards gained per attempt on passing plays. Present
+these averages in a single table.</p>
+</blockquote>
+<blockquote>
+<p><strong>c)</strong> Is there a linear relationship between team
+rushing yards per carry and team passing yards per attempt? (e.g., does
+a good running game pave the way for an effective passing attack?)
+Explain with a sentence or two, making use of a point plot which
+includes the least-squares regression line, and the value of <span class="math inline">\(r^2\)</span> for the linear model.</p>
+</blockquote>
+</div>
+<div id="q4-chapter-4-exercises-4.2-4.3-4.6-4.8." class="section level1">
+<h1>Q4 Chapter 4 Exercises: 4.2, 4.3, 4.6, 4.8.</h1>
 <!-- Default Statcounter code for math 140 resources pages-->
 <script type="text/javascript">
 var sc_project=12608389;
