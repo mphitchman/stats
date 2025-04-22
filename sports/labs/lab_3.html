@@ -9,9 +9,10 @@
 <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
+<meta name="author" content="Tools for Evaluating Team Strategies and Performance" />
 
 
-<title>Sports Analytics Resources</title>
+<title>Lab 3: Analytics with NFL play-by-play data</title>
 
 <script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
 // be compatible with the behavior of Pandoc < 2.8).
@@ -1501,7 +1502,10 @@ border-radius: 0px;
 
 
 
-<h1 class="title toc-ignore">Sports Analytics Resources</h1>
+<h1 class="title toc-ignore">Lab 3: Analytics with NFL play-by-play
+data</h1>
+<h4 class="author">Tools for Evaluating Team Strategies and
+Performance</h4>
 
 </div>
 
@@ -1531,102 +1535,275 @@ border-left: 1px solid seagreen;
 border-bottom: 1px solid seagreen;
 }
 </style>
-<div id="learning-r" class="section level1">
-<h1>Learning R</h1>
-<ul>
-<li><a href="https://mphitchman.com/math340/sampling-in-R.html">Intro
-to data types, basic statistics, sampling, repeated sampling</a></li>
-<li><a href="https://beanumber.github.io/abdwr3e/02-intro.html">ABDR
-Chapter 2: Introduction to R</a></li>
-<li><a href="https://beanumber.github.io/abdwr3e/03-graphics2.html">ABDR
-Chapter 3: Graphics</a></li>
-<li><a href="dataverbs.html">Intro to data verbs with
-<em>dplyr</em></a></li>
-<li><a href="https://mphitchman.com/math340/R-sim-probability.html">estimating
-probability via simulation</a></li>
-<li><a href="intro_to_markdown.html">Quick R Markdown Starter</a></li>
-</ul>
+<div id="introduction-and-loading-data" class="section level1">
+<h1>Introduction and Loading Data</h1>
+<p>In this lab we use NFL play-by-play data to investigate football
+questions, paying close attention to expected points (<code>ep</code>)
+and expected points added (<code>epa</code>) statistics.</p>
+<p>First, use nflfastR to load play-by-play data for all NFL games in
+the last four seasons:</p>
+<pre class="r"><code>nfl &lt;- load_pbp(seasons = 2021:2024)</code></pre>
+<p>FYI, here is a <a href="https://www.nflfastr.com/articles/field_descriptions.html">searchable
+table of the 372 variables</a> included in the data frame.</p>
+<p>Next run the following code to filter on just those rows we consider
+in the lab today.</p>
+<pre class="r"><code>df &lt;- nfl |&gt; 
+  filter(season_type == &#39;REG&#39;, play_type != &#39;no_play&#39;)</code></pre>
 </div>
-<div id="r-practice" class="section level1">
-<h1>R Practice</h1>
+<div id="part-i.-explore-expected-points-and-expected-points-added" class="section level1">
+<h1>Part I. Explore <em>expected points</em> and <em>expected points
+added</em></h1>
+<p><strong>Expected Points</strong> estimates the average number of
+points a team is expected to score given various factors related to the
+current state of the game. Th expected points value takes all of the
+following factors into consideration.</p>
 <ul>
-<li>Feb 13 <a href="Rpractice/day2.html">Defining vectors and data
-frames</a> | <a href="Rpractice/day2_solns.html">solutions</a></li>
-<li>Feb 18 <a href="Rpractice/day3.html">Data verbs and loading data
-frames</a> | <a href="Rpractice/day3_solns.html">solutions</a></li>
-<li>Feb 20 <a href="Rpractice/day4.html">General R check up</a> |
-<a href="Rpractice/day4_solns.html">solutions</a></li>
-<li>Mar 13 <a href="Rpractice/Rpractice_4.html">Sampling and
-simulating probability</a> |
-<a href="Rpractice/Rpractice_4_solns.html">solutions</a></li>
-<li>Apr 17 <a href="Rpractice/nflfastR_practice.html">Combing through
-NFL play-by-play data</a> |
-<a href="Rpractice/nflfastR_solutions.html">solutions</a></li>
+<li>time remaining in the game</li>
+<li>the down,</li>
+<li>yards-to-go for the 1st down</li>
+<li>distance to the end zone</li>
+<li>whether the team with the ball is the home or away team</li>
+<li>whether the game is indoors or outdoors (or outdoors and has a
+retractable roof!)</li>
+<li>the number of time-outs remaining</li>
 </ul>
+<p><strong>Expected points added</strong> (<code>epa</code>) for a play
+gives how much the play changed the expected points for the team with
+possession of the ball at the start of the play.</p>
+<div id="q1.-expected-points-added" class="section level2">
+<h2>Q1. Expected points added</h2>
+<blockquote>
+<p><strong>a)</strong> Run the following code to see some
+<code>ep</code> and <code>epa</code> values for consecutive plays in a
+particular game. What appears to be the relationship between
+<code>ep</code> and <code>epa</code>?</p>
+</blockquote>
+<pre class="r"><code>df |&gt; 
+  select(posteam,defteam,down,ydstogo,yards_gained,play_type,ep,epa) |&gt; 
+  slice(1:10) |&gt; 
+  kable() |&gt; 
+  kable_styling()</code></pre>
+<blockquote>
+<p><strong>b)</strong> Make a nice plot of the distribution of the
+<strong>expected points added</strong> (<code>epa</code>) statistic for
+all plays in <code>df</code>. Then describe the distribution’s key
+features, paying attention to shape, center, and spread. You should have
+observed that the distribution is centered at about 0. Why should this
+be the case?</p>
+</blockquote>
+<p><strong>We can interpret a play as <em>better than average</em> if
+its <code>epa</code> is positive.</strong></p>
+<blockquote>
+<p><strong>c)</strong> Which 5 plays in 2024 had the highest expected
+points added? Which 5 plays in 2024 had the lowest expected points
+added? Make a table that gives descriptions (<code>desc</code>) of these
+plays. Also include in your tables the down, yards to go, position of
+the ball, the team with the ball, and the team on defense. Then
+summarize which sorts of plays generate the most extreme
+<code>epa</code> values.</p>
+</blockquote>
+<blockquote>
+<p><strong>d)</strong> Which 5 punts had the highest expected points
+added. Explain why it is reasonable that the results of these 5 plays
+would have have high positive epa values.</p>
+</blockquote>
 </div>
-<div id="homework" class="section level1">
-<h1>Homework</h1>
+<div id="q2.-using-epa-to-investigate-1st-and-10-play-calling." class="section level2">
+<h2>Q2. Using <code>epa</code> to investigate 1st and 10 play
+calling.</h2>
+<blockquote>
+<p><strong>a)</strong> In Q1 b) we looked at the distribution of
+<code>epa</code> for <em>all</em> plays in <code>df</code>. Now let’s
+break that down by running vs. passing plays when it’s first down and 10
+yards to go. Produce these two <code>epa</code> distributions in a
+<em>single</em> <code>ggplot()</code> run using
+<strong>faceting</strong>, a technique that splits a single plot into 2
+or more “sub-plots” and arranges them together on a grid. Here’s <a href="https://ggplot2.tidyverse.org/reference/facet_grid.html">one
+tutorial</a>. Make sure your facetted plot has a shape/arrangement that
+allows us to easily “eyeball” the comparison of the distributions.</p>
+</blockquote>
+<blockquote>
+<p><strong>b)</strong> What percentage of pass plays on 1st and 10 have
+a positive <code>epa</code> value? What percentage of run plays have a
+positive <code>epa</code> value?</p>
+</blockquote>
+<blockquote>
+<p><strong>c)</strong> Interpret your results in (a) and (b) in a few
+sentences. Which play type appears more likely to provide a greater
+expected points added? What does that imply for football strategy? What
+information about football strategy has not been taken into account
+here, regarding whether it is better to run on 1st down or pass on 1st
+down?</p>
+</blockquote>
+</div>
+<div id="q3.-expected-points-when-home-or-away" class="section level2">
+<h2>Q3. Expected Points when Home or Away</h2>
+<p>Here we consider expected points when a team enters the red zone,
+specifically, when a team has the ball 1st and 10 at the 20 yard
+line.</p>
+<blockquote>
+<p><strong>a)</strong> Filter <code>df</code> to include just rows in
+which a team has the ball 1st and 10 on the opponent’s 20 yard-line
+(<code>yardline_100 == 20</code>), and assume there are at least two
+minutes left in the half. How many observations are in this filtered
+data set?</p>
+</blockquote>
+<blockquote>
+<p><strong>b</strong>) Make a visual of the <code>ep</code> distribution
+for this filtered set. Describe the distribution, paying attention to
+center, shape, and spread. Does this distribution provide clear evidence
+that <code>ep</code> values depend on more than just the down, yards to
+go to get the 1st down, and the position of the ball on the field?</p>
+</blockquote>
+<blockquote>
+<p><strong>c)</strong> Now let’s break the <code>ep</code> distribution
+from part (a) into two distributions, one for those plays in which the
+home team has the ball, and one in which the away team has the ball
+(hint: consider the <code>posteam_type</code> variable!). Create your
+plot either by using faceting or showing both distributions on the same
+axes, whichever does a better job at creating a useful visual comparison
+of these two distributions. Once you’ve produced your chart, interpret
+it briefly in a sentence or two. Does there appear to be a difference in
+expected points depending on whether the team with the ball is the home
+or away team?</p>
+</blockquote>
+<blockquote>
+<p><strong>d)</strong> Let’s be more precise than we were in (c). With a
+first and 10 at the 20 yard line, does there appear to be a
+<em>statistically significant</em> difference between the expected
+points based on whether the home team or the away team has the ball?
+Calculate a confidence interval for the difference in average expected
+points for home and away teams. Then state whether the interval provides
+statistically significant evidence of a difference.</p>
+</blockquote>
+<p>Here’s one way to compute the confidence interval ‘by hand’. If we
+find, with R, the following 6 summary statistics:</p>
 <ul>
-<li>Hmk 1: <a href="hmk/IntroR.html">Intro to R part I</a></li>
-<li>Hmk 2: <a href="hmk/Lahman.html">Intro to R part II:
-Baseball</a></li>
-<li>Hmk 3: <a href="hmk/Ch2_hmk.html">Chapter 2: Descriptive
-Statistics</a></li>
-<li>Hmk 4: <a href="hmk/pythag.html">Expected Wins in MLB (and writing
-an R markdown file)</a></li>
-<li>Hmk 5: Probability (on Blackboard)</li>
-<li>Hmk 6: <a href="hmk/hmk6_streaks.html">Simulating Likelihood in
-Sports</a></li>
-<li>Hmk 7: <a href="hmk/nfl_hmk.html">Intro to NFLfastR, and Ch. 4 of
-Severini</a></li>
+<li><span class="math inline">\(\bar{x}_h\)</span>, <span class="math inline">\(s_h\)</span>, and <span class="math inline">\(n_h\)</span>, the sample mean, sample standard
+deviation, and sample size, respectively, for the expected points data
+when the <strong>home team</strong> has the ball; and</li>
+<li><span class="math inline">\(\bar{x}_a\)</span>, <span class="math inline">\(s_a\)</span>, and <span class="math inline">\(n_a\)</span>, the mean, standard deviation, and
+sample size for the expected points data when the <strong>away
+team</strong> has the ball,</li>
 </ul>
+<p>then the confidence interval for the difference in the two means, as
+given in Severini, is <span class="math display">\[(\bar{x}_h -
+\bar{x}_a) \pm 2*\text{sqrt}\left(\frac{s_h^2}{n_h} +
+\frac{s_a^2}{n_a}\right).\]</span></p>
+<p>Here’s another way to use the power of R (via the
+<code>t.test()</code> command) to compute the confidence interval for
+us, but it’s up to us to understand and interpret the print out!! Note:
+the data frame <code>df_redzone</code> in the code below is the filtered
+data from part (a) of this question</p>
+<pre><code>t.test(ep ~ posteam_type, data = df_redzone)</code></pre>
+<p>You’re welcome 😊</p>
 </div>
-<div id="labs" class="section level1">
-<h1>Labs</h1>
-<ul>
-<li>Lab 1:
-<a href="https://mphitchman.com/stats/sports/labs/lab_1.html">A
-hitter’s contribution to team runs</a></li>
-<li>Lab 2:
-<a href="https://mphitchman.com/stats/sports/labs/lab_2.html">The Run
-Expectancy Matrix and RE24</a></li>
-<li>Lab 3:
-<a href="https://mphitchman.com/stats/sports/labs/lab_3.html">Analytics
-with NFL play-by-play data</a></li>
-</ul>
+<div id="q4.-evaluating-running-backs-with-epa" class="section level2">
+<h2>Q4. Evaluating running backs with <code>epa</code></h2>
+<p>Although <code>epa</code> is a team statistic, a running back whose
+runs generate a net positive <code>epa</code> value might be considered
+above average.</p>
+<p>The following code groups the rushing plays in 2024 by the running
+back, and records how many carries they had, their yards_per_carry, and
+their epa_per_carry.</p>
+<pre class="r"><code>rb &lt;- df |&gt; 
+  filter(season == 2024, play_type == &#39;run&#39;) |&gt;
+  group_by(rusher_player_id, rusher_player_name) |&gt;
+  summarize(N = n(),
+            yards_per_carry = mean(yards_gained),
+            epa_per_carry = mean(epa))</code></pre>
+<blockquote>
+<p><strong>a)</strong> Filter <code>rb</code> to include just those
+running backs with at least 150 carries for the season, and make a plot
+to check for association between yards per carry and epa per carry.</p>
+</blockquote>
+<blockquote>
+<p><strong>b)</strong> Determine the correlation coefficient between
+<code>epa_per_carry</code> and <code>yards_per_carry</code> among
+running backs with at least 150 carries in the 2024 season.</p>
+</blockquote>
+<blockquote>
+<p><strong>c)</strong> Using your responses to (a) and (b) describe the
+relationship between yards per carry for running backs, and epa per
+carry. Does <code>epa_per_carry</code> contain information not captured
+by <code>yards_per_carry</code>? Which statistic do you think is a
+better measure of a running back’s true ability? Explain in a few
+sentences.</p>
+</blockquote>
 </div>
-<div id="presentations" class="section level1">
-<h1>Presentations</h1>
-<ul>
-<li><a href="https://mphitchman.com/stats/sports/baseball_basics.html">Baseball
-basics</a></li>
-<li><a href="https://mphitchman.com/stats/sports/slides/summary_stats_handout.pdf">Descriptive
-Statistics</a></li>
-<li><a href="https://mphitchman.com/stats/sports/slides/probability_handout.pdf">Probability</a></li>
-<li><a href="https://mphitchman.com/stats/sports/slides/statistical_methods_handout.pdf">Statistical
-Methods</a></li>
-<li><a href="https://mphitchman.com/stats/sports/slides/linear-models-handout.pdf">Linear
-Models</a> |
-<a href="https://mphitchman.com/stats/sports/slides/regression_R.html">code</a></li>
-</ul>
 </div>
-<div id="data-sets" class="section level1">
-<h1>Data sets</h1>
+<div id="part-ii-evaluating-strategies-with-ep" class="section level1">
+<h1>Part II Evaluating Strategies with <code>ep</code></h1>
+<p>We can use expected points to evaluate decisions such as going for it
+on 4th down vs punting, or whether to accept a penalty in certain
+circumstances. In Lab 2 we spent considerable effort answering similar
+questions about baseball strategy. Rather than duplicate that effort
+here, we just take a quick look at these questions in football. Whereas
+we used the run expectancy matrix in baseball, we use <code>ep</code> in
+football.</p>
+<div id="q5.-accept-or-decline-the-penalty" class="section level2">
+<h2>Q5. Accept or Decline the Penalty?</h2>
+<blockquote>
+<p><strong>a)</strong> Suppose we gained seven yards on first down from
+our own 30 yard line. The defense was offside. Should we accept the 5
+yard penalty? Use expected points to answer this question - explain your
+reasoning.</p>
+</blockquote>
+<blockquote>
+<p><strong>b)</strong> On first and 10 from their own 30 yard line, our
+opponent runs up the middle for no gain. The offense was offside. Should
+we accept the five yard penalty? Use expected points to answer this
+question - explain your reesoning.</p>
+</blockquote>
+</div>
+</div>
+<div id="part-iii-investigating-other-football-questions." class="section level1">
+<h1>Part III Investigating other football questions.</h1>
+<div id="q6.-analyze-qb-types" class="section level2">
+<h2>Q6. Analyze QB types</h2>
+<p>Often times commentators like to use two labels for quarterbacks
+(QBs): <em>gunslingers</em> and <em>game managers</em>. How might we
+define tho labels <em>gunslinger</em> and <em>game manager</em> for
+quarterbacks using <code>nflfastR</code> data?</p>
+<blockquote>
+<p><strong>a)</strong> In your lab group, decide how to define those
+labels via statistics in the play-by-play data, and record your
+definitions here. You may want to consider statistics like completion
+percentage, interception rate, average yards per completion, attempts
+per game, etc.</p>
+</blockquote>
+<blockquote>
+<p><strong>b</strong>) Check which quarterbacks (with enough games
+played) in the data meet your definitions. Are they who you would expect
+based on your preconceptions, or not?</p>
+</blockquote>
+</div>
+<div id="q7.-answer-your-own-question-about-the-nfl." class="section level2">
+<h2>Q7. Answer your own question about the NFL.</h2>
+<p>Generate a question and answer it by creating a chart and/or table of
+your own design from the data. Statistical analysis may not be
+necessary, but can be included in your answer if appropriate. Note: a
+full answer here will consist of stating a question, creating a plot
+and/or table, and interpreting it to answer your question.</p>
+<p>Talk with your lab partners. Be sure that each of you tackles a
+different question (though they can be related).</p>
+<p>Some suggestions to spark the imagination:</p>
 <ul>
-<li><a href="http://www.taseverini.com/Datasets.html">textbook data
-sets</a></li>
-<li><a href="https://mphitchman.com/stats/data/softball.csv">Linfield
-Softball (csv)</a></li>
-<li><a href="data/fangraphs_guts.csv">Fangraphs Guts (csv)</a></li>
-<li><a href="data/rectangles.csv">Rectangles! (csv)</a></li>
-<li><a href="data/NFL_hall_of_fame.csv">NFL Hall of Fame (csv)</a></li>
-<li><a href="data/batted_ball_aug_24.csv">MLB batted ball events, August
-2024 (csv) </a></li>
-<li><a href="data/pga2024.csv">PGA golf 2024 (csv)</a></li>
-<li><a href="data/league_results.xlsx">Total points (runs) in NFL, MLB,
-and NBA games (xlsx)</a></li>
-<li><a href="data/RE24_2021.csv">MLB 2021 hitting with RE24</a></li>
-<li><a href="data/nfl24_standings.csv">NFL Standings 2024</a></li>
+<li>use the play-by-play data to randomly simulate a drive.</li>
+<li>use the play-by-play data to estimate how likely a team to run or
+pass or punt or… in some particular type of setting.</li>
+<li>Investigate field goal success from different distances</li>
+<li>Is it possible to create a heat map for where a QB tends to throw
+the ball? What variables are recorded about play-calling (e.g., location
+of passes, types of run plays)</li>
+<li>Can you use the win probability statistic to chart the win
+probability for each team in a given game, highlighting “high-impact”
+plays (or players)?</li>
+<li>In a regular game setting, if the home team has the ball 1st and 10
+at their own 35 yard line, about how many yards must they gain so that
+their expected points remains essentially unchanged after the play?</li>
+<li>the sky’s the limit. The point here is to dig into the data in a way
+that interests you with the hope that you learn something cool.</li>
 </ul>
 <!-- Default Statcounter code for math 140 resources pages-->
 <script type="text/javascript">
@@ -1641,6 +1818,7 @@ var sc_security="1d868be4";
 </div>
 </noscript>
 <!-- End of Statcounter Code -->
+</div>
 </div>
 
 
