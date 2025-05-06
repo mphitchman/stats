@@ -2280,6 +2280,157 @@ Logos?</a></p>
 <p>Search!</p>
 </div>
 </div>
+<div id="code-for-shiny-app" class="section level1">
+<h1>Code for shiny app</h1>
+<p>Below is the code for a shiny app I shared in class that allows users
+to build leaderboards for any season, for several statistics.</p>
+<p>A shiny app can be housed online with a free account at shinyapps.io,
+here’s a link to this one online: <a href="https://mphitchman.shinyapps.io/MLB_leaderboard/">MLB
+Leaderboards</a></p>
+<p>Some learning shiny resources:</p>
+<ul>
+<li><a href="https://shiny.posit.co/r/getstarted/shiny-basics/lesson1/">Welcome
+to Shiny</a></li>
+<li><a href="https://mastering-shiny.org/index.html">Mastering Shiny
+Book</a></li>
+<li><a href="https://rstudio.github.io/shinythemes/">Shiny
+Themes</a></li>
+</ul>
+<p>To build the MLB leaderboard shiny app in your own session you will
+want to install two packages we haven’t yet used in this class:
+<code>shiny</code> and <code>shinythemes</code>.</p>
+<pre class="r"><code>#
+# This is a Shiny web application. You can run the application by clicking
+# the &#39;Run App&#39; button above.
+#
+# Find out more about building applications with Shiny here:
+#
+#    https://shiny.posit.co/
+#
+
+library(shiny) #to build a shiny app
+library(shinythemes) #optional page themes https://rstudio.github.io/shinythemes/
+# only used in this line below:  theme = shinytheme(&quot;cerulean&quot;)
+library(tidyverse)
+library(Lahman) # to load our beloved baseball data 
+library(kableExtra) # for nice tables
+
+
+
+### load user friendly hitting data from Lahman
+
+hit &lt;- left_join(Batting |&gt; filter(yearID &gt;= 1903),
+                 People |&gt; select(playerID,nameFirst,nameLast),
+                 by = &quot;playerID&quot;) |&gt; 
+  unite(Name, nameFirst:nameLast,sep = &quot; &quot;)
+
+#fill in missing values with 0
+hit[is.na(hit)]&lt;- 0
+
+# add some rate stats to the counting stats in Lahman
+
+hit &lt;- hit |&gt; mutate(PA = AB + BB + HBP + SF + SH,
+                     TB = H + X2B + 2*X3B + 3*HR, #total bases
+                     X1B = H - X2B - X3B - HR, #isolates singles from hits
+                     outs = AB-H+GIDP+CS+SH+SF,
+                     AVG = round(H/AB,3),
+                     OBP = round((H + BB + HBP)/(AB + BB + HBP + SF),3),
+                     SLG = round(TB/AB,3),
+                     OPS = OBP + SLG,
+                     RC = (H+BB-CS+HBP-GIDP)*(TB+.26*(BB+HBP-IBB)+.52*(SH+SF+SB))/(AB+BB+HBP+SH+SF),
+                     RC27 = round(RC / outs * 27 , 1))
+
+hit &lt;- hit |&gt; mutate(Team = teamID, # add player&#39;s team to tables with nice column name
+                     RC = round(RC,1) # round RC after calculating RC27 :)
+) 
+
+
+# Define UI for application that shows stat leaderboard by season, and histograms
+ui &lt;- fluidPage(
+  
+  theme = shinytheme(&quot;cerulean&quot;), #optional shiny theme
+                
+  
+  # Application title
+  titlePanel(&quot;Historical MLB Hitting Annual Leaderboards&quot;),
+  
+  # Sidebar with two user inputs (by drop-down box): season and stat
+  sidebarLayout(
+    sidebarPanel(
+      width = 2,
+      selectInput(
+        inputId = &quot;season&quot;, #variable name for user choice of seasons
+        label=&quot;Select a season&quot;,
+        choices = c(2023:1903), #vector of items to appear in dropdown list
+        selected = 1969 #default selection
+      ),
+      selectInput(
+        inputId = &quot;stat&quot;,
+        label = &quot;Select a statistic&quot;,
+        choices = c(&quot;H&quot;,&quot;HR&quot;,&quot;R&quot;,&quot;RBI&quot;,&quot;SB&quot;,&quot;TB&quot;,&quot;RC&quot;,&quot;AVG&quot;,&quot;OBP&quot;,&quot;SLG&quot;,&quot;OPS&quot;,&quot;RC27&quot;),
+        selected=&quot;RC27&quot;
+      )
+    ),
+    
+    # the main panel is where the table and plot (with adjustable slider will appear)
+    mainPanel(
+      # Display layout: A row with two columns the first for the table, the second, which has two rows, has the plot and slider
+      fluidRow(
+        column(tableOutput(&quot;leaderboard&quot;), # &#39;leaderboard&#39; is the name of the table created below, and tableOutput() displays it 
+               width = 4),
+        column(fluidRow(plotOutput(&quot;distPlot&quot;)), #plotOutput() displays the plot created below that is given the name distPlot
+               fluidRow(
+                 column(&quot;&quot;,width=2),
+                 column(sliderInput(&quot;bins&quot;,
+                                    &quot;     Number of bins:&quot;,
+                                    min = 1,
+                                    max = 50,
+                                    value = 20),
+                        width=6)
+               ),
+               width=8)
+      )
+    ),
+  )
+)
+
+
+# Define server logic required to display table and histogram
+
+server &lt;- function(input, output) {
+  
+  # filter the hit data frame according to user input; wrap in reactive({ })
+  # notice the year chosen by the user is called with `input$season`, and the 
+  # statistic chosen by the user is called with `input$stat`
+  df &lt;- reactive({hit |&gt; 
+      filter(yearID == input$season &amp; AB &gt;= 400) |&gt;
+      select(Name, Team, AB, input$stat) 
+  })
+  
+  # create kable output display of &quot;leaderboard&quot; with renderText()
+  # notice df above is reactive - it changes when the user changes selections, so when
+  # df is called below, we call it as df()
+  output$leaderboard &lt;- renderText({df()[order(-df()[[4]]),] |&gt; #this orders in descending order from 4th column
+      slice(1:10) |&gt; 
+      kbl(caption=paste(input$season,input$stat,&quot;Leaderboard (400 AB min)&quot;)) |&gt; 
+      kable_styling(full_width = FALSE)
+  })
+  
+  # create basic histogram plot with renderPlot
+  output$distPlot &lt;- renderPlot({
+    # generate bins based on input$bins from ui.R
+    x    &lt;- df()[, 4]
+    bins &lt;- seq(min(x), max(x), length.out = input$bins + 1)
+    
+    hist(df()[,4],breaks = bins,col=&quot;steelblue&quot;,border = &quot;white&quot;,
+         main=paste(input$season,input$stat,&quot;distribution (400 AB min)&quot;),
+         xlab = input$stat)
+  })
+}
+
+# Run the application 
+shinyApp(ui = ui, server = server)</code></pre>
+</div>
 
 
 
