@@ -206,62 +206,62 @@ Timestamp,achieve,degree,term
 2/8/23 10:07,Oscar,CAS,S23
 2/8/23 10:08,gold,business,S23
 2/8/23 10:09,gold,CAS,S23
-8/26/24 15:10,To win an Academy Award,School of Nursing,F24
-8/28/24 9:01,To win an Olympic gold medal,School of Nursing,F24
-8/28/24 9:02,To win an Olympic gold medal,College of Arts and Sciences,F24
-8/28/24 9:02,To win a Nobel Prize,School of Nursing,F24
-8/28/24 9:02,To win an Olympic gold medal,College of Arts and Sciences,F24
-8/28/24 9:02,To win an Olympic gold medal,School of Business,F24
-8/28/24 9:03,To win an Olympic gold medal,College of Arts and Sciences,F24
-8/28/24 9:03,To win an Olympic gold medal,School of Business,F24
-8/28/24 9:03,To win a Nobel Prize,School of Nursing,F24
-8/28/24 9:04,To win an Olympic gold medal,School of Business,F24
-8/28/24 9:04,To win an Olympic gold medal,School of Business,F24
-8/28/24 9:04,To win an Academy Award,School of Nursing,F24
-8/28/24 9:04,To win an Olympic gold medal,School of Nursing,F24
-8/28/24 9:04,To win an Olympic gold medal,School of Business,F24
-8/28/24 9:04,To win an Academy Award,School of Nursing,F24
-8/28/24 9:04,To win an Olympic gold medal,School of Nursing,F24
-8/28/24 9:04,To win an Academy Award,School of Nursing,F24
-8/28/24 9:04,To win an Olympic gold medal,School of Business,F24
-8/28/24 9:04,To win an Olympic gold medal,School of Business,F24
-8/28/24 9:04,To win an Olympic gold medal,College of Arts and Sciences,F24
-8/28/24 9:05,To win an Olympic gold medal,School of Business,F24
-8/28/24 9:05,To win an Olympic gold medal,School of Nursing,F24
-8/28/24 9:05,To win a Nobel Prize,School of Business,F24
-8/28/24 9:05,To win a Nobel Prize,School of Business,F24
-8/28/24 9:06,To win an Olympic gold medal,College of Arts and Sciences,F24
-8/28/24 9:06,To win a Nobel Prize,School of Nursing,F24
-8/28/24 9:07,To win an Academy Award,School of Nursing,F24
-8/28/24 9:07,To win a Nobel Prize,School of Business,F24
-8/25/25 13:27,To become President of the United States,School of Nursing,F25
-8/25/25 13:27,To win an Olympic gold medal,School of Business,F25
-8/25/25 13:28,To win an Olympic gold medal,College of Arts and Sciences,F25
-8/25/25 13:28,To win an Olympic gold medal,College of Arts and Sciences,F25
-8/25/25 13:28,To win an Olympic gold medal,School of Business,F25
-8/25/25 13:28,To win an Olympic gold medal,School of Business,F25
-8/25/25 13:28,To win a Nobel Prize,School of Nursing,F25
-8/25/25 13:28,To win an Olympic gold medal,School of Business,F25
-8/25/25 13:28,To win a Nobel Prize,School of Business,F25
-8/25/25 13:28,To win a Nobel Prize,College of Arts and Sciences,F25
-8/25/25 13:28,To win an Olympic gold medal,School of Business,F25
-8/25/25 13:28,To win an Olympic gold medal,School of Business,F25
-8/25/25 13:28,To win an Olympic gold medal,School of Business,F25
-8/25/25 13:28,To win an Olympic gold medal,College of Arts and Sciences,F25
-8/25/25 13:28,To win an Olympic gold medal,School of Business,F25
-8/25/25 13:28,To become President of the United States,School of Nursing,F25
-8/25/25 13:28,To win an Olympic gold medal,College of Arts and Sciences,F25
-8/25/25 13:28,To win an Olympic gold medal,School of Business,F25
-8/25/25 13:28,To win an Olympic gold medal,School of Business,F25
-8/25/25 13:29,To win an Olympic gold medal,College of Arts and Sciences,F25
-8/25/25 13:29,To become President of the United States,School of Nursing,F25
-8/25/25 13:29,To win an Olympic gold medal,College of Arts and Sciences,F25
-8/25/25 13:29,To win an Olympic gold medal,School of Business,F25
-8/25/25 13:29,To win an Olympic gold medal,School of Business,F25
-8/25/25 13:29,To win an Olympic gold medal,College of Arts and Sciences,F25
-8/25/25 13:29,To win an Olympic gold medal,School of Business,F25
-8/25/25 13:29,To win an Olympic gold medal,School of Nursing,F25
-8/25/25 13:29,To win a Nobel Prize,School of Nursing,F25
-8/25/25 13:29,To win an Olympic gold medal,School of Business,F25
-8/25/25 13:30,To win an Olympic gold medal,School of Nursing,F25
-8/25/25 13:30,To win a Nobel Prize,College of Arts and Sciences,F25
+8/26/24 15:10,Oscar,nursing,F24
+8/28/24 9:01,gold,nursing,F24
+8/28/24 9:02,gold,CAS,F24
+8/28/24 9:02,Nobel,nursing,F24
+8/28/24 9:02,gold,CAS,F24
+8/28/24 9:02,gold,business,F24
+8/28/24 9:03,gold,CAS,F24
+8/28/24 9:03,gold,business,F24
+8/28/24 9:03,Nobel,nursing,F24
+8/28/24 9:04,gold,business,F24
+8/28/24 9:04,gold,business,F24
+8/28/24 9:04,Oscar,nursing,F24
+8/28/24 9:04,gold,nursing,F24
+8/28/24 9:04,gold,business,F24
+8/28/24 9:04,Oscar,nursing,F24
+8/28/24 9:04,gold,nursing,F24
+8/28/24 9:04,Oscar,nursing,F24
+8/28/24 9:04,gold,business,F24
+8/28/24 9:04,gold,business,F24
+8/28/24 9:04,gold,CAS,F24
+8/28/24 9:05,gold,business,F24
+8/28/24 9:05,gold,nursing,F24
+8/28/24 9:05,Nobel,business,F24
+8/28/24 9:05,Nobel,business,F24
+8/28/24 9:06,gold,CAS,F24
+8/28/24 9:06,Nobel,nursing,F24
+8/28/24 9:07,Oscar,nursing,F24
+8/28/24 9:07,Nobel,business,F24
+8/25/25 13:27,president,nursing,F25
+8/25/25 13:27,gold,business,F25
+8/25/25 13:28,gold,CAS,F25
+8/25/25 13:28,gold,CAS,F25
+8/25/25 13:28,gold,business,F25
+8/25/25 13:28,gold,business,F25
+8/25/25 13:28,Nobel,nursing,F25
+8/25/25 13:28,gold,business,F25
+8/25/25 13:28,Nobel,business,F25
+8/25/25 13:28,Nobel,CAS,F25
+8/25/25 13:28,gold,business,F25
+8/25/25 13:28,gold,business,F25
+8/25/25 13:28,gold,business,F25
+8/25/25 13:28,gold,CAS,F25
+8/25/25 13:28,gold,business,F25
+8/25/25 13:28,president,nursing,F25
+8/25/25 13:28,gold,CAS,F25
+8/25/25 13:28,gold,business,F25
+8/25/25 13:28,gold,business,F25
+8/25/25 13:29,gold,CAS,F25
+8/25/25 13:29,president,nursing,F25
+8/25/25 13:29,gold,CAS,F25
+8/25/25 13:29,gold,business,F25
+8/25/25 13:29,gold,business,F25
+8/25/25 13:29,gold,CAS,F25
+8/25/25 13:29,gold,business,F25
+8/25/25 13:29,gold,nursing,F25
+8/25/25 13:29,Nobel,nursing,F25
+8/25/25 13:29,gold,business,F25
+8/25/25 13:30,gold,nursing,F25
+8/25/25 13:30,Nobel,CAS,F25
