@@ -716,13 +716,15 @@ file on line 47). This package has many bells and whistles for table
 formatting. See <a href="https://cran.r-project.org/web/packages/kableExtra/vignettes/awesome_table_in_html.html">kableExtra
 documentation</a></p>
 <pre class="r"><code>df_Mexico = df %&gt;% 
-  filter(country==&#39;Mexico&#39;) %&gt;% 
-  select(-c(country,continent)) #we display a table without the country or continent column, and make it clear we&#39;re displying information about Mexico in a table caption
-kable(df_Mexico, 
-      caption = &quot;Data on Mexico&quot;,
-      digits = 1, #round columns to 1 decimal point
-      col.names = c(&quot;Year&quot;,&quot;Life Expectancy&quot;,
-                    &quot;Population&quot;,&quot;Per Capita GDP&quot;) #customize column names for display
+  filter(country==&#39;Mexico&#39;) %&gt;%
+  select(-c(country,continent)) #throw out these two columns
+
+df_Mexico %&gt;%
+  kable(
+    caption = &quot;Data on Mexico&quot;,
+    digits = 1, #round columns to 1 decimal point
+    col.names = c(&quot;Year&quot;,&quot;Life Expectancy&quot;,&quot;Population&quot;,
+                  &quot;Per Capita GDP&quot;) #customize col names for display
       ) %&gt;% 
   kable_styling(&quot;striped&quot;, full_width = F)</code></pre>
 <table class="table table-striped" style="width: auto !important; margin-left: auto; margin-right: auto;">
