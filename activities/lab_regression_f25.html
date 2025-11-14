@@ -2018,7 +2018,7 @@ association between Calories (response variable) and Sugars (explanatory
 variable).</p>
 </blockquote>
 <pre class="r"><code>ggplot(df,aes(x=Sugars,y=Calories))+
-  geom_point(col=&quot;chocolate&quot;,size=.9)+
+  geom_point(col=&quot;chocolate&quot;)+
   geom_smooth(method=&#39;lm&#39;, formula=y~x,col=&quot;seagreen&quot;,linewidth=.8,se=FALSE)+
   labs(title = &quot;add title&quot;,
        x = &quot;add x-axis label&quot;,
@@ -2054,7 +2054,7 @@ be a reasonable assumption for this model. Explain your answer.</p>
 </blockquote>
 <pre class="r"><code>ggplot(fit, aes(x = Sugars, y = .resid)) +
   geom_point() +
-  geom_hline(yintercept = 0,linetype=&quot;dashed&quot;,col=&quot;red&quot;,size=.6)+
+  geom_hline(yintercept = 0,linetype=&quot;dashed&quot;,col=&quot;red&quot;,linewidth=.6)+
   ylab(&quot;residual&quot;)+
   ggtitle(&quot;residual plot&quot;)</code></pre>
 <blockquote>
@@ -2064,6 +2064,8 @@ appropriately. (I have provided basic code below that you should
 “embellish”.) Does the histogram of the residuals look like what we
 would expect for a normal distribution? Explain.</p>
 </blockquote>
+<pre class="r"><code>ggplot(fit) +
+  geom_histogram(aes(x=.resid),bins=25,col=&quot;white&quot;,fill=&quot;wheat&quot;)</code></pre>
 <blockquote>
 <p><strong>d)</strong> If <em>constant variance</em> seems reasonable,
 the value of <span class="math inline">\(r^2\)</span> is fairly large
