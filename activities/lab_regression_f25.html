@@ -2049,8 +2049,8 @@ the predicted (from the line) <span class="math inline">\(y\)</span>-value.</p>
 <blockquote>
 <p><strong>b)</strong> In the part (b) code chunk run the code below to
 create the residual plot. Then in your written response to part (b),
-comment on whether you think <strong>constant variance</strong> seems to
-be a reasonable assumption for this model. Explain your answer.</p>
+comment on whether you think <strong>constant variability</strong> seems
+to be a reasonable assumption for this model. Explain your answer.</p>
 </blockquote>
 <pre class="r"><code>ggplot(fit, aes(x = Sugars, y = .resid)) +
   geom_point() +
@@ -2067,13 +2067,13 @@ would expect for a normal distribution? Explain.</p>
 <pre class="r"><code>ggplot(fit) +
   geom_histogram(aes(x=.resid),bins=25,col=&quot;white&quot;,fill=&quot;wheat&quot;)</code></pre>
 <blockquote>
-<p><strong>d)</strong> If <em>constant variance</em> seems reasonable,
-the value of <span class="math inline">\(r^2\)</span> is fairly large
-(on the scale from 0 to 1), and the histogram of the residuals is
-reasonably bell-shaped, these are good indications that a linear model
-is a good model for the relationship between sugar content and calories
-in Starbucks beverages. Summarize your findings in Q3 - does a linear
-model seem to be a reasonable model to use here?</p>
+<p><strong>d)</strong> If <em>constant variability</em> seems
+reasonable, the value of <span class="math inline">\(r^2\)</span> is
+fairly large (on the scale from 0 to 1), and the histogram of the
+residuals is reasonably bell-shaped, these are good indications that a
+linear model is a good model for the relationship between sugar content
+and calories in Starbucks beverages. Summarize your findings in Q3 -
+does a linear model seem to be a reasonable model to use here?</p>
 </blockquote>
 </div>
 <div id="q4---use-the-model" class="section level1">
