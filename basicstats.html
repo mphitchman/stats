@@ -13,7 +13,7 @@
 
 <title>MATH 140: Using RStudio</title>
 
-<script src="site_libs/header-attrs-2.27/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.29/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
@@ -35,8 +35,8 @@
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
-<link href="site_libs/font-awesome-6.4.2/css/all.min.css" rel="stylesheet" />
-<link href="site_libs/font-awesome-6.4.2/css/v4-shims.min.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-6.5.2/css/all.min.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-6.5.2/css/v4-shims.min.css" rel="stylesheet" />
 
 <style type="text/css">
   code{white-space: pre-wrap;}
@@ -574,10 +574,10 @@ frame.</p>
 can use the <code>mean()</code> command on the <code>W</code> column of
 the <code>wildcats</code> data frame:</p>
 <pre class="r"><code>mean(wildcats$W)</code></pre>
-<pre><code>## [1] 35.26923</code></pre>
+<pre><code>## [1] 35.62963</code></pre>
 <p>The average number of losses per season?</p>
 <pre class="r"><code>mean(wildcats$L)</code></pre>
-<pre><code>## [1] 9.346154</code></pre>
+<pre><code>## [1] 9.259259</code></pre>
 </div>
 <div id="r-comes-with-data" class="section level2">
 <h2>R comes with data</h2>
@@ -664,7 +664,7 @@ data</td>
 <pre class="r"><code>mean(c(4,5,8,5,4,3,6,7,3,8,9,12,11))</code></pre>
 <pre><code>## [1] 6.538462</code></pre>
 <pre class="r"><code>fivenum(wildcats$W)</code></pre>
-<pre><code>## [1] 12.0 31.0 37.5 39.0 51.0</code></pre>
+<pre><code>## [1] 12.0 31.5 38.0 40.5 51.0</code></pre>
 <p>The first result above gives the mean of the data just entered with
 the <code>c()</code> command. The second command gave the 5 number
 summary for the <code>W</code> column of the <code>wildcats</code> data
@@ -672,13 +672,13 @@ frame. It looks like Linfield Softball won at least 39 games during 25%
 of the seasons over the 1999-2020 time period!</p>
 <p>How many games did Linfield softball win between 1999 and 2020?</p>
 <pre class="r"><code>sum(wildcats$W)</code></pre>
-<pre><code>## [1] 917</code></pre>
+<pre><code>## [1] 962</code></pre>
 <p>Who has coached Linfield softball during this period, and how many
 seasons has each coach coached?</p>
 <pre class="r"><code>table(wildcats$Coach)</code></pre>
 <pre><code>## 
 ## Jackson Vaughan     Laura Kenow 
-##              23               3</code></pre>
+##              24               3</code></pre>
 </div>
 <div id="basic-data-manipulation" class="section level1">
 <h1>Basic Data Manipulation</h1>
@@ -978,7 +978,7 @@ districts, and National Champions!</p>
 <pre class="r"><code>table(wildcats$NCAA)</code></pre>
 <pre><code>## 
 ##     1st 2nd 3rd 4th 
-##  19   2   2   2   1</code></pre>
+##  19   2   2   3   1</code></pre>
 <p>ANSWER: It specifies how well Linfield did at Nationals over the
 1999-2020 time period. Linfield has finished 1st twice, 2nd twice, 3rd
 once, and 4th once. The other 16 seasons they didn’t finish as high as
@@ -987,7 +987,7 @@ once, and 4th once. The other 16 seasons they didn’t finish as high as
 <li>What does this code give?</li>
 </ol>
 <pre class="r"><code>sum(wildcats$District==&quot;1st&quot;)</code></pre>
-<pre><code>## [1] 15</code></pre>
+<pre><code>## [1] 16</code></pre>
 <p>ANSWER: It gives the number of seasons from 1999-2020 in which
 Linfield was 1st in the District</p>
 <ol start="4" style="list-style-type: decimal">
@@ -1001,13 +1001,14 @@ team each season (wins divided by games played).</p>
 <li>What does this code give?</li>
 </ol>
 <pre class="r"><code>max(wildcats$winpct)</code></pre>
-<pre><code>## [1] 0.9444444</code></pre>
+<pre><code>## [1] NA</code></pre>
 <p>ANSWER: It returns the best winning percentage for a season between
 1999 and 2020.</p>
 <p>Which season was this?</p>
 <pre class="r"><code>subset(wildcats, winpct == max(wildcats$winpct))</code></pre>
-<pre><code>##    Year           Coach  W L T District NCAA GP    winpct
-## 13 2011 Jackson Vaughan 51 3 0      1st  1st 54 0.9444444</code></pre>
+<pre><code>## [1] Year     Coach    W        L        T        District NCAA     GP      
+## [9] winpct  
+## &lt;0 rows&gt; (or 0-length row.names)</code></pre>
 <p>Not surprisingly, the best winning percentage occurred in the magical
 2011 season in which the team went 51-3.</p>
 <ol start="6" style="list-style-type: decimal">
@@ -1026,7 +1027,7 @@ going on. What was it? (global pandemic!)</p>
 <li>What does this code give?</li>
 </ol>
 <pre class="r"><code>fivenum(wildcats$W[wildcats$Coach==&quot;Jackson Vaughan&quot;])</code></pre>
-<pre><code>## [1] 12.0 33.0 38.0 40.5 51.0</code></pre>
+<pre><code>## [1] 12.0 33.0 38.0 43.5 51.0</code></pre>
 <p>ANSWER: This code gives the 5 number summary for the Linfield
 softball wins for just the seasons in the data set in which the coach
 was Jackson Vaughan. More generally, consider this code, which makes use
