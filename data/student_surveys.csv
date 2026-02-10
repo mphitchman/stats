@@ -62,7 +62,7 @@ Timestamp,Term,height,eyecolor,int.ext,phone.usage,haircut,random,study,run,shoe
 8/28/24 9:02,Fall24,69,Blue,4,2,32,5,15,4,3,Yes,7,10:00 PM,2,1,1st year,gold,business,8
 8/28/24 9:03,Fall24,63,Brown,3,3,39,7,7,3,5,No,7,11:00 PM,1,1,1st year,gold,CAS,8
 8/28/24 9:03,Fall24,68,Brown,3,4,45,4,4,0,13,No,8,11:00 PM,1,3,1st year,gold,business,9
-8/28/24 9:03,Fall24,64,Blue,1,7 or more,120,7,6,0,9,No,8,11:00 PM,1,2,1st year,Nobel,nursing,4
+8/28/24 9:03,Fall24,64,Blue,1,7,120,7,6,0,9,No,8,11:00 PM,1,2,1st year,Nobel,nursing,4
 8/28/24 9:04,Fall24,64,Brown,3,5,60,2,4,7,10,No,6,10:00 PM,1,2,1st year,gold,business,10
 8/28/24 9:04,Fall24,72,Brown,2,6,35,2,4,3,13,No,7,11:00 PM,6,1,1st year,gold,business,13
 8/28/24 9:04,Fall24,62.5,Brown,3,4,30,5,5,2,25,No,7.5,11:00 PM,2,2,1st year,oscar,nursing,5
@@ -73,18 +73,18 @@ Timestamp,Term,height,eyecolor,int.ext,phone.usage,haircut,random,study,run,shoe
 8/28/24 9:04,Fall24,67,Brown,3,3,0,5,1.5,0,6,No,7,11:00 PM,3,3,1st year,oscar,nursing,1
 8/28/24 9:04,Fall24,67,Brown,3,5,40,7,5,20,4,Yes,8,11:00 PM,2,3,1st year,gold,business,8
 8/28/24 9:04,Fall24,67,Brown,3,2,30,6,2,20,10,No,8,midnight,2,3,2nd year,gold,business,9
-8/28/24 9:04,Fall24,66,Brown,3,7 or more,20,8,5,0,15,No,6,midnight,5,1,2nd year,gold,CAS,4
+8/28/24 9:04,Fall24,66,Brown,3,7,20,8,5,0,15,No,6,midnight,5,1,2nd year,gold,CAS,4
 8/28/24 9:05,Fall24,76,Brown,4,4,35,6,3,2.5,8,Yes,7.5,before 10 pm,5,2,1st year,gold,business,20
 8/28/24 9:05,Fall24,69,Brown,3,4,25,6,16,1.5,4,No,7,10:00 PM,2,3,1st year,gold,nursing,4
 8/28/24 9:05,Fall24,65,Brown,2,5,0,7,10,4,15,Yes,7,11:00 PM,2,3,2nd year,Nobel,business,12
 8/28/24 9:05,Fall24,64,Brown,4,4,50,5,15,0,45,No,7,11:00 PM,2,3,1st year,Nobel,business,5
 8/28/24 9:06,Fall24,72,Blue,4,4,22,4,2,20,4,No,9,10:00 PM,2,4,1st year,gold,CAS,6.5
-8/28/24 9:06,Fall24,62,Brown,1,7 or more,50,2,12.5,4,4,No,8,10:00 PM,2,3,2nd year,Nobel,nursing,8
+8/28/24 9:06,Fall24,62,Brown,1,7,50,2,12.5,4,4,No,8,10:00 PM,2,3,2nd year,Nobel,nursing,8
 8/28/24 9:07,Fall24,64,Brown,2,4,45,6,10,28,6,No,8,11:00 PM,2,2,1st year,oscar,nursing,5
 8/28/24 9:07,Fall24,67,Brown,4,3,30,8,2.5,10,8,No,8,11:00 PM,0,1,1st year,Nobel,business,12
 8/25/25 13:27,Fall25,68,Blue,6,2,54,9,2.5,1,5,No,7,midnight,2,3,1st year,president,nursing,5
 8/25/25 13:27,Fall25,72,Hazel,4,5,20,10,2,5,6,Yes,8,midnight,3,3,1st year,gold,business,8
-8/25/25 13:28,Fall25,72,Brown,4,7 or more,25,10,3.5,1,1,Yes,7.5,midnight,3,4,2nd year,gold,CAS,3
+8/25/25 13:28,Fall25,72,Brown,4,7,25,10,3.5,1,1,Yes,7.5,midnight,3,4,2nd year,gold,CAS,3
 8/25/25 13:28,Fall25,73,Brown,5,6,45,9,4,7,14,Yes,8.5,10:00 PM,3,5,1st year,gold,CAS,5
 8/25/25 13:28,Fall25,74,Blue,3,6,55,4,,10,15,Yes,6.5,midnight,1,4,1st year,gold,business,5
 8/25/25 13:28,Fall25,71,Brown,5,5,35,6,4,6,10,No,6,midnight,10,3,1st year,gold,business,8
@@ -101,15 +101,42 @@ Timestamp,Term,height,eyecolor,int.ext,phone.usage,haircut,random,study,run,shoe
 8/25/25 13:28,Fall25,69,Brown,3,3,40,6,5,5,20,Yes,9,10:00 PM,1,1,1st year,gold,CAS,15
 8/25/25 13:28,Fall25,76,Blue,5,5,25,3,7.5,2.5,15,No,9,11:00 PM,1,4,1st year,gold,business,7
 8/25/25 13:28,Fall25,74,Brown,4,5,48,7,6.5,2,5,No,7.5,midnight,1,2,1st year,gold,business,3
-8/25/25 13:29,Fall25,55,Brown,3,7 or more,,4,2.5,,5,No,6,11:00 PM,2,1,2nd year,gold,CAS,4
-8/25/25 13:29,Fall25,64,Brown,3,6,45,4,5.5,0,5,No,7.5,11:00 PM,2 countries,3,1st year,president,nursing,8
+8/25/25 13:29,Fall25,55,Brown,3,7,,4,2.5,,5,No,6,11:00 PM,2,1,2nd year,gold,CAS,4
+8/25/25 13:29,Fall25,64,Brown,3,6,45,4,5.5,0,5,No,7.5,11:00 PM,2,3,1st year,president,nursing,8
 8/25/25 13:29,Fall25,71,Blue,5,4,25,3,8,0,4,Yes,8,before 10 pm,2,3,1st year,gold,CAS,15
 8/25/25 13:29,Fall25,75,Blue,5,3,20,3,2,10,12,No,7,1:00 AM,1,3,1st year,gold,business,8
 8/25/25 13:29,Fall25,65,Blue,4,3,35,7,4,3,12,Yes,8,11:00 PM,1,3,1st year,gold,business,7
 8/25/25 13:29,Fall25,61,Brown,3,4,85,3,12,6,12,No,8,10:00 PM,6,2,1st year,gold,CAS,10
 8/25/25 13:29,Fall25,75,Blue,2,5,45,10,3,7,10,No,8,11:00 PM,6,2,1st year,gold,business,9
 8/25/25 13:29,Fall25,61,Brown,2,5,20,7,4,0,6,No,6,midnight,2,1,1st year,gold,nursing,4
-8/25/25 13:29,Fall25,65,Blue,3,4,50,2,36,0,6,Yes,8,11:00 PM,"US, Mexico, Spain, Portugal",3,1st year,Nobel,nursing,7
+8/25/25 13:29,Fall25,65,Blue,3,4,50,2,36,0,6,Yes,8,11:00 PM,4,3,1st year,Nobel,nursing,7
 8/25/25 13:29,Fall25,68,Hazel,4,4,0,9,2,,8,No,8,midnight,2,2,1st year,gold,business,5
 8/25/25 13:30,Fall25,61,Brown,2,4,0,8,3,0,9,No,8,11:00 PM,2,3,1st year,gold,nursing,3
-8/25/25 13:30,Fall25,62,Blue,2,7 or more,5,5,30,0,10,Yes,9,10:00 PM,3,5,Other,Nobel,CAS,10
+8/25/25 13:30,Fall25,62,Blue,2,7,5,5,30,0,10,Yes,9,10:00 PM,3,5,Other,Nobel,CAS,10
+2/10/26 13:21,Spring26,53,Brown,2,4,0,5,8,0,10,No,8,10:00 PM,1,2,1st year,president,CAS,5
+2/10/26 13:22,Spring26,74,Blue,2,3,25,7,2,3.5,12,Yes,8,midnight,1,2,1st year,gold,business,7
+2/10/26 13:22,Spring26,67,Brown,3,6,30,5,15,1,6,No,6.5,1:00 AM,2,1,1st year,president,business,7
+2/10/26 13:22,Spring26,65,Green,4,2,17,9,10,5,10,No,8,midnight,1,5,1st year,Nobel,nursing,20
+2/10/26 13:22,Spring26,70,Brown,2,6,40,3,4,3,11,No,8,midnight,3,3,2nd year,gold,CAS,7
+2/10/26 13:22,Spring26,65,Brown,3,4,50,7,10,3,6,No,8,10:00 PM,2,3,1st year,gold,CAS,6
+2/10/26 13:22,Spring26,70,Brown,4,4,25,8,6-Jan,4,13,No,5,1:00 AM,2,2,1st year,gold,CAS,4
+2/10/26 13:22,Spring26,65,Brown,3,6,35,7,4,20,6,No,9,10:00 PM,3,3,1st year,oscar,business,11
+2/10/26 13:23,Spring26,77,Blue,4,2,20,5,5,10,5,No,7.5,11:00 PM,5,2,1st year,gold,business,10
+2/10/26 13:23,Spring26,65,Blue,4,4,0,7,5,5,10,Yes,8,midnight,2,3,1st year,gold,CAS,8
+2/10/26 13:23,Spring26,77,Green,3,6,25,7,3,3,6,No,7,11:00 PM,4,4,1st year,gold,business,5
+2/10/26 13:23,Spring26,60,Brown,2,4,40,6,10,8,10,No,6,midnight,2,1,4th year,gold,CAS,3
+2/10/26 13:23,Spring26,61,Brown,4,3,54,7,6,5,10,No,6,1:00 AM,11,3,1st year,gold,business,4
+2/10/26 13:23,Spring26,72,Brown,4,5,40,5,3,1,5,Yes,8,after 1 am,15,1,1st year,president,business,8
+2/10/26 13:23,Spring26,70,Green,6,3,0,7,20,7,10,Yes,4,1:00 AM,5,1,3rd year,president,business,25
+2/10/26 13:23,Spring26,62,Green,3,4,350,7,6,0,15,No,5,midnight,3,1,1st year,president,nursing,5
+2/10/26 13:23,Spring26,62,Brown,3,5,75,10,1,0,7,Yes,6,midnight,2,2,1st year,Nobel,nursing,5
+2/10/26 13:23,Spring26,63,Brown,2,5,0,6,10,1.5,15,No,9,1:00 AM,4,3,1st year,gold,nursing,2
+2/10/26 13:23,Spring26,71,Brown,5,2,40,4,8,,15,No,7,midnight,2,3,2nd year,president,CAS,18
+2/10/26 13:24,Spring26,63,Brown,3,5,50,6,25,7.5,12,Yes,6,10:00 PM,3,3,1st year,oscar,business,3
+2/10/26 13:24,Spring26,63,Brown,3,6,110,10,5,0,4,No,7.5,midnight,1,2,1st year,Nobel,nursing,8
+2/10/26 13:24,Spring26,65,Brown,4,3,20,5,25,5,15,No,8,10:00 PM,2,2,1st year,president,nursing,5
+2/10/26 13:24,Spring26,75,Blue,4,3,50,7,5,3,8,No,8.5,1:00 AM,20,1,1st year,gold,business,8
+2/10/26 13:24,Spring26,64,Brown,2,4,0,7,10,1,3,No,8,midnight,2,2,1st year,gold,nursing,3
+2/10/26 13:24,Spring26,59,Brown,3,4,0,9,4,0,4,No,7,after 1 am,2,1,,Nobel,nursing,4
+2/10/26 13:24,Spring26,62,Brown,1,5,0,6,12.5,0,10,No,6.5,10:00 PM,1,1,1st year,oscar,nursing,3
+2/10/26 13:26,Spring26,64,Brown,6,3,0,2,5,0,3,No,9,midnight,0,3,1st year,oscar,nursing,5
