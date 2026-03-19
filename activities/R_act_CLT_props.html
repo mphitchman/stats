@@ -1616,7 +1616,7 @@ from the population.</p>
 times, recording the sample proportion of successes in each draw in the
 vector we call <code>results_100</code>. Run this code in your
 script.</p>
-<pre><code>results_100 &lt;- replicate(100000, sum(sample(population, n) == &#39;s&#39;))</code></pre>
+<pre><code>results_100 &lt;- replicate(100000, sum(sample(population, n) == &#39;s&#39;)/n)</code></pre>
 <blockquote>
 <p>Make a bar plot of this vector of results
 (<code>barplot(table(results_100))</code>). Describe the shape of the
@@ -1657,7 +1657,7 @@ size 400. Run the following code to generate a new results vector called
 <code>results_400</code> (of 100000 different sample proportions from
 samples of this new size)</p>
 <pre><code>n = 400
-results_400 &lt;- replicate(100000, sum(sample(population, n) == &#39;s&#39;))</code></pre>
+results_400 &lt;- replicate(100000, sum(sample(population, n) == &#39;s&#39;)/n)</code></pre>
 <blockquote>
 <ol style="list-style-type: lower-alpha">
 <li>Make a barplot of the <code>results_400</code> vector. Does this
