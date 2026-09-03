@@ -1,142 +1,169 @@
-Timestamp,Term,height,eyecolor,int.ext,phone.usage,haircut,random,study,run,shoes,abolish.penny,sleep,bedtime,countries,class.dread,year,achieve,degree,states
-2/7/23 10:13,Spring23,67,Brown,5,7,20,4,10,4,14,No,11,11:00 PM,1,4,1st year,president,nursing,7
-2/7/23 10:13,Spring23,61,Hazel,4,7,90,7,15,0,12,No,6,10:00 PM,3,4,1st year,gold,CAS,10
-2/7/23 10:14,Spring23,68,Green,2,4,0,4,3,5,5,Yes,8,10:00 PM,1,3,3rd year,oscar,CAS,3
-2/7/23 10:14,Spring23,64,Brown,2,6,20,7,4,1,10,Yes,7,1:00 AM,3,3,1st year,Nobel,nursing,3
-2/7/23 10:14,Spring23,67,Blue,2,5,120,6,15,10,8,Yes,8,11:00 PM,2,4,1st year,president,CAS,6
-2/7/23 10:14,Spring23,63,Brown,3,7,0,8,5,0,20,Yes,7,after 1 am,4,5,4th year,oscar,CAS,4
-2/7/23 10:14,Spring23,62,Green,4,4,50,5,15,0,10,Yes,6.5,10:00 PM,1,2,1st year,gold,nursing,4
-2/7/23 10:14,Spring23,63,Green,3,7,0,4,17,0,8,No,8,10:00 PM,2,4,1st year,Nobel,CAS,12
-2/7/23 10:14,Spring23,62,Brown,1,5,35,1,15,0,5,No,7,11:00 PM,1,2,1st year,Nobel,CAS,3
-2/7/23 10:15,Spring23,61,Brown,3,4,30,5,20,0,6,No,6,11:00 PM,1,3,1st year,gold,nursing,8
-2/7/23 10:15,Spring23,69,Hazel,2,2,10,4,8,40,3,Yes,8,before 10 pm,0,2,2nd year,president,CAS,6
-2/7/23 10:15,Spring23,61,Brown,4,4,35,7,11,0,32,No,8,11:00 PM,2,1,1st year,oscar,nursing,5
-2/7/23 10:15,Spring23,60,Brown,1,7,30,4,4,4,15,No,6,midnight,2,3,1st year,president,nursing,2
-2/7/23 10:15,Spring23,62,Brown,3,5,25,5,5,1,9,No,8,11:00 PM,1,2,1st year,Nobel,nursing,4
-2/7/23 10:15,Spring23,64,Brown,4,7,25,4,8,0,10,No,8,11:00 PM,2,5,1st year,president,nursing,8
-2/7/23 10:15,Spring23,64,Brown,4,4,65,7,18,1,11,No,7,11:00 PM,2,2,1st year,Nobel,nursing,5
-2/7/23 10:15,Spring23,64,Brown,4,4,0,4,7,0,5,Yes,8,11:00 PM,10,3,1st year,oscar,nursing,13
-2/7/23 10:15,Spring23,68,Brown,4,4,30,10,15,3,8,Yes,10,11:00 PM,2,2,1st year,gold,CAS,5
-2/7/23 10:15,Spring23,62,Brown,3,6,60,3,12,15,12,No,7,midnight,2,1,1st year,gold,business,8
-2/7/23 10:15,Spring23,67,Hazel,5,6,50,4,8,4,9,Yes,8,midnight,7,2,1st year,Nobel,business,15
-2/7/23 10:15,Spring23,73,Blue,4,7,25,8,1.5,5,11,No,7.5,midnight,6,3,1st year,gold,business,12
-2/7/23 10:15,Spring23,60,Hazel,3,5,5,9,8,4,12,No,8,midnight,3,3,1st year,Nobel,nursing,10
-2/7/23 10:16,Spring23,66,Brown,5,2,60,7,35,0,24,Yes,7.5,11:00 PM,1,1,2nd year,Nobel,CAS,10
-2/7/23 10:16,Spring23,70,Brown,5,6,300,8,10,5,12,No,7,midnight,2,3,1st year,gold,CAS,21
-2/7/23 11:48,Spring23,62,Brown,2,4,62,2,15,3,7,No,7,midnight,3,2,1st year,Nobel,nursing,12
-2/7/23 12:04,Spring23,69,Blue,3,3,0,8,10,10,10,Yes,8,midnight,4,5,2nd year,gold,business,7
-2/7/23 13:21,Spring23,68,Blue,5,6,0,4,6,7,9,Yes,4,after 1 am,1,1,1st year,gold,CAS,8
-2/7/23 14:57,Spring23,70,Brown,6,3,25,8,16.5,0.1,5,Yes,7.5833,after 1 am,2,5,4th year,Nobel,CAS,15
-2/7/23 18:04,Spring23,62.5,Brown,3,4,45,6,5,0,3,Yes,6,1:00 AM,2,5,1st year,gold,nursing,7
-2/8/23 10:02,Spring23,62,Green,5,4,210,8,12,4,20,No,9,10:00 PM,2,2,1st year,oscar,business,4
-2/8/23 10:02,Spring23,72,Brown,3,2,40,6,2,2.5,4,No,7,11:00 PM,0,1,1st year,president,business,5
-2/8/23 10:02,Spring23,63,Brown,3,3,40,7,6,5,10,Yes,7,11:00 PM,2,3,1st year,gold,CAS,4
-2/8/23 10:02,Spring23,71,Blue,2,6,0,7,2,0,10,No,10,10:00 PM,0,1,1st year,president,CAS,5
-2/8/23 10:02,Spring23,71,Brown,2,3,15,7,2,2,6,No,9,10:00 PM,3,2,1st year,oscar,business,12
-2/8/23 10:03,Spring23,63,Hazel,3,3,100,4,10,20,19,No,8,11:00 PM,1,1,1st year,Nobel,CAS,7
-2/8/23 10:03,Spring23,71,Brown,5,7,26,8,5,0,10,Yes,6.5,after 1 am,1,1,1st year,president,CAS,8
-2/8/23 10:03,Spring23,62,Brown,3,4,60,2,15,3,7,No,7,midnight,3,3,1st year,Nobel,nursing,12
-2/8/23 10:03,Spring23,71,Brown,4,3,30,2,3,5,7,Yes,7,10:00 PM,1,2,1st year,gold,business,8
-2/8/23 10:03,Spring23,72,Blue,3,4,0,7,8,3,3,No,8,midnight,1,3,1st year,gold,business,5
-2/8/23 10:03,Spring23,63,Brown,5,6,60,4,3,0,15,No,8,midnight,3,1,1st year,gold,nursing,11
-2/8/23 10:03,Spring23,64,Brown,3,2,60,3,10,20,31,No,8,midnight,3,1,1st year,Nobel,nursing,8
-2/8/23 10:03,Spring23,66,Hazel,1,3,30,2,30,0,7,Yes,6,11:00 PM,1,3,1st year,oscar,business,7
-2/8/23 10:04,Spring23,60,Brown,4,6,40,6,5,0,10,No,6.5,after 1 am,1,3,1st year,Nobel,nursing,4
-2/8/23 10:04,Spring23,65,Brown,2,6,20,7,4,2,12,Yes,9,midnight,1,3,1st year,oscar,nursing,3
-2/8/23 10:04,Spring23,60,Brown,3,5,0,6,40,1,10,No,6,midnight,4,2,1st year,Nobel,nursing,3
-2/8/23 10:04,Spring23,64,Green,3,4,35,5,10,20,25,No,7,10:00 PM,1,2,1st year,gold,nursing,16
-2/8/23 10:04,Spring23,71,Brown,3,4,25,6,3,4,20,Yes,7,11:00 PM,3,3,1st year,Nobel,business,14
-2/8/23 10:05,Spring23,66,Brown,4,5,25,4,4,2,10,No,8,11:00 PM,1,2,1st year,gold,business,13
-2/8/23 10:05,Spring23,61,Brown,3,5,20,7,9,1,20,No,8,11:00 PM,2,3,1st year,gold,nursing,2
-2/8/23 10:05,Spring23,72,Brown,3,7,0,8,12,7,2,No,7,1:00 AM,1,2,1st year,Nobel,CAS,25
-2/8/23 10:05,Spring23,64,Brown,3,5,45,7,4,0,9,No,8,11:00 PM,1,4,2nd year,president,CAS,7
-2/8/23 10:05,Spring23,65,Blue,3,4,135,4,25,0,4,No,5,midnight,8,1,2nd year,president,business,13
-2/8/23 10:07,Spring23,62,Brown,4,5,100,8,21,0.5,5,No,7,after 1 am,3,4,1st year,oscar,CAS,5
-2/8/23 10:08,Spring23,66,Brown,3,5,0,10,2,0,6,No,6,11:00 PM,2,3,1st year,gold,business,3
-2/8/23 10:09,Spring23,71,Blue,3,1,0,5,10,7,3,Yes,6.5,after 1 am,2,1,1st year,gold,CAS,8
-8/26/24 15:10,Fall24,68,Blue,3,3,35,8,10,0,3,Yes,8,10:00 PM,1,2,1st year,oscar,nursing,12
-8/28/24 9:01,Fall24,69,Hazel,6,5,35,7,10,5,50,No,7,midnight,1,2,1st year,gold,nursing,9
-8/28/24 9:02,Fall24,69,Brown,6,5,10,2,4,5,6,No,7,11:00 PM,2,3,1st year,gold,CAS,6
-8/28/24 9:02,Fall24,69,Blue,3,4,75,7,4,0,4,Yes,5,midnight,1,2,1st year,Nobel,nursing,10
-8/28/24 9:02,Fall24,69,Blue,5,4,12,3,8,0,4,No,7.5,11:00 PM,1,2,2nd year,gold,CAS,12
-8/28/24 9:02,Fall24,69,Blue,4,2,32,5,15,4,3,Yes,7,10:00 PM,2,1,1st year,gold,business,8
-8/28/24 9:03,Fall24,63,Brown,3,3,39,7,7,3,5,No,7,11:00 PM,1,1,1st year,gold,CAS,8
-8/28/24 9:03,Fall24,68,Brown,3,4,45,4,4,0,13,No,8,11:00 PM,1,3,1st year,gold,business,9
-8/28/24 9:03,Fall24,64,Blue,1,7,120,7,6,0,9,No,8,11:00 PM,1,2,1st year,Nobel,nursing,4
-8/28/24 9:04,Fall24,64,Brown,3,5,60,2,4,7,10,No,6,10:00 PM,1,2,1st year,gold,business,10
-8/28/24 9:04,Fall24,72,Brown,2,6,35,2,4,3,13,No,7,11:00 PM,6,1,1st year,gold,business,13
-8/28/24 9:04,Fall24,62.5,Brown,3,4,30,5,5,2,25,No,7.5,11:00 PM,2,2,1st year,oscar,nursing,5
-8/28/24 9:04,Fall24,64,Hazel,3,4,50,8,5,0,10,No,7,11:00 PM,5,3,1st year,gold,nursing,6
-8/28/24 9:04,Fall24,73,Brown,2,5,40,5,12,6,9,No,7,11:00 PM,9,1,1st year,gold,business,8
-8/28/24 9:04,Fall24,70,Blue,3,3,70,4,5,0,6,No,7,midnight,1,4,1st year,oscar,nursing,7
-8/28/24 9:04,Fall24,60,Brown,5,5,200,2,20,0,10,Yes,8,11:00 PM,1,2,1st year,gold,nursing,10
-8/28/24 9:04,Fall24,67,Brown,3,3,0,5,1.5,0,6,No,7,11:00 PM,3,3,1st year,oscar,nursing,1
-8/28/24 9:04,Fall24,67,Brown,3,5,40,7,5,20,4,Yes,8,11:00 PM,2,3,1st year,gold,business,8
-8/28/24 9:04,Fall24,67,Brown,3,2,30,6,2,20,10,No,8,midnight,2,3,2nd year,gold,business,9
-8/28/24 9:04,Fall24,66,Brown,3,7,20,8,5,0,15,No,6,midnight,5,1,2nd year,gold,CAS,4
-8/28/24 9:05,Fall24,76,Brown,4,4,35,6,3,2.5,8,Yes,7.5,before 10 pm,5,2,1st year,gold,business,20
-8/28/24 9:05,Fall24,69,Brown,3,4,25,6,16,1.5,4,No,7,10:00 PM,2,3,1st year,gold,nursing,4
-8/28/24 9:05,Fall24,65,Brown,2,5,0,7,10,4,15,Yes,7,11:00 PM,2,3,2nd year,Nobel,business,12
-8/28/24 9:05,Fall24,64,Brown,4,4,50,5,15,0,45,No,7,11:00 PM,2,3,1st year,Nobel,business,5
-8/28/24 9:06,Fall24,72,Blue,4,4,22,4,2,20,4,No,9,10:00 PM,2,4,1st year,gold,CAS,6.5
-8/28/24 9:06,Fall24,62,Brown,1,7,50,2,12.5,4,4,No,8,10:00 PM,2,3,2nd year,Nobel,nursing,8
-8/28/24 9:07,Fall24,64,Brown,2,4,45,6,10,28,6,No,8,11:00 PM,2,2,1st year,oscar,nursing,5
-8/28/24 9:07,Fall24,67,Brown,4,3,30,8,2.5,10,8,No,8,11:00 PM,0,1,1st year,Nobel,business,12
-8/25/25 13:27,Fall25,68,Blue,6,2,54,9,2.5,1,5,No,7,midnight,2,3,1st year,president,nursing,5
-8/25/25 13:27,Fall25,72,Hazel,4,5,20,10,2,5,6,Yes,8,midnight,3,3,1st year,gold,business,8
-8/25/25 13:28,Fall25,72,Brown,4,7,25,10,3.5,1,1,Yes,7.5,midnight,3,4,2nd year,gold,CAS,3
-8/25/25 13:28,Fall25,73,Brown,5,6,45,9,4,7,14,Yes,8.5,10:00 PM,3,5,1st year,gold,CAS,5
-8/25/25 13:28,Fall25,74,Blue,3,6,55,4,10,10,15,Yes,6.5,midnight,1,4,1st year,gold,business,5
-8/25/25 13:28,Fall25,71,Brown,5,5,35,6,4,6,10,No,6,midnight,10,3,1st year,gold,business,8
-8/25/25 13:28,Fall25,66,Green,3,4,0,8,6,1.5,8,Yes,7,11:00 PM,2,2,1st year,Nobel,nursing,35
-8/25/25 13:28,Fall25,70,Brown,5,4,45,5,2.5,12,21,No,8,midnight,13,2,1st year,gold,business,8
-8/25/25 13:28,Fall25,73,Blue,5,1,30,7,2,0,10,No,8,midnight,5,1,2nd year,Nobel,business,4
-8/25/25 13:28,Fall25,64,Brown,3,2,5,10,10,0,5,No,8,11:00 PM,3,3,2nd year,Nobel,CAS,5
-8/25/25 13:28,Fall25,66,Brown,2,6,190,2,1,0,10,No,6,11:00 PM,3,4,1st year,gold,business,23
-8/25/25 13:28,Fall25,74,Blue,3,4,26,9,4,4,6,Yes,8,11:00 PM,3,4,1st year,gold,business,13
-8/25/25 13:28,Fall25,73,Brown,4,4,35,7,6,0,8,No,7,midnight,2,2,1st year,gold,business,10
-8/25/25 13:28,Fall25,76,Brown,4,2,35,6,8,7,14,No,8,11:00 PM,2,3,1st year,gold,CAS,12
-8/25/25 13:28,Fall25,71,Brown,5,4,40,7,3,1,20,No,7,midnight,2,2,1st year,gold,business,5
-8/25/25 13:28,Fall25,66,Brown,3,5,30,7,0,1,4,No,5,11:00 PM,1,3,1st year,president,nursing,1
-8/25/25 13:28,Fall25,69,Brown,3,3,40,6,5,5,20,Yes,9,10:00 PM,1,1,1st year,gold,CAS,15
-8/25/25 13:28,Fall25,76,Blue,5,5,25,3,7.5,2.5,15,No,9,11:00 PM,1,4,1st year,gold,business,7
-8/25/25 13:28,Fall25,74,Brown,4,5,48,7,6.5,2,5,No,7.5,midnight,1,2,1st year,gold,business,3
-8/25/25 13:29,Fall25,65,Brown,3,7,20,4,2.5,2,5,No,6,11:00 PM,2,1,2nd year,gold,CAS,4
-8/25/25 13:29,Fall25,64,Brown,3,6,45,4,5.5,0,5,No,7.5,11:00 PM,2,3,1st year,president,nursing,8
-8/25/25 13:29,Fall25,71,Blue,5,4,25,3,8,0,4,Yes,8,before 10 pm,2,3,1st year,gold,CAS,15
-8/25/25 13:29,Fall25,75,Blue,5,3,20,3,2,10,12,No,7,1:00 AM,1,3,1st year,gold,business,8
-8/25/25 13:29,Fall25,65,Blue,4,3,35,7,4,3,12,Yes,8,11:00 PM,1,3,1st year,gold,business,7
-8/25/25 13:29,Fall25,61,Brown,3,4,85,3,12,6,12,No,8,10:00 PM,6,2,1st year,gold,CAS,10
-8/25/25 13:29,Fall25,75,Blue,2,5,45,10,3,7,10,No,8,11:00 PM,6,2,1st year,gold,business,9
-8/25/25 13:29,Fall25,61,Brown,2,5,20,7,4,0,6,No,6,midnight,2,1,1st year,gold,nursing,4
-8/25/25 13:29,Fall25,65,Blue,3,4,50,2,36,0,6,Yes,8,11:00 PM,4,3,1st year,Nobel,nursing,7
-8/25/25 13:29,Fall25,68,Hazel,4,4,0,9,2,2,8,No,8,midnight,2,2,1st year,gold,business,5
-8/25/25 13:30,Fall25,61,Brown,2,4,0,8,3,0,9,No,8,11:00 PM,2,3,1st year,gold,nursing,3
-8/25/25 13:30,Fall25,62,Blue,2,7,5,5,30,0,10,Yes,9,10:00 PM,3,5,Other,Nobel,CAS,10
-2/10/26 13:21,Spring26,63,Brown,2,4,0,5,8,0,10,No,8,10:00 PM,1,2,1st year,president,CAS,5
-2/10/26 13:22,Spring26,74,Blue,2,3,25,7,2,3.5,12,Yes,8,midnight,1,2,1st year,gold,business,7
-2/10/26 13:22,Spring26,67,Brown,3,6,30,5,15,1,6,No,6.5,1:00 AM,2,1,1st year,president,business,7
-2/10/26 13:22,Spring26,65,Green,4,2,17,9,10,5,10,No,8,midnight,1,5,1st year,Nobel,nursing,20
-2/10/26 13:22,Spring26,70,Brown,2,6,40,3,4,3,11,No,8,midnight,3,3,2nd year,gold,CAS,7
-2/10/26 13:22,Spring26,65,Brown,3,4,50,7,10,3,6,No,8,10:00 PM,2,3,1st year,gold,CAS,6
-2/10/26 13:22,Spring26,70,Brown,4,4,25,8,4,4,13,No,5,1:00 AM,2,2,1st year,gold,CAS,4
-2/10/26 13:22,Spring26,65,Brown,3,6,35,7,4,20,6,No,9,10:00 PM,3,3,1st year,oscar,business,11
-2/10/26 13:23,Spring26,77,Blue,4,2,20,5,5,10,5,No,7.5,11:00 PM,5,2,1st year,gold,business,10
-2/10/26 13:23,Spring26,65,Blue,4,4,0,7,5,5,10,Yes,8,midnight,2,3,1st year,gold,CAS,8
-2/10/26 13:23,Spring26,77,Green,3,6,25,7,3,3,6,No,7,11:00 PM,4,4,1st year,gold,business,5
-2/10/26 13:23,Spring26,60,Brown,2,4,40,6,10,8,10,No,6,midnight,2,1,4th year,gold,CAS,3
-2/10/26 13:23,Spring26,61,Brown,4,3,54,7,6,5,10,No,6,1:00 AM,11,3,1st year,gold,business,4
-2/10/26 13:23,Spring26,72,Brown,4,5,40,5,3,1,5,Yes,8,after 1 am,15,1,1st year,president,business,8
-2/10/26 13:23,Spring26,70,Green,6,3,0,7,20,7,10,Yes,4,1:00 AM,5,1,3rd year,president,business,25
-2/10/26 13:23,Spring26,62,Green,3,4,350,7,6,0,15,No,5,midnight,3,1,1st year,president,nursing,5
-2/10/26 13:23,Spring26,62,Brown,3,5,75,10,1,0,7,Yes,6,midnight,2,2,1st year,Nobel,nursing,5
-2/10/26 13:23,Spring26,63,Brown,2,5,0,6,10,1.5,15,No,9,1:00 AM,4,3,1st year,gold,nursing,2
-2/10/26 13:23,Spring26,71,Brown,5,2,40,4,8,2,15,No,7,midnight,2,3,2nd year,president,CAS,18
-2/10/26 13:24,Spring26,63,Brown,3,5,50,6,25,7.5,12,Yes,6,10:00 PM,3,3,1st year,oscar,business,3
-2/10/26 13:24,Spring26,63,Brown,3,6,110,10,5,0,4,No,7.5,midnight,1,2,1st year,Nobel,nursing,8
-2/10/26 13:24,Spring26,65,Brown,4,3,20,5,25,5,15,No,8,10:00 PM,2,2,1st year,president,nursing,5
-2/10/26 13:24,Spring26,75,Blue,4,3,50,7,5,3,8,No,8.5,1:00 AM,20,1,1st year,gold,business,8
-2/10/26 13:24,Spring26,64,Brown,2,4,0,7,10,1,3,No,8,midnight,2,2,1st year,gold,nursing,3
-2/10/26 13:24,Spring26,59,Brown,3,4,0,9,4,0,4,No,7,after 1 am,2,1,,Nobel,nursing,4
-2/10/26 13:24,Spring26,62,Brown,1,5,0,6,12.5,0,10,No,6.5,10:00 PM,1,1,1st year,oscar,nursing,3
-2/10/26 13:26,Spring26,64,Brown,6,3,0,2,5,0,3,No,9,midnight,0,3,1st year,oscar,nursing,5
+Timestamp,Term,achieve,degree,eyecolor,year,int.ext,height,phone.usage,haircut,random,study,run,shoes,abolish.penny,sleep,bedtime,countries,states,class.dread
+2/7/23 10:13,Spring23,president,nursing,Brown,1st year,5,67,7,20,4,10,4,14,No,11,11:00 PM,1,7,4
+2/7/23 10:13,Spring23,gold,CAS,Hazel,1st year,4,61,7,90,7,15,0,12,No,6,10:00 PM,3,10,4
+2/7/23 10:14,Spring23,oscar,CAS,Green,3rd year,2,68,4,0,4,3,5,5,Yes,8,10:00 PM,1,3,3
+2/7/23 10:14,Spring23,Nobel,nursing,Brown,1st year,2,64,6,20,7,4,1,10,Yes,7,1:00 AM,3,3,3
+2/7/23 10:14,Spring23,president,CAS,Blue,1st year,2,67,5,120,6,15,10,8,Yes,8,11:00 PM,2,6,4
+2/7/23 10:14,Spring23,oscar,CAS,Brown,4th year,3,63,7,0,8,5,0,20,Yes,7,after 1 am,4,4,5
+2/7/23 10:14,Spring23,gold,nursing,Green,1st year,4,62,4,50,5,15,0,,Yes,6.5,10:00 PM,1,4,2
+2/7/23 10:14,Spring23,Nobel,CAS,Green,1st year,3,63,7,0,4,17,0,8,No,8,10:00 PM,2,12,4
+2/7/23 10:14,Spring23,Nobel,CAS,Brown,1st year,1,62,5,35,1,15,0,5,No,7,11:00 PM,1,3,2
+2/7/23 10:15,Spring23,gold,nursing,Brown,1st year,3,61,4,30,5,20,0,6,No,6,11:00 PM,1,8,3
+2/7/23 10:15,Spring23,president,CAS,Hazel,2nd year,2,69,2,10,4,8,40,3,Yes,8,before 10 pm,0,6,2
+2/7/23 10:15,Spring23,oscar,nursing,Brown,1st year,4,61,4,35,7,11,0,32,No,8,11:00 PM,2,5,1
+2/7/23 10:15,Spring23,president,nursing,Brown,1st year,1,60,7,30,4,4,4,15,No,6,midnight,2,2,3
+2/7/23 10:15,Spring23,Nobel,nursing,Brown,1st year,3,62,5,25,5,5,1,9,No,8,11:00 PM,1,4,2
+2/7/23 10:15,Spring23,president,nursing,Brown,1st year,4,64,7,25,4,8,0,10,No,8,11:00 PM,2,8,5
+2/7/23 10:15,Spring23,Nobel,nursing,Brown,1st year,4,64,4,65,7,18,1,11,No,7,11:00 PM,2,5,2
+2/7/23 10:15,Spring23,oscar,nursing,Brown,1st year,4,64,4,0,4,7,0,5,Yes,8,11:00 PM,10,13,3
+2/7/23 10:15,Spring23,gold,CAS,Brown,1st year,4,68,4,30,10,15,3,8,Yes,10,11:00 PM,2,5,2
+2/7/23 10:15,Spring23,gold,business,Brown,1st year,3,62,6,60,3,12,15,12,No,7,midnight,2,8,1
+2/7/23 10:15,Spring23,Nobel,business,Hazel,1st year,5,67,6,50,4,8,4,9,Yes,8,midnight,7,15,2
+2/7/23 10:15,Spring23,gold,business,Blue,1st year,4,73,7,25,8,1.5,5,11,No,7.5,midnight,6,12,3
+2/7/23 10:15,Spring23,Nobel,nursing,Hazel,1st year,3,60,5,5,9,8,4,12,No,8,midnight,3,10,3
+2/7/23 10:16,Spring23,Nobel,CAS,Brown,2nd year,5,66,2,60,7,35,0,24,Yes,7.5,11:00 PM,1,10,1
+2/7/23 10:16,Spring23,gold,CAS,Brown,1st year,5,70,6,300,8,10,5,12,No,7,midnight,2,21,3
+2/7/23 11:48,Spring23,Nobel,nursing,Brown,1st year,2,62,4,62,2,15,3,7,No,7,midnight,3,12,2
+2/7/23 12:04,Spring23,gold,business,Blue,2nd year,3,69,3,0,8,10,10,10,Yes,8,midnight,4,7,5
+2/7/23 13:21,Spring23,gold,CAS,Blue,1st year,5,68,6,0,4,6,7,9,Yes,4,after 1 am,1,8,1
+2/7/23 14:57,Spring23,Nobel,CAS,Brown,4th year,6,70,3,25,8,16.5,0.1,5,Yes,7.5833,after 1 am,2,15,5
+2/7/23 18:04,Spring23,gold,nursing,Brown,1st year,3,62.5,4,45,6,5,0,3,Yes,6,1:00 AM,2,7,5
+2/8/23 10:02,Spring23,oscar,business,Green,1st year,5,62,4,210,8,12,4,20,No,9,10:00 PM,2,4,2
+2/8/23 10:02,Spring23,president,business,Brown,1st year,3,72,2,40,6,2,2.5,4,No,7,11:00 PM,0,5,1
+2/8/23 10:02,Spring23,gold,CAS,Brown,1st year,3,63,3,40,7,6,5,10,Yes,7,11:00 PM,2,4,3
+2/8/23 10:02,Spring23,president,CAS,Blue,1st year,2,71,6,0,7,2,0,10,No,10,10:00 PM,0,5,1
+2/8/23 10:02,Spring23,oscar,business,Brown,1st year,2,71,3,15,7,2,2,6,No,9,10:00 PM,3,12,2
+2/8/23 10:03,Spring23,Nobel,CAS,Hazel,1st year,3,63,3,100,4,10,20,19,No,8,11:00 PM,1,7,1
+2/8/23 10:03,Spring23,president,CAS,Brown,1st year,5,71,7,26,8,5,0,10,Yes,6.5,after 1 am,1,8,1
+2/8/23 10:03,Spring23,Nobel,nursing,Brown,1st year,3,62,4,60,2,15,3,7,No,7,midnight,3,12,3
+2/8/23 10:03,Spring23,gold,business,Brown,1st year,4,71,3,30,2,3,5,7,Yes,7,10:00 PM,1,8,2
+2/8/23 10:03,Spring23,gold,business,Blue,1st year,3,72,4,0,7,8,3,3,No,8,midnight,1,5,3
+2/8/23 10:03,Spring23,gold,nursing,Brown,1st year,5,63,6,60,4,3,0,15,No,8,midnight,3,11,1
+2/8/23 10:03,Spring23,Nobel,nursing,Brown,1st year,3,64,2,60,3,10,20,31,No,8,midnight,3,8,1
+2/8/23 10:03,Spring23,oscar,business,Hazel,1st year,1,66,3,30,2,30,0,7,Yes,6,11:00 PM,1,7,3
+2/8/23 10:04,Spring23,Nobel,nursing,Brown,1st year,4,60,6,40,6,5,0,10,No,6.5,after 1 am,1,4,3
+2/8/23 10:04,Spring23,oscar,nursing,Brown,1st year,2,65,6,20,7,4,2,12,Yes,9,midnight,1,3,3
+2/8/23 10:04,Spring23,Nobel,nursing,Brown,1st year,3,60,5,0,6,40,1,10,No,6,midnight,4,3,2
+2/8/23 10:04,Spring23,gold,nursing,Green,1st year,3,64,4,35,5,10,20,25,No,7,10:00 PM,1,16,2
+2/8/23 10:04,Spring23,Nobel,business,Brown,1st year,3,71,4,25,6,3,4,20,Yes,7,11:00 PM,3,14,3
+2/8/23 10:05,Spring23,gold,business,Brown,1st year,4,66,5,25,4,4,2,10,No,8,11:00 PM,1,13,2
+2/8/23 10:05,Spring23,gold,nursing,Brown,1st year,3,61,5,20,7,9,1,20,No,8,11:00 PM,2,2,3
+2/8/23 10:05,Spring23,Nobel,CAS,Brown,1st year,3,72,7,0,8,12,7,2,No,7,1:00 AM,1,25,2
+2/8/23 10:05,Spring23,president,CAS,Brown,2nd year,3,64,5,45,7,4,0,9,No,8,11:00 PM,1,7,4
+2/8/23 10:05,Spring23,president,business,Blue,2nd year,3,65,4,135,4,25,0,4,No,5,midnight,8,13,1
+2/8/23 10:07,Spring23,oscar,CAS,Brown,1st year,4,62,5,100,8,21,0.5,5,No,7,after 1 am,3,5,4
+2/8/23 10:08,Spring23,gold,business,Brown,1st year,3,66,5,0,10,2,0,6,No,6,11:00 PM,2,3,3
+2/8/23 10:09,Spring23,gold,CAS,Blue,1st year,3,71,1,0,5,10,7,3,Yes,6.5,after 1 am,2,8,1
+8/26/24 15:10,Fall24,oscar,nursing,Blue,1st year,3,68,3,35,8,10,0,3,Yes,8,10:00 PM,1,12,2
+8/28/24 9:01,Fall24,gold,nursing,Hazel,1st year,6,69,5,35,7,10,5,50,No,7,midnight,1,9,2
+8/28/24 9:02,Fall24,gold,CAS,Brown,1st year,6,69,5,10,2,4,5,6,No,7,11:00 PM,2,6,3
+8/28/24 9:02,Fall24,Nobel,nursing,Blue,1st year,3,69,4,75,7,4,0,4,Yes,5,midnight,1,10,2
+8/28/24 9:02,Fall24,gold,CAS,Blue,2nd year,5,69,4,12,3,8,0,4,No,7.5,11:00 PM,1,12,2
+8/28/24 9:02,Fall24,gold,business,Blue,1st year,4,69,2,32,5,15,4,3,Yes,7,10:00 PM,2,8,1
+8/28/24 9:03,Fall24,gold,CAS,Brown,1st year,3,63,3,39,7,7,3,5,No,7,11:00 PM,1,8,1
+8/28/24 9:03,Fall24,gold,business,Brown,1st year,3,68,4,45,4,4,0,13,No,8,11:00 PM,1,9,3
+8/28/24 9:03,Fall24,Nobel,nursing,Blue,1st year,1,64,7,120,7,6,0,9,No,8,11:00 PM,1,4,2
+8/28/24 9:04,Fall24,gold,business,Brown,1st year,3,64,5,60,2,4,7,10,No,6,10:00 PM,1,10,2
+8/28/24 9:04,Fall24,gold,business,Brown,1st year,2,72,6,35,2,4,3,13,No,7,11:00 PM,6,13,1
+8/28/24 9:04,Fall24,oscar,nursing,Brown,1st year,3,62.5,4,30,5,5,2,25,No,7.5,11:00 PM,2,5,2
+8/28/24 9:04,Fall24,gold,nursing,Hazel,1st year,3,64,4,50,8,5,0,10,No,7,11:00 PM,5,6,3
+8/28/24 9:04,Fall24,gold,business,Brown,1st year,2,73,5,40,5,12,6,9,No,7,11:00 PM,9,8,1
+8/28/24 9:04,Fall24,oscar,nursing,Blue,1st year,3,70,3,70,4,5,0,6,No,7,midnight,1,7,4
+8/28/24 9:04,Fall24,gold,nursing,Brown,1st year,5,60,5,200,2,20,0,10,Yes,8,11:00 PM,1,10,2
+8/28/24 9:04,Fall24,oscar,nursing,Brown,1st year,3,67,3,0,5,1.5,0,6,No,7,11:00 PM,3,1,3
+8/28/24 9:04,Fall24,gold,business,Brown,1st year,3,67,5,40,7,5,20,4,Yes,8,11:00 PM,2,8,3
+8/28/24 9:04,Fall24,gold,business,Brown,2nd year,3,67,2,30,6,2,20,10,No,8,midnight,2,9,3
+8/28/24 9:04,Fall24,gold,CAS,Brown,2nd year,3,66,7,20,8,5,0,15,No,6,midnight,5,4,1
+8/28/24 9:05,Fall24,gold,business,Brown,1st year,4,76,4,35,6,3,2.5,8,Yes,7.5,before 10 pm,5,20,2
+8/28/24 9:05,Fall24,gold,nursing,Brown,1st year,3,69,4,25,6,16,1.5,4,No,7,10:00 PM,2,4,3
+8/28/24 9:05,Fall24,Nobel,business,Brown,2nd year,2,65,5,0,7,10,4,15,Yes,7,11:00 PM,2,12,3
+8/28/24 9:05,Fall24,Nobel,business,Brown,1st year,4,64,4,50,5,15,0,45,No,7,11:00 PM,2,5,3
+8/28/24 9:06,Fall24,gold,CAS,Blue,1st year,4,72,4,22,4,2,20,4,No,9,10:00 PM,2,6.5,4
+8/28/24 9:06,Fall24,Nobel,nursing,Brown,2nd year,1,62,7,50,2,12.5,4,4,No,8,10:00 PM,2,8,3
+8/28/24 9:07,Fall24,oscar,nursing,Brown,1st year,2,64,4,45,6,10,28,6,No,8,11:00 PM,2,5,2
+8/28/24 9:07,Fall24,Nobel,business,Brown,1st year,4,67,3,30,8,2.5,10,8,No,8,11:00 PM,0,12,1
+8/25/25 13:27,Fall25,president,nursing,Blue,1st year,6,68,2,54,9,2.5,1,5,No,7,midnight,2,5,3
+8/25/25 13:27,Fall25,gold,business,Hazel,1st year,4,72,5,20,10,2,5,6,Yes,8,midnight,3,8,3
+8/25/25 13:28,Fall25,gold,CAS,Brown,2nd year,4,72,7,25,10,3.5,1,1,Yes,7.5,midnight,3,3,4
+8/25/25 13:28,Fall25,gold,CAS,Brown,1st year,5,73,6,45,9,4,7,14,Yes,8.5,10:00 PM,3,5,5
+8/25/25 13:28,Fall25,gold,business,Blue,1st year,3,74,6,55,4,10,10,15,Yes,6.5,midnight,1,5,4
+8/25/25 13:28,Fall25,gold,business,Brown,1st year,5,71,5,35,6,4,6,10,No,6,midnight,10,8,3
+8/25/25 13:28,Fall25,Nobel,nursing,Green,1st year,3,66,4,0,8,6,1.5,8,Yes,7,11:00 PM,2,35,2
+8/25/25 13:28,Fall25,gold,business,Brown,1st year,5,70,4,45,5,2.5,12,21,No,8,midnight,13,8,2
+8/25/25 13:28,Fall25,Nobel,business,Blue,2nd year,5,73,1,30,7,2,0,10,No,8,midnight,5,4,1
+8/25/25 13:28,Fall25,Nobel,CAS,Brown,2nd year,3,64,2,5,10,10,0,5,No,8,11:00 PM,3,,3
+8/25/25 13:28,Fall25,gold,business,Brown,1st year,2,66,6,190,2,1,0,10,No,6,11:00 PM,3,23,4
+8/25/25 13:28,Fall25,gold,business,Blue,1st year,3,74,4,26,9,4,4,6,Yes,8,11:00 PM,3,13,4
+8/25/25 13:28,Fall25,gold,business,Brown,1st year,4,73,4,35,7,6,0,8,No,7,midnight,2,10,2
+8/25/25 13:28,Fall25,gold,CAS,Brown,1st year,4,76,2,35,6,8,7,14,No,8,11:00 PM,2,12,3
+8/25/25 13:28,Fall25,gold,business,Brown,1st year,5,71,4,40,7,3,1,20,No,7,midnight,2,5,2
+8/25/25 13:28,Fall25,president,nursing,Brown,1st year,3,66,5,30,7,0,1,4,No,5,11:00 PM,1,1,3
+8/25/25 13:28,Fall25,gold,CAS,Brown,1st year,3,69,3,40,6,5,5,20,Yes,9,10:00 PM,1,15,1
+8/25/25 13:28,Fall25,gold,business,Blue,1st year,5,76,5,25,3,7.5,2.5,15,No,9,11:00 PM,1,7,4
+8/25/25 13:28,Fall25,gold,business,Brown,1st year,4,74,5,48,7,6.5,2,5,No,7.5,midnight,1,3,2
+8/25/25 13:29,Fall25,gold,CAS,Brown,2nd year,3,65,7,20,4,2.5,,5,No,6,11:00 PM,2,4,1
+8/25/25 13:29,Fall25,president,nursing,Brown,1st year,3,64,6,45,4,5.5,0,5,No,7.5,11:00 PM,2,8,3
+8/25/25 13:29,Fall25,gold,CAS,Blue,1st year,5,71,4,25,3,8,0,4,Yes,8,before 10 pm,2,15,3
+8/25/25 13:29,Fall25,gold,business,Blue,1st year,5,75,3,20,3,2,10,12,No,7,1:00 AM,1,8,3
+8/25/25 13:29,Fall25,gold,business,Blue,1st year,4,65,3,35,7,4,3,12,Yes,8,11:00 PM,1,7,3
+8/25/25 13:29,Fall25,gold,CAS,Brown,1st year,3,61,4,85,3,12,6,12,No,8,10:00 PM,6,10,2
+8/25/25 13:29,Fall25,gold,business,Blue,1st year,2,75,5,45,10,3,7,10,No,8,11:00 PM,6,9,2
+8/25/25 13:29,Fall25,gold,nursing,Brown,1st year,2,61,5,20,7,4,0,6,No,6,midnight,2,4,1
+8/25/25 13:29,Fall25,Nobel,nursing,Blue,1st year,3,65,4,50,2,36,0,6,Yes,8,11:00 PM,4,7,3
+8/25/25 13:29,Fall25,gold,business,Hazel,1st year,4,68,4,0,9,2,,8,No,8,midnight,2,5,2
+8/25/25 13:30,Fall25,gold,nursing,Brown,1st year,2,61,4,0,8,3,0,9,No,8,11:00 PM,2,3,3
+8/25/25 13:30,Fall25,Nobel,CAS,Blue,Other,2,62,7,5,5,30,0,10,Yes,9,10:00 PM,3,10,5
+2/10/26 13:21,Spring26,president,CAS,Brown,1st year,2,63,4,0,5,8,0,10,No,8,10:00 PM,1,5,2
+2/10/26 13:22,Spring26,gold,business,Blue,1st year,2,74,3,25,7,2,3.5,12,Yes,8,midnight,1,7,2
+2/10/26 13:22,Spring26,president,business,Brown,1st year,3,67,6,30,5,15,1,6,No,6.5,1:00 AM,2,7,1
+2/10/26 13:22,Spring26,Nobel,nursing,Green,1st year,4,65,2,17,9,10,5,10,No,8,midnight,1,20,5
+2/10/26 13:22,Spring26,gold,CAS,Brown,2nd year,2,70,6,40,3,4,3,11,No,8,midnight,3,7,3
+2/10/26 13:22,Spring26,gold,CAS,Brown,1st year,3,65,4,50,7,10,3,6,No,8,10:00 PM,2,6,3
+2/10/26 13:22,Spring26,gold,CAS,Brown,1st year,4,70,4,25,8,4,4,13,No,5,1:00 AM,2,4,2
+2/10/26 13:22,Spring26,oscar,business,Brown,1st year,3,65,6,35,7,4,20,6,No,9,10:00 PM,3,11,3
+2/10/26 13:23,Spring26,gold,business,Blue,1st year,4,77,2,20,5,5,10,5,No,7.5,11:00 PM,5,10,2
+2/10/26 13:23,Spring26,gold,CAS,Blue,1st year,4,65,4,0,7,5,5,10,Yes,8,midnight,2,8,3
+2/10/26 13:23,Spring26,gold,business,Green,1st year,3,77,6,25,7,3,3,6,No,7,11:00 PM,4,5,4
+2/10/26 13:23,Spring26,gold,CAS,Brown,4th year,2,60,4,40,6,10,8,10,No,6,midnight,2,3,1
+2/10/26 13:23,Spring26,gold,business,Brown,1st year,4,61,3,54,7,6,5,10,No,6,1:00 AM,11,4,3
+2/10/26 13:23,Spring26,president,business,Brown,1st year,4,72,5,40,5,3,1,5,Yes,8,after 1 am,15,8,1
+2/10/26 13:23,Spring26,president,business,Green,3rd year,6,70,3,0,7,20,7,10,Yes,4,1:00 AM,5,25,1
+2/10/26 13:23,Spring26,president,nursing,Green,1st year,3,62,4,350,7,6,0,15,No,5,midnight,3,5,1
+2/10/26 13:23,Spring26,Nobel,nursing,Brown,1st year,3,62,5,75,10,1,0,7,Yes,6,midnight,2,5,2
+2/10/26 13:23,Spring26,gold,nursing,Brown,1st year,2,63,5,0,6,10,1.5,15,No,9,1:00 AM,4,2,3
+2/10/26 13:23,Spring26,president,CAS,Brown,2nd year,5,71,2,40,4,8,,15,No,7,midnight,2,18,3
+2/10/26 13:24,Spring26,oscar,business,Brown,1st year,3,63,5,50,6,25,7.5,12,Yes,6,10:00 PM,3,3,3
+2/10/26 13:24,Spring26,Nobel,nursing,Brown,1st year,3,63,6,110,10,5,0,4,No,7.5,midnight,1,8,2
+2/10/26 13:24,Spring26,president,nursing,Brown,1st year,4,65,3,20,5,25,5,15,No,8,10:00 PM,2,5,2
+2/10/26 13:24,Spring26,gold,business,Blue,1st year,4,75,3,50,7,5,3,8,No,8.5,1:00 AM,20,8,1
+2/10/26 13:24,Spring26,gold,nursing,Brown,1st year,2,64,4,0,7,10,1,3,No,8,midnight,2,3,2
+2/10/26 13:24,Spring26,Nobel,nursing,Brown,,3,59,4,0,9,4,0,4,No,7,after 1 am,2,4,1
+2/10/26 13:24,Spring26,oscar,nursing,Brown,1st year,1,62,5,0,6,12.5,0,10,No,6.5,10:00 PM,1,3,1
+2/10/26 13:26,Spring26,oscar,nursing,Brown,1st year,6,64,3,0,2,5,0,3,No,9,midnight,0,5,3
+2026/09/02 2:19:04 PM MDT,Fall26,Nobel,nursing,Brown,2nd year,3,63,4,$60 ,9,6,,8,No,8,11:00 PM,1,5,4
+2026/09/02 2:19:27 PM MDT,Fall26,gold,business,Blue,1st year,3,68,2,30,1,5,5,5,Yes,7,midnight,2,6,1
+2026/09/02 2:19:33 PM MDT,Fall26,gold,business,Blue,2nd year,5,68,5,$65 ,7,6,5,25,No,8,midnight,5,18,1
+2026/09/02 2:19:49 PM MDT,Fall26,Nobel,nursing,Brown,2nd year,3,65,6,30,4,4,1,5,No,8,midnight,2,5,2
+2026/09/02 2:19:50 PM MDT,Fall26,gold,business,Brown,1st year,4,71,4,$0 ,8,3,3,4,No,7,11:00 PM,1,10,3
+2026/09/02 2:20:01 PM MDT,Fall26,gold,CAS,Brown,2nd year,5,69,6,35 dollars,4,6 hours,2 miles,4,Yes,8 hours,midnight,1,4,2
+2026/09/02 2:20:01 PM MDT,Fall26,Nobel,nursing,Green,1st year,3,67,4,35,8,4,5,16,No,6,midnight,1,5,3
+2026/09/02 2:20:07 PM MDT,Fall26,president,nursing,Blue,1st year,3,60,5,300,7,2,4-Mar,20,No,8-Jul,11:00 PM,1,7,3
+2026/09/02 2:20:13 PM MDT,Fall26,president,CAS,Blue,1st year,2,63,4,0,4,8,3,7,No,5,11:00 PM,2,10,4
+2026/09/02 2:20:24 PM MDT,Fall26,gold,business,Brown,3rd year,3,65,4,$12 ,7,14,0,20,No,8,11:00 PM,10,10,1
+2026/09/02 2:20:26 PM MDT,Fall26,gold,business,Brown,2nd year,4,69,5,0,3,4,2,8,No,8,11:00 PM,,7,1
+2026/09/02 2:20:34 PM MDT,Fall26,gold,CAS,Brown,2nd year,2,67,4,0,10,2,0,3,No,6,11:00 PM,2,2,4
+2026/09/02 2:20:47 PM MDT,Fall26,president,business,Blue,1st year,3,71,7,25,8,2-3 hours,40 (soccer),12,Yes,8,midnight,5,14,3
+2026/09/02 2:20:48 PM MDT,Fall26,gold,business,Brown,1st year,3,76,4,35,3,2,7,15,No,9-Aug,11:00 PM,1,10,1
+2026/09/02 2:20:50 PM MDT,Fall26,gold,CAS,Hazel,2nd year,3,53,6,45,7,10,5,20,No,8,11:00 PM,2,13,3
+2026/09/02 2:20:54 PM MDT,Fall26,gold,business,Green,1st year,4,73,3,30,3,2,2,8,Yes,8,10:00 PM,2,8,1
+2026/09/02 2:20:57 PM MDT,Fall26,gold,CAS,Brown,2nd year,5,67,7,32 (including tip),7,3,0,4,Yes,6,midnight,1,6,2
+2026/09/02 2:21:00 PM MDT,Fall26,gold,business,Brown,1st year,3,71,4,30,5,2,a lot i dont know ,6,No,8,10:00 PM,6,3,4
+2026/09/02 2:21:04 PM MDT,Fall26,gold,business,Brown,1st year,4,69,4,0,2,4,0,4,No,8,11:00 PM,2,14,2
+2026/09/02 2:21:29 PM MDT,Fall26,gold,business,Blue,1st year,5,69,4,36,2,4,0,15,Yes,7,midnight,3,10,3
+2026/09/02 2:21:31 PM MDT,Fall26,Nobel,CAS,Green,2nd year,5,64,2,450,4,2,0,16,Yes,8,11:00 PM,1,4,2
+2026/09/02 2:21:46 PM MDT,Fall26,oscar,CAS,Brown,3rd year,2,58,3,0,9,6,0,5,Yes,7,midnight,1,4,5
+2026/09/02 2:22:12 PM MDT,Fall26,gold,business,Brown,1st year,2,74,3,0,7,1,3,10,No,9,11:00 PM,3,10,3
+2026/09/02 2:22:33 PM MDT,Fall26,gold,nursing,Brown,1st year,3,65,5,40,7,7,7,13,No,8,1:00 AM,5,8,3
+2026/09/02 2:22:36 PM MDT,Fall26,gold,nursing,Brown,1st year,2,60,5,0,4,8,5,10,No,7,11:00 PM,2,7,2
+2026/09/02 2:23:59 PM MDT,Fall26,Nobel,business,Blue,3rd year,4,62,4,25,7,6,0,20,No,7,11:00 PM,3,5,1
+2026/09/02 2:24:23 PM MDT,Fall26,Nobel,CAS,Brown,2nd year,4,72,3,35,6,around 6.5,"Right now, 2-3. When training for a half marathon, I was running about 14 a week. ",13,Yes,8.5,11:00 PM,3,9,1
