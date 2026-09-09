@@ -140,24 +140,24 @@ Timestamp,Term,achieve,degree,eyecolor,year,int.ext,height,phone.usage,haircut,r
 2/10/26 13:24,Spring26,Nobel,nursing,Brown,,3,59,4,0,9,4,0,4,No,7,after 1 am,2,4,1
 2/10/26 13:24,Spring26,oscar,nursing,Brown,1st year,1,62,5,0,6,12.5,0,10,No,6.5,10:00 PM,1,3,1
 2/10/26 13:26,Spring26,oscar,nursing,Brown,1st year,6,64,3,0,2,5,0,3,No,9,midnight,0,5,3
-2026/09/02 2:19:04 PM MDT,Fall26,Nobel,nursing,Brown,2nd year,3,63,4,$60 ,9,6,,8,No,8,11:00 PM,1,5,4
+2026/09/02 2:19:04 PM MDT,Fall26,Nobel,nursing,Brown,2nd year,3,63,4,60,9,6,,8,No,8,11:00 PM,1,5,4
 2026/09/02 2:19:27 PM MDT,Fall26,gold,business,Blue,1st year,3,68,2,30,1,5,5,5,Yes,7,midnight,2,6,1
-2026/09/02 2:19:33 PM MDT,Fall26,gold,business,Blue,2nd year,5,68,5,$65 ,7,6,5,25,No,8,midnight,5,18,1
+2026/09/02 2:19:33 PM MDT,Fall26,gold,business,Blue,2nd year,5,68,5,65,7,6,5,25,No,8,midnight,5,18,1
 2026/09/02 2:19:49 PM MDT,Fall26,Nobel,nursing,Brown,2nd year,3,65,6,30,4,4,1,5,No,8,midnight,2,5,2
-2026/09/02 2:19:50 PM MDT,Fall26,gold,business,Brown,1st year,4,71,4,$0 ,8,3,3,4,No,7,11:00 PM,1,10,3
-2026/09/02 2:20:01 PM MDT,Fall26,gold,CAS,Brown,2nd year,5,69,6,35 dollars,4,6 hours,2 miles,4,Yes,8 hours,midnight,1,4,2
+2026/09/02 2:19:50 PM MDT,Fall26,gold,business,Brown,1st year,4,71,4,0,8,3,3,4,No,7,11:00 PM,1,10,3
+2026/09/02 2:20:01 PM MDT,Fall26,gold,CAS,Brown,2nd year,5,69,6,35,4,6,2,4,Yes,8 hours,midnight,1,4,2
 2026/09/02 2:20:01 PM MDT,Fall26,Nobel,nursing,Green,1st year,3,67,4,35,8,4,5,16,No,6,midnight,1,5,3
-2026/09/02 2:20:07 PM MDT,Fall26,president,nursing,Blue,1st year,3,60,5,300,7,2,4-Mar,20,No,8-Jul,11:00 PM,1,7,3
+2026/09/02 2:20:07 PM MDT,Fall26,president,nursing,Blue,1st year,3,60,5,300,7,2,3.5,20,No,8-Jul,11:00 PM,1,7,3
 2026/09/02 2:20:13 PM MDT,Fall26,president,CAS,Blue,1st year,2,63,4,0,4,8,3,7,No,5,11:00 PM,2,10,4
-2026/09/02 2:20:24 PM MDT,Fall26,gold,business,Brown,3rd year,3,65,4,$12 ,7,14,0,20,No,8,11:00 PM,10,10,1
-2026/09/02 2:20:26 PM MDT,Fall26,gold,business,Brown,2nd year,4,69,5,0,3,4,2,8,No,8,11:00 PM,,7,1
+2026/09/02 2:20:24 PM MDT,Fall26,gold,business,Brown,3rd year,3,65,4,12,7,14,0,20,No,8,11:00 PM,10,10,1
+2026/09/02 2:20:26 PM MDT,Fall26,gold,business,Brown,2nd year,4,69,5,0,3,4,2,8,No,8,11:00 PM,1,7,1
 2026/09/02 2:20:34 PM MDT,Fall26,gold,CAS,Brown,2nd year,2,67,4,0,10,2,0,3,No,6,11:00 PM,2,2,4
-2026/09/02 2:20:47 PM MDT,Fall26,president,business,Blue,1st year,3,71,7,25,8,2-3 hours,40 (soccer),12,Yes,8,midnight,5,14,3
+2026/09/02 2:20:47 PM MDT,Fall26,president,business,Blue,1st year,3,71,7,25,8,2.5,40,12,Yes,8,midnight,5,14,3
 2026/09/02 2:20:48 PM MDT,Fall26,gold,business,Brown,1st year,3,76,4,35,3,2,7,15,No,9-Aug,11:00 PM,1,10,1
 2026/09/02 2:20:50 PM MDT,Fall26,gold,CAS,Hazel,2nd year,3,53,6,45,7,10,5,20,No,8,11:00 PM,2,13,3
 2026/09/02 2:20:54 PM MDT,Fall26,gold,business,Green,1st year,4,73,3,30,3,2,2,8,Yes,8,10:00 PM,2,8,1
-2026/09/02 2:20:57 PM MDT,Fall26,gold,CAS,Brown,2nd year,5,67,7,32 (including tip),7,3,0,4,Yes,6,midnight,1,6,2
-2026/09/02 2:21:00 PM MDT,Fall26,gold,business,Brown,1st year,3,71,4,30,5,2,a lot i dont know ,6,No,8,10:00 PM,6,3,4
+2026/09/02 2:20:57 PM MDT,Fall26,gold,CAS,Brown,2nd year,5,67,7,32,7,3,0,4,Yes,6,midnight,1,6,2
+2026/09/02 2:21:00 PM MDT,Fall26,gold,business,Brown,1st year,3,71,4,30,5,2,20,6,No,8,10:00 PM,6,3,4
 2026/09/02 2:21:04 PM MDT,Fall26,gold,business,Brown,1st year,4,69,4,0,2,4,0,4,No,8,11:00 PM,2,14,2
 2026/09/02 2:21:29 PM MDT,Fall26,gold,business,Blue,1st year,5,69,4,36,2,4,0,15,Yes,7,midnight,3,10,3
 2026/09/02 2:21:31 PM MDT,Fall26,Nobel,CAS,Green,2nd year,5,64,2,450,4,2,0,16,Yes,8,11:00 PM,1,4,2
@@ -166,4 +166,4 @@ Timestamp,Term,achieve,degree,eyecolor,year,int.ext,height,phone.usage,haircut,r
 2026/09/02 2:22:33 PM MDT,Fall26,gold,nursing,Brown,1st year,3,65,5,40,7,7,7,13,No,8,1:00 AM,5,8,3
 2026/09/02 2:22:36 PM MDT,Fall26,gold,nursing,Brown,1st year,2,60,5,0,4,8,5,10,No,7,11:00 PM,2,7,2
 2026/09/02 2:23:59 PM MDT,Fall26,Nobel,business,Blue,3rd year,4,62,4,25,7,6,0,20,No,7,11:00 PM,3,5,1
-2026/09/02 2:24:23 PM MDT,Fall26,Nobel,CAS,Brown,2nd year,4,72,3,35,6,around 6.5,"Right now, 2-3. When training for a half marathon, I was running about 14 a week. ",13,Yes,8.5,11:00 PM,3,9,1
+2026/09/02 2:24:23 PM MDT,Fall26,Nobel,CAS,Brown,2nd year,4,72,3,35,6,6.5,2.5,13,Yes,8.5,11:00 PM,3,9,1
